@@ -43,8 +43,8 @@ Route::get('products/payment', function (){
     return view('products.payment');
 })->name('products.payment');
 
-
-Route::prefix('admin')->group(function (){
+//, 'middleware' => 'auth'
+Route::group(['prefix' => 'administrator'], function (){
     Route::get('/dashboard', function () {
         return view('admin.dashboard');
     });
