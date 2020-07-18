@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * @method static findOrFail($product)
  * @method static pluck()
+ * @method static where(string $string, int $id)
  * @property mixed image
  */
 class Product extends Model
@@ -19,6 +20,7 @@ class Product extends Model
         'description',
         'price',
         'image',
+        'material',
         'stock',
         'size',
         'status',

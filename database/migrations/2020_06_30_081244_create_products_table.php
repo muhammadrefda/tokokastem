@@ -19,6 +19,7 @@ class CreateProductsTable extends Migration
             $table->string('description',1000);
             $table->unsignedInteger('price');
             $table->string('image',1000)->nullable();
+            $table->string('material')->nullable();
             $table->unsignedInteger('stock');
             $table->string('size');
             $table->string('status')->default('unavailable');

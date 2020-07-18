@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -36,33 +37,28 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
      */
-    public function store(Request $request)
+      public function store(Request $request)
     {
-
-
-        $request->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        ]);
-        $imageName = time().'.'.$request->image->extension();
-
         $product = new Product();
-
         $product->title = $request->get('title');
         $product->description = $request->get('description');
         $product->price = $request->get('price');
+        $product->material = $request->get('material');
 
-        $product->image->move(public_path('img/product'), $imageName);
+        if ($request->file('image'))
+        {
+            $file = $request->file('image')->store('img/product','public');
+            $product->image = $file;
+        }
 
         $product->stock = $request->get('stock');
         $product->size = $request->get('size');
         $product->category = $request->get('category');
 
-        dd($product);
-
         $product->save();
 
-        return redirect()->route('product.index')
-            ->with('success',' created product id {$product->id} successfully.');
+        return redirect()->route('products.index')
+            ->with('status',' created product id {$product->id} successfully.');
     }
 
     /**
@@ -82,11 +78,11 @@ class ProductController extends Controller
      * @param $product
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
-    public function edit($product)
+    public function edit($id)
     {
-        return view('product.edit')->with([
-            'product' => Product::findOrFail($product),
-        ]);
+        $product = Product::findOrFail($id);
+
+        return view('admin.product.edit',['product' => $product]);
     }
 
     /**
@@ -96,12 +92,30 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
      */
-    public function update(Request $request, $product)
+    public function update(Request $request, $id)
     {
-        $product->update($request->validated());
+        $product = Product::findOrFail($id);
+
+        $product->title = $request->get('title');
+        $product->description = $request->get('description');
+        $product->price = $request->get('price');
+
+        if($product->image && file_exists(storage_path('app/public/' . $product->image)))
+        {
+            Storage::delete('public/'.$product->avatar);
+            $file = $request->file('image')->store('img/product', 'public');
+            $product->image = $file;
+        }
+
+        $product->material = $request->get('material');
+        $product->stock = $request->get('stock');
+        $product->size = $request->get('size');
+        $product->status = $request->get('status');
+        $product->category = $request->get('category');
+
         return redirect()
-            ->route('product.index')
-            ->with("The product with id {$product->id} was updated");
+            ->route('products.index')
+            ->with('status','Great! Product updated successfully');
     }
 
     /**
@@ -113,10 +127,10 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        $product->delete();
+          $product->delete();
         return redirect()
-            ->route('product.index')
-            ->with("The product was removed");
+            ->route('products.index')
+            ->with('status',"The product was removed");
 
     }
 }

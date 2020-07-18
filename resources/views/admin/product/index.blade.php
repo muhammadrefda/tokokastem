@@ -6,24 +6,26 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <p class="m-0 font-weight-bold text-primary">manage product</p>
+            <p class="m-0 font-weight-bold text-primary">Daftar Produk</p>
             <hr>
-            <a href="{{route('product.create')}}">tambah produk</a>
+            <a href="{{route('products.create')}}">tambah produk</a>
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <table class="table table-bordered" id="dataTable" cellspacing="0">
                     <thead>
                     <tr>
                         <th>id </th>
-                        <th>title</th>
-                        <th>description</th>
-                        <th>price</th>
-                        <th>image</th>
+                        <th>Nama Produk</th>
+                        <th>Deskripsi Produk</th>
+                        <th>Harga</th>
+                        <th>Gambar</th>
+                        <th>Bahan</th>
                         <th>size</th>
                         <th>status</th>
-                        <th>category</th>
-                        <th>Action</th>
+                        <th>Kategori</th>
+                        <th>created at</th>
+                        <td colspan="2">Action</td>
                     </tr>
                     </thead>
                     <tbody>
@@ -42,8 +44,11 @@
                             Rp{{$product->price}},-
                             </td>
                             <td>
-                                {{$product->image}}
+                                @if($product->image)
+                                    <img src="{{asset('storage/'.$product->image)}}" width="70px">
+                                @endif
                             </td>
+                            <td>{{$product->material}}</td>
                             <td>
                                 {{$product->size}}
                             </td>
@@ -54,16 +59,18 @@
                                 {{$product->category}}
                             </td>
                             <td>
-                                <button class="btn btn-outline-success">
-                                    Ubah
-                                </button>
-                                <hr>
-                                <button class="btn btn-outline-danger">
-                                    <a href="{{route('product.destroy', $product->id)}}">Hapus</a>
-
-                                </button>
+                                {{date('m-d', strtotime($product->created_at))}}
                             </td>
-
+                            <td>
+                                <a href="{{route('products.edit',$product->id)}} " class="btn btn-primary">edit</a>
+                            </td>
+                            <td>
+                                <form action="{{route('products.destroy',$product->id)}}" method="post">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn btn-danger" type="submit">hapus</button>
+                                </form>
+                            </td>
                         </tr>
                     @endforeach
                     </tbody>
@@ -75,3 +82,4 @@
 </div>
 <!-- /.container-fluid -->
 @endsection
+

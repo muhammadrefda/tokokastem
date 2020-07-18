@@ -16,15 +16,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('products.index');
 });
+//
+//Route::get('products', function (){
+//        return view('products.detail');
+//})->name('products.details');
 
-Route::get('products', function (){
-        return view('products.detail');
-})->name('products.details');
-
-
-Route::get('products/custom', function (){
-    return view('products.custom');
-})->name('products.custom');
+//
+//Route::get('products/custom', function (){
+//    return view('products.custom');
+//})->name('products.custom');
 
 
 Route::get('account', function (){
@@ -39,17 +39,15 @@ Route::get('cara-pesan', function (){
     return view('cara-pesan');
 })->name('cara-pesan');
 
-Route::get('products/payment', function (){
-    return view('products.payment');
-})->name('products.payment');
+//Route::get('products/payment', function (){
+//    return view('products.payment');
+//})->name('products.payment');
 
-//, 'middleware' => 'auth'
-Route::group(['prefix' => 'administrator'], function (){
     Route::get('/dashboard', function () {
         return view('admin.dashboard');
     });
-    Route::resource('product','ProductController');
-});
+    Route::resource('admin/products','ProductController');
+
 
 
 
@@ -69,15 +67,6 @@ Route::get('/register', function () {
 
 
 
-Route::prefix('manage-category')->group(function () {
-    Route::get('/', function () {
-        return view('category.index');
-    });
-    Route::get('/create', function () {
-        return view('category.create');
-    });
-});
-
 Route::prefix('manage-transaction')->group(function () {
     Route::get('/', function () {
         return view('transaction.index');
@@ -96,3 +85,8 @@ Route::prefix('manage-product')->group(function () {
 
 });
 
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

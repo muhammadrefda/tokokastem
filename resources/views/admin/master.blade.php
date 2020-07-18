@@ -42,28 +42,17 @@
         <hr class="sidebar-divider">
         <!-- Nav Item - Tables -->
         <li class="nav-item">
-            <a class="nav-link" href="{{route('product.index')}}">
+            <a class="nav-link" href="{{route('products.index')}}">
                 <i class="fas fa-fw fa-table"></i>
                 <span>Manage Product</span></a>
         </li>
-
-{{--        <hr class="sidebar-divider">--}}
-
-
-        <!-- Nav Item - Tables -->
-{{--        <li class="nav-item">--}}
-{{--            <a class="nav-link" href="/manage-category/">--}}
-{{--                <i class="fas fa-fw fa-table"></i>--}}
-{{--                <span>Manage Category</span></a>--}}
-{{--        </li>--}}
-
 
         <hr class="sidebar-divider">
 
 
         <!-- Nav Item - Tables -->
         <li class="nav-item">
-            <a class="nav-link" href="/manage-category/">
+            <a class="nav-link" href="/admin/order">
                 <i class="fas fa-fw fa-table"></i>
                 <span>Manage Order</span></a>
         </li>
@@ -124,14 +113,10 @@
                         </a>
                         <!-- Dropdown - User Information -->
                         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                            {{--                <a class="dropdown-item" href="#">--}}
-                            {{--                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>--}}
-                            {{--                  Profile--}}
-                            {{--                </a>--}}
-                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                Logout
-                            </a>
+                            <form action="{{route("logout")}}" method="POST">
+                                @csrf
+                                <button class="dropdown-item" style="cursor:pointer">Sign Out</button>
+                            </form>
                         </div>
                     </li>
 
@@ -142,7 +127,7 @@
         <!-- End of Topbar -->
         </div>
     @yield('content')
-        <!-- End of Main Content -->
+        <!-- End of Main Content --
 
         <!-- Footer -->
         <footer class="sticky-footer bg-white">
