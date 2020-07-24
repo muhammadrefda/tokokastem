@@ -15,7 +15,7 @@
                 <table class="table table-bordered" id="dataTable" cellspacing="0">
                     <thead>
                     <tr>
-                        <th>id </th>
+                        <th>No.</th>
                         <th>Nama Produk</th>
                         <th>Deskripsi Produk</th>
                         <th>Harga</th>
@@ -32,7 +32,7 @@
                     @foreach($products as $product)
                         <tr>
                             <td>
-                                {{$product->id}}
+                                {{$loop->iteration}}
                             </td>
                             <td>
                                 {{$product->title}}

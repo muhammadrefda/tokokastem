@@ -59,6 +59,11 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="material">bahan</label>
+                    <input type="text" class="form-control" id="" name="material" value="{{$product->material}}">
+                </div>
+
+                <div class="form-group">
                     <label for="stock">stock</label>
                     <input type="text" class="form-control" id="" name="stock" value="{{$product->stock}}">
                 </div>

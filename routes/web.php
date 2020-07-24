@@ -13,18 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('products.index');
-});
-//
-//Route::get('products', function (){
-//        return view('products.detail');
-//})->name('products.details');
 
-//
-//Route::get('products/custom', function (){
-//    return view('products.custom');
-//})->name('products.custom');
 
 
 Route::get('account', function (){
@@ -39,14 +28,66 @@ Route::get('cara-pesan', function (){
     return view('cara-pesan');
 })->name('cara-pesan');
 
-//Route::get('products/payment', function (){
-//    return view('products.payment');
-//})->name('products.payment');
+
+
+
+Route::get('/', function () {
+    return view('products.index');
+});
+Route::prefix('products')->group(function (){
+
+
+
+    Route::get('detail', function (){
+        return view('products.detail');
+    })->name('products.details');
+
+    Route::get('custom', function (){
+        return view('products.custom');
+    })->name('products.custom');
+
+    Route::get('payment', function (){
+        return view('products.payment');
+    })->name('products.payment');
+
+    Route::get('bag', function (){
+        return view('products.bag.index');
+    })->name('products.bag.index');
+
+
+    Route::resource('mask','ProductController');
+
+
+
+
+    Route::get('mug', function (){
+        return view('products.mug.index');
+    })->name('products.mug.index');
+
+    Route::get('totebag', function (){
+        return view('products.totebag.index');
+    })->name('products.totebag.index');
+
+
+    Route::get('tshirt', function (){
+        return view('products.tshirt.index');
+    })->name('products.tshirt.index');
+
+});
+
+Route::get('product/mask/{id?}','ProductDetailController@index')->name('mask.detail');
+
+
+
+
 
     Route::get('/dashboard', function () {
         return view('admin.dashboard');
     });
-    Route::resource('admin/products','ProductController');
+    Route::resource('admin/products','admin\ProductController');
+    Route::resource('admin/orders','admin\OrderController');
+Route::resource('admin/promo','admin\PromoController');
+
 
 
 

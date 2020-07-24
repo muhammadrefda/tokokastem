@@ -55,6 +55,7 @@
                     <label>Pilih Size</label>
                     <label>
                         <select class="form-control" name="size">
+                            <option value="All Size">All Size</option>
                             <option value="S">S</option>
                             <option value="L">L</option>
                             <option value="M">M</option>

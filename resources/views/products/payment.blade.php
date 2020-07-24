@@ -18,78 +18,78 @@
                                                 <div class="panel-heading">
                                                     <h4 class="panel-title">
                                                         <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
-                                                            Shippping Address
+                                                            Alamat Pengiriman
                                                         </a>
                                                     </h4>
                                                 </div>
                                                 <div id="collapseFour" class="panel-collapse collapse">
                                                     <div class="panel-body">
                                                         <div class="row">
+                                                            <div class="col-md-12">
+                                                                <div class="aa-checkout-single-bill">
+                                                                    <input type="text" placeholder="Nama Lengkap*">
+                                                                </div>
+                                                            </div>
+{{--                                                            <div class="col-md-6">--}}
+{{--                                                                <div class="aa-checkout-single-bill">--}}
+{{--                                                                    <input type="text" placeholder="Last Name*">--}}
+{{--                                                                </div>--}}
+{{--                                                            </div>--}}
+                                                        </div>
+{{--                                                        <div class="row">--}}
+{{--                                                            <div class="col-md-12">--}}
+{{--                                                                <div class="aa-checkout-single-bill">--}}
+{{--                                                                    <input type="text" placeholder="Company name">--}}
+{{--                                                                </div>--}}
+{{--                                                            </div>--}}
+{{--                                                        </div>--}}
+                                                        <div class="row">
                                                             <div class="col-md-6">
                                                                 <div class="aa-checkout-single-bill">
-                                                                    <input type="text" placeholder="First Name*">
+                                                                    <input type="email" placeholder="Email*">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6">
                                                                 <div class="aa-checkout-single-bill">
-                                                                    <input type="text" placeholder="Last Name*">
+                                                                    <input type="tel" placeholder="Nomor handphone*">
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-md-12">
                                                                 <div class="aa-checkout-single-bill">
-                                                                    <input type="text" placeholder="Company name">
+                                                                    <textarea cols="8" rows="3">Alamat*</textarea>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-md-6">
                                                                 <div class="aa-checkout-single-bill">
-                                                                    <input type="email" placeholder="Email Address*">
+                                                                    <input type="text" placeholder="Provinsi">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6">
                                                                 <div class="aa-checkout-single-bill">
-                                                                    <input type="tel" placeholder="Phone*">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-md-12">
-                                                                <div class="aa-checkout-single-bill">
-                                                                    <textarea cols="8" rows="3">Address*</textarea>
+                                                                    <input type="text" placeholder="Kota">
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-md-6">
                                                                 <div class="aa-checkout-single-bill">
-                                                                    <input type="text" placeholder="Appartment, Suite etc.">
+                                                                    <input type="text" placeholder="Kabupaten">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6">
                                                                 <div class="aa-checkout-single-bill">
-                                                                    <input type="text" placeholder="City / Town*">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-md-6">
-                                                                <div class="aa-checkout-single-bill">
-                                                                    <input type="text" placeholder="District*">
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <div class="aa-checkout-single-bill">
-                                                                    <input type="text" placeholder="Postcode / ZIP*">
+                                                                    <input type="text" placeholder="Kode Pos">
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-md-12">
                                                                 <div class="aa-checkout-single-bill">
-                                                                    <textarea cols="8" rows="3">Special Notes</textarea>
+                                                                    <textarea cols="8" rows="3">Catatan</textarea>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -101,12 +101,12 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="checkout-right">
-                                        <h4>Order Summary</h4>
+                                        <h4>Rincian Pesanan</h4>
                                         <div class="aa-order-summary-area">
                                             <table class="table table-responsive">
                                                 <thead>
                                                 <tr>
-                                                    <th>Product</th>
+                                                    <th>Produk</th>
                                                     <th>Total</th>
                                                 </tr>
                                                 </thead>
@@ -125,14 +125,14 @@
                                                 </tr>
                                                 </tbody>
                                                 <tfoot>
-                                                <tr>
-                                                    <th>Subtotal</th>
-                                                    <td>$750</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Tax</th>
-                                                    <td>$35</td>
-                                                </tr>
+{{--                                                <tr>--}}
+{{--                                                    <th>Subtotal</th>--}}
+{{--                                                    <td>$750</td>--}}
+{{--                                                </tr>--}}
+{{--                                                <tr>--}}
+{{--                                                    <th>Tax</th>--}}
+{{--                                                    <td>$35</td>--}}
+{{--                                                </tr>--}}
                                                 <tr>
                                                     <th>Total</th>
                                                     <td>$785</td>
@@ -142,14 +142,12 @@
                                         </div>
                                         <h4>Payment Method</h4>
                                         <div class="aa-payment-method">
-                                            <label for="">Silahkan upload bukti transaksi pada tombol bayar dibawah</label>
-                                            <label for=""><input type="radio" id="paypal" name="optionsRadios" checked> Via ATM</label>
-                                            <img src="https://www.paypalobjects.com/webstatic/mktg/logo/AM_mc_vs_dc_ae.jpg" border="0" alt="PayPal Acceptance Mark">
+                                            <label for="">Silahkan screenshot halaman ini dan upload ke tombol bayar dibawah</label>
+                                            <a class="btn btn-success" href="https://api.whatsapp.com/send?phone=81411165221&text=Saya%20ingin%20melakukan%20konfirmasi%20pembayaran">Bayar</a>
 
                                         </div>
                                         <br>
 
-                                        <a class="btn btn-success" href="https://api.whatsapp.com/send?phone=81411165221&text=Saya%20ingin%20melakukan%20konfirmasi%20pembayaran">Bayar</a>
                                     </div>
                                 </div>
                             </div>

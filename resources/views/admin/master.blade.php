@@ -57,6 +57,15 @@
                 <span>Manage Order</span></a>
         </li>
 
+        <hr class="sidebar-divider">
+
+        <!-- Nav Item - Tables -->
+        <li class="nav-item">
+            <a class="nav-link" href="/admin/order">
+                <i class="fas fa-fw fa-table"></i>
+                <span>Manage Promo</span></a>
+        </li>
+
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">
 

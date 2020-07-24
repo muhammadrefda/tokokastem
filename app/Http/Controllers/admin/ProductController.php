@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
 
+use App\Http\Controllers\Controller;
 use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -17,7 +18,7 @@ class ProductController extends Controller
     {
 
         $products = Product::all();
-        return view('products.mask.index')
+        return view('admin.product.index')
             ->with(['products' => $products,]);
     }
 
