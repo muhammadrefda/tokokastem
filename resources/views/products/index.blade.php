@@ -91,7 +91,7 @@
                                     <li>
                                         <figure class="">
                                             <a class="aa-product-img" href="#"><img src="{{asset('img/category/mask.png')}}" alt=""></a>
-                                            <a class="aa-add-card-btn" href="{{route('products.mask.index')}}"><span class=""></span>Masker</a>
+                                            <a class="aa-add-card-btn" href="{{route('mask.index')}}"><span class=""></span>Masker</a>
                                         </figure>
                                     </li>
                                     <!-- start single product item -->

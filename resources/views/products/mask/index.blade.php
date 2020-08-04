@@ -20,7 +20,7 @@
                                     <li>
                                         <figure class="">
                                             <a class="aa-product-img" href="#"><img src="{{asset("storage/{$product->image}")}}" ></a>
-                                            <a class="aa-add-card-btn" href="{{route('mask.detail.index')}}"><span class=""></span>{{$product->title}}</a>
+                                            <a class="aa-add-card-btn" href="{{route('mask.detail')}}"><span class=""></span>{{$product->title}}</a>
                                         </figure>
                                     </li>
                                     <!-- start single product item -->

@@ -36,8 +36,6 @@ Route::get('/', function () {
 });
 Route::prefix('products')->group(function (){
 
-
-
     Route::get('detail', function (){
         return view('products.detail');
     })->name('products.details');
@@ -54,12 +52,6 @@ Route::prefix('products')->group(function (){
         return view('products.bag.index');
     })->name('products.bag.index');
 
-
-    Route::resource('mask','ProductController');
-
-
-
-
     Route::get('mug', function (){
         return view('products.mug.index');
     })->name('products.mug.index');
@@ -73,11 +65,15 @@ Route::prefix('products')->group(function (){
         return view('products.tshirt.index');
     })->name('products.tshirt.index');
 
+
 });
 
-Route::get('product/mask/{id?}','ProductDetailController@index')->name('mask.detail');
+//Route::get('product/mask/{id?}','ProductDetailController@index')->name('mask.detail');
+Route::prefix('product/mask')->group(function () {
+    Route::get('/','MaskController@showAllMask')->name('mask.index');
+    Route::get('/detail','MaskController@showDetailMask')->name('mask.detail');
 
-
+});
 
 
 
@@ -131,3 +127,4 @@ Route::prefix('manage-product')->group(function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
