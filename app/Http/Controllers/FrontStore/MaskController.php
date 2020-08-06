@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\FrontStore;
 
+use App\Http\Controllers\Controller;
 use App\Product;
-use Illuminate\Http\Request;
 
 class MaskController extends Controller
 {
     public function showAllMask()
     {
-        $products = Product::all();
+        $masks = Product::where("category","=",'masker')->get();
         return view('products.mask.index')
-            ->with(['products' => $products,]);
+            ->with(['masks' => $masks,]);
     }
 
     public function showDetailMask(){

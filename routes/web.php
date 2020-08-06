@@ -13,6 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/*
+ * Authentication for admin
+ */
+Route::prefix('admin')->group(function () {
+    Route::get('/login', function () {
+        return view('admin.login');
+    });
+    Route::get('/register', function () {
+        return view('admin.register');
+    });
+});
+
 
 
 
@@ -36,9 +48,9 @@ Route::get('/', function () {
 });
 Route::prefix('products')->group(function (){
 
-    Route::get('detail', function (){
-        return view('products.detail');
-    })->name('products.details');
+//    Route::get('detail', function (){
+//        return view('products.detail');
+//    })->name('products.details');
 
     Route::get('custom', function (){
         return view('products.custom');
@@ -47,32 +59,32 @@ Route::prefix('products')->group(function (){
     Route::get('payment', function (){
         return view('products.payment');
     })->name('products.payment');
-
-    Route::get('bag', function (){
-        return view('products.bag.index');
-    })->name('products.bag.index');
-
-    Route::get('mug', function (){
-        return view('products.mug.index');
-    })->name('products.mug.index');
-
-    Route::get('totebag', function (){
-        return view('products.totebag.index');
-    })->name('products.totebag.index');
-
-
-    Route::get('tshirt', function (){
-        return view('products.tshirt.index');
-    })->name('products.tshirt.index');
-
-
 });
 
 //Route::get('product/mask/{id?}','ProductDetailController@index')->name('mask.detail');
 Route::prefix('product/mask')->group(function () {
-    Route::get('/','MaskController@showAllMask')->name('mask.index');
-    Route::get('/detail','MaskController@showDetailMask')->name('mask.detail');
+    Route::get('/','FrontStore\MaskController@showAllMask')->name('mask.index');
+    Route::get('/detail','FrontStore\MaskController@showDetailMask')->name('mask.detail');
+});
 
+Route::prefix('product/totebag')->group(function () {
+    Route::get('/','FrontStore\TotebagController@showAllTotebag')->name('totebag.index');
+    Route::get('/detail','FrontStore\TotebagController@showDetailTotebag')->name('totebag.detail');
+});
+
+Route::prefix('product/tshirt')->group(function () {
+    Route::get('/','FrontStore\TshirtController@showAllTshirt')->name('tshirt.index');
+    Route::get('/detail','FrontStore\TshirtController@showDetailTshirt')->name('tshirt.detail');
+});
+
+Route::prefix('product/mug')->group(function () {
+    Route::get('/','FrontStore\MugController@showAllMug')->name('mug.index');
+    Route::get('/detail','FrontStore\MugController@showDetailMug')->name('mug.detail');
+});
+
+Route::prefix('product/bagpack')->group(function () {
+    Route::get('/','FrontStore\BagpackController@showAllBagpack')->name('bagpack.index');
+    Route::get('/detail','FrontStore\BagpackController@showDetailBagpack')->name('bagpack.detail');
 });
 
 
@@ -91,18 +103,6 @@ Route::resource('admin/promo','admin\PromoController');
 Route::get('/table', function () {
     return view('tables');
 });
-
-
-Route::get('/login', function () {
-    return view('admin.login');
-});
-
-
-Route::get('/register', function () {
-    return view('admin.register');
-});
-
-
 
 Route::prefix('manage-transaction')->group(function () {
     Route::get('/', function () {

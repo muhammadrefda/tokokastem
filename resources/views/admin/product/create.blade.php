@@ -80,7 +80,7 @@
                                 <option value="kain">Kain</option>
                                 <option value="totebag">Tote bag</option>
                                 <option value="masker">Masker</option>
-                                <option value="t-shirt">T-shirt</option>
+                                <option value="tshirt">T-shirt</option>
                             </select>
                         </label>
                     </div>
