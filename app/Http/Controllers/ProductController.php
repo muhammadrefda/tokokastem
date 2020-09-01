@@ -50,8 +50,6 @@ class ProductController extends Controller
             $file = $request->file('image')->store('img/product','public');
             $product->image = $file;
         }
-
-        $product->stock = $request->get('stock');
         $product->size = $request->get('size');
         $product->category = $request->get('category');
 
@@ -111,7 +109,6 @@ class ProductController extends Controller
         }
 
         $product->material = $request->get('material');
-        $product->stock = $request->get('stock');
         $product->size = $request->get('size');
         $product->status = $request->get('status');
         $product->category = $request->get('category');

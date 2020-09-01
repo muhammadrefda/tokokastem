@@ -46,10 +46,6 @@
                     <input type="text" class="form-control" name="material" required>
                 </div>
 
-                <div class="form-group">
-                    <label>stok Produk</label>
-                    <input type="text" class="form-control" name="stock" required>
-                </div>
                 <br>
                 <div class="form-group">
                     <label>Pilih Size</label>

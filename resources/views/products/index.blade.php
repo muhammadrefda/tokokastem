@@ -72,7 +72,29 @@
     </div>
 @endsection
 
+
+
 @section('populer')
+    <section id="aa-client-brand">
+        <div class="container-fluid">
+            <div class="col-md-12">
+                <div class="aa-custom-category-area">
+                    <h2 class="text-center">CUSTOM PRODUK DISINI</h2>
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="text-center" >
+                    <a class="aa-browse-btn " href="{{route('fabric.create')}}">Custom Produkmu Sekarang!</a>
+                </div>
+                <br>
+                <br>
+                <br>
+            </div>
+        </div>
+    </section>
+
+
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -91,7 +113,7 @@
                                     <li>
                                         <figure class="">
                                             <a class="aa-product-img" href="#"><img src="{{asset('img/category/mask.png')}}" alt=""></a>
-                                            <a class="aa-add-card-btn" href="{{route('mask.index')}}"><span class=""></span>Masker</a>
+                                            <a class="aa-add-card-btn" href="{{route('tshirt.design.front')}}"><span class=""></span>Masker</a>
                                         </figure>
                                     </li>
                                     <!-- start single product item -->
@@ -127,28 +149,6 @@
                             <!-- / popular product category -->
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <hr>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="row">
-                    <div class="aa-popular-category-area">
-                            <h2 class="text-center">CUSTOM PRODUK DISINI</h2>
-                        </div>
-                    <br>
-                    <div class="text-center">
-
-                        <a class="aa-browse-btn " href="/products/">Custom Product Now! <span class=""></span></a>
-
-                    </div>
-
-                </div>
                 </div>
             </div>
         </div>

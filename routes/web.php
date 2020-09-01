@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+//require 'admin';
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 /*
  * Authentication for admin
  */
@@ -23,6 +25,8 @@ Route::prefix('admin')->group(function () {
     Route::get('/register', function () {
         return view('admin.register');
     });
+    Route::get('/order','admin\OrderController@index')->name('order.index');
+
 });
 
 
@@ -48,44 +52,45 @@ Route::get('/', function () {
 });
 Route::prefix('products')->group(function (){
 
-//    Route::get('detail', function (){
-//        return view('products.detail');
-//    })->name('products.details');
-
     Route::get('custom', function (){
         return view('products.custom');
     })->name('products.custom');
 
-    Route::get('payment', function (){
-        return view('products.payment');
-    })->name('products.payment');
+    Route::get('payment', 'TransactionController@store')->name('transaction.store');
 });
+
+Route::get('fabric', 'FrontStore\FabricController@createFabric')->name('fabric.create');
 
 //Route::get('product/mask/{id?}','ProductDetailController@index')->name('mask.detail');
 Route::prefix('product/mask')->group(function () {
     Route::get('/','FrontStore\MaskController@showAllMask')->name('mask.index');
-    Route::get('/detail','FrontStore\MaskController@showDetailMask')->name('mask.detail');
+    Route::get('/detail/{id?}','FrontStore\MaskController@showDetailMask')->name('mask.detail');
 });
 
 Route::prefix('product/totebag')->group(function () {
     Route::get('/','FrontStore\TotebagController@showAllTotebag')->name('totebag.index');
-    Route::get('/detail','FrontStore\TotebagController@showDetailTotebag')->name('totebag.detail');
+    Route::get('/detail/{id?}','FrontStore\TotebagController@showDetailTotebag')->name('totebag.detail');
 });
 
 Route::prefix('product/tshirt')->group(function () {
     Route::get('/','FrontStore\TshirtController@showAllTshirt')->name('tshirt.index');
-    Route::get('/detail','FrontStore\TshirtController@showDetailTshirt')->name('tshirt.detail');
+    Route::get('/detail/pesanan','FrontStore\TshirtController@createTshirtOrder')->name('tshirt.create.detail.order');
+    Route::post('/detail/pesanan/create','FrontStore\TshirtController@storeTshirtOrder')->name('tshirt.store.detail.order');
+    Route::get('/design/front','FrontStore\TshirtController@showFrontTshirt')->name('tshirt.design.front');
+    Route::get('/design/back','FrontStore\TshirtController@showBackTshirt')->name('tshirt.design.back');
+
 });
 
 Route::prefix('product/mug')->group(function () {
     Route::get('/','FrontStore\MugController@showAllMug')->name('mug.index');
-    Route::get('/detail','FrontStore\MugController@showDetailMug')->name('mug.detail');
+    Route::get('/detail/{id?}','FrontStore\MugController@showDetailMug')->name('mug.detail');
 });
 
 Route::prefix('product/bagpack')->group(function () {
     Route::get('/','FrontStore\BagpackController@showAllBagpack')->name('bagpack.index');
-    Route::get('/detail','FrontStore\BagpackController@showDetailBagpack')->name('bagpack.detail');
+    Route::get('/detail/{id?}','FrontStore\BagpackController@showDetailBagpack')->name('bagpack.detail');
 });
+
 
 
 
@@ -128,3 +133,15 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+
+
+
+
+
+
+Route::resource('users', 'UsersController');
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

@@ -15,7 +15,28 @@ class TshirtController extends Controller
             ->with(['tshirts' => $tshirts,]);
     }
 
-    public function showDetailTshirt(){
-        return view('products.tshirt.detail');
+    public function createTshirtOrder(){
+
+        return view('products.tshirt.detail_order');
+    }
+
+    public function storeTshirtOrder(Request $request){
+
+        Product::create($request->all());
+        return redirect()->route('tshirt.detail.order')
+            ->with('success','Order has ben created.');
+
+//        return view('products.tshirt.detail')->with(['tshirt' => $tshirt,]);
+    }
+
+
+    public function showFrontTshirt(){
+
+        return view('products.tshirt.design_front');
+    }
+
+    public function showBackTshirt(){
+
+        return view('products.tshirt.design_back');
     }
 }

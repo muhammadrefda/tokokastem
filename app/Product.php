@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * @method static findOrFail($product)
- * @method static pluck()
  * @method static where(string $string, int $id)
+ * @method static create(array $all)
  * @property mixed image
  */
 class Product extends Model
@@ -20,10 +20,19 @@ class Product extends Model
         'description',
         'price',
         'image',
+        'link_image',
+        'category',
         'material',
-        'stock',
+//        'stock',
         'size',
         'status',
-        'category',
     ];
+
+    public function transaction(){
+        return $this->belongsTo(Transaction::class);
+    }
+
+    public function user(){
+        return $this->hasMany(User::class);
+    }
 }

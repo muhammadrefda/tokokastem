@@ -15,7 +15,11 @@ class BagpackController extends Controller
             ->with(['bagpacks' => $bagpacks,]);
     }
 
-    public function showDetailBagpack(){
-        return view('products.bag.detail');
+    public function showDetailBagpack($bagpack){
+
+        $bagpack = Product::findOrFail($bagpack);
+
+        return view('products.bag.detail')->with(['bagpack' => $bagpack,]);
+
     }
 }

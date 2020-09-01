@@ -31,15 +31,6 @@
         <!-- Google Font -->
         <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
-
-
-        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
-
     </head>
 <body>
 
@@ -69,7 +60,35 @@
                             <!-- / header top left -->
                             <div class="aa-header-top-right">
                                 <ul class="aa-head-top-nav-right">
-                                    <li><a href="" data-toggle="modal" data-target="#login-modal">Login</a></li>
+                                    <!-- Authentication Links -->
+                                    @guest
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                        </li>
+                                        @if (Route::has('register'))
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                            </li>
+                                        @endif
+                                    @else
+                                        <li class="nav-item dropdown">
+                                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                                {{ Auth::user()->name }} <span class="caret"></span>
+                                            </a>
+
+                                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                                   onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                                    {{ __('Logout') }}
+                                                </a>
+
+                                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                    @csrf
+                                                </form>
+                                            </div>
+                                        </li>
+                                    @endguest
                                 </ul>
                             </div>
                         </div>
@@ -130,7 +149,7 @@
                         <li><a href="/">Home</a></li>
                         <li><a href="/cara-pesan">Cara Pesan</a>
                         <li><a href="/contact">Kontak Kami</a></li>
-                        </li>
+
                     </ul>
                 </div>
                 <!--/.nav-collapse -->
@@ -197,7 +216,7 @@
 
 
     <!-- Support section -->
-    <section id="aa-support">
+    <section id="aa-support" >
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -291,13 +310,14 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h4>Login or Register</h4>
                 <form class="aa-login-form" action="">
-                    <label for="">Username or Email address<span>*</span></label>
-                    <input type="text" placeholder="Username or email">
+                    <label for="">Email address<span>*</span></label>
+                    <input type="text" placeholder="email">
                     <label for="">Password<span>*</span></label>
                     <input type="password" placeholder="Password">
+
                     <button class="aa-browse-btn" type="submit">Login</button>
-                    <label for="rememberme" class="rememberme"><input type="checkbox" id="rememberme"> Remember me </label>
-                    <p class="aa-lost-password"><a href="#">Lost your password?</a></p>
+{{--                    <p class="aa-lost-password"><a href="#">Lost your password?</a></p>--}}
+
                     <div class="aa-register-now">
                         Don't have an account?<a href="/account">Register now!</a>
                     </div>
@@ -327,7 +347,6 @@
 <script type="text/javascript" src="{{asset('js/nouislider.js')}}"></script>
 <!-- Custom js -->
 <script src="{{asset('js/custom.js')}}"></script>
-
 </body>
 
 </html>

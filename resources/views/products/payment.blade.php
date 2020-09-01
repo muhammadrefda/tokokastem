@@ -13,6 +13,7 @@
                                 <div class="col-md-8">
                                     <div class="checkout-left">
                                         <div class="panel-group" id="accordion">
+
                                             <!-- Shipping Address -->
                                             <div class="panel panel-default aa-checkout-billaddress">
                                                 <div class="panel-heading">
@@ -112,30 +113,14 @@
                                                 </thead>
                                                 <tbody>
                                                 <tr>
-                                                    <td>T-Shirt <strong> x  1</strong></td>
-                                                    <td>$150</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Polo T-Shirt <strong> x  1</strong></td>
-                                                    <td>$250</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Shoes <strong> x  1</strong></td>
-                                                    <td>$350</td>
+                                                    <td>Masker Scuba <strong> x  10</strong></td>
+                                                    <td>Rp820000</td>
                                                 </tr>
                                                 </tbody>
                                                 <tfoot>
-{{--                                                <tr>--}}
-{{--                                                    <th>Subtotal</th>--}}
-{{--                                                    <td>$750</td>--}}
-{{--                                                </tr>--}}
-{{--                                                <tr>--}}
-{{--                                                    <th>Tax</th>--}}
-{{--                                                    <td>$35</td>--}}
-{{--                                                </tr>--}}
                                                 <tr>
                                                     <th>Total</th>
-                                                    <td>$785</td>
+                                                    <td>Rp820000</td>
                                                 </tr>
                                                 </tfoot>
                                             </table>

@@ -20,7 +20,7 @@
                                     <li>
                                         <figure class="">
                                             <a class="aa-product-img" href="#"><img src="{{asset("storage/{$mask->image}")}}" ></a>
-                                            <a class="aa-add-card-btn" href="{{route('mask.detail')}}"><span class=""></span>{{$mask->title}}</a>
+                                            <a class="aa-add-card-btn" href="{{route('mask.detail',$mask->id)}}"><span class=""></span>{{$mask->title}}</a>
                                         </figure>
                                     </li>
                                     @endforeach

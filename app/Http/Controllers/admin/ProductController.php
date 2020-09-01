@@ -52,7 +52,6 @@ class ProductController extends Controller
             $product->image = $file;
         }
 
-        $product->stock = $request->get('stock');
         $product->size = $request->get('size');
         $product->category = $request->get('category');
 
@@ -116,6 +115,9 @@ class ProductController extends Controller
         $product->size = $request->get('size');
         $product->status = $request->get('status');
         $product->category = $request->get('category');
+
+        $product->save();
+
 
         return redirect()
             ->route('products.index')

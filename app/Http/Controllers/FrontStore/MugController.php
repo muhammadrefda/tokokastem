@@ -15,7 +15,10 @@ class MugController extends Controller
             ->with(['mugs' => $mugs,]);
     }
 
-    public function showDetailMug(){
-        return view('products.mug.detail');
+    public function showDetailMug($mug){
+
+        $mug = Product::findOrFail($mug);
+
+        return view('products.mug.detail')->with(['mug' => $mug,]);
     }
 }

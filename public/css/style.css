@@ -1369,6 +1369,16 @@ img {
   /* bootstrap hack:fix content width inside hidden tabs */
   /* bootstrap hack end */
 }
+
+#aa-custom-category-area {
+    display: block;
+    float: left;
+    width: 100%;
+    background-color: #0c5460;
+    /* bootstrap hack:fix content width inside hidden tabs */
+    /* bootstrap hack end */
+}
+
 #aa-popular-category .aa-popular-category-area .tab-content > .tab-pane:not(.active),
 #aa-popular-category .aa-popular-category-area .pill-content > .pill-pane:not(.active) {
   display: block;
@@ -4182,5 +4192,7 @@ img {
   #aa-header .aa-header-top .aa-header-top-right .aa-head-top-nav-right li a {
     padding: 5px 2px;
   }
+
+
 }
 

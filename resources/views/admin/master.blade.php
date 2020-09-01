@@ -22,6 +22,41 @@
     <!-- Custom styles for this page -->
     <link href="{{asset('vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
 
+    <style>
+        .drawing-area{
+            position: absolute;
+            top: 60px;
+            left: 122px;
+            z-index: 10;
+            width: 200px;
+            height: 400px;
+        }
+
+        .canvas-container{
+            width: 200px;
+            height: 400px;
+            position: relative;
+            user-select: none;
+        }
+
+        #tshirt-div{
+            width: 452px;
+            height: 548px;
+            position: relative;
+            background-color: #fff;
+        }
+
+        #canvas{
+            position: absolute;
+            width: 200px;
+            height: 400px;
+            left: 0px;
+            top: 0px;
+            user-select: none;
+            cursor: default;
+        }
+    </style>
+
 </head>
 
 <body id="page-top">
@@ -47,15 +82,13 @@
                 <span>Manage Product</span></a>
         </li>
 
-        <hr class="sidebar-divider">
-
 
         <!-- Nav Item - Tables -->
-        <li class="nav-item">
-            <a class="nav-link" href="/admin/order">
-                <i class="fas fa-fw fa-table"></i>
-                <span>Manage Order</span></a>
-        </li>
+{{--        <li class="nav-item">--}}
+{{--            <a class="nav-link" href="{{route('order.index')}}">--}}
+{{--                <i class="fas fa-fw fa-table"></i>--}}
+{{--                <span>Manage Order</span></a>--}}
+{{--        </li>--}}
 
         <hr class="sidebar-divider">
 
@@ -64,6 +97,21 @@
             <a class="nav-link" href="/admin/order">
                 <i class="fas fa-fw fa-table"></i>
                 <span>Manage Promo</span></a>
+        </li>
+        <hr class="sidebar-divider">
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                <i class="fas fa-fw fa-cog"></i>
+                <span>Manage Order</span>
+            </a>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Status Transaksi:</h6>
+                    <a class="collapse-item" href="{{route('order.index')}}">Berhasil</a>
+                    <a class="collapse-item" href="cards.html">Pending</a>
+                </div>
+            </div>
         </li>
 
         <!-- Divider -->
@@ -136,7 +184,7 @@
         <!-- End of Topbar -->
         </div>
     @yield('content')
-        <!-- End of Main Content --
+        <!-- End of Main Content -->
 
         <!-- Footer -->
         <footer class="sticky-footer bg-white">
@@ -189,6 +237,14 @@
 
 <!-- Custom scripts for all pages-->
 <script src="{{asset('js/sb-admin-2.min.js')}}"></script>
+
+<!-- Include Fabric.js in the page -->
+<script src="{{asset('js/fabric.js')}}"></script>
+<script src="{{asset('js/dist/fabric.js')}}"></script>
+<script src="{{asset('js/dist/fabric.min.js')}}"></script>
+<script src="{{asset('js/src/globalFabric.js')}}"></script>
+
+
 </body>
 
 </html>

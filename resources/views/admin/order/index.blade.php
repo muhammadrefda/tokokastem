@@ -6,9 +6,7 @@
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <p class="m-0 font-weight-bold text-primary">Daftar Transaksi</p>
-                <hr>
-{{--                <a href="{{route('products.create')}}">tambah produk</a>--}}
+                <p class="m-0 font-weight-bold text-primary">Daftar Transaksi Sukses</p>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -16,51 +14,57 @@
                         <thead>
                         <tr>
                             <th>No.</th>
-                            <th>Tanggal Transaksi</th>
+                            <th>Jumlah Pembelian</th>
+                            <th>Total</th>
                             <th>Status Transaksi</th>
-                            <th>Status Pengiriman</th>
+                            <th>Telepon Customer</th>
+                            <th>Alamat Customer</th>
                             <th>Bukti Transaksi</th>
-                            <th>Detail Transaksi</th>
-                            <th>created at</th>
+                            <th>Product yg di pilih</th>
+                            <th>Tanggal Transaksi</th>
                             <td colspan="2">Action</td>
                         </tr>
                         </thead>
                         <tbody>
-{{--                        @foreach($products as $product)--}}
-{{--                            <tr>--}}
-{{--                                <td>--}}
-{{--                                    {{$loop->iteration}}--}}
-{{--                                </td>--}}
-{{--                                <td>--}}
-{{--                                    {{$product->title}}--}}
-{{--                                </td>--}}
-{{--                                <td>--}}
-{{--                                    {{$product->description}}--}}
-{{--                                </td>--}}
-{{--                                <td>--}}
-{{--                                    Rp{{$product->price}},---}}
-{{--                                </td>--}}
-{{--                                <td>--}}
-{{--                                    @if($product->image)--}}
-{{--                                        <img src="{{asset('storage/'.$product->image)}}" width="70px">--}}
-{{--                                    @endif--}}
-{{--                                </td>--}}
-{{--                                <td>{{$product->material}}</td>--}}
-{{--                                <td>--}}
-{{--                                    {{$product->size}}--}}
-{{--                                </td>--}}
-{{--                                <td>--}}
-{{--                                    {{$product->status}}--}}
-{{--                                </td>--}}
-{{--                                <td>--}}
-{{--                                    {{$product->category}}--}}
-{{--                                </td>--}}
-{{--                                <td>--}}
-{{--                                    {{date('m-d', strtotime($product->created_at))}}--}}
-{{--                                </td>--}}
-{{--                                <td>--}}
+                        @foreach($orders as $order)
+                            <tr>
+                                <td>
+                                    {{$loop->iteration}}
+                                </td>
+                                <td>
+                                    {{$order->quantity}}
+                                </td>
+                                <td>
+                                    {{$order->total}}
+                                </td>
+                                <td>
+                                    {{$order->status}}
+                                </td>
+                                <td>{{$order->customer_phone}}</td>
+                                <td>
+                                    {{$order->customer_province}}
+                                </td>
+                                <td>
+                                    {{$order->customer_city}}
+                                </td>
+                                <td>
+                                    {{$order->customer_district}}
+                                </td>
+                                <td>
+                                    {{$order->customer_address}}
+                                </td>
+                                <td>
+                                    {{$order->customer_postal_code}}
+                                </td>
+                                <td>
+                                    {{$order->proof_of_transaction}}
+                                </td>
+                                <td>
+                                    {{date('m-d', strtotime($product->created_at))}}
+                                </td>
+                                <td>
 {{--                                    <a href="{{route('products.edit',$product->id)}} " class="btn btn-primary">edit</a>--}}
-{{--                                </td>--}}
+                                </td>
 {{--                                <td>--}}
 {{--                                    <form action="{{route('products.destroy',$product->id)}}" method="post">--}}
 {{--                                        @csrf--}}
@@ -68,8 +72,8 @@
 {{--                                        <button class="btn btn-danger" type="submit">hapus</button>--}}
 {{--                                    </form>--}}
 {{--                                </td>--}}
-{{--                            </tr>--}}
-{{--                        @endforeach--}}
+                            </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>

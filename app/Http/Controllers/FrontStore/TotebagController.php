@@ -10,12 +10,15 @@ class TotebagController extends Controller
 {
     public function showAllTotebag()
     {
-        $totebags = Product::where("category","=",'totebag')->get();
+        $totebags = Product::where("category","=",'tote bag')->get();
         return view('products.totebag.index')
             ->with(['totebags' => $totebags,]);
     }
 
-    public function showDetailTotebag(){
-        return view('products.totebag.detail');
+    public function showDetailTotebag($totebag){
+
+        $totebag = Product::findOrFail($totebag);
+
+        return view('products.totebag.detail')->with(['totebag' => $totebag,]);
     }
 }

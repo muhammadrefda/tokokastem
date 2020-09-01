@@ -16,7 +16,11 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name',
+        'email',
+        'password',
+        'address',
+        'phone_number',
     ];
 
     /**
@@ -37,19 +41,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    protected $dates = [
-        'admin_since',
-    ];
 
-    public function orders (){
-        return $this->hasMany(order::class,'customer_id');
-    }
-
-    public function payments(){
-        return $this->hasManyThrough(Payment::class, order::class, 'customer_id');
-    }
-
-    public function image(){
-        return $this->morphOne(Image::class, 'imageable');
+    public function transactions(){
+        return $this->hasMany(Transaction::class,'user_id');
     }
 }
