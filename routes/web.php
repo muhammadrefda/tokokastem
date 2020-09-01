@@ -64,12 +64,20 @@ Route::get('fabric', 'FrontStore\FabricController@createFabric')->name('fabric.c
 //Route::get('product/mask/{id?}','ProductDetailController@index')->name('mask.detail');
 Route::prefix('product/mask')->group(function () {
     Route::get('/','FrontStore\MaskController@showAllMask')->name('mask.index');
-    Route::get('/detail/{id?}','FrontStore\MaskController@showDetailMask')->name('mask.detail');
+    Route::get('/detail/pesanan','FrontStore\MaskController@createMaskOrder')->name('mask.create.detail.order');
+    Route::post('/detail/pesanan/create','FrontStore\MaskController@storeMaskOrder')->name('mask.store.detail.order');
+    Route::get('/design/right','FrontStore\MaskController@showRightMask')->name('mask.design.right');
+    Route::get('/design/left','FrontStore\MaskController@showLeftMask')->name('mask.design.left');
+
 });
 
 Route::prefix('product/totebag')->group(function () {
     Route::get('/','FrontStore\TotebagController@showAllTotebag')->name('totebag.index');
-    Route::get('/detail/{id?}','FrontStore\TotebagController@showDetailTotebag')->name('totebag.detail');
+    Route::get('/detail/pesanan','FrontStore\TotebagController@createTotebagOrder')->name('totebag.create.detail.order');
+    Route::post('/detail/pesanan/create','FrontStore\TotebagController@storeTotebagOrder')->name('totebag.store.detail.order');
+    Route::get('/design/front','FrontStore\TotebagController@showFrontTotebag')->name('totebag.design.front');
+    Route::get('/design/back','FrontStore\TotebagController@showBackTotebag')->name('totebag.design.back');
+
 });
 
 Route::prefix('product/tshirt')->group(function () {

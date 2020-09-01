@@ -113,21 +113,21 @@
                                     <li>
                                         <figure class="">
                                             <a class="aa-product-img" href="#"><img src="{{asset('img/category/mask.png')}}" alt=""></a>
-                                            <a class="aa-add-card-btn" href="{{route('tshirt.design.front')}}"><span class=""></span>Masker</a>
+                                            <a class="aa-add-card-btn" href="{{route('mask.design.right')}}"><span class=""></span>Masker</a>
                                         </figure>
                                     </li>
                                     <!-- start single product item -->
                                     <li>
                                         <figure>
                                             <a class="aa-product-img" href="#"><img src="{{asset('img/category/totebag.png')}}" alt=""></a>
-                                            <a class="aa-add-card-btn" href="{{route('totebag.index')}}"><span class=""></span>Tote bag</a>
+                                            <a class="aa-add-card-btn" href="{{route('totebag.design.front')}}"><span class=""></span>Tote bag</a>
                                         </figure>
                                     </li>
                                     <!-- start single product item -->
                                     <li>
                                         <figure>
                                             <a class="aa-product-img" href="#"><img src="{{asset('img/category/tshirt.png')}}" alt=""></a>
-                                            <a class="aa-add-card-btn" href="{{route('tshirt.index')}}"><span class=""></span>T-shirt</a>
+                                            <a class="aa-add-card-btn" href="{{route('tshirt.design.front')}}"><span class=""></span>T-shirt</a>
                                         </figure>
                                     </li>
                                     <!-- start single product item -->

@@ -21,4 +21,28 @@ class TotebagController extends Controller
 
         return view('products.totebag.detail')->with(['totebag' => $totebag,]);
     }
+
+
+    public function createTotebagOrder(){
+
+        return view('products.totebag.detail_order');
+    }
+
+    public function storeTotebagOrder(Request $request){
+
+        Product::create($request->all());
+        return redirect()->route('totebag.detail.order')
+            ->with('success','Order has ben created.');
+    }
+
+
+    public function showFrontTotebag(){
+        return view('products.totebag.design_front');
+    }
+
+    public function showBackTotebag(){
+        return view('products.totebag.design_back');
+    }
+
+
 }
