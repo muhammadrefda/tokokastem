@@ -134,14 +134,14 @@
                                     <li>
                                         <figure>
                                             <a class="aa-product-img" href="#"><img src="{{asset('img/category/mug.png')}}" alt=""></a>
-                                            <a class="aa-add-card-btn" href="{{route('mug.index')}}"><span class=""></span>Mug</a>
+                                            <a class="aa-add-card-btn" href="{{route('mug.design.front')}}"><span class=""></span>Mug</a>
                                         </figure>
                                     </li>
                                     <!-- start single product item -->
                                     <li>
                                         <figure>
                                             <a class="aa-product-img" href="#"><img src="{{asset('img/category/bag.png')}}" alt=""></a>
-                                            <a class="aa-add-card-btn" href="{{route('bagpack.index')}}"><span class=""></span>Tas</a>
+                                            <a class="aa-add-card-btn" href="{{route('bagpack.design.front')}}"><span class=""></span>Tas</a>
                                         </figure>
                                     </li>
                                 </ul>

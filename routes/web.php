@@ -91,7 +91,11 @@ Route::prefix('product/tshirt')->group(function () {
 
 Route::prefix('product/mug')->group(function () {
     Route::get('/','FrontStore\MugController@showAllMug')->name('mug.index');
-    Route::get('/detail/{id?}','FrontStore\MugController@showDetailMug')->name('mug.detail');
+    Route::get('/detail/pesanan','FrontStore\MugController@createMugOrder')->name('mug.create.detail.order');
+    Route::post('/detail/pesanan/create','FrontStore\MugController@storeMugOrder')->name('mug.store.detail.order');
+    Route::get('/design/front','FrontStore\MugController@showFrontMug')->name('mug.design.front');
+    Route::get('/design/back','FrontStore\MugController@showBackMug')->name('mug.design.back');
+
 });
 
 Route::prefix('product/bagpack')->group(function () {
