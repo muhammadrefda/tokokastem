@@ -15,11 +15,27 @@ class BagpackController extends Controller
             ->with(['bagpacks' => $bagpacks,]);
     }
 
-    public function showDetailBagpack($bagpack){
+    public function createBagpackOrder(){
 
-        $bagpack = Product::findOrFail($bagpack);
-
-        return view('products.bag.detail')->with(['bagpack' => $bagpack,]);
-
+        return view('products.mug.detail_order');
     }
+
+    public function storeBagpackOrder(Request $request){
+
+        Product::create($request->all());
+        return redirect()->route('bagpack.detail.order')
+            ->with('success','Order has ben created.');
+    }
+
+
+    public function showFrontBagpack(){
+
+        return view('products.bag.design_front');
+    }
+
+    public function showBackBagpack(){
+
+        return view('products.bag.design_back');
+    }
+
 }

@@ -100,7 +100,11 @@ Route::prefix('product/mug')->group(function () {
 
 Route::prefix('product/bagpack')->group(function () {
     Route::get('/','FrontStore\BagpackController@showAllBagpack')->name('bagpack.index');
-    Route::get('/detail/{id?}','FrontStore\BagpackController@showDetailBagpack')->name('bagpack.detail');
+    Route::get('/detail/pesanan','FrontStore\BagpackController@createBagpackOrder')->name('bagpack.create.detail.order');
+    Route::post('/detail/pesanan/create','FrontStore\BagpackController@storeBagpackOrder')->name('bagpack.store.detail.order');
+    Route::get('/design/front','FrontStore\BagpackController@showFrontBagpack')->name('bagpack.design.front');
+    Route::get('/design/back','FrontStore\BagpackController@showBackBagpack')->name('bagpack.design.back');
+
 });
 
 
