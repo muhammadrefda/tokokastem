@@ -24,12 +24,12 @@
                                                 <input type="text" class="form-control" name="material" required>
                                             </div>
                                             <div class="form-group">
-                                                <label>Design kaos depan</label>
+                                                <label>Design totebag depan</label>
                                                 <span class="aa-product-view-price"></span>
                                                 <input type="file" class="form-control" name="material" required>
                                             </div>
                                             <div class="form-group">
-                                                <label>Design kaos belakang</label>
+                                                <label>Design totebag belakang</label>
                                                 <span class="aa-product-view-price"></span>
                                                 <input type="file" class="form-control" name="material" required>
                                             </div>
@@ -39,15 +39,11 @@
                                 <div class="col-md-7 col-sm-7 col-xs-12">
                                     <div class="aa-product-view-content">
                                         <div class="form-group">
-                                            <label>Ukuran Panjang</label>
+                                            <label>Ukuran</label>
                                             <span class="aa-product-view-price"></span>
-                                            <input type="text" class="form-control" name="material" placeholder="Contoh 35cm">
-
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Ukuran Lebar</label>
-                                            <span class="aa-product-view-price"></span>
-                                            <input type="text" class="form-control" name="material" placeholder="Contoh 20cm">
+                                            <select class="form-control" id="exampleFormControlSelect1" disabled>
+                                                <option>All Size</option>
+                                            </select>
                                         </div>
 
                                         <div class="form-group">
@@ -60,17 +56,16 @@
                                             <label>Jenis Bahan</label>
                                             <span class="aa-product-view-price"></span>
                                             <select class="form-control" id="exampleFormControlSelect1">
-                                                <option>Scuba</option>
-                                                <option>Cotton</option>
-                                                <option>Flanel</option>
-                                                <option>Polyster</option>
+                                                <option>Drill</option>
+                                                <option>Kanvas</option>
+                                                <option>Blacu</option>
                                             </select>
                                         </div>
 
                                         <div class="form-group">
                                             <label>Catatan</label>
                                             <span class="aa-product-view-price"></span>
-                                            <textarea  class="form-control" name="material"> </textarea>
+                                            <textarea class="form-control" name="" id="" cols="30" rows="10"></textarea>
                                         </div>
 
                                         <div class="col-md-10 col-sm-10 col-xs-12">

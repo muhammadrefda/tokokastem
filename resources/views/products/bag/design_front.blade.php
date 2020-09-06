@@ -142,7 +142,7 @@
 <div class="container">
     <section id="typography">
         <!-- Headings & Paragraph Copy -->
-        <h3>Tas depan</h3>
+        <h3>Desain Simulator Tas</h3>
 
         <div class="row">
             <div class="span3">
@@ -340,8 +340,8 @@
                         </div>
                     </ul>
                 </div>
-                <a href="{{route('tshirt.design.back')}}" class="btn btn-primary">
-                    Design Kaos Belakang Disini
+                <a href="{{route('bagpack.create.detail.order')}}" class="btn btn-primary">
+                    Proses Pesanan
                 </a>
             </div>
 

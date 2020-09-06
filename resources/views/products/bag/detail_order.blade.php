@@ -24,12 +24,7 @@
                                                 <input type="text" class="form-control" name="material" required>
                                             </div>
                                             <div class="form-group">
-                                                <label>Design kaos depan</label>
-                                                <span class="aa-product-view-price"></span>
-                                                <input type="file" class="form-control" name="material" required>
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Design kaos belakang</label>
+                                                <label>Design Tas Depan</label>
                                                 <span class="aa-product-view-price"></span>
                                                 <input type="file" class="form-control" name="material" required>
                                             </div>
@@ -42,11 +37,7 @@
                                         <div class="form-group">
                                             <label>Ukuran</label>
                                             <span class="aa-product-view-price"></span>
-                                            <select class="form-control" id="exampleFormControlSelect1">
-                                                <option>S</option>
-                                                <option>L</option>
-                                                <option>M</option>
-                                                <option>XL</option>
+                                            <select class="form-control" id="exampleFormControlSelect1" disabled>
                                                 <option>All Size</option>
                                             </select>
                                         </div>
@@ -71,7 +62,7 @@
                                         <div class="form-group">
                                             <label>Catatan</label>
                                             <span class="aa-product-view-price"></span>
-                                            <input type="textarea" class="form-control" name="material" disabled>
+                                            <textarea class="form-control" name="" id="" cols="30" rows="10"></textarea>
                                         </div>
 
                                         <div class="col-md-10 col-sm-10 col-xs-12">

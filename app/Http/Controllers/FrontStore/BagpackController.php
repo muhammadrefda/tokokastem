@@ -17,7 +17,7 @@ class BagpackController extends Controller
 
     public function createBagpackOrder(){
 
-        return view('products.mug.detail_order');
+        return view('products.bag.detail_order');
     }
 
     public function storeBagpackOrder(Request $request){

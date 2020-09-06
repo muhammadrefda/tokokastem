@@ -29,16 +29,21 @@
                                         <option value="M">satin</option>
                                         <option value="XL">kanvas</option>
                                     </select>
-                                </label>
-                                <label for="">Ukuran</label>
-                                <label for="">panjang</label>
+                                </label> <br>
+                                <label for="">Ukuran panjang</label>
                                 <input type="text" placeholder="panjang kain dalam cm">
-                                <label for="">lebar</label>
+                                <label for="">Ukuran lebar</label>
                                 <input type="text" placeholder="lebar kain dalam cm">
                                 <label for="">Catatan Untuk Admin</label>
-                                <textarea name="" id=""  ></textarea>
                                 <br>
-                                <button type="submit" class="aa-browse-btn">Pesan Sekarang</button>
+                                <textarea class="form-control" name="" id="" cols="30" rows="10"  ></textarea>
+                                <br>
+{{--                                <button type="submit" class="aa-browse-btn">--}}
+
+                                </button>
+                                <a href="/products/payment" class="btn btn-primary">
+                                    Pesan Sekarang
+                                </a>
                             </form>
                         </div>
                     </div>

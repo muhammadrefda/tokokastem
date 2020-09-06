@@ -71,7 +71,7 @@
                                         <div class="form-group">
                                             <label>Catatan</label>
                                             <span class="aa-product-view-price"></span>
-                                            <input type="textarea" class="form-control" name="material" disabled>
+                                            <textarea class="form-control" name="" id="" cols="30" rows="10"></textarea>
                                         </div>
 
                                         <div class="col-md-10 col-sm-10 col-xs-12">
