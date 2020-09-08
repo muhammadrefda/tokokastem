@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBagOrderTable extends Migration
+class CreateFabricOrderTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,13 @@ class CreateBagOrderTable extends Migration
      */
     public function up()
     {
-        Schema::create('bag_order', function (Blueprint $table) {
+        Schema::create('fabric_order', function (Blueprint $table) {
             $table->id();
             $table->integer('quantity');
+            $table->char('link_goggle_drive');
+            $table->char('type');
+            $table->integer('length');
+            $table->integer('width');
             $table->string('design');
             $table->string('size');
             $table->string('material');
@@ -28,7 +32,6 @@ class CreateBagOrderTable extends Migration
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete("cascade")->onUpdate("cascade");
-
         });
     }
 
@@ -39,6 +42,6 @@ class CreateBagOrderTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bag_order');
+        Schema::dropIfExists('fabric_order');
     }
 }

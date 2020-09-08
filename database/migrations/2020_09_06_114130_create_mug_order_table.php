@@ -21,8 +21,8 @@ class CreateMugOrderTable extends Migration
             $table->string('size');
             $table->string('material');
             $table->string('note')->nullable();
-            $table->integer('proof_of_transaction');
-            $table->integer('status');
+            $table->integer('proof_of_transaction')->nullable();
+            $table->integer('status')->default('pending');
 
             $table->unsignedBigInteger('user_id');
 
