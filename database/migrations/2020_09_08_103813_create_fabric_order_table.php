@@ -20,9 +20,6 @@ class CreateFabricOrderTable extends Migration
             $table->char('type');
             $table->integer('length');
             $table->integer('width');
-            $table->string('design');
-            $table->string('size');
-            $table->string('material');
             $table->string('note')->nullable();
             $table->integer('proof_of_transaction')->nullable();
             $table->integer('status')->default('pending');

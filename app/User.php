@@ -42,7 +42,37 @@ class User extends Authenticatable
     ];
 
 
-    public function transactions(){
-        return $this->hasMany(Transaction::class,'user_id');
+//    public function transactions(){
+//        return $this->hasMany(Transaction::class,'user_id');
+//    }
+
+    public function bags(){
+
+        return $this->hasMany(Bag::class);
+    }
+
+    public function fabrics(){
+
+        return $this->hasMany(Fabric::class);
+    }
+
+    public function masks(){
+
+        return $this->hasMany(Mask::class);
+    }
+
+    public function mugs(){
+
+        return $this->hasMany(Mug::class);
+    }
+
+    public function totebags(){
+
+        return $this->hasMany(Totebag::class);
+    }
+
+    public function tshirts(){
+
+        return $this->hasMany(Tshirt::class);
     }
 }
