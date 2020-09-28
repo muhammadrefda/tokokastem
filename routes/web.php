@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-//require 'admin';
 
 /*
 |--------------------------------------------------------------------------
@@ -15,28 +14,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-/*
- * Authentication for admin
- */
-Route::prefix('admin')->group(function () {
-    Route::get('/login', function () {
-        return view('admin.login');
-    });
-    Route::get('/register', function () {
-        return view('admin.register');
-    });
-    Route::get('/order','admin\OrderController@index')->name('order.index');
 
+
+
+
+/*Start Front Store Area*/
+Auth::routes();
+
+Route::get('/', function () {
+    return view('products.index');
 });
 
-
-
-
-Route::get('account', function (){
-    return view('account');
-})->name('account');
-
-Route::get('contact', function (){
+Route::get('kontak-kami', function (){
     return view('contact');
 })->name('contact');
 
@@ -44,120 +33,106 @@ Route::get('cara-pesan', function (){
     return view('cara-pesan');
 })->name('cara-pesan');
 
+Route::get('/home', 'HomeController@index')->name('home');
 
-
-
-Route::get('/', function () {
-    return view('products.index');
-});
-Route::prefix('products')->group(function (){
-
-    Route::get('custom', function (){
-        return view('products.custom');
-    })->name('products.custom');
-
-    Route::get('payment', 'TransactionController@store')->name('transaction.store');
+Route::prefix('product/fabric')->group(function () {
+    Route::get('/detail/pesanan','FrontStore\ProductController@createFabricOrder')->name('fabric.create.detail.order');
+    Route::post('/detail/pesanan/create','FrontStore\ProductController@storeProductOrder')->name('fabric.store.detail.order')->middleware('auth');
+    Route::get('shipping-detail/','FrontStore\ProductController@showShippingDetail')->name('fabric.show.shipping.detail')->middleware('auth');
 });
 
-Route::get('fabric', 'FrontStore\FabricController@createFabric')->name('fabric.create');
-
-//Route::get('product/mask/{id?}','ProductDetailController@index')->name('mask.detail');
 Route::prefix('product/mask')->group(function () {
-    Route::get('/','FrontStore\MaskController@showAllMask')->name('mask.index');
-    Route::get('/detail/pesanan','FrontStore\MaskController@createMaskOrder')->name('mask.create.detail.order');
-    Route::post('/detail/pesanan/create','FrontStore\MaskController@storeMaskOrder')->name('mask.store.detail.order');
-    Route::get('/design/right','FrontStore\MaskController@showRightMask')->name('mask.design.right');
-    Route::get('/design/left','FrontStore\MaskController@showLeftMask')->name('mask.design.left');
-
+    Route::get('/detail/pesanan','FrontStore\ProductController@createMaskOrder')->name('mask.create.detail.order');
+    Route::post('/detail/pesanan/create','FrontStore\ProductController@storeMaskOrder')->name('mask.store.detail.order')->middleware('auth');
+    Route::get('shipping-detail/','FrontStore\ProductController@showShippingMaskDetail')->name('mask.show.shipping.detail')->middleware('auth');
+    Route::get('/design/right','FrontStore\ProductController@showRightMask')->name('mask.design.right');
+    Route::get('/design/left','FrontStore\ProductController@showLeftMask')->name('mask.design.left');
 });
 
 Route::prefix('product/totebag')->group(function () {
-    Route::get('/','FrontStore\TotebagController@showAllTotebag')->name('totebag.index');
-    Route::get('/detail/pesanan','FrontStore\TotebagController@createTotebagOrder')->name('totebag.create.detail.order');
-    Route::post('/detail/pesanan/create','FrontStore\TotebagController@storeTotebagOrder')->name('totebag.store.detail.order');
-    Route::get('/design/front','FrontStore\TotebagController@showFrontTotebag')->name('totebag.design.front');
-    Route::get('/design/back','FrontStore\TotebagController@showBackTotebag')->name('totebag.design.back');
-
+    Route::get('/detail/pesanan','FrontStore\ProductController@createTotebagOrder')->name('totebag.create.detail.order');
+    Route::post('/detail/pesanan/create','FrontStore\ProductController@storeTotebagOrder')->name('totebag.store.detail.order')->middleware('auth');
+    Route::get('shipping-detail/','FrontStore\ProductController@showShippingTotebagDetail')->name('totebag.show.shipping.detail')->middleware('auth');;
+    Route::get('/design/front','FrontStore\ProductController@showFrontTotebag')->name('totebag.design.front');
+    Route::get('/design/back','FrontStore\ProductController@showBackTotebag')->name('totebag.design.back');
 });
 
 Route::prefix('product/tshirt')->group(function () {
-    Route::get('/','FrontStore\TshirtController@showAllTshirt')->name('tshirt.index');
-    Route::get('/detail/pesanan','FrontStore\TshirtController@createTshirtOrder')->name('tshirt.create.detail.order');
-    Route::post('/detail/pesanan/create','FrontStore\TshirtController@storeTshirtOrder')->name('tshirt.store.detail.order');
-    Route::get('/design/front','FrontStore\TshirtController@showFrontTshirt')->name('tshirt.design.front');
-    Route::get('/design/back','FrontStore\TshirtController@showBackTshirt')->name('tshirt.design.back');
-
+    Route::get('/detail/pesanan','FrontStore\ProductController@createTshirtOrder')->name('tshirt.create.detail.order');
+    Route::post('/detail/pesanan/create','FrontStore\ProductController@storeTshirtOrder')->name('tshirt.store.detail.order')->middleware('auth');
+    Route::get('shipping-detail/','FrontStore\ProductController@showShippingTshirtDetail')->name('tshirt.show.shipping.detail')->middleware('auth');;
+    Route::get('/design/front','FrontStore\ProductController@showFrontTshirt')->name('tshirt.design.front');
+    Route::get('/design/back','FrontStore\ProductController@showBackTshirt')->name('tshirt.design.back');
 });
 
 Route::prefix('product/mug')->group(function () {
-    Route::get('/','FrontStore\MugController@showAllMug')->name('mug.index');
-    Route::get('/detail/pesanan','FrontStore\MugController@createMugOrder')->name('mug.create.detail.order');
-    Route::post('/detail/pesanan/create','FrontStore\MugController@storeMugOrder')->name('mug.store.detail.order');
-    Route::get('/design/front','FrontStore\MugController@showFrontMug')->name('mug.design.front');
-    Route::get('/design/back','FrontStore\MugController@showBackMug')->name('mug.design.back');
-
+    Route::get('/detail/pesanan','FrontStore\ProductController@createMugOrder')->name('mug.create.detail.order');
+    Route::post('/detail/pesanan/create','FrontStore\ProductController@storeMugOrder')->name('mug.store.detail.order');
+    Route::get('shipping-detail/','FrontStore\ProductController@showShippingMugDetail')->name('mug.show.shipping.detail')->middleware('auth');;
+    Route::get('/design/front','FrontStore\ProductController@showFrontMug')->name('mug.design.front');
+    Route::get('/design/back','FrontStore\ProductController@showBackMug')->name('mug.design.back');
 });
 
 Route::prefix('product/bagpack')->group(function () {
-    Route::get('/','FrontStore\BagpackController@showAllBagpack')->name('bagpack.index');
-    Route::get('/detail/pesanan','FrontStore\BagpackController@createBagpackOrder')->name('bagpack.create.detail.order');
-    Route::post('/detail/pesanan/create','FrontStore\BagpackController@storeBagpackOrder')->name('bagpack.store.detail.order');
-    Route::get('/design/front','FrontStore\BagpackController@showFrontBagpack')->name('bagpack.design.front');
-    Route::get('/design/back','FrontStore\BagpackController@showBackBagpack')->name('bagpack.design.back');
-
+    Route::get('/detail/pesanan','FrontStore\ProductController@createBagpackOrder')->name('bagpack.create.detail.order');
+    Route::post('/detail/pesanan/create','FrontStore\ProductController@storeBagpackOrder')->name('bagpack.store.detail.order')->middleware('auth');
+    Route::get('shipping-detail/','FrontStore\ProductController@showShippingBagpackDetail')->name('bagpack.show.shipping.detail')->middleware('auth');;
+    Route::get('/design','FrontStore\BagpackController@showFrontBagpack')->name('bagpack.design');
 });
 
+/*End Front Store Area*/
 
 
+/*Start Admin Panel Area*/
 
-    Route::get('/dashboard', function () {
+Route::get('admin/home', 'HomeController@handleAdmin')->name('admin.route')->middleware('admin');
+
+Route::prefix('dashboard')->group(function () {
+    Route::get('/', function () {
         return view('admin.dashboard');
-    });
-    Route::resource('admin/products','admin\ProductController');
-    Route::resource('admin/orders','admin\OrderController');
-Route::resource('admin/promo','admin\PromoController');
-
-
-
-
-
-Route::get('/table', function () {
-    return view('tables');
+    })->middleware('admin');
 });
 
-Route::prefix('manage-transaction')->group(function () {
-    Route::get('/', function () {
-        return view('transaction.index');
-    });
-    Route::get('/create', function () {
-        return view('transaction.create');
-    });
+Route::prefix('fabric-order')->group(function () {
+    Route::get('/','Admin\OrderController@displayFabricPendingOrder')->name('fabric.order.index');
+    Route::get('/success/','Admin\OrderController@displayFabricSuccessOrder')->name('fabric.order.index.success');
+    Route::get('{order}/edit','Admin\OrderController@editFabricStatusOrder')->name('fabric.order.edit');
+    Route::put('{order}','Admin\OrderController@updateFabricStatusOrder')->name('fabric.order.update');
 });
 
-
-
-Route::prefix('manage-product')->group(function () {
-    Route::get('/', function () {
-        return view('');
-    });
-
+Route::prefix('mask-order')->group(function () {
+    Route::get('/','Admin\OrderController@displayMaskPendingOrder')->name('mask.order.index');
+    Route::get('/success/','Admin\OrderController@displayMaskSuccessOrder')->name('mask.order.index.success');
+    Route::get('{order}/edit','Admin\OrderController@editMaskStatusOrder')->name('mask.order.edit');
+    Route::put('{order}','Admin\OrderController@updateMaskStatusOrder')->name('mask.order.update');
 });
 
+Route::prefix('mug-order')->group(function () {
+    Route::get('/','Admin\OrderController@displayMugPendingOrder')->name('mug.order.index');
+    Route::get('/success/','Admin\OrderController@displayMugSuccessOrder')->name('mug.order.index.success');
+    Route::get('{order}/edit','Admin\OrderController@editMugStatusOrder')->name('mug.order.edit');
+    Route::put('{order}','Admin\OrderController@updateMugStatusOrder')->name('mug.order.update');
+});
 
+Route::prefix('tshirt-order')->group(function () {
+    Route::get('/','Admin\OrderController@displayTshirtPendingOrder')->name('tshirt.order.index');
+    Route::get('/success/','Admin\OrderController@displayTshirtSuccessOrder')->name('tshirt.order.index.success');
+    Route::get('{order}/edit','Admin\OrderController@editTshirtStatusOrder')->name('tshirt.order.edit');
+    Route::put('{order}','Admin\OrderController@updateTshirtStatusOrder')->name('tshirt.order.update');
+});
 
-Auth::routes();
+Route::prefix('totebag-order')->group(function () {
+    Route::get('/','Admin\OrderController@displayTotebagPendingOrder')->name('totebag.order.index');
+    Route::get('/success/','Admin\OrderController@displayTotebagSuccessOrder')->name('totebag.order.index.success');
+    Route::get('{order}/edit','Admin\OrderController@editTotebagStatusOrder')->name('totebag.order.edit');
+    Route::put('{order}','Admin\OrderController@updateTotebagStatusOrder')->name('totebag.order.update');
+});
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::prefix('bag-order')->group(function () {
+    Route::get('/','Admin\OrderController@displayBagPendingOrder')->name('bag.order.index');
+    Route::get('/success/','Admin\OrderController@displayBagSuccessOrder')->name('bag.order.index.success');
+    Route::get('{order}/edit','Admin\OrderController@editBagStatusOrder')->name('bag.order.edit');
+    Route::put('{order}','Admin\OrderController@updateBagStatusOrder')->name('bag.order.update');
+});
 
-
-
-
-
-
-
-Route::resource('users', 'UsersController');
-
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+/*End Admin Panel Area*/

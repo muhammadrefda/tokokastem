@@ -74,13 +74,13 @@
         <!-- Divider -->
         <hr class="sidebar-divider my-0">
     <!-- Divider -->
-        <hr class="sidebar-divider">
+{{--        <hr class="sidebar-divider">--}}
         <!-- Nav Item - Tables -->
-        <li class="nav-item">
-            <a class="nav-link" href="{{route('products.index')}}">
-                <i class="fas fa-fw fa-table"></i>
-                <span>Manage Product</span></a>
-        </li>
+{{--        <li class="nav-item">--}}
+{{--            <a class="nav-link" href="{{route('products.index')}}">--}}
+{{--                <i class="fas fa-fw fa-table"></i>--}}
+{{--                <span>Manage Product</span></a>--}}
+{{--        </li>--}}
 
 
         <!-- Nav Item - Tables -->
@@ -90,26 +90,106 @@
 {{--                <span>Manage Order</span></a>--}}
 {{--        </li>--}}
 
-        <hr class="sidebar-divider">
+{{--        <hr class="sidebar-divider">--}}
 
         <!-- Nav Item - Tables -->
-        <li class="nav-item">
-            <a class="nav-link" href="/admin/order">
-                <i class="fas fa-fw fa-table"></i>
-                <span>Manage Promo</span></a>
-        </li>
+{{--        <li class="nav-item">--}}
+{{--            <a class="nav-link" href="{{route('promosi.index')}}">--}}
+{{--                <i class="fas fa-fw fa-table"></i>--}}
+{{--                <span>Promo</span></a>--}}
+{{--        </li>--}}
         <hr class="sidebar-divider">
 
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                 <i class="fas fa-fw fa-cog"></i>
-                <span>Manage Order</span>
+                <span>Orderan Kain</span>
             </a>
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Status Transaksi:</h6>
-                    <a class="collapse-item" href="{{route('order.index')}}">Berhasil</a>
-                    <a class="collapse-item" href="cards.html">Pending</a>
+                    <a class="collapse-item" href="{{route('fabric.order.index.success')}}">Berhasil</a>
+                    <a class="collapse-item" href="{{route('fabric.order.index')}}">Pending</a>
+                </div>
+            </div>
+        </li>
+
+        <hr class="sidebar-divider">
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTo" aria-expanded="true" aria-controls="collapseTo">
+                <i class="fas fa-fw fa-cog"></i>
+                <span>Orderan Masker</span>
+            </a>
+            <div id="collapseTo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Status Transaksi:</h6>
+                    <a class="collapse-item" href="{{route('mask.order.index.success')}}">Berhasil</a>
+                    <a class="collapse-item" href="{{route('mask.order.index')}}">Pending</a>
+                </div>
+            </div>
+        </li>
+
+        <hr class="sidebar-divider">
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseMug" aria-expanded="true" aria-controls="collapseTwo">
+                <i class="fas fa-fw fa-cog"></i>
+                <span>Orderan Mug</span>
+            </a>
+            <div id="collapseMug" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Status Transaksi:</h6>
+                    <a class="collapse-item" href="{{route('mug.order.index.success')}}">Berhasil</a>
+                    <a class="collapse-item" href="{{route('mug.order.index')}}">Pending</a>
+                </div>
+            </div>
+        </li>
+
+        <hr class="sidebar-divider">
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTshirt" aria-expanded="true" aria-controls="collapseTwo">
+                <i class="fas fa-fw fa-cog"></i>
+                <span>Orderan T-Shirt</span>
+            </a>
+            <div id="collapseTshirt" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Status Transaksi:</h6>
+                    <a class="collapse-item" href="{{route('tshirt.order.index.success')}}">Berhasil</a>
+                    <a class="collapse-item" href="{{route('tshirt.order.index')}}">Pending</a>
+                </div>
+            </div>
+        </li>
+        <hr class="sidebar-divider">
+
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTotebag" aria-expanded="true" aria-controls="collapseTwo">
+                <i class="fas fa-fw fa-cog"></i>
+                <span>Orderan Tote Bag</span>
+            </a>
+            <div id="collapseTotebag" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Status Transaksi:</h6>
+                    <a class="collapse-item" href="{{route('totebag.order.index.success')}}">Berhasil</a>
+                    <a class="collapse-item" href="{{route('totebag.order.index')}}">Pending</a>
+                </div>
+            </div>
+        </li>
+        <hr class="sidebar-divider">
+
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBag" aria-expanded="true" aria-controls="collapseTwo">
+                <i class="fas fa-fw fa-cog"></i>
+                <span>Orderan Tas</span>
+            </a>
+            <div id="collapseBag" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Status Transaksi:</h6>
+                    <a class="collapse-item" href="{{route('bag.order.index.success')}}">Berhasil</a>
+                    <a class="collapse-item" href="{{route('bag.order.index')}}">Pending</a>
                 </div>
             </div>
         </li>

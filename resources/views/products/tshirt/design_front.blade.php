@@ -164,10 +164,10 @@
                                         style="font-size: 25px;"
                                         class="fa fa-file-pdf-o"
                                         aria-hidden="true"></i></button>
-                                <button id="rotate" title="Return" class="btn btn-primary"><i
-                                        style="font-size: 25px;"
-                                        class="fa fa-repeat"
-                                        aria-hidden="true"></i></button>
+{{--                                <button id="rotate" title="Return" class="btn btn-primary"><i--}}
+{{--                                        style="font-size: 25px;"--}}
+{{--                                        class="fa fa-repeat"--}}
+{{--                                        aria-hidden="true"></i></button>--}}
                                 <button class="btn btn-primary" onclick="location.reload();" title="Delete everything"><i
                                         style="font-size: 25px;"
                                         class="fa fa-trash"
@@ -273,7 +273,7 @@
                 <!--	EDITOR      -->
                 <div id="shirtDiv" class="page"
                      style="width: 530px; height: 630px; position: relative; background-color: rgb(255, 255, 255);">
-                    <!--img id="tshirtFacing" src="img/crew_front.png"></img-->
+{{--                    <img id="tshirtFacing" src="/img/crew_front.png">--}}
                     <img id="tshirtFacing" src="/img/t-shirts/crew_front.png" alt="">
 {{--                    <img id="tshirtFacing" src="{{asset('img/t-shirts/crew_back.png')}}" alt="">--}}
 
@@ -507,7 +507,7 @@
                 ;
             }, 1100);
             setTimeout(function () {
-                doc.save("T-Shirt.pdf");
+                doc.save("desain_T-Shirt_depan.pdf");
                 $('.loading-blink').hide();
                 $('#test').empty();
             }, 1700);

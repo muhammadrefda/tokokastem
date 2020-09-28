@@ -14,65 +14,69 @@
                                 <center>
                                 <h2>Detail Pemesanan</h2>
                                 </center>
-                                <div class="col-md-5 col-sm-5 col-xs-12">
-
-                                        <form action="" class="aa-subscribe-form">
-                                            @csrf
-                                            <div class="form-group">
-                                                <label>Jumlah Pesanan</label>
-                                                <span class="aa-product-view-price"></span>
-                                                <input type="text" class="form-control" name="material" required>
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Design totebag depan</label>
-                                                <span class="aa-product-view-price"></span>
-                                                <input type="file" class="form-control" name="material" required>
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Design totebag belakang</label>
-                                                <span class="aa-product-view-price"></span>
-                                                <input type="file" class="form-control" name="material" required>
-                                            </div>
-                                        </form>
-                                </div>
-
-                                <div class="col-md-7 col-sm-7 col-xs-12">
-                                    <div class="aa-product-view-content">
+                                <form action="{{route('totebag.store.detail.order')}}" method="POST" class="aa-subscribe-form" enctype="multipart/form-data">
+                                    @csrf
+                                    <div class="col-md-5 col-sm-5 col-xs-12">
                                         <div class="form-group">
-                                            <label>Ukuran</label>
+                                            <label>Jumlah Pesanan</label>
                                             <span class="aa-product-view-price"></span>
-                                            <select class="form-control" id="exampleFormControlSelect1" disabled>
-                                                <option>All Size</option>
-                                            </select>
+                                            <input type="text" class="form-control" name="quantity" required placeholder="minimal 1">
                                         </div>
-
                                         <div class="form-group">
-                                            <label>Harga Satuan</label>
+                                            <label>Design totebag depan</label>
                                             <span class="aa-product-view-price"></span>
-                                            <input type="text" class="form-control" name="material" disabled>
+                                            <input type="file" class="form-control" name="design_front_totebag" required>
                                         </div>
-
                                         <div class="form-group">
-                                            <label>Jenis Bahan</label>
+                                            <label>Design totebag belakang</label>
                                             <span class="aa-product-view-price"></span>
-                                            <select class="form-control" id="exampleFormControlSelect1">
-                                                <option>Drill</option>
-                                                <option>Kanvas</option>
-                                                <option>Blacu</option>
-                                            </select>
+                                            <input type="file" class="form-control" name="design_back_totebag" required>
                                         </div>
-
                                         <div class="form-group">
-                                            <label>Catatan</label>
-                                            <span class="aa-product-view-price"></span>
-                                            <textarea class="form-control" name="" id="" cols="30" rows="10"></textarea>
-                                        </div>
+                                            <input type="hidden" class="form-control" name="category" value="Totebag">
+                                            <input type="hidden" class="form-control" name="status" value="pending">
 
-                                        <div class="col-md-10 col-sm-10 col-xs-12">
-                                            <a class="aa-add-to-cart-btn" href="/products/payment">Proses Pemesanan</a>
                                         </div>
                                     </div>
-                                </div>
+                                    <div class="col-md-7 col-sm-7 col-xs-12">
+                                        <div class="aa-product-view-content">
+                                            <div class="form-group">
+                                                <label>Ukuran</label>
+                                                <span class="aa-product-view-price"></span>
+                                                <select class="form-control" id="exampleFormControlSelect1" name="size" disabled>
+                                                    <option>All Size</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>Harga Satuan</label>
+                                                <span class="aa-product-view-price"></span>
+                                                <input type="text" class="form-control" value="Rp 20.000,-" disabled>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>Jenis Bahan</label>
+                                                <span class="aa-product-view-price"></span>
+                                                <select class="form-control" id="exampleFormControlSelect1" name="material">
+                                                    <option value="Scuba">Scuba</option>
+                                                    <option value="Cotton">Cotton</option>
+                                                    <option value="Flanel">Flanel</option>
+                                                    <option value="Polyster">Polyster</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>Catatan</label>
+                                                <span class="aa-product-view-price"></span>
+                                                <textarea class="form-control" name="note" id="" cols="30" rows="10" ></textarea>
+                                            </div>
+                                            <div class="col-md-10 col-sm-10 col-xs-12">
+                                                <input type="submit" name="submit" value="proses pesanan" class="aa-add-to-cart-btn">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+
                             </div>
                         </div>
                     </div>

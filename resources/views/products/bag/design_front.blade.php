@@ -164,10 +164,10 @@
                                         style="font-size: 25px;"
                                         class="fa fa-file-pdf-o"
                                         aria-hidden="true"></i></button>
-                                <button id="rotate" title="Return" class="btn btn-primary"><i
-                                        style="font-size: 25px;"
-                                        class="fa fa-repeat"
-                                        aria-hidden="true"></i></button>
+{{--                                <button id="rotate" title="Return" class="btn btn-primary"><i--}}
+{{--                                        style="font-size: 25px;"--}}
+{{--                                        class="fa fa-repeat"--}}
+{{--                                        aria-hidden="true"></i></button>--}}
                                 <button class="btn btn-primary" onclick="location.reload();" title="Delete everything"><i
                                         style="font-size: 25px;"
                                         class="fa fa-trash"
@@ -507,7 +507,7 @@
                 ;
             }, 1100);
             setTimeout(function () {
-                doc.save("T-Shirt.pdf");
+                doc.save("Desain_Tas.pdf");
                 $('.loading-blink').hide();
                 $('#test').empty();
             }, 1700);

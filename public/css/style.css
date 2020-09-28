@@ -2532,6 +2532,15 @@ img {
   float: left;
   width: 100%;
 }
+
+#checkout .checkout-right1 {
+    display: inline;
+    float: left;
+    width: 100%;
+    background-color: #999;
+    color: black;
+}
+
 #checkout .checkout-area .checkout-right h4 {
   margin-top: 0px;
 }

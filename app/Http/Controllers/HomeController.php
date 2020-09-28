@@ -25,4 +25,9 @@ class HomeController extends Controller
     {
         return view('products.index');
     }
+
+    public function handleAdmin()
+    {
+        return view('admin.dashboard');
+    }
 }

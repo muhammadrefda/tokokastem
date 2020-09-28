@@ -15,7 +15,6 @@
                         <div class="seq-title">
                             <span data-seq>TSHIRT</span>
                             <h2 data-seq>Disc up to 40%</h2>
-{{--                            <a data-seq href="#" class="aa-shop-now-btn aa-secondary-btn">SHOP NOW</a>--}}
                         </div>
                     </li>
                     <!-- single slide item -->
@@ -26,7 +25,6 @@
                         <div class="seq-title">
                             <span data-seq>MUG</span>
                             <h2 data-seq>Disc up to 70%</h2>
-{{--                            <a data-seq href="#" class="aa-shop-now-btn aa-secondary-btn">SHOP NOW</a>--}}
                         </div>
                     </li>
                     <!-- single slide item -->
@@ -85,7 +83,7 @@
                 <br>
                 <br>
                 <div class="text-center" >
-                    <a class="aa-browse-btn " href="{{route('fabric.create')}}">Custom Produkmu Sekarang!</a>
+                    <a class="aa-browse-btn " href="{{route('fabric.create.detail.order')}}">Custom Produkmu Sekarang!</a>
                 </div>
                 <br>
                 <br>
@@ -141,7 +139,7 @@
                                     <li>
                                         <figure>
                                             <a class="aa-product-img" href="#"><img src="{{asset('img/category/bag.png')}}" alt=""></a>
-                                            <a class="aa-add-card-btn" href="{{route('bagpack.design.front')}}"><span class=""></span>Tas</a>
+                                            <a class="aa-add-card-btn" href="{{route('bagpack.design')}}"><span class=""></span>Tas</a>
                                         </figure>
                                     </li>
                                 </ul>

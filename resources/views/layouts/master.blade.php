@@ -148,8 +148,7 @@
                     <ul class="nav navbar-nav">
                         <li><a href="/">Home</a></li>
                         <li><a href="/cara-pesan">Cara Pesan</a>
-                        <li><a href="/contact">Kontak Kami</a></li>
-
+                        <li><a href="/kontak-kami">Kontak Kami</a></li>
                     </ul>
                 </div>
                 <!--/.nav-collapse -->

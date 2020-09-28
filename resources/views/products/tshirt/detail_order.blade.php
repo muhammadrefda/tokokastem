@@ -14,27 +14,28 @@
                                 <center>
                                 <h2>Detail Pemesanan</h2>
                                 </center>
+                                <form method="POST" action="{{route('tshirt.store.detail.order')}}" class="aa-subscribe-form" enctype="multipart/form-data">
+                                    @csrf
                                 <div class="col-md-5 col-sm-5 col-xs-12">
-
-                                        <form action="" class="aa-subscribe-form">
-                                            @csrf
                                             <div class="form-group">
                                                 <label>Jumlah Pesanan</label>
                                                 <span class="aa-product-view-price"></span>
-                                                <input type="text" class="form-control" name="material" required>
+                                                <input type="text" class="form-control" name="quantity" required>
                                             </div>
                                             <div class="form-group">
                                                 <label>Design kaos depan</label>
                                                 <span class="aa-product-view-price"></span>
-                                                <input type="file" class="form-control" name="material" required>
+                                                <input type="file" class="form-control" name="design_front_tshirt" required>
                                             </div>
                                             <div class="form-group">
                                                 <label>Design kaos belakang</label>
                                                 <span class="aa-product-view-price"></span>
-                                                <input type="file" class="form-control" name="material" required>
+                                                <input type="file" class="form-control" name="design_back_tshirt" required>
                                             </div>
-                                        </form>
-
+                                            <div class="form-group">
+                                                <input type="hidden" class="form-control" name="category" value="Tshirt">
+                                                <input type="hidden" class="form-control" name="status" value="pending">
+                                            </div>
                                 </div>
 
                                 <div class="col-md-7 col-sm-7 col-xs-12">
@@ -42,43 +43,44 @@
                                         <div class="form-group">
                                             <label>Ukuran</label>
                                             <span class="aa-product-view-price"></span>
-                                            <select class="form-control" id="exampleFormControlSelect1">
-                                                <option>S</option>
-                                                <option>L</option>
-                                                <option>M</option>
-                                                <option>XL</option>
-                                                <option>All Size</option>
+                                            <select class="form-control" name="size">
+                                                <option value="S">S</option>
+                                                <option value="L">L</option>
+                                                <option value="M">M</option>
+                                                <option value="XL">XL</option>
+                                                <option value="All Size">All Size</option>
                                             </select>
                                         </div>
 
                                         <div class="form-group">
                                             <label>Harga Satuan</label>
                                             <span class="aa-product-view-price"></span>
-                                            <input type="text" class="form-control" name="material" disabled>
+                                            <input type="text" class="form-control" value="Rp. 15,000,-" disabled>
                                         </div>
 
                                         <div class="form-group">
                                             <label>Jenis Bahan</label>
                                             <span class="aa-product-view-price"></span>
-                                            <select class="form-control" id="exampleFormControlSelect1">
-                                                <option>Scuba</option>
-                                                <option>Cotton</option>
-                                                <option>Flanel</option>
-                                                <option>Polyster</option>
+                                            <select class="form-control" name="material">
+                                                <option value="Scuba">Scuba</option>
+                                                <option value="Cotton">Cotton</option>
+                                                <option value="Flanel">Flanel</option>
+                                                <option value="Polyster">Polyster</option>
                                             </select>
                                         </div>
 
                                         <div class="form-group">
                                             <label>Catatan</label>
                                             <span class="aa-product-view-price"></span>
-                                            <textarea class="form-control" name="" id="" cols="30" rows="10"></textarea>
+                                            <textarea class="form-control" name="note" cols="30" rows="10"></textarea>
                                         </div>
 
                                         <div class="col-md-10 col-sm-10 col-xs-12">
-                                            <a class="aa-add-to-cart-btn" href="/products/payment">Proses Pemesanan</a>
+                                            <input type="submit" name="submit" value="proses pesanan" class="aa-add-to-cart-btn">
                                         </div>
                                     </div>
                                 </div>
+                                </form>
                             </div>
                         </div>
                     </div>
