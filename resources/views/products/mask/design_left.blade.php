@@ -183,6 +183,9 @@
                                     <button id="add-text" class="btn" title="Add"><i class="icon-share-alt"></i>
                                     </button>
                                     <hr>
+                                 
+
+                                    <hr>
                                 </div>
                                 <h4>Add an image
                                     <form hidden id="form1" runat="server">
@@ -297,7 +300,11 @@
 
                                 <div class="well">
                                     <ul class="nav">
-                                        <li class="color-preview" title="White" style="background-color:#ffffff;"></li>
+                                        <li
+                                            class="color-preview"
+                                            title="White"
+                                            style="background-image:url(public/img/logo.jpg); ">
+                                        </li>
                                         <li class="color-preview" title="Dark Heather" style="background-color:#616161;"></li>
                                         <li class="color-preview" title="Gray" style="background-color:#f0f0f0;"></li>
                                         <li class="color-preview" title="Charcoal" style="background-color:#5b5b5b;"></li>
@@ -318,6 +325,9 @@
                                         <li class="color-preview" title="Antique Sapphire" style="background-color:#0f77c0;"></li>
                                         <li class="color-preview" title="Heather Navy" style="background-color:#3469b7;"></li>
                                         <li class="color-preview" title="Cherry Red" style="background-color:#c50404;"></li>
+                                        <li class="color-preview" style="background-color: hotpink ">
+
+                                        </li>
                                     </ul>
                                 </div>
                             </div>

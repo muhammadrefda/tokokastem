@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProvincesTable extends Migration
+class CreateAlamatTokoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateProvincesTable extends Migration
      */
     public function up()
     {
-        Schema::create('provinces', function (Blueprint $table) {
+        Schema::create('alamat_toko', function (Blueprint $table) {
             $table->id();
-//            $table->unsignedBigInteger('code');
-//            $table->string('title');
-            $table->unsignedBigInteger('province_id');
-            $table->string('title');
+            $table->integer('city_id');
+            $table->string('detail');
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ class CreateProvincesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('provinces');
+        Schema::dropIfExists('alamat_toko');
     }
 }

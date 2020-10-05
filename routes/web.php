@@ -21,6 +21,7 @@ use Illuminate\Support\Facades\Route;
 /*Start Front Store Area*/
 Auth::routes();
 
+
 Route::get('/', function () {
     return view('products.index');
 });
@@ -35,9 +36,17 @@ Route::get('cara-pesan', function (){
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+
+Route::get('/api/province/{id}/cities', 'FrontStore\ProductController@getCities');
+Route::post('/api/cities', 'FrontStore\ProductController@searchCities');
+Route::post('/store-detail-pengiriman','FrontStore\ProductController@storeDetailPengiriman')->name('store.detail.pengiriman');
+
+
+
 Route::prefix('product/fabric')->group(function () {
     Route::get('/detail/pesanan','FrontStore\ProductController@createFabricOrder')->name('fabric.create.detail.order');
     Route::post('/detail/pesanan/create','FrontStore\ProductController@storeProductOrder')->name('fabric.store.detail.order')->middleware('auth');
+    Route::get('detail-pengiriman','FrontStore\ProductController@showDetailPengiriman')->name('fabric.show.detail.pengiriman');
     Route::get('shipping-detail/','FrontStore\ProductController@showShippingDetail')->name('fabric.show.shipping.detail')->middleware('auth');
 });
 
@@ -77,7 +86,7 @@ Route::prefix('product/bagpack')->group(function () {
     Route::get('/detail/pesanan','FrontStore\ProductController@createBagpackOrder')->name('bagpack.create.detail.order');
     Route::post('/detail/pesanan/create','FrontStore\ProductController@storeBagpackOrder')->name('bagpack.store.detail.order')->middleware('auth');
     Route::get('shipping-detail/','FrontStore\ProductController@showShippingBagpackDetail')->name('bagpack.show.shipping.detail')->middleware('auth');;
-    Route::get('/design','FrontStore\BagpackController@showFrontBagpack')->name('bagpack.design');
+    Route::get('/design','FrontStore\ProductController@showBagpackDesain')->name('bagpack.design');
 });
 
 /*End Front Store Area*/
@@ -86,6 +95,13 @@ Route::prefix('product/bagpack')->group(function () {
 /*Start Admin Panel Area*/
 
 Route::get('admin/home', 'HomeController@handleAdmin')->name('admin.route')->middleware('admin');
+
+Route::get('/alamat-toko/show','Admin\AlamatController@displayStoreAddress')->name('admin.alamat.index');
+
+Route::get('/alamat-toko','Admin\AlamatController@aturalamat')->name('admin.aturalamat');
+//Route::get('/pengaturan/ubahalamat/{id}','admin\PengaturanController@ubahalamat')->name('admin.ubahalamat');
+Route::get('/alamat-toko/getcity/{id}','Admin\AlamatController@getCity')->name('admin.getCity');
+Route::post('alamat-toko/simpan','Admin\AlamatController@simpanalamat')->name('admin.simpanalamat');
 
 Route::prefix('dashboard')->group(function () {
     Route::get('/', function () {

@@ -31,6 +31,12 @@
         <!-- Google Font -->
         <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js"></script>
+        <script src="{{ asset('js/app.js') }}" defer></script>
+
+
+        <!-- CSRF Token -->
+        <meta name="csrf-token" content="{{ csrf_token() }}">
     </head>
 <body>
 
@@ -300,34 +306,8 @@
 </footer>
 <!-- / footer -->
 
-<!-- Login Modal -->
-<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-     aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4>Login or Register</h4>
-                <form class="aa-login-form" action="">
-                    <label for="">Email address<span>*</span></label>
-                    <input type="text" placeholder="email">
-                    <label for="">Password<span>*</span></label>
-                    <input type="password" placeholder="Password">
-
-                    <button class="aa-browse-btn" type="submit">Login</button>
-{{--                    <p class="aa-lost-password"><a href="#">Lost your password?</a></p>--}}
-
-                    <div class="aa-register-now">
-                        Don't have an account?<a href="/account">Register now!</a>
-                    </div>
-                </form>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div>
-
 <!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="{{asset('js/bootstrap.js')}}"></script>
 <!-- SmartMenus jQuery plugin -->
@@ -346,6 +326,7 @@
 <script type="text/javascript" src="{{asset('js/nouislider.js')}}"></script>
 <!-- Custom js -->
 <script src="{{asset('js/custom.js')}}"></script>
+@yield('js')
 </body>
 
 </html>

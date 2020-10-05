@@ -2,12 +2,17 @@
 
 namespace App\Http\Controllers\FrontStore;
 
+use App\City;
+use App\Courier;
 use App\Http\Controllers\Controller;
 use App\Product;
+use App\Province;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Kavist\RajaOngkir\Facades\RajaOngkir;
+
 
 class ProductController extends Controller
 {
@@ -34,33 +39,186 @@ class ProductController extends Controller
         $new_product->material = $request->get('material');
         $new_product->note = $request->get('note');
         $new_product->status = $request->get('status');
-        $new_product->price_fabric = Product::price_fabric;
+        $new_product->ongkir = mt_rand(1,9);
+        $new_product->price_fabric = 10000;
+
+
+        $new_product->total = $new_product->getTotalAttributes();
 
         $new_product->save();
 
-        return redirect()->route('fabric.show.shipping.detail');
+        return redirect()->route('fabric.show.detail.pengiriman');
     }
+
+    public function getProvince(){
+        return Province::pluck('title');
+    }
+
+    /**
+     * @param $id
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function getCities($id)
+    {
+        $city = City::where('province_code', $id)->pluck('title', 'code');
+        return response()->json($city);
+    }
+
+
+    public function getCity($id)
+    {
+
+        //kfunction untuk mengambil data kota sesuia id parameter
+        $city = City::where('province_id',$id)->get();
+        //lalu return dengan format json
+        return response()->json($city);
+    }
+
+
+
+
+    public function showDetailPengiriman(){
+
+//        $province = $this->getProvince();
+//        $courier = $this->getCourier();
+//
+        $id_user = \Auth::user()->id;
+        //ambil data alamat
+        $data['province'] = Province::all();
+        $cekAlamat = DB::table('shipping_address')
+            ->where('user_id',$id_user)
+            ->count();
+        //cek jika user sudah mengatur alamat maka jalankan ini
+        if($cekAlamat >0) {
+            $data['alamat'] = DB::table('shipping_address')
+                ->join('cities', 'cities.city_id', '=', 'shipping_address.cities_id')
+                ->join('provinces', 'provinces.province_id', '=', 'cities.province_id')
+                ->select('provinces.title as prov', 'cities.title as kota', 'shipping_address.*')
+                ->where('shipping_address.user_id', $id_user)
+                ->get();
+        }
+
+        return view('products.fabric.detail_pengiriman',$data);
+    }
+
+    public function storeDetailPengiriman(Request $request){
+       //cek request
+//        dd($request->all());
+//        $staticOrigin = RajaOngkir::kota()->find(115);
+
+        $courier = $request->input('courier');
+
+        if ($courier){
+
+            $data = [
+                'origin' => $this->getCity($request->origin_city),
+                'destination' => $this->getCity($request->destination_city),
+                'weight' => 1300,
+                'result' => []
+            ];
+
+            foreach ($courier as $row){
+                $ongkir = RajaOngkir::ongkosKirim([
+                    'origin' => $request->origin_city,
+                    'destination' => $request->destination_city,
+                    'weight' => $data['weight'],
+                    'courier' => $row
+                ])->get();
+
+                $data['result'][] = $ongkir;
+            }
+
+            return view('products.fabric.cost')->with($data);
+        }
+
+        return redirect()->back();
+
+    }
+
+    public function searchCities(Request $request){
+        $search = $request->search;
+
+        if (empty($search)){
+            $cities = City::orderBy('title','asc')
+                ->select('id','title')
+                ->limit(5)
+                ->get();
+        } else {
+            $cities = City::orderBy('title','asc')
+                ->where('title','like','%' . $search . '%')
+                ->select('id','title')
+                ->limit(5)
+                ->get();
+        }
+
+        $response = [];
+
+
+        foreach ($cities as $city) {
+            $response[] = [
+                'id' => $city->id,
+                'text' => $city->title
+            ];
+        }
+
+        return json_encode($response);
+    }
+
+    public function getCourier()
+    {
+        return Courier::all();
+    }
+//    public function getCity($code)
+//    {
+//        return City::where('code', $code)->first();
+//    }
+
+    public function getStoreAddress()
+    {
+        return City::where('code','=',115);
+    }
+
+
     public function showShippingDetail(){
+
 
         $detail_order = DB::table('products')
             ->join('users','products.user_id','=','users.id')
             ->select('products.id', 'products.quantity','products.created_at','products.category',
-                'products.unique_code','products.price_fabric')
+                'products.unique_code','products.price_fabric','products.total')
             ->orderByDesc('created_at')
             ->limit(1)
             ->get();
-
 //        $order = User::findOrFail($order);
 //
 //        $data = array(
 //            'detail_order' => $detail_order,
 //            'order' => $order,
 //        );
+        return view('products.fabric.payment',compact('detail_order','provinces'));
+    }
 
 
 
 
-        return view('products.fabric.payment',compact('detail_order'));
+
+
+
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function check_ongkir(Request $request)
+    {
+        $cost = RajaOngkir::ongkosKirim([
+            'origin'        => $request->city_origin, // ID kota/kabupaten asal
+            'destination'   => $request->city_destination, // ID kota/kabupaten tujuan
+            'weight'        => $request->weight, // berat barang dalam gram
+            'courier'       => $request->courier // kode kurir pengiriman: ['jne', 'tiki', 'pos'] untuk starter
+        ])->get();
+
+
+        return response()->json($cost);
     }
 
     public function saveShippingDetail(Request $request){
@@ -154,6 +312,12 @@ class ProductController extends Controller
         $new_product->note = $request->get('note');
         $new_product->status = $request->get('status');
 
+        $new_product->price_mask = 5000;
+
+
+        $new_product->total = $new_product->getMaskTotalAttributes();
+
+
         $new_product->save();
 
         return redirect()->route('mask.show.shipping.detail');
@@ -162,7 +326,8 @@ class ProductController extends Controller
 
         $detail_order = DB::table('products')
             ->join('users','products.user_id','=','users.id')
-            ->select('products.id', 'products.quantity','products.created_at','products.category','products.unique_code')
+            ->select('products.id', 'products.quantity','products.created_at','products.category',
+                'products.unique_code','products.price_mask','products.total')
             ->orderByDesc('created_at')
             ->limit(1)
             ->get();
@@ -234,8 +399,10 @@ class ProductController extends Controller
         $new_product->size = $request->get('size');
         $new_product->material = $request->get('material');
         $new_product->note = $request->get('note');
-        $new_product->proof_of_transaction = $request->get('proof_of_transaction');
         $new_product->status = $request->get('status');
+        $new_product->price_totebag = 15000;
+
+        $new_product->total = $new_product->getTotebagTotalAttributes();
 
         $new_product->save();
 
@@ -246,7 +413,8 @@ class ProductController extends Controller
 
         $detail_order = DB::table('products')
             ->join('users','products.user_id','=','users.id')
-            ->select('products.id', 'products.quantity','products.created_at','products.category','products.unique_code')
+            ->select('products.id', 'products.quantity','products.created_at','products.category',
+                'products.unique_code','products.price_totebag','products.total')
             ->orderByDesc('created_at')
             ->limit(1)
             ->get();
@@ -318,8 +486,10 @@ class ProductController extends Controller
         $new_product->size = $request->get('size');
         $new_product->material = $request->get('material');
         $new_product->note = $request->get('note');
-        $new_product->proof_of_transaction = $request->get('proof_of_transaction');
         $new_product->status = $request->get('status');
+        $new_product->price_tshirt = 35000;
+
+        $new_product->total = $new_product->getTshirtTotalAttributes();
 
         $new_product->save();
 
@@ -330,7 +500,8 @@ class ProductController extends Controller
 
         $detail_order = DB::table('products')
             ->join('users','products.user_id','=','users.id')
-            ->select('products.id', 'products.quantity','products.created_at','products.category','products.unique_code')
+            ->select('products.id', 'products.quantity','products.created_at','products.category',
+                'products.unique_code','products.price_tshirt','products.total')
             ->orderByDesc('created_at')
             ->limit(1)
             ->get();
@@ -405,8 +576,11 @@ class ProductController extends Controller
         $new_product->size = $request->get('size');
         $new_product->material = $request->get('material');
         $new_product->note = $request->get('note');
-        $new_product->proof_of_transaction = $request->get('proof_of_transaction');
         $new_product->status = $request->get('status');
+
+        $new_product->price_mug = 25000;
+
+        $new_product->total = $new_product->getMugTotalAttributes();
 
         $new_product->save();
 
@@ -417,7 +591,8 @@ class ProductController extends Controller
 
         $detail_order = DB::table('products')
             ->join('users','products.user_id','=','users.id')
-            ->select('products.id', 'products.quantity','products.created_at','products.category','products.unique_code')
+            ->select('products.id', 'products.quantity','products.created_at','products.category',
+                'products.unique_code','products.price_mug','products.total')
             ->orderByDesc('created_at')
             ->limit(1)
             ->get();
@@ -490,8 +665,12 @@ class ProductController extends Controller
         $new_product->size = $request->get('size');
         $new_product->material = $request->get('material');
         $new_product->note = $request->get('note');
-        $new_product->proof_of_transaction = $request->get('proof_of_transaction');
+//        $new_product->proof_of_transaction = $request->get('proof_of_transaction');
         $new_product->status = $request->get('status');
+        $new_product->price_backpack = 50000;
+        $new_product->total = $new_product->getBagTotalAttributes();
+
+
 
         $new_product->save();
 
@@ -502,7 +681,8 @@ class ProductController extends Controller
 
         $detail_order = DB::table('products')
             ->join('users','products.user_id','=','users.id')
-            ->select('products.id', 'products.quantity','products.created_at','products.category','products.unique_code')
+            ->select('products.id', 'products.quantity','products.created_at','products.category',
+                'products.unique_code','products.price_backpack','products.total')
             ->orderByDesc('created_at')
             ->limit(1)
             ->get();

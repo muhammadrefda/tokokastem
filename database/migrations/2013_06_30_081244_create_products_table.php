@@ -39,6 +39,9 @@ class CreateProductsTable extends Migration
             $table->unsignedInteger('price_totebag')->nullable();
             $table->unsignedInteger('price_tshirt')->nullable();
             $table->unsignedInteger('price_backpack')->nullable();
+            $table->unsignedInteger('total');
+            $table->integer('weigth')->nullable();
+            $table->integer('ongkir');
             $table->unsignedBigInteger('user_id');
 
             $table->timestamps();

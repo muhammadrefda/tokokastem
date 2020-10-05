@@ -14,6 +14,7 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     const price_fabric = 10000;
+    const price_backpack = 50000;
 
 
     /**
@@ -48,6 +49,9 @@ class Product extends Model
         'price_totebag',
         'price_tshirt',
         'price_backpack',
+        'total',
+        'weigth',
+        'ongkir',
 
 ];
 //    public function displayFabricPrice(){
@@ -57,5 +61,28 @@ class Product extends Model
     public function order_details()
     {
         return $this->hasMany('App\OrderDetails','product_id','id');
+    }
+
+    public function getTotalAttributes(){
+        return $this->quantity * $this->price_fabric + $this->unique_code;
+    }
+
+    public function getBagTotalAttributes(){
+        return $this->quantity * $this->price_backpack + $this->unique_code;
+    }
+
+    public function getMaskTotalAttributes(){
+        return $this->quantity * $this->price_mask + $this->unique_code;
+    }
+    public function getTotebagTotalAttributes(){
+        return $this->quantity * $this->price_totebag + $this->unique_code;
+    }
+
+    public function getTshirtTotalAttributes(){
+        return $this->quantity * $this->price_tshirt + $this->unique_code;
+    }
+
+    public function getMugTotalAttributes(){
+        return $this->quantity * $this->price_mug + $this->unique_code;
     }
 }

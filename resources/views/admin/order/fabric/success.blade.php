@@ -6,9 +6,7 @@
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h2 class="m-0 font-weight-bold text-primary">Daftar Orderan Kain</h2>
-                <br>
-                <h3 class="m-0 font-weight-bold text-primary">Status: Pending</h3>
+                <p class="m-0 font-weight-bold text-primary">Daftar Orderan Kain, Status: Berhasil</p>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -17,15 +15,12 @@
                         <tr>
                             <th>No.</th>
                             <th>Jumlah Pembelian</th>
-                            <th>Kategori</th>
-                            <th>Kode Pembayaran</th>
                             <th>Link Desain</th>
                             <th>Jenis Kain</th>
                             <th>Catatan</th>
                             <th>Status</th>
                             <th>Nama Pembeli</th>
                             <th>Alamat Pengiriman</th>
-                            <th>No. Hp Pembeli</th>
                             <th>Tanggal Transaksi</th>
                             <td colspan="2">Action</td>
                         </tr>
@@ -39,10 +34,8 @@
                                 <td>
                                     {{$order->quantity}}
                                 </td>
-                                <td>{{$order->category}}</td>
-                                <td>{{$order->unique_code}}</td>
                                 <td>
-                                    <a href="{{$order->link_goggle_drive}}">{{$order->link_goggle_drive}}</a>
+                                    <a href="{{$order->link_goggle_drive}}"></a>
                                 </td>
                                 <td>
                                     {{$order->type_fabric}}
@@ -59,7 +52,6 @@
                                 <td>
                                     {{$order->address}}
                                 </td>
-                                <td>{{$order->phone_number}}</td>
                                 <td>
                                     {{date('m-d', strtotime($order->created_at))}}
                                 </td>

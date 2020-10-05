@@ -12,19 +12,11 @@ class CourierSeeder extends Seeder
      */
     public function run()
     {
-        Courier::insert([
-            [
-                'code' => 'jne',
-                'title' => 'Jalur Nugraha Ekakurir (JNE)'
-            ],
-            [
-                'code' => 'pos',
-                'title' => 'POS Indonesia'
-            ],
-            [
-                'code' => 'tiki',
-                'title' => 'Citra Van Titipan Kilat'
-            ]
-        ]);
+        $data = [
+            ['code' => 'jne','title' => 'JNE'],
+            ['code' => 'pos','title' => 'POS'],
+            ['code' => 'tiki','title' => 'TIKI'],
+        ];
+        Courier::insert($data);
     }
 }

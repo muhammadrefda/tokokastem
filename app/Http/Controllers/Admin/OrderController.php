@@ -20,7 +20,7 @@ class OrderController extends Controller
             ->join('users','products.user_id','=','users.id')
             ->select('products.id', 'products.quantity', 'products.link_goggle_drive', 'products.type_fabric',
                              'products.note', 'products.status', 'products.unique_code', 'users.name', 'users.address',
-                             'users.phone_number', 'products.created_at')
+                             'users.phone_number', 'products.created_at','products.category')
             ->where('status','=','pending')
             ->where('category','=','Kain')
             ->get();

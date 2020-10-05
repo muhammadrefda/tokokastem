@@ -47,11 +47,6 @@
                                             </select>
                                         </div>
 
-                                        <div class="form-group">
-                                            <label>Harga Satuan</label>
-                                            <span class="aa-product-view-price"></span>
-                                            <input type="text" class="form-control"  value="Rp 20.000,-" disabled>
-                                        </div>
 
                                         <div class="form-group">
                                             <label>Jenis Bahan</label>
