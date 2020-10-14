@@ -106,7 +106,7 @@
                         <div class="tab-content">
                             <!-- Start men popular category -->
                             <div class="tab-pane fade in active" id="popular">
-                                <ul class="aa-product-catg">
+                                <ul class="aa-product-catg" >
                                     <!-- start single product item -->
                                     <li>
                                         <figure class="">

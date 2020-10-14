@@ -12,21 +12,131 @@ use Image;
 class OrderController extends Controller
 {
 
-    /* Start Fabric Section */
 
-    public function displayFabricPendingOrder(){
+    public function allPendingOrder (){
 
-        $orders = DB::table('products')
+        $fabrics = DB::table('products')
             ->join('users','products.user_id','=','users.id')
-            ->select('products.id', 'products.quantity', 'products.link_goggle_drive', 'products.type_fabric',
-                             'products.note', 'products.status', 'products.unique_code', 'users.name', 'users.address',
-                             'users.phone_number', 'products.created_at','products.category')
+            ->select('products.*','users.*')
             ->where('status','=','pending')
             ->where('category','=','Kain')
             ->get();
 
-        return view('admin.order.fabric.pending')->with(['orders' => $orders,]);
+        $masks = DB::table('products')
+            ->join('users','products.user_id','=','users.id')
+            ->select('products.*', 'users.*')
+            ->where('status','=','pending')
+            ->where('category','=','Masker')
+            ->get();
+
+        $mugs = DB::table('products')
+            ->join('users','products.user_id','=','users.id')
+            ->select('products.*', 'users.*')
+            ->where('status','=','pending')
+            ->where('category','=','Mug')
+            ->get();
+
+        $tshirts = DB::table('products')
+            ->join('users','products.user_id','=','users.id')
+            ->select('products.*', 'users.*')
+            ->where('status','=','pending')
+            ->where('category','=','Tshirt')
+            ->get();
+
+        $totebags = DB::table('products')
+            ->join('users','products.user_id','=','users.id')
+            ->select('products.*', 'users.*')
+            ->where('status','=','pending')
+            ->where('category','=','Totebag')
+            ->get();
+
+        $backpacks = DB::table('products')
+            ->join('users','products.user_id','=','users.id')
+            ->select('products.*', 'users.*')
+            ->where('status','=','pending')
+            ->where('category','=','Tas')
+            ->get();
+
+        $data = [
+            'fabrics' => $fabrics,
+            'masks' => $masks,
+            'mugs' => $mugs,
+            'tshirts' => $tshirts,
+            'totebags' => $totebags,
+            'backpacks' => $backpacks,
+        ];
+
+        return view('admin.order.all_pending',$data);
+
     }
+
+    public function allSuccessOrder(){
+        $fabrics = DB::table('products')
+            ->join('users','products.user_id','=','users.id')
+            ->select('products.*','users.*')
+            ->where('status','=','Berhasil')
+            ->where('category','=','Kain')
+            ->get();
+
+        $masks = DB::table('products')
+            ->join('users','products.user_id','=','users.id')
+            ->select('products.id', 'products.quantity', 'products.design_left_mask', 'products.design_right_mask',
+                'products.size', 'products.material', 'products.note', 'products.status','products.unique_code',
+                'users.name', 'users.address', 'users.phone_number', 'products.created_at')
+            ->where('status','=','Berhasil')
+            ->where('category','=','Masker')
+            ->get();
+
+        $mugs = DB::table('products')
+            ->join('users','products.user_id','=','users.id')
+            ->select('products.id', 'products.quantity', 'products.design_front_mug', 'products.design_back_mug',
+                'products.size', 'products.material', 'products.note', 'products.status', 'products.unique_code',
+                'users.name', 'users.address', 'users.phone_number', 'products.created_at')
+            ->where('status','=','Berhasil')
+            ->where('category','=','Mug')
+            ->get();
+
+        $tshirts = DB::table('products')
+            ->join('users','products.user_id','=','users.id')
+            ->select('products.id', 'products.quantity', 'products.design_front_tshirt', 'products.design_back_tshirt',
+                'products.size', 'products.material', 'products.note', 'products.status', 'products.unique_code',
+                'users.name', 'users.address', 'users.phone_number', 'products.created_at')
+            ->where('status','=','Berhasil')
+            ->where('category','=','Tshirt')
+            ->get();
+
+        $totebags = DB::table('products')
+            ->join('users','products.user_id','=','users.id')
+            ->select('products.id', 'products.quantity', 'products.design_front_totebag', 'products.design_back_totebag',
+                'products.size', 'products.material', 'products.note', 'products.status', 'products.unique_code',
+                'users.name', 'users.address', 'users.phone_number', 'products.created_at')
+            ->where('status','=','Berhasil')
+            ->where('category','=','Totebag')
+            ->get();
+
+        $backpacks = DB::table('products')
+            ->join('users','products.user_id','=','users.id')
+            ->select('products.id', 'products.quantity', 'products.design_backpack', 'products.size',
+                'products.material', 'products.note', 'products.status', 'products.unique_code',
+                'users.name', 'users.address', 'users.phone_number', 'products.created_at')
+            ->where('status','=','Berhasil')
+            ->where('category','=','Tas')
+            ->get();
+
+
+        $data = [
+            'fabrics' => $fabrics,
+            'masks' => $masks,
+            'mugs' => $mugs,
+            'tshirts' => $tshirts,
+            'totebags' => $totebags,
+            'backpacks' => $backpacks,
+        ];
+
+        return view('admin.order.all_success',$data);
+    }
+
+    /* Start Fabric Section */
 
     public function displayFabricSuccessOrder(){
 
@@ -61,27 +171,13 @@ class OrderController extends Controller
 
         $order->update(request()->all());
 
-        return redirect()->route('fabric.order.index');
+        return redirect()->back();
     }
 
     /* End Fabric Section */
 
 
     /* Start Mask Section */
-
-    public function displayMaskPendingOrder(){
-
-        $orders = DB::table('products')
-            ->join('users','products.user_id','=','users.id')
-            ->select('products.id', 'products.quantity', 'products.design_left_mask', 'products.design_right_mask',
-                'products.size', 'products.material', 'products.note', 'products.status','products.unique_code',
-                'users.name', 'users.address', 'users.phone_number', 'products.created_at')
-            ->where('status','=','pending')
-            ->where('category','=','Masker')
-            ->get();
-
-        return view('admin.order.mask.pending')->with(['orders' => $orders,]);
-    }
 
     public function displayMaskSuccessOrder(){
 
@@ -115,7 +211,7 @@ class OrderController extends Controller
 
         $order->update(request()->all());
 
-        return redirect()->route('mask.order.index');
+        return redirect()->route('order.success.index');
     }
 
     /* End Mask Section */
@@ -168,7 +264,7 @@ class OrderController extends Controller
 
         $order->update(request()->all());
 
-        return redirect()->route('mug.order.index');
+        return redirect()->route('order.success.index');
     }
 
     /* End Mug Section */
@@ -221,7 +317,7 @@ class OrderController extends Controller
 
         $order->update(request()->all());
 
-        return redirect()->route('tshirt.order.index');
+        return redirect()->route('order.success.index');
     }
     /* End T-Shirt Section */
 

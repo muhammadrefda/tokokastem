@@ -40,14 +40,6 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('Address') }}</label>
-
-                            <div class="col-md-6">
-                                <textarea class="form-control" name="address" id="" cols="30" rows="10"></textarea>
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
                             <label for="phone_number" class="col-md-4 col-form-label text-md-right">{{ __('Nomor HP') }}</label>
 
                             <div class="col-md-6">
@@ -75,6 +67,13 @@
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                                <br>
+                                <label>
+                                    <a href="{{ __('login') }}">
+                                        Sudah Punya Akun?, Silahkan Login disini
+
+                                    </a>
+                                </label>
                             </div>
                         </div>
 

@@ -32,6 +32,6 @@ class HomeController extends Controller
 
     public function handleAdmin()
     {
-        return view('admin.dashboard');
+        return redirect()->route('order.pending.index');
     }
 }

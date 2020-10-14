@@ -21,42 +21,6 @@
 
     <!-- Custom styles for this page -->
     <link href="{{asset('vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
-
-    <style>
-        .drawing-area{
-            position: absolute;
-            top: 60px;
-            left: 122px;
-            z-index: 10;
-            width: 200px;
-            height: 400px;
-        }
-
-        .canvas-container{
-            width: 200px;
-            height: 400px;
-            position: relative;
-            user-select: none;
-        }
-
-        #tshirt-div{
-            width: 452px;
-            height: 548px;
-            position: relative;
-            background-color: #fff;
-        }
-
-        #canvas{
-            position: absolute;
-            width: 200px;
-            height: 400px;
-            left: 0px;
-            top: 0px;
-            user-select: none;
-            cursor: default;
-        }
-    </style>
-
 </head>
 
 <body id="page-top">
@@ -68,161 +32,26 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{route('order.pending.index')}}">
             <div class="sidebar-brand-text mx-3">Toko Kastem</div>
         </a>
         <!-- Divider -->
         <hr class="sidebar-divider my-0">
-    <!-- Divider -->
-{{--        <hr class="sidebar-divider">--}}
-        <!-- Nav Item - Tables -->
-{{--        <li class="nav-item">--}}
-{{--            <a class="nav-link" href="{{route('products.index')}}">--}}
-{{--                <i class="fas fa-fw fa-table"></i>--}}
-{{--                <span>Manage Product</span></a>--}}
-{{--        </li>--}}
-
 
         <!-- Nav Item - Tables -->
-{{--        <li class="nav-item">--}}
-{{--            <a class="nav-link" href="{{route('order.index')}}">--}}
-{{--                <i class="fas fa-fw fa-table"></i>--}}
-{{--                <span>Manage Order</span></a>--}}
-{{--        </li>--}}
-
-{{--        <hr class="sidebar-divider">--}}
-
-        <!-- Nav Item - Tables -->
-{{--        <li class="nav-item">--}}
-{{--            <a class="nav-link" href="{{route('promosi.index')}}">--}}
-{{--                <i class="fas fa-fw fa-table"></i>--}}
-{{--                <span>Daftar Orderan</span></a>--}}
-{{--        </li>--}}
-
-        <hr class="sidebar-divider">
-
         <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                <i class="fas fa-fw fa-cog"></i>
-                <span>Daftar Orderan</span>
-            </a>
-            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#OrderCollapse" aria-expanded="true" aria-controls="OrderCollapse">
+            <i class="fas fa-fw fa-table"></i>
+                <span>Daftar Orderan</span></a>
+            <div id="OrderCollapse" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Orderan Kain</h6>
-                    <a class="collapse-item" href="{{route('fabric.order.index.success')}}">Berhasil</a>
-                    <a class="collapse-item" href="{{route('fabric.order.index')}}">Pending</a>
+                    <a class="collapse-item" href="{{route('order.pending.index')}}">Pending</a>
                 </div>
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Orderan Masker:</h6>
-                    <a class="collapse-item" href="{{route('mask.order.index.success')}}">Berhasil</a>
-                    <a class="collapse-item" href="{{route('mask.order.index')}}">Pending</a>
-                </div>
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Orderan Mug:</h6>
-                    <a class="collapse-item" href="{{route('mug.order.index.success')}}">Berhasil</a>
-                    <a class="collapse-item" href="{{route('mug.order.index')}}">Pending</a>
-                </div>
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Orderan Tshirt:</h6>
-                    <a class="collapse-item" href="{{route('tshirt.order.index.success')}}">Berhasil</a>
-                    <a class="collapse-item" href="{{route('tshirt.order.index')}}">Pending</a>
-                </div>
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Orderan Totebag:</h6>
-                    <a class="collapse-item" href="{{route('totebag.order.index.success')}}">Berhasil</a>
-                    <a class="collapse-item" href="{{route('totebag.order.index')}}">Pending</a>
-                </div>
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Orderan Tas:</h6>
-                    <a class="collapse-item" href="{{route('bag.order.index.success')}}">Berhasil</a>
-                    <a class="collapse-item" href="{{route('bag.order.index')}}">Pending</a>
+                    <a class="collapse-item" href="{{route('order.success.index')}}">Berhasil</a>
                 </div>
             </div>
-
         </li>
-
-{{--        <hr class="sidebar-divider">--}}
-
-{{--        <li class="nav-item">--}}
-{{--            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTo" aria-expanded="true" aria-controls="collapseTo">--}}
-{{--                <i class="fas fa-fw fa-cog"></i>--}}
-{{--                <span>Orderan Masker</span>--}}
-{{--            </a>--}}
-{{--            <div id="collapseTo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">--}}
-{{--                <div class="bg-white py-2 collapse-inner rounded">--}}
-{{--                    <h6 class="collapse-header">Status Transaksi:</h6>--}}
-{{--                    <a class="collapse-item" href="{{route('mask.order.index.success')}}">Berhasil</a>--}}
-{{--                    <a class="collapse-item" href="{{route('mask.order.index')}}">Pending</a>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </li>--}}
-
-{{--        <hr class="sidebar-divider">--}}
-
-{{--        <li class="nav-item">--}}
-{{--            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseMug" aria-expanded="true" aria-controls="collapseTwo">--}}
-{{--                <i class="fas fa-fw fa-cog"></i>--}}
-{{--                <span>Orderan Mug</span>--}}
-{{--            </a>--}}
-{{--            <div id="collapseMug" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">--}}
-{{--                <div class="bg-white py-2 collapse-inner rounded">--}}
-{{--                    <h6 class="collapse-header">Status Transaksi:</h6>--}}
-{{--                    <a class="collapse-item" href="{{route('mug.order.index.success')}}">Berhasil</a>--}}
-{{--                    <a class="collapse-item" href="{{route('mug.order.index')}}">Pending</a>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </li>--}}
-
-{{--        <hr class="sidebar-divider">--}}
-
-{{--        <li class="nav-item">--}}
-{{--            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTshirt" aria-expanded="true" aria-controls="collapseTwo">--}}
-{{--                <i class="fas fa-fw fa-cog"></i>--}}
-{{--                <span>Orderan T-Shirt</span>--}}
-{{--            </a>--}}
-{{--            <div id="collapseTshirt" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">--}}
-{{--                <div class="bg-white py-2 collapse-inner rounded">--}}
-{{--                    <h6 class="collapse-header">Status Transaksi:</h6>--}}
-{{--                    <a class="collapse-item" href="{{route('tshirt.order.index.success')}}">Berhasil</a>--}}
-{{--                    <a class="collapse-item" href="{{route('tshirt.order.index')}}">Pending</a>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </li>--}}
-{{--        <hr class="sidebar-divider">--}}
-
-
-{{--        <li class="nav-item">--}}
-{{--            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTotebag" aria-expanded="true" aria-controls="collapseTwo">--}}
-{{--                <i class="fas fa-fw fa-cog"></i>--}}
-{{--                <span>Orderan Tote Bag</span>--}}
-{{--            </a>--}}
-{{--            <div id="collapseTotebag" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">--}}
-{{--                <div class="bg-white py-2 collapse-inner rounded">--}}
-{{--                    <h6 class="collapse-header">Status Transaksi:</h6>--}}
-{{--                    <a class="collapse-item" href="{{route('totebag.order.index.success')}}">Berhasil</a>--}}
-{{--                    <a class="collapse-item" href="{{route('totebag.order.index')}}">Pending</a>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </li>--}}
-{{--        <hr class="sidebar-divider">--}}
-
-
-{{--        <li class="nav-item">--}}
-{{--            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBag" aria-expanded="true" aria-controls="collapseTwo">--}}
-{{--                <i class="fas fa-fw fa-cog"></i>--}}
-{{--                <span>Orderan Tas</span>--}}
-{{--            </a>--}}
-{{--            <div id="collapseBag" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">--}}
-{{--                <div class="bg-white py-2 collapse-inner rounded">--}}
-{{--                    <h6 class="collapse-header">Status Transaksi:</h6>--}}
-{{--                    <a class="collapse-item" href="{{route('bag.order.index.success')}}">Berhasil</a>--}}
-{{--                    <a class="collapse-item" href="{{route('bag.order.index')}}">Pending</a>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </li>--}}
-
-
-
 
             <hr class="sidebar-divider">
 

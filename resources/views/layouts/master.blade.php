@@ -7,6 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Toko Kastem | @yield('title')</title>
 
+
         <!-- Font awesome -->
         <link href="{{asset('css/font-awesome.css')}}" rel="stylesheet">
         <!-- Bootstrap -->

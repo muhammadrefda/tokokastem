@@ -16,6 +16,8 @@ class Product extends Model
     const price_fabric = 10000;
     const price_backpack = 50000;
 
+    const price_mask = 5000;
+
 
     /**
      * @var string[]
@@ -51,7 +53,7 @@ class Product extends Model
         'price_backpack',
         'total',
         'weigth',
-        'ongkir',
+//        'ongkir',
 
 ];
 //    public function displayFabricPrice(){
@@ -65,6 +67,12 @@ class Product extends Model
 
     public function getTotalAttributes(){
         return $this->quantity * $this->price_fabric + $this->unique_code;
+    }
+
+
+    //qty * 5000 GRAM
+    public function getFabricWeightTotal(){
+        return $this->quantity * 5000;
     }
 
     public function getBagTotalAttributes(){

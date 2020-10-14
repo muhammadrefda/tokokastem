@@ -41,7 +41,7 @@ class CreateProductsTable extends Migration
             $table->unsignedInteger('price_backpack')->nullable();
             $table->unsignedInteger('total');
             $table->integer('weigth')->nullable();
-            $table->integer('ongkir');
+            $table->integer('ongkir')->nullable();
             $table->unsignedBigInteger('user_id');
 
             $table->timestamps();

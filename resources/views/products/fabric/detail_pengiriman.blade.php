@@ -123,7 +123,7 @@
                         <div class="col-md-8">
                             <div class="card">
                                 <div class="card-body">
-                                    <form action="" method="POST">
+                                    <form action="{{route('store.detail.pengiriman')}}" method="POST">
                                         @csrf
                                         <div class="form-group">
                                             <label for="">Pilih Provinsi</label>
@@ -141,8 +141,9 @@
                                         </div>
                                         <div class="form-grup">
                                             <label for="">Alamat Lengkap</label>
-                                            <input type="text" name="detail" id="" placeholde="Kecamatan/Desa/Nama Jalan" class="form-control">
-                                            </select>
+
+                                            <textarea name="detail" class="form-control" placeholder="Kecamatan/Desa/Nama Jalan" id="" cols="30" rows="10"></textarea>
+
                                         </div>
                                         <br>
                                         <div class="mt-4 text-right">
