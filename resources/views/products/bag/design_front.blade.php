@@ -4,11 +4,12 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Toko Kastem | @yield('title')</title>
-    <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-<!--[if IE]>
+    <title>Desain Tas | Toko Kastem</title>
+
+    <link href="{{asset('css/style.css')}}" rel="stylesheet">
+
+
+
     <script type="text/javascript" src="{{ asset('js/excanvas.js')}}"></script><![endif]-->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script type="text/javascript" src="{{ asset('js/fabric.js')}}"></script>
@@ -35,9 +36,6 @@
             background-color: whiteSmoke;
         }
 
-        body {
-            padding-top: 60px;
-        }
 
         .color-preview {
             border: 1px solid #CCC;
@@ -135,43 +133,160 @@
             margin-right: 4px;
         }
     </style>
+
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <link id="switcher" href="{{asset('css/theme-color/default-theme.css')}}" rel="stylesheet">
+
+    <!-- Font awesome -->
+    <link href="{{asset('css/font-awesome.css')}}" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="{{asset('css/bootstrap.css')}}" rel="stylesheet">
+    <!-- SmartMenus jQuery Bootstrap Addon CSS -->
+    <link href="{{asset('css/jquery.smartmenus.bootstrap.css')}}" rel="stylesheet">
+
 </head>
 
-<body class="preview" data-spy="scroll" data-target=".subnav" data-offset="80">
 
+<!-- Start header section -->
+<header id="aa-header" >
+
+    <!-- start header top  -->
+    <div class="aa-header-top">
+        <div class="container" >
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="aa-header-top-area">
+                        <!-- start header top left -->
+                        <div class="aa-header-top-left">
+
+                            <!-- start cellphone -->
+                            <div class="cellphone hidden-xs">
+                                <p><span class="fa fa-phone"></span>00-62-658-658</p>
+                            </div>
+                            <!-- / cellphone -->
+                        </div>
+
+                        <!-- / header top left -->
+                        <div class="aa-header-top-right" >
+                            <ul class="aa-head-top-nav-right">
+                                <!-- Authentication Links -->
+                                @guest
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    </li>
+                                    @if (Route::has('register'))
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                        </li>
+                                    @endif
+                                @else
+                                    <li class="nav-item dropdown">
+                                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                            {{ Auth::user()->name }} <span class="caret"></span>
+                                        </a>
+
+                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                               onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                                {{ __('Logout') }}
+                                            </a>
+
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                @csrf
+                                            </form>
+                                        </div>
+                                    </li>
+                                @endguest
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- / header top  -->
+
+    <!-- start header bottom  -->
+    <div class="aa-header-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="aa-header-bottom-area">
+                        <!-- logo  -->
+                        <div class="aa-logo">
+                            <!-- Text based logo -->
+                            <a href="/">
+                                <span class="fa fa-shopping-cart"></span>
+                                <p>toko<strong>Kastem</strong> <span>Custom your own</span></p>
+                            </a>
+                        </div>
+                        <!-- / logo  -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- / header bottom  -->
+</header>
+<!-- / header section -->
+<section id="menu">
+    <div class="container">
+        <div class="menu-area">
+            <!-- Navbar -->
+            <div class="navbar navbar-default" role="navigation">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <!-- Left nav -->
+                    <ul class="nav navbar-nav">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/cara-pesan">Cara Pesan</a>
+                        <li><a href="/kontak-kami">Kontak Kami</a></li>
+                    </ul>
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<body>
 <div class="container">
     <section id="typography">
         <!-- Headings & Paragraph Copy -->
-        <h3>Desain Simulator Tas</h3>
 
         <div class="row">
-            <div class="span3">
+
+
+            <div class="col-md-3">
+                <h3>Desain Tas</h3>
+
                 <div class="tabbable"> <!-- Only required for left/right tabs -->
                     <ul class="nav nav-tabs">
-                        <li class="active"><a href="#tab1" data-toggle="tab">T-shirt parameters</a></li>
-                        <li><a href="#tab2" data-toggle="tab">Gravatar</a></li>
+                        <li class="active"><a href="#tab1" data-toggle="tab">Atur File Tas </a></li>
+                        <li><a href="#tab2" data-toggle="tab">tulisan/gambar</a></li>
                     </ul>
                     <div class="tab-content">
                         <div class="tab-pane active" id="tab1">
                             <div class="well">
                                 <p style="font-family: 'Telex',sans-serif;font-weight: bold;line-height: 1;color: #317eac;text-rendering: optimizelegibility;">
-                                    Action</p>
-{{--                                <button id="imgsavejpg" class="btn btn-primary" title="Save as image"><i--}}
-{{--                                        style="font-size: 25px;"--}}
-{{--                                        class="fa fa-camera"--}}
-{{--                                        aria-hidden="true"></i></button>--}}
+                                    Aksi</p>
                                 <button id="imgsavepdf" class="btn btn-primary" title="Save as PDF"><i
                                         style="font-size: 25px;"
                                         class="fa fa-file-pdf-o"
                                         aria-hidden="true"></i></button>
-{{--                                <button id="rotate" title="Return" class="btn btn-primary"><i--}}
-{{--                                        style="font-size: 25px;"--}}
-{{--                                        class="fa fa-repeat"--}}
-{{--                                        aria-hidden="true"></i></button>--}}
-                                <button class="btn btn-primary" onclick="location.reload();" title="Delete everything"><i
-                                        style="font-size: 25px;"
-                                        class="fa fa-trash"
-                                        aria-hidden="true"></i></button>
+                                <button class="btn btn-primary" onclick="location.reload();" title="Reset Desain">
+                                    Reset Desain
+                                </button>
                             </div>
                         </div>
                         <div class="tab-pane" id="tab2">
@@ -194,16 +309,13 @@
                                 </h4>
 
                                 <div id="avatarlist" style="max-height: 500px; overflow: scroll;">
-{{--                                    @foreach($prints as $image)--}}
-{{--                                        <img class="img-polaroid tt" src="{{ asset('img/templates/') }}/{{$image->image}}">--}}
-{{--                                    @endforeach--}}
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="span6">
+            <div class="col-md-6">
                 <div align="center" style="min-height: 32px;">
                     <div class="clearfix">
                         <div class="btn-group inline pull-left" id="texteditor" style="display:none">
@@ -275,7 +387,7 @@
                      style="width: 530px; height: 630px; position: relative; background-color: rgb(255, 255, 255);">
                     <!--img id="tshirtFacing" src="img/crew_front.png"></img-->
                     <img id="tshirtFacing" src="{{asset('img/backpack.png')}}" alt="">
-{{--                    <img id="tshirtFacing" src="{{asset('img/t-shirts/crew_back.png')}}" alt="">--}}
+                    {{--                    <img id="tshirtFacing" src="{{asset('img/t-shirts/crew_back.png')}}" alt="">--}}
 
 
                     <div id="drawingArea"
@@ -287,18 +399,19 @@
 
             </div>
 
-            <div class="span3">
+            <div class="col-md-3">
                 <div class="well">
                     <ul class="nav">
                         <h3>Choose a color</h3>
 
                         <div class="tab-content">
-                            <div class="tab-pane active" id="tab1">
+                            <div class="tab-pane active" id="tab1" >
 
-                                <div class="well">
-                                    <ul class="nav">
+                                <div class="well" style="float: left;">
+
+                                    <ul class="nav" >
                                         <li class="color-preview" title="White" style="background-color:#ffffff;"></li>
-                                        <li class="color-preview" title="Dark Heather" style="background-color:#616161;"></li>
+                                        <li class="color-preview"  title="Dark Heather" style="background-color:#616161;"></li>
                                         <li class="color-preview" title="Gray" style="background-color:#f0f0f0;"></li>
                                         <li class="color-preview" title="Charcoal" style="background-color:#5b5b5b;"></li>
                                         <li class="color-preview" title="Black" style="background-color:#222222;"></li>
@@ -319,6 +432,7 @@
                                         <li class="color-preview" title="Heather Navy" style="background-color:#3469b7;"></li>
                                         <li class="color-preview" title="Cherry Red" style="background-color:#c50404;"></li>
                                     </ul>
+
                                 </div>
                             </div>
                             <div class="tab-pane" id="tab2">
@@ -351,6 +465,128 @@
 
 
 </div><!-- /container -->
+
+<br>
+
+
+<!-- Support section -->
+<section id="aa-support">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="aa-support-area">
+                    <!-- single support -->
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="aa-support-single">
+                            <span class="fa fa-truck"></span>
+                            <h4>FREE SHIPPING</h4>
+                            <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, nobis.</P>
+                        </div>
+                    </div>
+                    <!-- single support -->
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="aa-support-single">
+                            <span class="fa fa-clock-o"></span>
+                            <h4>30 DAYS MONEY BACK</h4>
+                            <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, nobis.</P>
+                        </div>
+                    </div>
+                    <!-- single support -->
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="aa-support-single">
+                            <span class="fa fa-phone"></span>
+                            <h4>SUPPORT 24/7</h4>
+                            <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, nobis.</P>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- / Support section -->
+
+
+<!-- Support section -->
+<section id="aa-support" >
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="aa-support-area">
+                    <!-- single support -->
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="aa-support-single">
+                        </div>
+                    </div>
+                    <!-- single support -->
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="aa-support-single">
+                            <span class="fa fa-envelope"></span>
+
+                            <h4>PARTNERSHIP</h4>
+                            <P>Ribrick Tech
+                                <br> <span>&</span> <br>
+                                Lazuardy Printing</P>
+                        </div>
+                    </div>
+                    <!-- single support -->
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="aa-support-single">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- / Support section -->
+
+<!-- footer -->
+<footer id="aa-footer">
+    <!-- footer bottom -->
+    <div class="aa-footer-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="aa-footer-top-area">
+                        <div class="row">
+                            <div class="col-md-3 col-sm-6">
+                                <div class="aa-footer-widget">
+                                    <div class="aa-footer-widget">
+                                        <h3>Contact Us</h3>
+                                        <address>
+                                            <p> 25 Astor Pl, NY 10003, USA</p>
+                                            <p><span class="fa fa-phone"></span>+1 212-982-4589</p>
+                                            <p><span class="fa fa-envelope"></span>dailyshop@gmail.com</p>
+                                        </address>
+                                        <div class="aa-footer-social">
+                                            <a href="#"><span class="fa fa-facebook"></span></a>
+                                            <a href="#"><span class="fa fa-twitter"></span></a>
+                                            <a href="#"><span class="fa fa-youtube"></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer-bottom -->
+    <div class="aa-footer-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="aa-footer-bottom-area">
+                        <p>Designed by <a href="http://www.markups.io/">MarkUps.io</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- / footer -->
 
 
 <!-- Le javascript
@@ -416,7 +652,7 @@
                 html2canvas(document.querySelector("#test")).then(canvas => {
                     // document.body.appendChild(canvas)
                     $(canvas).get(0).toBlob(function (blob) {
-                        var filesaver = saveAs(blob, "TShirt.png");
+                        var filesaver = saveAs(blob, "Masker.png");
                         filesaver.onwriteend = function () {
                             $('.loading-blink').hide();
                             $('#test').empty();
@@ -507,7 +743,7 @@
                 ;
             }, 1100);
             setTimeout(function () {
-                doc.save("Desain_Tas.pdf");
+                doc.save("Tas.pdf");
                 $('.loading-blink').hide();
                 $('#test').empty();
             }, 1700);
@@ -517,13 +753,7 @@
     });
 
 </script>
-<div style="position: fixed;top: 0;left: 0;width: 100%;height: 100%;z-index:999999;" id="loading-custom-overlay"
-     class="loading-div loading-blink">
-    <div id="custom-overlay">
-        <div class="loading-spinner">
-            Loading (custom)...
-        </div>
-    </div>
-</div>
+<script src="{{asset('js/custom.js')}}"></script>
+
 </body>
 </html>

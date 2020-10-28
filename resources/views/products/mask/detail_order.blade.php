@@ -23,15 +23,10 @@
                                                 <input type="text" class="form-control" name="quantity" required placeholder="minimal 1">
                                             </div>
                                             <div class="form-group">
-                                                <label>Design masker kanan</label>
+                                                <label>Design masker</label>
 
                                                 <span class="aa-product-view-price"></span>
                                                 <input type="file" class="form-control" name="design_right_mask"  required>
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Design masker kiri</label>
-                                                <span class="aa-product-view-price"></span>
-                                                <input type="file" class="form-control" name="design_left_mask"  required>
                                             </div>
                                             <div class="form-group">
                                                 <input type="hidden" class="form-control" name="category" value="Masker">

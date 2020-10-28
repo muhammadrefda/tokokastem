@@ -243,18 +243,11 @@ class ProductController extends Controller
         $new_product->user_id = Auth::user()->id;
         $new_product->unique_code = mt_rand(100,999);
         $new_product->quantity = $request->get('quantity');
-        $design_left_mask = $request->file('design_left_mask');
+        $design_mask = $request->file('design_mask');
 
-        if($design_left_mask){
-            $design_left_mask_path = $design_left_mask->store('design_left_mask', 'public');
-            $new_product->design_left_mask = $design_left_mask_path;
-        }
-
-        $design_right_mask = $request->file('design_right_mask');
-
-        if($design_right_mask){
-            $design_right_mask_path = $design_right_mask->store('design_right_mask', 'public');
-            $new_product->design_right_mask = $design_right_mask_path;
+        if($design_mask){
+            $design_mask_path = $design_mask->store('design_mask', 'public');
+            $new_product->design_mask = $design_mask_path;
         }
 
         $new_product->category = $request->get('category');
@@ -284,7 +277,7 @@ class ProductController extends Controller
         $cekAlamat = DB::table('shipping_address')
             ->where('user_id',$id_user)
             ->count();
-        //cek jika user sudah mengatur alamat maka jalankan ini
+
         if($cekAlamat >0) {
             $data['alamat'] = DB::table('shipping_address')
                 ->join('cities', 'cities.city_id', '=', 'shipping_address.cities_id')

@@ -25,8 +25,7 @@ class Product extends Model
     protected $fillable = [
         'unique_code',
         'quantity',
-        'design_left_mask',
-        'design_right_mask',
+        'design_mask',
         'design_front_totebag',
         'design_back_totebag',
         'design_front_tshirt',

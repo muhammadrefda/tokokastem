@@ -62,7 +62,7 @@ Route::prefix('product/mask')->middleware('auth')->group(function () {
     Route::get('detail-pengiriman','FrontStore\ProductController@showMaskDetailPengiriman')->name('mask.show.detail.pengiriman');
     Route::post('detail-pengiriman','FrontStore\ProductController@storeMaskDetailPengiriman')->name('mask.store.detail.pengiriman');
     Route::get('shipping-detail/','FrontStore\ProductController@showShippingMaskDetail')->name('mask.show.shipping.detail');
-    Route::get('/design/right','FrontStore\ProductController@showRightMask')->name('mask.design.right');
+    Route::get('/design','FrontStore\ProductController@showRightMask')->name('mask.design.right');
     Route::get('/design/left','FrontStore\ProductController@showLeftMask')->name('mask.design.left');
 });
 

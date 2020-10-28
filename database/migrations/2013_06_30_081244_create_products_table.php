@@ -17,8 +17,7 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->integer('unique_code');
             $table->integer('quantity');
-            $table->string('design_left_mask')->nullable();
-            $table->string('design_right_mask')->nullable();
+            $table->string('design_mask')->nullable();
             $table->string('design_front_totebag')->nullable();
             $table->string('design_back_totebag')->nullable();
             $table->string('design_front_tshirt')->nullable();
