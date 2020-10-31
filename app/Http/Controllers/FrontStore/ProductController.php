@@ -299,12 +299,8 @@ class ProductController extends Controller
             'user_id'   => \Auth::user()->id
         ]);
 
-
-
         return redirect()->route('mask.show.shipping.detail');
-
     }
-
 
 
     public function showShippingMaskDetail(){
@@ -329,7 +325,7 @@ class ProductController extends Controller
             'origin'  => $alamat_toko->id,
             'destination' => $city_destination,
             'weight' => 1000,
-            'courier' => 'pos'
+            'courier' => 'jne'
         ])->get();
 
         $ongkir =  $cost[0]['costs'][0]['cost'][0]['value'];

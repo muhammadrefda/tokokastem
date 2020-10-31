@@ -4,118 +4,7 @@
 
     <!-- Cart view section -->
     <section id="checkout" >
-{{--        <div class="container">--}}
-{{--            <div class="row">--}}
-
-{{--                <div class="col-md-12">--}}
-{{--                    <div class="checkout-area">--}}
-{{--                        <div class="aa-order-summary-area">--}}
-{{--                            <div class="card">--}}
-{{--                                <div class="card-header">--}}
-{{--                                    <h2 class="my-0 font-weight-normal">Rincian Pengiriman--}}
-{{--                                    </h2>--}}
-{{--                                </div>--}}
-{{--                                <br>--}}
-{{--                                <div class="card-body">--}}
-{{--                                    <form action="" method="">--}}
-
-{{--                                        <div class="form-row">--}}
-{{--                                            <div class="col">--}}
-{{--                                                <div class="card">--}}
-{{--                                                    <div class="card-body">--}}
-{{--                                                        <div class="form-group">--}}
-{{--                                                            <label class="font-weight-bold">PROVINSI TUJUAN</label>--}}
-{{--                                                            <select class="form-control provinsi-tujuan" name="province_destination">--}}
-{{--                                                                <option value="0">-- pilih provinsi tujuan --</option>--}}
-{{--                                                                @foreach ($provinces as $province => $value)--}}
-{{--                                                                    <option value="{{ $province  }}">{{ $value }}</option>--}}
-{{--                                                                @endforeach--}}
-{{--                                                            </select>--}}
-{{--                                                        </div>--}}
-{{--                                                        <div class="form-group">--}}
-{{--                                                            <label class="font-weight-bold">KOTA / KABUPATEN TUJUAN</label>--}}
-{{--                                                            <select class="form-control kota-tujuan" name="city_destination">--}}
-{{--                                                                <option value="">-- pilih kota tujuan --</option>--}}
-{{--                                                            </select>--}}
-{{--                                                        </div>--}}
-
-{{--                                                        <div class="form-group">--}}
-{{--                                                            <label for="">ALAMAT LENGKAP</label>--}}
-{{--                                                            <textarea class="form-control" name="" id="" rows="10"--}}
-{{--                                                                      placeholder="EX: Jl. Moh Kahfi 2 No. 99">--}}
-{{--                                                            </textarea>--}}
-{{--                                                        </div>--}}
-{{--                                                    </div>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                            <div class="card">--}}
-{{--                                                <div class="card-body">--}}
-{{--                                                    <div class="form-group">--}}
-{{--                                                        <label>PILIH KURIR</label>--}}
-{{--                                                        <select class="form-control kurir" name="courier">--}}
-{{--                                                            <option value="0">-- pilih kurir --</option>--}}
-{{--                                                            <option value="jne">JNE</option>--}}
-{{--                                                            <option value="pos">POS</option>--}}
-{{--                                                            <option value="tiki">TIKI</option>--}}
-{{--                                                        </select>--}}
-{{--                                                    </div>--}}
-{{--                                                    <div class="form-group">--}}
-{{--                                                        <label class="font-weight-bold">BERAT (GRAM)</label>--}}
-{{--                                                        <input type="number" class="form-control" name="weight" id="weight" placeholder="Masukkan Berat (GRAM)" value="5000" disabled>--}}
-{{--                                                    </div>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                        <div class="checkout-area">--}}
-{{--                                            <button class="btn btn-md btn-primary btn-block btn-check">PROSES PESANAN</button>--}}
-{{--                                        </div>--}}
-{{--                                    </form>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-
-
-{{--            </div>--}}
-{{--        </div>--}}
         <div class="checkout-area">
-{{--            <div class="card-header">--}}
-{{--                <h4 class="my-0 font-weight-normal">Formulir Cek Ongkir</h4>--}}
-{{--            </div>--}}
-{{--            <div class="">--}}
-{{--                <form action="{{route('store.detail.pengiriman')}}" method="POST">--}}
-{{--                    @csrf--}}
-{{--                    <div class="form-row">--}}
-{{--                        <div class="col">--}}
-{{--                            <h2 class="font-weight-bolder">Tujuan Pengiriman:</h2>--}}
-
-{{--                            <div class="form-group">--}}
-{{--                                <label>Provinsi</label>--}}
-{{--                                <label for="province_id"></label><select required name="province_id" id="province_id" class="form-control">--}}
-{{--                                    @foreach($province as $provinc)--}}
-{{--                                        <option value="{{ $provinc->province_id }}">{{ $provinc->title }}</option>--}}
-{{--                                    @endforeach--}}
-{{--                                </select>--}}
-{{--                            </div>--}}
-{{--                            <div class="form-grup">--}}
-{{--                                <label for="">Kota/Kabupaten</label>--}}
-{{--                                <select name="cities_id" id="cities_id" class="form-control" required>--}}
-{{--                                </select>--}}
-{{--                            </div>--}}
-{{--                            <div class="form-group mt-3">--}}
-{{--                                <label>Detail Alamat</label>--}}
-{{--                                <input type="text" class="form-control" name="detail" required>--}}
-{{--                            </div>--}}
-{{--                            <div class="text-right">--}}
-{{--                                <button type="submit" class="btn btn-success text-right">Simpan</button>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </form>--}}
-{{--            </div>--}}
-
-
             <div class="site-section">
                 <div class="container">
                     <div class="row">
@@ -145,6 +34,18 @@
                                             <textarea name="detail" class="form-control" placeholder="Kecamatan/Desa/Nama Jalan" id="" cols="30" rows="10"></textarea>
 
                                         </div>
+
+                                        <div class="form-group">
+                                            <label for="">Pilih Ekspedisi</label>
+{{--                                            @foreach ($courier as $key => $value)--}}
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="courier-" name="courier[]" value="">
+                                                    <label class="form-check-label" for="courier-"></label>
+                                                </div>
+{{--                                            @endforeach--}}
+
+                                        </div>
+
                                         <br>
                                         <div class="mt-4 text-right">
                                             <button type="submit" class="btn btn-primary">Simpan Perubahan</button>

@@ -30,6 +30,7 @@ class HomeController extends Controller
 
 
 
+
     public function handleAdmin()
     {
         return redirect()->route('order.pending.index');

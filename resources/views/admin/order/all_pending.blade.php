@@ -73,8 +73,7 @@
                         <th>Jumlah Pembelian</th>
                         <th>Kategori</th>
                         <th>Kode Pembayaran</th>
-                        <th>Desain Kiri Masker</th>
-                        <th>Desain Kanan Masker</th>
+                        <th>Desain Masker</th>
                         <th>Ukuran Masker</th>
                         <th>Bahan Masker</th>
                         <th>Catatan</th>
@@ -93,11 +92,8 @@
                             <td>{{$mask->quantity}}</td>
                             <td>{{$mask->category}}</td>
                             <td>{{$mask->unique_code}}</td>
-                            <td>@if($mask->design_left_mask)
-                                    <iframe src="{{asset('storage/' .$mask->design_left_mask)}}" ></iframe>
-                                @endif</td>
-                            <td>@if($mask->design_right_mask)
-                                    <iframe src="{{asset('storage/' .$mask->design_right_mask)}}"></iframe>
+                            <td>@if($mask->design_mask)
+                                    <iframe src="{{asset('storage/' .$mask->design_mask)}}" ></iframe>
                                 @endif</td>
                             <td>{{$mask->size}}</td>
                             <td>{{$mask->material}}</td>
