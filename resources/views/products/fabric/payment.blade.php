@@ -27,7 +27,6 @@
                                             <td>{{$td->quantity}}</td>
                                             <td>{{number_format($td->price_fabric)}}</td>
                                         </tr>
-
                                     </tbody>
                                     @endforeach
                                     <tfoot>

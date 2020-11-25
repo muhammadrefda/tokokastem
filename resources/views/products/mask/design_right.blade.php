@@ -261,14 +261,14 @@
 
                 <div class="tabbable"> <!-- Only required for left/right tabs -->
                     <ul class="nav nav-tabs">
-                        <li class="active"><a href="#tab1" data-toggle="tab">Atur File Masker </a></li>
+                        <li class="active"><a href="#tab1" data-toggle="tab">Atur File </a></li>
                         <li><a href="#tab2" data-toggle="tab">tulisan/gambar</a></li>
                     </ul>
                     <div class="tab-content">
                         <div class="tab-pane active" id="tab1">
                             <div class="well">
                                 <button id="imgsavepdf" class="aa-add-to-cart-btn">Simpan Gambar</button>
-                                <hr>
+
                                 <button class="aa-add-to-cart-btn" onclick="location.reload();" title="Reset Desain">
                                     Reset Desain
                                 </button>
@@ -284,7 +284,7 @@
                                     </button>
                                     <hr>
                                 </div>
-                                <h4>Add an image
+                                <h4>Sisipkan Gambar
                                     <form hidden id="form1" runat="server">
                                         <input hidden type='file' id="imgInp"/>
                                     </form>

@@ -19,6 +19,7 @@ class ProductController extends Controller
 {
 
     /*Start of Fabric section*/
+
     public function createFabricOrder()
     {
         return view('products.fabric.detail_order');
@@ -38,9 +39,12 @@ class ProductController extends Controller
         $new_product->material = $request->get('material');
         $new_product->note = $request->get('note');
         $new_product->status = $request->get('status');
-//        $new_product->ongkir = 0;
+
         $new_product->price_fabric = 10000;
-        $new_product->weigth = 1000;
+
+        /*weight in grams*/
+        $new_product->fabric_weight = 1000;
+
         $new_product->total = $new_product->getTotalAttributes();
 
         $new_product->save();
@@ -62,11 +66,12 @@ class ProductController extends Controller
     public function showDetailPengiriman(){
 
         $id_user = \Auth::user()->id;
+        $data['courier'] = Courier::all();
         $data['province'] = Province::all();
         $cekAlamat = DB::table('shipping_address')
             ->where('user_id',$id_user)
             ->count();
-        if($cekAlamat >0) {
+        if( $cekAlamat > 0 ) {
             $data['alamat'] = DB::table('shipping_address')
                 ->join('cities', 'cities.city_id', '=', 'shipping_address.cities_id')
                 ->join('provinces', 'provinces.province_id', '=', 'cities.province_id')
@@ -89,13 +94,13 @@ class ProductController extends Controller
     public function storeDetailPengiriman(Request $request){
 
          ShippingAddress::create([
-            'cities_id' => $request->cities_id,
-            'detail'    => $request->detail,
-            'user_id'   => \Auth::user()->id
-        ]);
+             'cities_id' => $request->cities_id,
+             'detail'    => $request->detail,
+             'user_id'   => \Auth::user()->id,
+             'courier_code'     => $request->courier_code
+         ]);
 
         return redirect()->route('fabric.show.shipping.detail');
-
     }
 
     public function searchCities(Request $request){
@@ -137,7 +142,7 @@ class ProductController extends Controller
         $detail_order = DB::table('products')
             ->join('users','products.user_id','=','users.id')
             ->select('products.id', 'products.quantity','products.created_at','products.category',
-                'products.unique_code','products.price_fabric','products.total')
+                'products.unique_code','products.price_fabric','products.total','products.fabric_weight')
             ->orderByDesc('created_at')
             ->limit(1)
             ->get();
@@ -146,11 +151,19 @@ class ProductController extends Controller
         $city = DB::table('shipping_address')->where('user_id',$id_user)->get();
         $city_destination =  $city[0]->cities_id;
         $alamat_toko = DB::table('alamat_toko')->first();
+        $getCourier = DB::table('shipping_address')->select('shipping_address.courier_code')
+            ->orderByDesc('created_at')->limit(1)->get();
+        $calculateCourier = $getCourier[0]->courier_code;
+        $calculateWeight = DB::table('products')
+            ->select('products.fabric_weight')->orderByDesc('created_at')->limit(1)->get();
+        $getFabricWeight = $calculateWeight[0]->fabric_weight;
+
         $cost = RajaOngkir::ongkosKirim([
             'origin'  => $alamat_toko->id,
             'destination' => $city_destination,
-            'weight' => 1000,
-            'courier' => 'pos'
+            'weight' => $getFabricWeight,
+//        'weight' =>5000,
+            'courier' => $calculateCourier,
         ])->get();
 
         $ongkir =  $cost[0]['costs'][0]['cost'][0]['value'];
@@ -164,17 +177,17 @@ class ProductController extends Controller
         return view('products.fabric.payment',$data);
     }
 
-    public function check_ongkir(Request $request)
-    {
-        $cost = RajaOngkir::ongkosKirim([
-            'origin'        => $request->city_origin,
-            'destination'   => $request->city_destination,
-            'weight'        => $request->weight,
-            'courier'       => $request->courier
-        ])->get();
-
-        return response()->json($cost);
-    }
+//    public function check_ongkir(Request $request)
+//    {
+//        $cost = RajaOngkir::ongkosKirim([
+//            'origin'        => $request->city_origin,
+//            'destination'   => $request->city_destination,
+//            'weight'        => $request->weight,
+//            'courier'       => $request->courier
+//        ])->get();
+//
+//        return response()->json($cost);
+//    }
 
     public function saveShippingDetail(Request $request){
         $add_shipping = new User();
@@ -269,10 +282,13 @@ class ProductController extends Controller
         return redirect()->route('mask.show.detail.pengiriman');
     }
 
+
     public function showMaskDetailPengiriman(){
 
         $id_user = \Auth::user()->id;
-        //ambil data alamat
+
+
+        $data['courier'] = Courier::all();
         $data['province'] = Province::all();
         $cekAlamat = DB::table('shipping_address')
             ->where('user_id',$id_user)
@@ -320,6 +336,8 @@ class ProductController extends Controller
         $city_destination =  $city[0]->cities_id;
 
         $alamat_toko = DB::table('alamat_toko')->first();
+
+//        $couriers = $courier[0]->courier_code;
 
         $cost = RajaOngkir::ongkosKirim([
             'origin'  => $alamat_toko->id,

@@ -39,8 +39,12 @@ class CreateProductsTable extends Migration
             $table->unsignedInteger('price_tshirt')->nullable();
             $table->unsignedInteger('price_backpack')->nullable();
             $table->unsignedInteger('total');
-            $table->integer('weigth')->nullable();
-            $table->integer('ongkir')->nullable();
+            $table->integer('fabric_weight')->nullable();
+            $table->integer('mask_weight')->nullable();
+            $table->integer('mug_weight')->nullable();
+            $table->integer('totebag_weight')->nullable();
+            $table->integer('tshirt_weight')->nullable();
+            $table->integer('backpack_weight')->nullable();
             $table->unsignedBigInteger('user_id');
 
             $table->timestamps();

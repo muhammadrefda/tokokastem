@@ -10,15 +10,10 @@ use Illuminate\Database\Eloquent\Model;
  * @method static create(array $all)
  * @property mixed image
  * @property mixed material
+ * @property float|int|mixed total
  */
 class Product extends Model
 {
-    const price_fabric = 10000;
-    const price_backpack = 50000;
-
-    const price_mask = 5000;
-
-
     /**
      * @var string[]
      */
@@ -51,13 +46,13 @@ class Product extends Model
         'price_tshirt',
         'price_backpack',
         'total',
-        'weigth',
-//        'ongkir',
-
+        'fabric_weight',
+        'mask_weight',
+        'mug_weight',
+        'totebag_weight',
+        'tshirt_weight',
+        'backpack_weight'
 ];
-//    public function displayFabricPrice(){
-//        return $this->price_fabric == Product::price_fabric;
-//    }
 
     public function order_details()
     {
@@ -66,30 +61,5 @@ class Product extends Model
 
     public function getTotalAttributes(){
         return $this->quantity * $this->price_fabric + $this->unique_code;
-    }
-
-
-    //qty * 5000 GRAM
-    public function getFabricWeightTotal(){
-        return $this->quantity * 5000;
-    }
-
-    public function getBagTotalAttributes(){
-        return $this->quantity * $this->price_backpack + $this->unique_code;
-    }
-
-    public function getMaskTotalAttributes(){
-        return $this->quantity * $this->price_mask + $this->unique_code;
-    }
-    public function getTotebagTotalAttributes(){
-        return $this->quantity * $this->price_totebag + $this->unique_code;
-    }
-
-    public function getTshirtTotalAttributes(){
-        return $this->quantity * $this->price_tshirt + $this->unique_code;
-    }
-
-    public function getMugTotalAttributes(){
-        return $this->quantity * $this->price_mug + $this->unique_code;
     }
 }

@@ -42,14 +42,13 @@
                     <div class="form-group">
                         <span class="aa-product-view-price"></span>
                         <input type="hidden" class="form-control" name="status" value="pending">
-
                     </div>
                     <div class="form-group">
                         <label>Catatan Untuk Admin</label>
                         <span class="aa-product-view-price"></span>
                         <textarea class="form-control" id="" cols="30" rows="10" name="note"></textarea>
                     </div>
-                    <input type="submit" name="submit" value="proses pesanan" class="btn btn-primary">
+                    <input type="submit" name="submit" value="proses pesanan" class="aa-add-to-cart-btn">
                 </div>
                 </form>
             </div>

@@ -8,8 +8,7 @@
             <div class="site-section">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-2"></div>
-                        <div class="col-md-8">
+                        <div class="col-md-12">
                             <div class="card">
                                 <div class="card-body">
                                     <form action="{{route('store.detail.pengiriman')}}" method="POST">
@@ -23,32 +22,32 @@
                                                 @endforeach
                                             </select>
                                         </div>
+
                                         <div class="form-grup">
                                             <label for="cities_id">Pilih Kota/Kabupaten</label>
                                             <select name="cities_id" id="cities_id" class="form-control">
                                             </select>
                                         </div>
+                                        <br>
                                         <div class="form-grup">
                                             <label for="">Alamat Lengkap</label>
-
                                             <textarea name="detail" class="form-control" placeholder="Kecamatan/Desa/Nama Jalan" id="" cols="30" rows="10"></textarea>
-
                                         </div>
-
+                                        <br>
                                         <div class="form-group">
-                                            <label for="">Pilih Ekspedisi</label>
-{{--                                            @foreach ($courier as $key => $value)--}}
+                                            <label>Pilih Kurir Pengiriman</label>
+                                            @foreach ($courier as $key => $value)
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="checkbox" id="courier-" name="courier[]" value="">
-                                                    <label class="form-check-label" for="courier-"></label>
+                                                    <!-- name="courier[]"-->
+                                                    <input class="form-check-input" type="checkbox" id="courier-{{ $key }}" name="courier_code"  value="{{ $value->code }}">
+                                                    <label class="form-check-label"  for="courier-{{ $key }}">{{ $value->title }}</label>
                                                 </div>
-{{--                                            @endforeach--}}
-
+                                            @endforeach
                                         </div>
 
                                         <br>
-                                        <div class="mt-4 text-right">
-                                            <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+                                        <div class="form-group text-right">
+                                            <button type="submit" class="aa-add-to-cart-btn">Submit</button>
                                         </div>
                                     </form>
                                 </div>

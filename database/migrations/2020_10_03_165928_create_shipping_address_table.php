@@ -18,6 +18,7 @@ class CreateShippingAddressTable extends Migration
             $table->integer('cities_id');
             $table->string('detail');
             $table->unsignedBigInteger('user_id');
+            $table->string('courier_code');
             $table->timestamps();
         });
     }
