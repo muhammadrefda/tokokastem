@@ -1,7 +1,5 @@
 @extends('layouts.master')
-
 @section('title','Homepage')
-
 @section('content')
 
     <section id="aa-product-details">
@@ -24,9 +22,8 @@
                                             </div>
                                             <div class="form-group">
                                                 <label>Design masker</label>
-
                                                 <span class="aa-product-view-price"></span>
-                                                <input type="file" class="form-control" name="design_right_mask"  required>
+                                                <input type="file" class="form-control" name="design_mask"  required>
                                             </div>
                                             <div class="form-group">
                                                 <input type="hidden" class="form-control" name="category" value="Masker">

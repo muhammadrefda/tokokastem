@@ -2,7 +2,6 @@
 @section('title','Payment')
 @section('content')
 
-    <!-- Cart view section -->
     <section id="checkout" >
         <div class="checkout-area">
             <div class="site-section">
@@ -33,6 +32,16 @@
                                             <textarea name="detail" class="form-control" placeholder="Kecamatan/Desa/Nama Jalan" id="" cols="30" rows="10"></textarea>
                                         </div>
                                         <br>
+                                        <div class="form-group">
+                                            <label>Pilih Kurir Pengiriman</label>
+                                            @foreach ($courier as $key => $value)
+                                                <div class="form-check form-check-inline">
+                                                    <!-- name="courier[]"-->
+                                                    <input class="form-check-input" type="checkbox" id="courier-{{ $key }}" name="courier_code"  value="{{ $value->code }}">
+                                                    <label class="form-check-label"  for="courier-{{ $key }}">{{ $value->title }}</label>
+                                                </div>
+                                            @endforeach
+                                        </div>
                                         <div class="mt-4 text-right">
                                             <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
                                         </div>
@@ -44,10 +53,8 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
-    <!-- / Cart view section -->
 @endsection
 @section('js')
     <script type="text/javascript">

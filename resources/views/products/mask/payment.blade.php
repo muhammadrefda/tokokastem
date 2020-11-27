@@ -27,7 +27,6 @@
                                         <td>{{$td->quantity}}</td>
                                         <td>{{number_format($td->price_mask)}}</td>
                                     </tr>
-
                                 </tbody>
                                 @endforeach
                                 <tfoot>
@@ -50,9 +49,11 @@
                                 </tfoot>
                             </table>
                         </div>
-                        <h4>setelah melakukan transfer, silahkan mengirim bukti pembayaran ke nomor berikut</h4>
                         <div class="aa-order-summary-area">
-                            <a class="" href="https://api.whatsapp.com/send?phone=81411165221&text=Saya%20ingin%20melakukan%20konfirmasi%20pembayaran"><b>0812345678976</b></a>
+                            <h4>Setelah melakukan transfer, silahkan mengirim bukti pembayaran ke nomor berikut</h4>
+                            <div class="col-md-offset-10">
+                                <a class="btn btn-primary" style="background-color: #F36365; color: #ffffff;" href="https://api.whatsapp.com/send?phone=81411165221&text=Saya%20ingin%20melakukan%20konfirmasi%20pembayaran"><b>0812345678976</b></a>
+                            </div>
                         </div>
                     </div>
                 </div>
