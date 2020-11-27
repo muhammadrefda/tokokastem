@@ -67,8 +67,12 @@ Route::prefix('product/mask')->middleware('auth')->group(function () {
 });
 
 Route::prefix('product/totebag')->middleware('auth')->group(function () {
+    Route::get('/design/front','FrontStore\ProductController@showFrontTotebag')->name('totebag.design.front');
+    Route::get('/design/back','FrontStore\ProductController@showBackTotebag')->name('totebag.design.back');
     Route::get('/detail/pesanan','FrontStore\ProductController@createTotebagOrder')->name('totebag.create.detail.order');
     Route::post('/detail/pesanan/create','FrontStore\ProductController@storeTotebagOrder')->name('totebag.store.detail.order');
+    Route::get('detail-pengiriman','FrontStore\ProductController@showTotebagDetailPengiriman')->name('totebag.show.detail.pengiriman');
+    Route::post('detail-pengiriman','FrontStore\ProductController@storeTotebagDetailPengiriman')->name('totebag.store.detail.pengiriman');
     Route::get('shipping-detail/','FrontStore\ProductController@showShippingTotebagDetail')->name('totebag.show.shipping.detail');
     Route::get('/design/front','FrontStore\ProductController@showFrontTotebag')->name('totebag.design.front');
     Route::get('/design/back','FrontStore\ProductController@showBackTotebag')->name('totebag.design.back');
@@ -77,6 +81,8 @@ Route::prefix('product/totebag')->middleware('auth')->group(function () {
 Route::prefix('product/tshirt')->middleware('auth')->group(function () {
     Route::get('/detail/pesanan','FrontStore\ProductController@createTshirtOrder')->name('tshirt.create.detail.order');
     Route::post('/detail/pesanan/create','FrontStore\ProductController@storeTshirtOrder')->name('tshirt.store.detail.order');
+    Route::get('detail-pengiriman','FrontStore\ProductController@showTshirtDetailPengiriman')->name('tshirt.show.detail.pengiriman');
+    Route::post('detail-pengiriman','FrontStore\ProductController@storeTshirtDetailPengiriman')->name('tshirt.store.detail.pengiriman');
     Route::get('shipping-detail/','FrontStore\ProductController@showShippingTshirtDetail')->name('tshirt.show.shipping.detail');
     Route::get('/design/front','FrontStore\ProductController@showFrontTshirt')->name('tshirt.design.front');
     Route::get('/design/back','FrontStore\ProductController@showBackTshirt')->name('tshirt.design.back');

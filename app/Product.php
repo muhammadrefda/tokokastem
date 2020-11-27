@@ -8,9 +8,6 @@ use Illuminate\Database\Eloquent\Model;
  * @method static findOrFail($product)
  * @method static where(string $string, int $id)
  * @method static create(array $all)
- * @property mixed image
- * @property mixed material
- * @property float|int|mixed total
  */
 class Product extends Model
 {
@@ -61,5 +58,25 @@ class Product extends Model
 
     public function getTotalAttributes(){
         return $this->quantity * $this->price_fabric + $this->unique_code;
+    }
+
+    public function getMaskTotalAttributes(){
+        return $this->quantity * $this->price_mask + $this->unique_code;
+    }
+
+    public function getTotebagTotalAttributes(){
+        return $this->quantity * $this->price_totebag + $this->unique_code;
+    }
+
+    public function getTshirtTotalAttributes(){
+        return $this->quantity * $this->price_tshirt + $this->unique_code;
+    }
+
+    public function getMugTotalAttributes(){
+        return $this->quantity * $this->price_mug + $this->unique_code;
+    }
+
+    public function getBagTotalAttributes(){
+        return $this->quantity * $this->price_bag + $this->unique_code;
     }
 }

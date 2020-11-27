@@ -2,7 +2,6 @@
 @section('title','Payment')
 @section('content')
 
-    <!-- Cart view section -->
     <section id="checkout" >
         <div class="checkout-area">
             <div class="site-section">
