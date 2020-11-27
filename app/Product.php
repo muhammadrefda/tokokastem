@@ -77,6 +77,6 @@ class Product extends Model
     }
 
     public function getBagTotalAttributes(){
-        return $this->quantity * $this->price_bag + $this->unique_code;
+        return $this->quantity * $this->price_backpack + $this->unique_code;
     }
 }

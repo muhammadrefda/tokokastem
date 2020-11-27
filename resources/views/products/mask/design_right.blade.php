@@ -133,7 +133,6 @@
     <link href="{{asset('css/bootstrap.css')}}" rel="stylesheet">
     <!-- SmartMenus jQuery Bootstrap Addon CSS -->
     <link href="{{asset('css/jquery.smartmenus.bootstrap.css')}}" rel="stylesheet">
-
 </head>
 
 

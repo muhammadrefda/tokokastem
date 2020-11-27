@@ -454,7 +454,7 @@
                         </div>
                     </ul>
                 </div>
-                <a href="{{route('mug.create.detail.order')}}" class="btn btn-primary">
+                <a href="{{route('mug.design.back')}}" class="btn btn-primary">
                     Proses Pesanan
                 </a>
             </div>

@@ -758,8 +758,21 @@ class ProductController extends Controller
         $new_product->user_id = Auth::user()->id;
         $new_product->unique_code = mt_rand(100,999);
         $new_product->quantity = $request->get('quantity');
-        $new_product->design_front_mug = $request->get('design_front_mug');
-        $new_product->design_back_mug = $request->get('design_back_mug');
+
+        $design_front_mug = $request->file('design_front_mug');
+
+        if($design_front_mug){
+            $design_front_mug_path = $design_front_mug->store('design_mug', 'public');
+            $new_product->design_front_mug = $design_front_mug_path;
+        }
+
+        $design_back_mug = $request->file('design_back_mug');
+
+        if($design_back_mug){
+            $design_back_mug_path = $design_back_mug->store('design_mug', 'public');
+            $new_product->design_back_mug = $design_back_mug_path;
+        }
+
         $new_product->category = $request->get('category');
         $new_product->size = $request->get('size');
         $new_product->material = $request->get('material');
@@ -767,6 +780,8 @@ class ProductController extends Controller
         $new_product->status = $request->get('status');
 
         $new_product->price_mug = 25000;
+        $new_product->mug_weight = 1500;
+
 
         $new_product->total = $new_product->getMugTotalAttributes();
 
@@ -775,16 +790,89 @@ class ProductController extends Controller
         return redirect()->route('mug.show.shipping.detail');
     }
 
+    public function showMugDetailPengiriman(){
+
+        $id_user = \Auth::user()->id;
+
+        $data['courier'] = Courier::all();
+        $data['province'] = Province::all();
+        $cekAlamat = DB::table('shipping_address')
+            ->where('user_id',$id_user)
+            ->count();
+
+        if( $cekAlamat > 0 ) {
+            $data['alamat'] = DB::table('shipping_address')
+                ->join('cities', 'cities.city_id', '=', 'shipping_address.cities_id')
+                ->join('provinces', 'provinces.province_id', '=', 'cities.province_id')
+                ->select('provinces.title as prov', 'cities.title as kota', 'shipping_address.*')
+                ->where('shipping_address.user_id', $id_user)
+                ->get();
+        }
+
+        return view('products.mug.detail_pengiriman',$data);
+    }
+
+
+    public function storeMugDetailPengiriman(Request $request){
+
+        ShippingAddress::create([
+            'cities_id'        => $request->cities_id,
+            'detail'           => $request->detail,
+            'user_id'          => \Auth::user()->id,
+            'courier_code'     => $request->courier_code
+
+        ]);
+
+        return redirect()->route('mug.show.shipping.detail');
+    }
+
     public function showShippingMugDetail(){
         $detail_order = DB::table('products')
             ->join('users','products.user_id','=','users.id')
             ->select('products.id', 'products.quantity','products.created_at','products.category',
-                'products.unique_code','products.price_mug','products.total')
+                'products.unique_code','products.price_mug','products.total','products.mug_weight')
             ->orderByDesc('created_at')
             ->limit(1)
             ->get();
 
-        return view('products.mug.payment', compact('detail_order'));
+        $id_user = \Auth::user()->id;
+
+        $city = DB::table('shipping_address')->where('user_id',$id_user)->get();
+
+        $city_destination =  $city[0]->cities_id;
+
+        $alamat_toko = DB::table('alamat_toko')->first();
+
+        $getCourier = DB::table('shipping_address')->select('shipping_address.courier_code')
+            ->orderByDesc('created_at')
+            ->limit(1)
+            ->get();
+
+        $calculateCourier = $getCourier[0]->courier_code;
+
+        $calculateWeight = DB::table('products')
+            ->select('products.mug_weight')
+            ->orderByDesc('created_at')
+            ->limit(1)
+            ->get();
+
+        $getMugWeight = $calculateWeight[0]->mug_weight;
+
+        $cost = RajaOngkir::ongkosKirim([
+            'origin'  => $alamat_toko->id,
+            'destination' => $city_destination,
+            'weight' => $getMugWeight,
+            'courier' => $calculateCourier,
+        ])->get();
+
+        $ongkir =  $cost[0]['costs'][0]['cost'][0]['value'];
+
+        $data = [
+            'ongkir' => $ongkir,
+            'detail_order' => $detail_order
+        ];
+
+        return view('products.mug.payment',$data);
     }
 
     public function saveShippingMugDetail(Request $request){
@@ -843,10 +931,18 @@ class ProductController extends Controller
     public function storeBagpackOrder(Request  $request){
 
         $new_product = new Product();
+
         $new_product->user_id = Auth::user()->id;
         $new_product->unique_code = mt_rand(100,999);
         $new_product->quantity = $request->get('quantity');
-        $new_product->design_backpack = $request->get('design_backpack');
+
+        $design_backpack = $request->file('design_bagpack');
+
+        if($design_backpack){
+            $design_backpack_path = $design_backpack->store('design_backpack', 'public');
+            $new_product->backpack = $design_backpack_path;
+        }
+
         $new_product->category = $request->get('category');
         $new_product->size = $request->get('size');
         $new_product->material = $request->get('material');
@@ -854,9 +950,48 @@ class ProductController extends Controller
 //        $new_product->proof_of_transaction = $request->get('proof_of_transaction');
         $new_product->status = $request->get('status');
         $new_product->price_backpack = 50000;
+        $new_product->backpack_weight = 2000;
+
         $new_product->total = $new_product->getBagTotalAttributes();
 
         $new_product->save();
+
+        return redirect()->route('backpack.show.detail.pengiriman');
+    }
+
+
+    public function showBackpackDetailPengiriman(){
+
+        $id_user = \Auth::user()->id;
+
+        $data['courier'] = Courier::all();
+        $data['province'] = Province::all();
+        $cekAlamat = DB::table('shipping_address')
+            ->where('user_id',$id_user)
+            ->count();
+
+        if( $cekAlamat > 0 ) {
+            $data['alamat'] = DB::table('shipping_address')
+                ->join('cities', 'cities.city_id', '=', 'shipping_address.cities_id')
+                ->join('provinces', 'provinces.province_id', '=', 'cities.province_id')
+                ->select('provinces.title as prov', 'cities.title as kota', 'shipping_address.*')
+                ->where('shipping_address.user_id', $id_user)
+                ->get();
+        }
+
+        return view('products.bag.detail_pengiriman',$data);
+    }
+
+
+    public function storeBackpackDetailPengiriman(Request $request){
+
+        ShippingAddress::create([
+            'cities_id'        => $request->cities_id,
+            'detail'           => $request->detail,
+            'user_id'          => \Auth::user()->id,
+            'courier_code'     => $request->courier_code
+
+        ]);
 
         return redirect()->route('bagpack.show.shipping.detail');
     }
@@ -866,12 +1001,49 @@ class ProductController extends Controller
         $detail_order = DB::table('products')
             ->join('users','products.user_id','=','users.id')
             ->select('products.id', 'products.quantity','products.created_at','products.category',
-                'products.unique_code','products.price_backpack','products.total')
+                'products.unique_code','products.price_backpack','products.total','products.backpack_weight')
             ->orderByDesc('created_at')
             ->limit(1)
             ->get();
 
-        return view('products.bag.payment', compact('detail_order'));
+        $id_user = \Auth::user()->id;
+
+        $city = DB::table('shipping_address')->where('user_id',$id_user)->get();
+
+        $city_destination =  $city[0]->cities_id;
+
+        $alamat_toko = DB::table('alamat_toko')->first();
+
+        $getCourier = DB::table('shipping_address')->select('shipping_address.courier_code')
+            ->orderByDesc('created_at')
+            ->limit(1)
+            ->get();
+
+        $calculateCourier = $getCourier[0]->courier_code;
+
+        $calculateWeight = DB::table('products')
+            ->select('products.backpack_weight')
+            ->orderByDesc('created_at')
+            ->limit(1)
+            ->get();
+
+        $getBackpackWeight = $calculateWeight[0]->backpack_weight;
+
+        $cost = RajaOngkir::ongkosKirim([
+            'origin'      => $alamat_toko->id,
+            'destination' => $city_destination,
+            'weight'      => $getBackpackWeight,
+            'courier'     => $calculateCourier
+        ])->get();
+
+        $ongkir =  $cost[0]['costs'][0]['cost'][0]['value'];
+
+        $data = [
+            'ongkir' => $ongkir,
+            'detail_order' => $detail_order
+        ];
+
+        return view('products.bag.payment', $data);
     }
 
     public function saveShippingBagpackDetail(Request $request){

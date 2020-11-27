@@ -91,6 +91,8 @@ Route::prefix('product/tshirt')->middleware('auth')->group(function () {
 Route::prefix('product/mug')->middleware('auth')->group(function () {
     Route::get('/detail/pesanan','FrontStore\ProductController@createMugOrder')->name('mug.create.detail.order');
     Route::post('/detail/pesanan/create','FrontStore\ProductController@storeMugOrder')->name('mug.store.detail.order');
+    Route::get('detail-pengiriman','FrontStore\ProductController@showMugDetailPengiriman')->name('mug.show.detail.pengiriman');
+    Route::post('detail-pengiriman','FrontStore\ProductController@storeMugDetailPengiriman')->name('mug.store.detail.pengiriman');
     Route::get('shipping-detail/','FrontStore\ProductController@showShippingMugDetail')->name('mug.show.shipping.detail');
     Route::get('/design/front','FrontStore\ProductController@showFrontMug')->name('mug.design.front');
     Route::get('/design/back','FrontStore\ProductController@showBackMug')->name('mug.design.back');
@@ -99,6 +101,8 @@ Route::prefix('product/mug')->middleware('auth')->group(function () {
 Route::prefix('product/bagpack')->middleware('auth')->group(function () {
     Route::get('/detail/pesanan','FrontStore\ProductController@createBagpackOrder')->name('bagpack.create.detail.order');
     Route::post('/detail/pesanan/create','FrontStore\ProductController@storeBagpackOrder')->name('bagpack.store.detail.order');
+    Route::get('detail-pengiriman','FrontStore\ProductController@showBackpackDetailPengiriman')->name('backpack.show.detail.pengiriman');
+    Route::post('detail-pengiriman','FrontStore\ProductController@storeBackpackDetailPengiriman')->name('backpack.store.detail.pengiriman');
     Route::get('shipping-detail/','FrontStore\ProductController@showShippingBagpackDetail')->name('bagpack.show.shipping.detail');
     Route::get('/design','FrontStore\ProductController@showBagpackDesain')->name('bagpack.design');
 });
