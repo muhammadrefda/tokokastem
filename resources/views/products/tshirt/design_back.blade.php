@@ -386,7 +386,7 @@
                 <div id="shirtDiv" class="page"
                      style="width: 530px; height: 630px; position: relative; background-color: rgb(255, 255, 255);">
                     <!--img id="tshirtFacing" src="img/crew_front.png"></img-->
-                    <img id="tshirtFacing" src="{{asset('img/masker_right.png')}}" alt="">
+                    <img id="tshirtFacing" src="{{asset('img/t-shirts/crew_back.png')}}" alt="">
                     {{--                    <img id="tshirtFacing" src="{{asset('img/t-shirts/crew_back.png')}}" alt="">--}}
 
 
@@ -454,7 +454,7 @@
                         </div>
                     </ul>
                 </div>
-                <a href="{{route('mask.create.detail.order')}}" class="btn btn-primary">
+                <a href="{{route('tshirt.create.detail.order')}}" class="btn btn-primary">
                     Proses Pesanan
                 </a>
             </div>
@@ -743,7 +743,7 @@
                 ;
             }, 1100);
             setTimeout(function () {
-                doc.save("Masker.pdf");
+                doc.save("Design T-Shirt Belakang.pdf");
                 $('.loading-blink').hide();
                 $('#test').empty();
             }, 1700);
