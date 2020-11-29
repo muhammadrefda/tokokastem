@@ -611,7 +611,7 @@ class ProductController extends Controller
 
         $new_product->save();
 
-        return redirect()->route('tshirt.show.shipping.detail');
+        return redirect()->route('tshirt.show.detail.pengiriman');
     }
 
     public function showShippingTshirtDetail(){
@@ -787,7 +787,7 @@ class ProductController extends Controller
 
         $new_product->save();
 
-        return redirect()->route('mug.show.shipping.detail');
+        return redirect()->route('mug.show.detail.pengiriman');
     }
 
     public function showMugDetailPengiriman(){

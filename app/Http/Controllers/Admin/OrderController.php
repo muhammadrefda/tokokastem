@@ -136,22 +136,88 @@ class OrderController extends Controller
         return view('admin.order.all_success',$data);
     }
 
-    /* Start Fabric Section */
-
-    public function displayFabricSuccessOrder(){
-
-        $orders = DB::table('products')
+    public function allOnProgressOrder(){
+        $fabrics = DB::table('products')
             ->join('users','products.user_id','=','users.id')
-            ->select('products.id', 'products.quantity', 'products.link_goggle_drive', 'products.type_fabric',
-                             'products.note', 'products.status',
-                             'products.unique_code', 'users.name', 'users.address', 'users.phone_number',
-                             'products.created_at')
-            ->where('status','=','Berhasil')
+            ->select('products.*','users.*')
+            ->where('status','=','On Progress')
             ->where('category','=','Kain')
             ->get();
 
-        return view('admin.order.fabric.success')->with(['orders' => $orders,]);
+        $masks = DB::table('products')
+            ->join('users','products.user_id','=','users.id')
+            ->select('products.id', 'products.quantity', 'products.design_mask', 'products.size',
+                'products.material', 'products.note', 'products.status','products.unique_code',
+                'users.name', 'users.address', 'users.phone_number', 'products.created_at')
+            ->where('status','=','On Progress')
+            ->where('category','=','Masker')
+            ->get();
+
+        $mugs = DB::table('products')
+            ->join('users','products.user_id','=','users.id')
+            ->select('products.id', 'products.quantity', 'products.design_front_mug', 'products.design_back_mug',
+                'products.size', 'products.material', 'products.note', 'products.status', 'products.unique_code',
+                'users.name', 'users.address', 'users.phone_number', 'products.created_at')
+            ->where('status','=','On Progress')
+            ->where('category','=','Mug')
+            ->get();
+
+        $tshirts = DB::table('products')
+            ->join('users','products.user_id','=','users.id')
+            ->select('products.id', 'products.quantity', 'products.design_front_tshirt', 'products.design_back_tshirt',
+                'products.size', 'products.material', 'products.note', 'products.status', 'products.unique_code',
+                'users.name', 'users.address', 'users.phone_number', 'products.created_at')
+            ->where('status','=','On Progress')
+            ->where('category','=','Tshirt')
+            ->get();
+
+        $totebags = DB::table('products')
+            ->join('users','products.user_id','=','users.id')
+            ->select('products.id', 'products.quantity', 'products.design_front_totebag', 'products.design_back_totebag',
+                'products.size', 'products.material', 'products.note', 'products.status', 'products.unique_code',
+                'users.name', 'users.address', 'users.phone_number', 'products.created_at')
+            ->where('status','=','On Progress')
+            ->where('category','=','Totebag')
+            ->get();
+
+        $backpacks = DB::table('products')
+            ->join('users','products.user_id','=','users.id')
+            ->select('products.id', 'products.quantity', 'products.design_backpack', 'products.size',
+                'products.material', 'products.note', 'products.status', 'products.unique_code',
+                'users.name', 'users.address', 'users.phone_number', 'products.created_at')
+            ->where('status','=','On Progress')
+            ->where('category','=','Tas')
+            ->get();
+
+
+        $data = [
+            'fabrics' => $fabrics,
+            'masks' => $masks,
+            'mugs' => $mugs,
+            'tshirts' => $tshirts,
+            'totebags' => $totebags,
+            'backpacks' => $backpacks,
+        ];
+
+        return view('admin.order.all_onprogress',$data);
     }
+
+    /* Start Fabric Section */
+
+//    public function displayFabricSuccessOrder(){
+//
+//        $orders = DB::table('products')
+//            ->join('users','products.user_id','=','users.id')
+//            ->select('products.id', 'products.quantity', 'products.link_goggle_drive', 'products.type_fabric',
+//                             'products.note', 'products.status',
+//                             'products.unique_code', 'users.name', 'users.address', 'users.phone_number',
+//                             'products.created_at')
+//            ->where('status','=','Berhasil')
+//            ->where('category','=','Kain')
+//            ->get();
+//
+//        return view('admin.order.fabric.success')->with(['orders' => $orders,]);
+//    }
 
 
     public function editFabricStatusOrder ($order)

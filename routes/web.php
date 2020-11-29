@@ -34,6 +34,8 @@ Route::get('cara-pesan', function (){
     return view('cara-pesan');
 })->name('cara-pesan');
 
+Route::get('/status-pesanan', 'FrontStore\StatusOrderController@index')->name('status.order.index');
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 
@@ -124,6 +126,7 @@ Route::post('alamat-toko/simpan','Admin\AlamatController@simpanalamat')->name('a
 
 Route::prefix('daftar-orderan')->middleware('admin')->group(function (){
     Route::get('pending','Admin\OrderController@allPendingOrder')->name('order.pending.index');
+    Route::get('on-progress','Admin\OrderController@allOnProgressOrder')->name('order.onprogress.index');
     Route::get('sukses','Admin\OrderController@allSuccessOrder')->name('order.success.index');
 });
 

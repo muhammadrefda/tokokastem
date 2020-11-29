@@ -48,6 +48,9 @@
                     <a class="collapse-item" href="{{route('order.pending.index')}}">Pending</a>
                 </div>
                 <div class="bg-white py-2 collapse-inner rounded">
+                    <a class="collapse-item" href="{{route('order.onprogress.index')}}">On Progress</a>
+                </div>
+                <div class="bg-white py-2 collapse-inner rounded">
                     <a class="collapse-item" href="{{route('order.success.index')}}">Berhasil</a>
                 </div>
             </div>

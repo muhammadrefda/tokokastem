@@ -30,6 +30,7 @@
                     <select class="form-control" name="status">
                         <option value="{{$order->status}}">pending</option>
                         <option value="Berhasil">Berhasil</option>
+                        <option value="On Progress">On Progress</option>
                     </select>
                 </div>
                 <button type="submit" name="submit" class="btn btn-primary">Ubah Status</button>

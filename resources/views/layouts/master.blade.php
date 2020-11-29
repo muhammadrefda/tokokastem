@@ -156,6 +156,7 @@
                         <li><a href="/">Home</a></li>
                         <li><a href="/cara-pesan">Cara Pesan</a>
                         <li><a href="/kontak-kami">Kontak Kami</a></li>
+                        <li><a href="{{route('status.order.index')}}">Cek Status Pesananmu</a></li>
                     </ul>
                 </div>
                 <!--/.nav-collapse -->
@@ -304,6 +305,9 @@
             </div>
         </div>
     </div>
+
+
+
 </footer>
 <!-- / footer -->
 
