@@ -698,7 +698,7 @@
                 ;
             }, 1100);
             setTimeout(function () {
-                doc.save("Masker.pdf");
+                doc.save("Desain Masker.pdf");
                 $('.loading-blink').hide();
                 $('#test').empty();
             }, 1700);

@@ -436,7 +436,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="{{route('totebag.create.detail.order')}}" class="aa-add-to-cart-btn">
+                <a href="{{route('totebag.design.back')}}" class="aa-add-to-cart-btn">
                     Proses Pesanan
                 </a>
             </div>
