@@ -18,12 +18,24 @@
                                             <div class="form-group">
                                                 <label>Jumlah Pesanan</label>
                                                 <span class="aa-product-view-price"></span>
-                                                <input type="text" class="form-control" name="quantity" required placeholder="minimal 1">
+                                                <input type="text" class="form-control @error('quantity') is-invalid @enderror"
+                                                       name="quantity" placeholder="minimal 1">
+                                                @error('quantity')
+                                                <span class="invalid-feedback" role="alert" style="color: red">
+                                        <strong>{{ $message }}</strong>
+                                                </span>
+                                                @enderror
                                             </div>
                                             <div class="form-group">
                                                 <label>Design masker</label>
                                                 <span class="aa-product-view-price"></span>
-                                                <input type="file" class="form-control" name="design_mask"  required>
+                                                <input type="file" class="form-control @error('design_mask') is-invalid @enderror"
+                                                       name="design_mask">
+                                                @error('design_mask')
+                                                <span class="invalid-feedback" role="alert" style="color: red">
+                                        <strong>{{ $message }}</strong>
+                                                </span>
+                                                @enderror
                                             </div>
                                             <div class="form-group">
                                                 <input type="hidden" class="form-control" name="category" value="Masker">
@@ -35,7 +47,7 @@
                                         <div class="form-group">
                                             <label>Ukuran</label>
                                             <span class="aa-product-view-price"></span>
-                                            <select class="form-control" name="size" required>
+                                            <select class="form-control" name="size">
                                                 <option value="All Size">All Size</option>
                                             </select>
                                         </div>

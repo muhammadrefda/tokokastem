@@ -28,10 +28,10 @@
                                             </select>
                                         </div>
                                         <br>
-                                        <div class="form-grup">
-                                            <label for="">Alamat Lengkap</label>
-                                            <textarea name="detail" class="form-control" placeholder="Kecamatan/Desa/Nama Jalan" id="" cols="30" rows="10"></textarea>
-                                        </div>
+{{--                                        <div class="form-grup">--}}
+{{--                                            <label for="">Alamat Lengkap</label>--}}
+{{--                                            <textarea name="detail" class="form-control" placeholder="Kecamatan/Desa/Nama Jalan" id="" cols="30" rows="10"></textarea>--}}
+{{--                                        </div>--}}
                                         <br>
                                         <div class="form-group">
                                             <label>Pilih Kurir Pengiriman</label>
@@ -51,7 +51,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-2"></div>
                     </div>
                 </div>
             </div>

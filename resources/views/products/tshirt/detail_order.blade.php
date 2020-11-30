@@ -20,17 +20,32 @@
                                             <div class="form-group">
                                                 <label>Jumlah Pesanan</label>
                                                 <span class="aa-product-view-price"></span>
-                                                <input type="text" class="form-control" name="quantity" required>
+                                                <input type="text" class="form-control @error('quantity') is-invalid @enderror"
+                                                       name="quantity">
+                                                @error('quantity')
+                                                <span class="invalid-feedback" role="alert" style="color: red">
+                                        <strong>{{ $message }}</strong></span>
+                                                @enderror
                                             </div>
                                             <div class="form-group">
                                                 <label>Design kaos depan</label>
                                                 <span class="aa-product-view-price"></span>
-                                                <input type="file" class="form-control" name="design_front_tshirt" required>
+                                                <input type="file" class="form-control @error('design_front_tshirt') is-invalid @enderror"
+                                                       name="design_front_tshirt">
+                                                @error('design_front_tshirt')
+                                                <span class="invalid-feedback" role="alert" style="color: red">
+                                        <strong>{{ $message }}</strong></span>
+                                                @enderror
                                             </div>
                                             <div class="form-group">
                                                 <label>Design kaos belakang</label>
                                                 <span class="aa-product-view-price"></span>
-                                                <input type="file" class="form-control" name="design_back_tshirt" required>
+                                                <input type="file" class="form-control @error('design_back_tshirt') is-invalid @enderror"
+                                                       name="design_back_tshirt">
+                                                @error('design_back_tshirt')
+                                                <span class="invalid-feedback" role="alert" style="color: red">
+                                        <strong>{{ $message }}</strong></span>
+                                                @enderror
                                             </div>
                                             <div class="form-group">
                                                 <input type="hidden" class="form-control" name="category" value="Tshirt">

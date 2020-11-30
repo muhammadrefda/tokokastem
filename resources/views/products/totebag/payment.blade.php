@@ -51,6 +51,7 @@
                         <div class="aa-order-summary-area">
                             <h4>Setelah melakukan transfer, silahkan mengirim bukti pembayaran ke nomor berikut</h4>
                             <div class="col-md-offset-10">
+                                <img src="{{asset('img/WhatsApp_Logo_1.png')}}">
                                 <a class="btn btn-primary" style="background-color: #F36365; color: #ffffff;" href="https://api.whatsapp.com/send?phone=81411165221&text=Saya%20ingin%20melakukan%20konfirmasi%20pembayaran"><b>0812345678976</b></a>
                             </div>
                         </div>

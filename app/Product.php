@@ -48,13 +48,19 @@ class Product extends Model
         'mug_weight',
         'totebag_weight',
         'tshirt_weight',
-        'backpack_weight'
+        'backpack_weight',
+//        'shipping_address_id',
 ];
 
-    public function order_details()
-    {
-        return $this->hasMany('App\OrderDetails','product_id','id');
-    }
+//    public function order_details()
+//    {
+//        return $this->hasMany('App\OrderDetails','product_id','id');
+//    }
+
+//    public function shipping_address(){
+//        return $this->belongsTo(ShippingAddress::class,'shipping_address_id');
+//    }
+
 
     public function getTotalAttributes(){
         return $this->quantity * $this->price_fabric + $this->unique_code;

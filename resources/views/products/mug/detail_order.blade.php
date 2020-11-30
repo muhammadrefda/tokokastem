@@ -20,17 +20,32 @@
                                             <div class="form-group">
                                                 <label>Jumlah Pesanan</label>
                                                 <span class="aa-product-view-price"></span>
-                                                <input type="text" class="form-control" name="quantity" required>
+                                                <input type="text" class="form-control @error('quantity') is-invalid @enderror"
+                                                       name="quantity">
+                                                @error('quantity')
+                                                <span class="invalid-feedback" role="alert" style="color: red">
+                                        <strong>{{ $message }}</strong></span>
+                                                @enderror
                                             </div>
                                             <div class="form-group">
                                                 <label>Design mug depan</label>
                                                 <span class="aa-product-view-price"></span>
-                                                <input type="file" class="form-control" name="design_front_mug" required>
+                                                <input type="file" class="form-control @error('design_front_mug') is-invalid @enderror"
+                                                       name="design_front_mug">
+                                                @error('design_front_mug')
+                                                <span class="invalid-feedback" role="alert" style="color: red">
+                                        <strong>{{ $message }}</strong></span>
+                                                @enderror
                                             </div>
                                             <div class="form-group">
                                                 <label>Design mug belakang</label>
                                                 <span class="aa-product-view-price"></span>
-                                                <input type="file" class="form-control" name="design_back_mug" required>
+                                                <input type="file" class="form-control @error('design_back_mug') is-invalid @enderror"
+                                                       name="design_back_mug">
+                                                @error('design_back_mug')
+                                                <span class="invalid-feedback" role="alert" style="color: red">
+                                        <strong>{{ $message }}</strong></span>
+                                                @enderror
                                             </div>
                                             <div class="form-group">
                                                 <input type="hidden" class="form-control" name="category" value="Mug">

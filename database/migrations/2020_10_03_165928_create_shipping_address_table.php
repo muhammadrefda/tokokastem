@@ -16,7 +16,7 @@ class CreateShippingAddressTable extends Migration
         Schema::create('shipping_address', function (Blueprint $table) {
             $table->id();
             $table->integer('cities_id');
-            $table->string('detail');
+            $table->string('detail')->nullable();
             $table->unsignedBigInteger('user_id');
             $table->string('courier_code');
             $table->timestamps();

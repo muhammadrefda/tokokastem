@@ -10,10 +10,9 @@
                 <div class="col-md-12">
                     <div class="aa-blog-archive-area">
                         <h2> Status Pesananmu:
-                          <b> @foreach($status as $sts )
-                                        {{$sts->status}}
+                           @foreach($status as $sts )
+                                <b>*{{$sts->status}}*</b>
                                     @endforeach
-                            </b>
                         </h2>
 
 

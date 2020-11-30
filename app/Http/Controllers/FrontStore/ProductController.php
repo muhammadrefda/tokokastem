@@ -12,6 +12,7 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 use Kavist\RajaOngkir\Facades\RajaOngkir;
 
 
@@ -78,6 +79,12 @@ class ProductController extends Controller
 
     public function storeProductOrder(Request  $request){
 
+
+        Validator::make($request->all(),[
+            "quantity" => "required|digits_between:1,6",
+            "link_goggle_drive" => "required"
+        ])->validate();
+
         $new_product = new Product();
 
         $new_product->user_id = Auth::user()->id;
@@ -98,7 +105,8 @@ class ProductController extends Controller
 
         $new_product->save();
 
-        return redirect()->route('fabric.show.detail.pengiriman');
+
+        return redirect()->route('fabric.show.detail.pengiriman')->with('status','Pesanan Berhasil dibuat');
     }
 
     public function showDetailPengiriman(){
@@ -127,7 +135,7 @@ class ProductController extends Controller
 
          ShippingAddress::create([
              'cities_id'        => $request->cities_id,
-             'detail'           => $request->detail,
+//             'detail'           => $request->detail,
              'user_id'          => \Auth::user()->id,
              'courier_code'     => $request->courier_code
          ]);
@@ -242,6 +250,12 @@ class ProductController extends Controller
     }
 
     public function storeMaskOrder(Request  $request){
+
+        Validator::make($request->all(),[
+            "quantity" => "required|digits_between:1,6",
+            "design_mask" => "required"
+        ])->validate();
+
         $new_product = new Product();
 
         $new_product->user_id = Auth::user()->id;
@@ -411,6 +425,13 @@ class ProductController extends Controller
     }
 
     public function storeTotebagOrder(Request  $request){
+
+        Validator::make($request->all(),[
+            "quantity" => "required|digits_between:1,6",
+            "design_front_totebag" => "required",
+            "design_back_totebag" => "required"
+        ])->validate();
+
         $new_product = new Product();
 
         $new_product->user_id = Auth::user()->id;
@@ -579,6 +600,13 @@ class ProductController extends Controller
     }
 
     public function storeTshirtOrder(Request  $request){
+
+        Validator::make($request->all(),[
+            "quantity" => "required|digits_between:1,6",
+            "design_front_tshirt" => "required",
+            "design_back_tshirt" => "required"
+        ])->validate();
+
         $new_product = new Product();
 
         $new_product->user_id = Auth::user()->id;
@@ -753,6 +781,13 @@ class ProductController extends Controller
     }
 
     public function storeMugOrder(Request  $request){
+
+        Validator::make($request->all(),[
+            "quantity" => "required|digits_between:1,6",
+            "design_front_mug" => "required",
+            "design_back_mug" => "required"
+        ])->validate();
+
         $new_product = new Product();
 
         $new_product->user_id = Auth::user()->id;
@@ -930,24 +965,28 @@ class ProductController extends Controller
 
     public function storeBagpackOrder(Request  $request){
 
+        Validator::make($request->all(),[
+            "quantity" => "required|digits_between:1,6",
+            "design_backpack" => "required"
+        ])->validate();
+
         $new_product = new Product();
 
         $new_product->user_id = Auth::user()->id;
         $new_product->unique_code = mt_rand(100,999);
         $new_product->quantity = $request->get('quantity');
 
-        $design_backpack = $request->file('design_bagpack');
+        $design_backpack = $request->file('design_backpack');
 
         if($design_backpack){
             $design_backpack_path = $design_backpack->store('design_backpack', 'public');
-            $new_product->backpack = $design_backpack_path;
+            $new_product->design_backpack = $design_backpack_path;
         }
 
         $new_product->category = $request->get('category');
         $new_product->size = $request->get('size');
         $new_product->material = $request->get('material');
         $new_product->note = $request->get('note');
-//        $new_product->proof_of_transaction = $request->get('proof_of_transaction');
         $new_product->status = $request->get('status');
         $new_product->price_backpack = 50000;
         $new_product->backpack_weight = 2000;

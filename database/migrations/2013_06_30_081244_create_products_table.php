@@ -46,10 +46,12 @@ class CreateProductsTable extends Migration
             $table->integer('tshirt_weight')->nullable();
             $table->integer('backpack_weight')->nullable();
             $table->unsignedBigInteger('user_id');
-
+//            $table->unsignedBigInteger('shipping_address_id')->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete("cascade")->onUpdate("cascade");
+//            $table->foreign('shipping_address_id')->references('id')->on('shipping_address')->onDelete("cascade")->onUpdate("cascade");
+
         });
     }
 

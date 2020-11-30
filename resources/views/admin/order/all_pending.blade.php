@@ -13,13 +13,14 @@
                     <tr>
                         <th>No.</th>
                         <th>Jumlah Pembelian</th>
-                        <th>Kategori</th>
+                        <th>Kode Pembayaran</th>
                         <th>Link Desain</th>
                         <th>Jenis Kain</th>
                         <th>Catatan</th>
                         <th>Status</th>
                         <th>Nama Pembeli</th>
                         <th>Alamat Pengiriman</th>
+                        <th>No. Hp Pembeli</th>
                         <th>Tanggal Transaksi</th>
                         <td colspan="2">Action</td>
                     </tr>
@@ -27,9 +28,9 @@
                     <tbody>
                     @foreach($fabrics as $fabric)
                         <tr>
-                            <td>{{$loop->iteration}}</td>
+                        <td>{{$loop->iteration}}</td>
                             <td>{{$fabric->quantity}}</td>
-                            <td>{{$fabric->category}}</td>
+                            <td>{{$fabric->unique_code}}</td>
                             <td style="column-width: 50rem;">
                                 <a target="_blank"
                                     href="{{$fabric->link_goggle_drive}}">Klik Link Desain Disini</a></td>
@@ -44,6 +45,7 @@
                             <td>
                                 {{$fabric->address}}
                             </td>
+                            <td>{{$fabric->phone_number}}</td>
                             <td>
                                 {{date('m-d', strtotime($fabric->created_at))}}
                             </td>
@@ -71,7 +73,6 @@
                     <tr>
                         <th>No.</th>
                         <th>Jumlah Pembelian</th>
-                        <th>Kategori</th>
                         <th>Kode Pembayaran</th>
                         <th>Desain Masker</th>
                         <th>Ukuran Masker</th>
@@ -86,11 +87,11 @@
                     </tr>
                     </thead>
                     <tbody>
+
                     @foreach($masks as $mask)
                         <tr>
                             <td>{{$loop->iteration}}</td>
                             <td>{{$mask->quantity}}</td>
-                            <td>{{$mask->category}}</td>
                             <td>{{$mask->unique_code}}</td>
                             <td>@if($mask->design_mask)
                                     <iframe src="{{asset('storage/' .$mask->design_mask)}}" ></iframe>
@@ -106,7 +107,7 @@
                             <td>
                                 <a href="{{route('mask.order.edit',['order' => $mask->id])}}" class="btn btn-primary">edit</a>
                             </td>
-                        </tr>
+</tr>
                     @endforeach
                     </tbody>
                 </table>
@@ -127,7 +128,6 @@
                     <tr>
                         <th>No.</th>
                         <th>Jumlah Pembelian</th>
-                        <th>Kategori</th>
                         <th>Kode Pembayaran</th>
                         <th>Desain Depan Mug</th>
                         <th>Desain Belakang Mug</th>
@@ -151,7 +151,6 @@
                             <td>
                                 {{$mug->quantity}}
                             </td>
-                            <td>{{$mug->category}}</td>
                             <td>{{$mug->unique_code}}</td>
                             <td>
                                 @if($mug->design_front_mug)
@@ -209,7 +208,6 @@
                         <th>No.</th>
                         <th>Jumlah Pembelian</th>
                         <th>Kode Pembayaran</th>
-                        <th>Kategori</th>
                         <th>Desain Depan Totebag</th>
                         <th>Desain Belakang Totebag</th>
                         <th>Ukuran Totebag</th>
@@ -226,12 +224,8 @@
                     <tbody>
                     @foreach($totebags as $totebag)
                         <tr>
-                            <td>
-                                {{$loop->iteration}}
-                            </td>
-                            <td>
-                                {{$totebag->quantity}}
-                            </td>
+                            <td>{{$loop->iteration}}</td>
+                            <td>{{$totebag->quantity}}</td>
                             <td>{{$totebag->unique_code}}</td>
                             <td>
                                 @if($totebag->design_front_totebag)
@@ -244,25 +238,13 @@
                                 @endif
                             </td>
                             <td>{{$totebag->size}}</td>
-                            <td>
-                                {{$totebag->material}}
-                            </td>
-                            <td>
-                                {{$totebag->note}}
-                            </td>
-                            <td>
-                                {{$totebag->status}}
-                            </td>
-                            <td>
-                                {{$totebag->name}}
-                            </td>
-                            <td>
-                                {{$totebag->address}}
-                            </td>
+                            <td>{{$totebag->material}}</td>
+                            <td>{{$totebag->note}}</td>
+                            <td>{{$totebag->status}}</td>
+                            <td>{{$totebag->name}}</td>
+                            <td>{{$totebag->address}}</td>
                             <td>{{$totebag->phone_number}}</td>
-                            <td>
-                                {{date('m-d', strtotime($totebag->created_at))}}
-                            </td>
+                            <td>{{date('m-d', strtotime($totebag->created_at))}}</td>
                             <td>
                                 <a href="{{route('totebag.order.edit',['order' => $totebag->id])}}" class="btn btn-primary">edit</a>
                             </td>
@@ -290,7 +272,6 @@
                         <th>No.</th>
                         <th>Jumlah Pembelian</th>
                         <th>Kode Pembayaran</th>
-                        <th>Kategori</th>
                         <th>Desain Depan Kaos</th>
                         <th>Desain Belakang Kaos</th>
                         <th>Ukuran Kaos</th>
@@ -307,20 +288,9 @@
                     <tbody>
                     @foreach($tshirts as $tshirt)
                         <tr>
-                            <td>
-                                {{$loop->iteration}}
-                            </td>
-                            <td>
-                                {{$tshirt->quantity}}
-                            </td>
+                            <td>{{$loop->iteration}}</td>
+                            <td>{{$tshirt->quantity}}</td>
                             <td>{{$tshirt->unique_code}}</td>
-                            <td>{{$tshirt->category}}</td>
-                            <td>
-                                {{$tshirt->design_front_tshirt}}
-                            </td>
-                            <td>
-                                {{$tshirt->design_back_tshirt}}
-                            </td>
                             <td>
                                 @if($tshirt->design_front_tshirt)
                                     <iframe src="{{asset('storage/' .$tshirt->design_front_tshirt)}}" ></iframe>
@@ -375,10 +345,8 @@
                     <thead>
                     <tr>
                         <th>No.</th>
-
                         <th>Jumlah Pembelian</th>
                         <th>Kode Pembayaran</th>
-                        <th>Kategori</th>
                         <th>Desain Tas</th>
                         <th>Ukuran Tas</th>
                         <th>Bahan Tas</th>
@@ -387,6 +355,7 @@
                         <th>Nama Pembeli</th>
                         <th>Alamat Pengiriman</th>
                         <th>No. Hp Pembeli</th>
+                        <th>Jenis Kurir</th>
 
                         <th>Tanggal Transaksi</th>
                         <td colspan="2">Action</td>
@@ -402,7 +371,6 @@
                                 {{$order->quantity}}
                             </td>
                             <td>{{$order->unique_code}}</td>
-                            <td>{{$order->category}}</td>
                             <td>
                                 @if($order->design_backpack)
                                     <iframe src="{{asset('storage/' .$order->design_backpack)}}" ></iframe>
@@ -425,6 +393,7 @@
                                 {{$order->address}}
                             </td>
                             <td>{{$order->phone_number}}</td>
+                            <td>jne</td>
 
                             <td>
                                 {{date('m-d', strtotime($order->created_at))}}

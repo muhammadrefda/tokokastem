@@ -375,7 +375,6 @@
                      background-color: rgb(255, 255, 255);">
                     <img id="tshirtFacing" src="{{asset('img/backpack.png')}}" alt="">
 
-
                     <div id="drawingArea"
                          style="position: absolute;
                                 top: 0px;
@@ -437,7 +436,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="{{route('mask.create.detail.order')}}" class="aa-add-to-cart-btn">
+                <a href="{{route('bagpack.create.detail.order')}}" class="aa-add-to-cart-btn">
                     Proses Pesanan
                 </a>
             </div>

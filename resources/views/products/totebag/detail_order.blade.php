@@ -20,17 +20,32 @@
                                         <div class="form-group">
                                             <label>Jumlah Pesanan</label>
                                             <span class="aa-product-view-price"></span>
-                                            <input type="text" class="form-control" name="quantity" required placeholder="minimal 1">
+                                            <input type="text" class="form-control @error('quantity') is-invalid @enderror"
+                                                   name="quantity"  placeholder="minimal 1">
+                                            @error('quantity')
+                                            <span class="invalid-feedback" role="alert" style="color: red">
+                                        <strong>{{ $message }}</strong></span>
+                                            @enderror
                                         </div>
                                         <div class="form-group">
                                             <label>Design totebag depan</label>
                                             <span class="aa-product-view-price"></span>
-                                            <input type="file" class="form-control" name="design_front_totebag" required>
+                                            <input type="file" class="form-control @error('design_front_totebag') is-invalid @enderror"
+                                                   name="design_front_totebag">
+                                            @error('design_front_totebag')
+                                            <span class="invalid-feedback" role="alert" style="color: red">
+                                        <strong>{{ $message }}</strong></span>
+                                            @enderror
                                         </div>
                                         <div class="form-group">
                                             <label>Design totebag belakang</label>
                                             <span class="aa-product-view-price"></span>
-                                            <input type="file" class="form-control" name="design_back_totebag" required>
+                                            <input type="file" class="form-control @error('design_back_totebag') is-invalid @enderror"
+                                                   name="design_back_totebag">
+                                            @error('design_back_totebag')
+                                            <span class="invalid-feedback" role="alert" style="color: red">
+                                        <strong>{{ $message }}</strong></span>
+                                            @enderror
                                         </div>
                                         <div class="form-group">
                                             <input type="hidden" class="form-control" name="category" value="Totebag">
@@ -43,8 +58,8 @@
                                             <div class="form-group">
                                                 <label>Ukuran</label>
                                                 <span class="aa-product-view-price"></span>
-                                                <select class="form-control" id="exampleFormControlSelect1" name="size" disabled>
-                                                    <option>All Size</option>
+                                                <select class="form-control" name="size">
+                                                    <option value="All Size">All Size</option>
                                                 </select>
                                             </div>
 

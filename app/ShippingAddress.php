@@ -13,4 +13,12 @@ class ShippingAddress extends Model
         return $this->hasOne('App\Courier','courier_code','code');
     }
 
+    public function getCourier(){
+        return $this->courier_code;
+    }
+
+    public function product(){
+        return $this->hasMany('App\Product','shipping_address_id');
+    }
+
 }

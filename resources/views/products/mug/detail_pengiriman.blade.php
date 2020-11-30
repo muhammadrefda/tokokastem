@@ -7,8 +7,8 @@
             <div class="site-section">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-2"></div>
-                        <div class="col-md-8">
+                        <h2>Detail Pengiriman</h2>
+                        <div class="col-md-12">
                             <div class="card">
                                 <div class="card-body">
                                     <form action="{{route('mug.store.detail.pengiriman')}}" method="POST">
@@ -27,10 +27,10 @@
                                             <select name="cities_id" id="cities_id" class="form-control">
                                             </select>
                                         </div>
-                                        <div class="form-grup">
-                                            <label for="">Alamat Lengkap</label>
-                                            <textarea name="detail" class="form-control" placeholder="Kecamatan/Desa/Nama Jalan" id="" cols="30" rows="10"></textarea>
-                                        </div>
+{{--                                        <div class="form-grup">--}}
+{{--                                            <label for="">Alamat Lengkap</label>--}}
+{{--                                            <textarea name="detail" class="form-control" placeholder="Kecamatan/Desa/Nama Jalan" id="" cols="30" rows="10"></textarea>--}}
+{{--                                        </div>--}}
                                         <br>
                                         <div class="form-group">
                                             <label>Pilih Kurir Pengiriman</label>
@@ -42,14 +42,13 @@
                                                 </div>
                                             @endforeach
                                         </div>
-                                        <div class="mt-4 text-right">
-                                            <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+                                        <div class="form-group text-right">
+                                            <button type="submit" class="aa-add-to-cart-btn">Submit</button>
                                         </div>
                                     </form>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-2"></div>
                     </div>
                 </div>
             </div>

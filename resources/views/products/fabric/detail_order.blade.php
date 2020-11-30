@@ -12,12 +12,24 @@
                             <div class="form-group">
                                 <label>Jumlah Pesanan</label>
                                 <span class="aa-product-view-price"></span>
-                                <input type="text" class="form-control" name="quantity" placeholder="minimal 1" required>
+                                <input type="text" class="form-control @error('quantity') is-invalid @enderror"
+                                       name="quantity" placeholder="minimal 1">
+                                @error('quantity')
+                                <span class="invalid-feedback" role="alert" style="color: red">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                             <div class="form-group">
                                     <label>Masukkan link google drive desain kamu disini</label>
                                     <span class="aa-product-view-price"></span>
-                                    <input type="text" class="form-control" name="link_goggle_drive" placeholder="link google drive" required>
+                                    <input type="text" class="form-control @error('link_goggle_drive') is-invalid @enderror"
+                                           name="link_goggle_drive" placeholder="link google drive">
+                                @error('link_goggle_drive')
+                                <span class="invalid-feedback" role="alert" style="color: red">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <span class="aa-product-view-price"></span>
