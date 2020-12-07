@@ -332,6 +332,7 @@
 <!-- Custom js -->
 <script src="{{asset('js/custom.js')}}"></script>
 @yield('js')
+    @include('sweetalert::alert')
 </body>
 
 </html>

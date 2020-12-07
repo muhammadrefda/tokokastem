@@ -66,5 +66,6 @@
             </div>
             </div>
     </section>
+    @include('sweetalert::alert')
     <!-- / Subscribe section -->
 @endsection

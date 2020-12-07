@@ -17,7 +17,6 @@
                         <th>Link Desain</th>
                         <th>Jenis Kain</th>
                         <th>Catatan</th>
-                        <th>Status</th>
                         <th>Nama Pembeli</th>
                         <th>Alamat Pengiriman</th>
                         <th>No. Hp Pembeli</th>
@@ -36,9 +35,6 @@
                                     href="{{$fabric->link_goggle_drive}}">Klik Link Desain Disini</a></td>
                             <td>{{$fabric->type_fabric}}</td>
                             <td style="column-width: auto;">{{$fabric->note}}</td>
-                            <td>
-                                {{$fabric->status}}
-                            </td>
                             <td>
                                 {{$fabric->name}}
                             </td>
@@ -78,7 +74,6 @@
                         <th>Ukuran Masker</th>
                         <th>Bahan Masker</th>
                         <th>Catatan</th>
-                        <th>Status</th>
                         <th>Nama Pembeli</th>
                         <th>Alamat Pengiriman</th>
                         <th>No. Hp Pembeli</th>
@@ -99,7 +94,6 @@
                             <td>{{$mask->size}}</td>
                             <td>{{$mask->material}}</td>
                             <td>{{$mask->note}}</td>
-                            <td>{{$mask->status}}</td>
                             <td>{{$mask->name}}</td>
                             <td>{{$mask->address}}</td>
                             <td>{{$mask->phone_number}}</td>
@@ -134,7 +128,6 @@
                         <th>Ukuran Mug</th>
                         <th>Bahan Mug</th>
                         <th>Catatan</th>
-                        <th>Status</th>
                         <th>Nama Pembeli</th>
                         <th>Alamat Pengiriman</th>
                         <th>No. Hp Pembeli</th>
@@ -168,9 +161,6 @@
                             </td>
                             <td>
                                 {{$mug->note}}
-                            </td>
-                            <td>
-                                {{$mug->status}}
                             </td>
                             <td>
                                 {{$mug->name}}
@@ -213,7 +203,6 @@
                         <th>Ukuran Totebag</th>
                         <th>Jenis Bahan</th>
                         <th>Catatan</th>
-                        <th>Status</th>
                         <th>Nama Pembeli</th>
                         <th>Alamat Pengiriman</th>
                         <th>No. Hp Pembeli</th>
@@ -240,7 +229,6 @@
                             <td>{{$totebag->size}}</td>
                             <td>{{$totebag->material}}</td>
                             <td>{{$totebag->note}}</td>
-                            <td>{{$totebag->status}}</td>
                             <td>{{$totebag->name}}</td>
                             <td>{{$totebag->address}}</td>
                             <td>{{$totebag->phone_number}}</td>
@@ -277,7 +265,6 @@
                         <th>Ukuran Kaos</th>
                         <th>Jenis Bahan</th>
                         <th>Catatan</th>
-                        <th>Status</th>
                         <th>Nama Pembeli</th>
                         <th>Alamat Pengiriman</th>
                         <th>No. Hp Pembeli</th>
@@ -307,9 +294,6 @@
                             </td>
                             <td>
                                 {{$tshirt->note}}
-                            </td>
-                            <td>
-                                {{$tshirt->status}}
                             </td>
                             <td>
                                 {{$tshirt->name}}
@@ -351,7 +335,6 @@
                         <th>Ukuran Tas</th>
                         <th>Bahan Tas</th>
                         <th>Catatan</th>
-                        <th>Status</th>
                         <th>Nama Pembeli</th>
                         <th>Alamat Pengiriman</th>
                         <th>No. Hp Pembeli</th>
@@ -382,9 +365,6 @@
                             </td>
                             <td>
                                 {{$order->note}}
-                            </td>
-                            <td>
-                                {{$order->status}}
                             </td>
                             <td>
                                 {{$order->name}}

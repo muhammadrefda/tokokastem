@@ -13,7 +13,6 @@
                     <tr>
                         <th>No.</th>
                         <th>Jumlah Pembelian</th>
-                        <th>Kategori</th>
                         <th>Link Desain</th>
                         <th>Jenis Kain</th>
                         <th>Catatan</th>
@@ -29,7 +28,6 @@
                         <tr>
                             <td>{{$loop->iteration}}</td>
                             <td>{{$fabric->quantity}}</td>
-                            <td>{{$fabric->category}}</td>
                             <td style="column-width: 50rem;"><a target="_blank" href="{{$fabric->link_goggle_drive}}">
                                     Klik Link Desain Disini</a></td>
                             <td>{{$fabric->type_fabric}}</td>
@@ -70,10 +68,8 @@
                     <tr>
                         <th>No.</th>
                         <th>Jumlah Pembelian</th>
-                        <th>Kategori</th>
                         <th>Kode Pembayaran</th>
-                        <th>Desain Kiri Masker</th>
-                        <th>Desain Kanan Masker</th>
+                        <th>Desain Masker</th>
                         <th>Ukuran Masker</th>
                         <th>Bahan Masker</th>
                         <th>Catatan</th>
@@ -90,13 +86,9 @@
                         <tr>
                             <td>{{$loop->iteration}}</td>
                             <td>{{$mask->quantity}}</td>
-                            <td>{{$mask->category}}</td>
                             <td>{{$mask->unique_code}}</td>
-                            <td>@if($mask->design_left_mask)
-                                    <iframe src="{{asset('storage/' .$mask->design_left_mask)}}" ></iframe>
-                                @endif</td>
-                            <td>@if($mask->design_right_mask)
-                                    <iframe src="{{asset('storage/' .$mask->design_right_mask)}}"></iframe>
+                            <td>@if($mask->design_mask)
+                                    <iframe src="{{asset('storage/' .$mask->design_mask)}}" ></iframe>
                                 @endif</td>
                             <td>{{$mask->size}}</td>
                             <td>{{$mask->material}}</td>
@@ -130,7 +122,6 @@
                     <tr>
                         <th>No.</th>
                         <th>Jumlah Pembelian</th>
-                        <th>Kategori</th>
                         <th>Kode Pembayaran</th>
                         <th>Desain Depan Mug</th>
                         <th>Desain Belakang Mug</th>
@@ -150,7 +141,6 @@
                         <tr>
                             <td>{{$loop->iteration}}</td>
                             <td>{{$mug->quantity}}</td>
-                            <td>{{$mug->category}}</td>
                             <td>{{$mug->unique_code}}</td>
                             <td>
                                 @if($mug->design_front_mug)
@@ -194,7 +184,6 @@
                     <tr>
                         <th>No.</th>
                         <th>Jumlah Pembelian</th>
-                        <th>Kategori</th>
                         <th>Kode Pembayaran</th>
                         <th>Desain Depan Totebag</th>
                         <th>Desain Belakang Totebag</th>
@@ -214,7 +203,6 @@
                         <tr>
                             <td>{{$loop->iteration}}</td>
                             <td>{{$totebag->quantity}}</td>
-                            <td>{{$totebag->category}}</td>
                             <td>{{$totebag->unique_code}}</td>
                             <td>
                                 @if($totebag->design_front_totebag)
@@ -259,7 +247,6 @@
                     <tr>
                         <th>No.</th>
                         <th>Jumlah Pembelian</th>
-                        <th>Kategori</th>
                         <th>Kode Pembayaran</th>
                         <th>Desain Depan Kaos</th>
                         <th>Desain Belakang Kaos</th>
@@ -279,7 +266,6 @@
                         <tr>
                             <td>{{$loop->iteration}}</td>
                             <td>{{$tshirt->quantity}}</td>
-                            <td>{{$tshirt->category}}</td>
                             <td>{{$tshirt->unique_code}}</td>
                             <td>{{$tshirt->design_front_tshirt}}</td>
                             <td>{{$tshirt->design_back_tshirt}}</td>
@@ -326,7 +312,6 @@
                     <tr>
                         <th>No.</th>
                         <th>Jumlah Pembelian</th>
-                        <th>Kategori</th>
                         <th>Kode Pembayaran</th>
                         <th>Desain Tas</th>
                         <th>Ukuran Tas</th>
@@ -346,7 +331,6 @@
                             <td>{{$loop->iteration}}</td>
                             <td>{{$order->quantity}}</td>
                             <td>{{$order->unique_code}}</td>
-                            <td>{{$order->category}}</td>
                             <td>
                                 @if($order->design_backpack)
                                     <iframe src="{{asset('storage/' .$order->design_backpack)}}" ></iframe>

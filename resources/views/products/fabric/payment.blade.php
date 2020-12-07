@@ -27,6 +27,9 @@
                                         </tr>
                                     </tbody>
                                     @endforeach
+{{--                                    @foreach($calculateCourier as $c)--}}
+{{--                                        <tr><td>{{$c->courier_code}}</td></tr>--}}
+{{--                                    @endforeach--}}
                                     <tfoot>
                                     <tr>
                                         <th colspan="2">Kode Unik</th>

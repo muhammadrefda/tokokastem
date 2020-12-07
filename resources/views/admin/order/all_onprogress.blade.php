@@ -13,7 +13,6 @@
                     <tr>
                         <th>No.</th>
                         <th>Jumlah Pembelian</th>
-                        <th>Kategori</th>
                         <th>Link Desain</th>
                         <th>Jenis Kain</th>
                         <th>Catatan</th>
@@ -70,10 +69,8 @@
                     <tr>
                         <th>No.</th>
                         <th>Jumlah Pembelian</th>
-                        <th>Kategori</th>
-                        <th>Kode Pembayaran</th>
-                        <th>Desain Kiri Masker</th>
-                        <th>Desain Kanan Masker</th>
+                            <th>Kode Pembayaran</th>
+                        <th>Desain Masker</th>
                         <th>Ukuran Masker</th>
                         <th>Bahan Masker</th>
                         <th>Catatan</th>
@@ -90,13 +87,9 @@
                         <tr>
                             <td>{{$loop->iteration}}</td>
                             <td>{{$mask->quantity}}</td>
-                            <td>{{$mask->category}}</td>
                             <td>{{$mask->unique_code}}</td>
-                            <td>@if($mask->design_left_mask)
-                                    <iframe src="{{asset('storage/' .$mask->design_left_mask)}}" ></iframe>
-                                @endif</td>
-                            <td>@if($mask->design_right_mask)
-                                    <iframe src="{{asset('storage/' .$mask->design_right_mask)}}"></iframe>
+                            <td>@if($mask->design_mask)
+                                    <iframe src="{{asset('storage/' .$mask->design_mask)}}" ></iframe>
                                 @endif</td>
                             <td>{{$mask->size}}</td>
                             <td>{{$mask->material}}</td>
@@ -130,7 +123,6 @@
                     <tr>
                         <th>No.</th>
                         <th>Jumlah Pembelian</th>
-                        <th>Kategori</th>
                         <th>Kode Pembayaran</th>
                         <th>Desain Depan Mug</th>
                         <th>Desain Belakang Mug</th>
@@ -194,7 +186,6 @@
                     <tr>
                         <th>No.</th>
                         <th>Jumlah Pembelian</th>
-                        <th>Kategori</th>
                         <th>Kode Pembayaran</th>
                         <th>Desain Depan Totebag</th>
                         <th>Desain Belakang Totebag</th>
@@ -259,7 +250,6 @@
                     <tr>
                         <th>No.</th>
                         <th>Jumlah Pembelian</th>
-                        <th>Kategori</th>
                         <th>Kode Pembayaran</th>
                         <th>Desain Depan Kaos</th>
                         <th>Desain Belakang Kaos</th>
@@ -326,7 +316,6 @@
                     <tr>
                         <th>No.</th>
                         <th>Jumlah Pembelian</th>
-                        <th>Kategori</th>
                         <th>Kode Pembayaran</th>
                         <th>Desain Tas</th>
                         <th>Ukuran Tas</th>

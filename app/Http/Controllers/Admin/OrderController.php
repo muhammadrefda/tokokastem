@@ -25,18 +25,10 @@ class OrderController extends Controller
 
         $masks = DB::table('products')
             ->join('users','products.user_id','=','users.id')
-//            ->join('shipping_address','products.shipping_address_id','=','shipping_address.id')
             ->select('products.*', 'users.*')
             ->where('status','=','pending')
             ->where('category','=','Masker')
             ->get();
-//        $cek = DB::table('shipping_address')->select('*')
-//            ->orderBy('user_id')
-//            ->orderBy('created_at')
-//            ->get();
-
-
-//        $detailMaskShipping = Product::with(['shipping_address.courier_code'])->get();
 
         $mugs = DB::table('products')
             ->join('users','products.user_id','=','users.id')
@@ -68,7 +60,6 @@ class OrderController extends Controller
 
         $data = [
             'fabrics' => $fabrics,
-//            'cek' => $cek,
             'masks' => $masks,
             'mugs' => $mugs,
             'tshirts' => $tshirts,

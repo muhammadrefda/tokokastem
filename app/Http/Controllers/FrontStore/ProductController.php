@@ -79,7 +79,6 @@ class ProductController extends Controller
 
     public function storeProductOrder(Request  $request){
 
-
         Validator::make($request->all(),[
             "quantity" => "required|digits_between:1,6",
             "link_goggle_drive" => "required"
@@ -103,10 +102,11 @@ class ProductController extends Controller
 
         $new_product->total = $new_product->getTotalAttributes();
 
+
         $new_product->save();
 
 
-        return redirect()->route('fabric.show.detail.pengiriman')->with('status','Pesanan Berhasil dibuat');
+        return redirect()->route('fabric.show.detail.pengiriman')->with('success','Pesanan Berhasil dibuat');
     }
 
     public function showDetailPengiriman(){
@@ -127,8 +127,7 @@ class ProductController extends Controller
                 ->where('shipping_address.user_id', $id_user)
                 ->get();
         }
-
-        return view('products.fabric.detail_pengiriman',$data);
+        return view('products.fabric.detail_pengiriman',$data)->with('success','Pesanan Berhasil dibuat');
     }
 
     public function storeDetailPengiriman(Request $request){
@@ -168,6 +167,9 @@ class ProductController extends Controller
 
         $calculateCourier = $getCourier[0]->courier_code;
 
+        $displayCourierType = DB::table('shipping_address')
+            ->select('courier_code')->first();
+
         $calculateWeight = DB::table('products')
             ->select('products.fabric_weight')
             ->orderByDesc('created_at')
@@ -187,7 +189,7 @@ class ProductController extends Controller
 
         $data = [
             'ongkir' => $ongkir,
-//            'alamat' => $alamat_user,
+//            'calculateCourier' => $calculateCourier,
             'detail_order' => $detail_order
         ];
 
