@@ -30,6 +30,8 @@ class User extends Authenticatable
         'phone_number',
         'is_admin',
         'alamat_id',
+        'cities_id',
+        'courier_code',
     ];
 
     /**
@@ -49,4 +51,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function product(){
+        return $this->belongsTo(Product::class);
+    }
 }

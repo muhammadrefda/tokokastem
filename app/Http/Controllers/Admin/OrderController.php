@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 //use Intervention\Image\Image;
 use Image;
+use Kavist\RajaOngkir\Facades\RajaOngkir;
 
 class OrderController extends Controller
 {
@@ -16,12 +17,48 @@ class OrderController extends Controller
 
     public function allPendingOrder (){
 
+
+//        $city = DB::table('users')->get();
+
+//        $city_destination =  $city[0]->cities_id;
+
+//        $alamat_toko = DB::table('alamat_toko')->first();
+
+//        $getCourier = DB::table('users')->select('users.courier_code')
+//            ->orderByDesc('created_at')
+//            ->limit(1)
+//            ->get();
+
+//        $calculateCourier = $getCourier[0]->courier_code;
+
+//        $calculateWeight = DB::table('products')
+//            ->select('products.fabric_weight')
+//            ->orderByDesc('created_at')
+//            ->limit(1)
+//            ->get();
+
+//        $getFabricWeight = $calculateWeight[0]->fabric_weight;
+
+//        $cost = RajaOngkir::ongkosKirim([
+//            'origin'  => $alamat_toko->id,
+//            'destination' => $city_destination,
+//            'weight' => $getFabricWeight,
+//            'courier' => $calculateCourier,
+//        ])->get();
+
+//        $ongkir =  $cost[0]['costs'][0]['cost'][0]['value'];
+
+
+
         $fabrics = DB::table('products')
             ->join('users','products.user_id','=','users.id')
             ->select('products.*','users.*')
             ->where('status','=','pending')
             ->where('category','=','Kain')
             ->get();
+
+
+
 
         $masks = DB::table('products')
             ->join('users','products.user_id','=','users.id')
@@ -65,6 +102,7 @@ class OrderController extends Controller
             'tshirts' => $tshirts,
             'totebags' => $totebags,
             'backpacks' => $backpacks,
+//            'ongkir' => $ongkir,
         ];
 
         return view('admin.order.all_pending',$data);

@@ -22,7 +22,10 @@ class CreateUsersTable extends Migration
             $table->string('address',1000)->nullable();
             $table->string('phone_number')->nullable();
             $table->boolean('is_admin')->nullable();
-
+            $table->integer('cities_id')->nullable();
+//            $table->integer('province_id')->nullable();
+            $table->string('detail')->nullable();
+            $table->string('courier_code')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

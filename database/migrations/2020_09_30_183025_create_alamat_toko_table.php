@@ -18,6 +18,7 @@ class CreateAlamatTokoTable extends Migration
             $table->integer('city_id');
             $table->string('detail');
             $table->timestamps();
+//            $table->foreign('city_id')->references('id')->on('cities')->cascadeOnUpdate()->cascadeOnDelete();
         });
     }
 

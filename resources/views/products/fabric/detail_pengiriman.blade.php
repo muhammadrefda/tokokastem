@@ -11,8 +11,9 @@
                             <h2>Detail Pengiriman</h2>
                             <div class="card">
                                 <div class="card-body">
-                                    <form action="{{route('store.detail.pengiriman')}}" method="POST">
+                                    <form action="{{route('update.detail.pengiriman', $order->id)}}" method="POST">
                                         @csrf
+                                        @method('patch')
                                         <div class="form-group">
                                             <label for="">Pilih Provinsi</label>
                                             <select name="province_id" id="province_id" class="form-control">

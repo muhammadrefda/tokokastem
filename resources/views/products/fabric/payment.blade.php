@@ -16,6 +16,7 @@
                                         <th>Produk</th>
                                         <th>Qty </th>
                                         <th>Harga Satuan</th>
+{{--                                        <th>Tipe Kurir</th>--}}
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -27,9 +28,6 @@
                                         </tr>
                                     </tbody>
                                     @endforeach
-{{--                                    @foreach($calculateCourier as $c)--}}
-{{--                                        <tr><td>{{$c->courier_code}}</td></tr>--}}
-{{--                                    @endforeach--}}
                                     <tfoot>
                                     <tr>
                                         <th colspan="2">Kode Unik</th>
@@ -51,8 +49,9 @@
                                 </table>
                             </div>
                             <div class="aa-order-summary-area">
+                                <a href="{{route('fabric.print.invoice')}}" class="btn btn-info">Cetak Invoice</a>
                                 <h4>Setelah melakukan transfer, silahkan mengirim bukti pembayaran ke nomor berikut</h4>
-                                <div class="col-md-offset-10">
+                                <div class="">
                                     <img src="{{asset('img/WhatsApp_Logo_1.png')}}">
                                 <a class="btn btn-primary" style="background-color: #F36365; color: #ffffff;"
                                    href="https://api.whatsapp.com/send?phone=81411165221&text=Saya%20ingin%20melakukan%20konfirmasi%20pembayaran">

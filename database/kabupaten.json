@@ -1,2016 +1,2016 @@
 [
     {
-        "code": "1",
+        "cities_id": "1",
         "title": "Kab. Aceh Barat",
         "province_code": "21"
     },
     {
-        "code": "2",
+        "cities_id": "2",
         "title": "Kab. Aceh Barat Daya",
         "province_code": "21"
     },
     {
-        "code": "3",
+        "cities_id": "3",
         "title": "Kab. Aceh Besar",
         "province_code": "21"
     },
     {
-        "code": "4",
+        "cities_id": "4",
         "title": "Kab. Aceh Jaya",
         "province_code": "21"
     },
     {
-        "code": "5",
+        "cities_id": "5",
         "title": "Kab. Aceh Selatan",
         "province_code": "21"
     },
     {
-        "code": "6",
+        "cities_id": "6",
         "title": "Kab. Aceh Singkil",
         "province_code": "21"
     },
     {
-        "code": "7",
+        "cities_id": "7",
         "title": "Kab. Aceh Tamiang",
         "province_code": "21"
     },
     {
-        "code": "8",
+        "cities_id": "8",
         "title": "Kab. Aceh Tengah",
         "province_code": "21"
     },
     {
-        "code": "9",
+        "cities_id": "9",
         "title": "Kab. Aceh Tenggara",
         "province_code": "21"
     },
     {
-        "code": "10",
+        "cities_id": "10",
         "title": "Kab. Aceh Timur",
         "province_code": "21"
     },
     {
-        "code": "11",
+        "cities_id": "11",
         "title": "Kab. Aceh Utara",
         "province_code": "21"
     },
     {
-        "code": "12",
+        "cities_id": "12",
         "title": "Kab. Agam",
         "province_code": "32"
     },
     {
-        "code": "13",
+        "cities_id": "13",
         "title": "Kab. Alor",
         "province_code": "23"
     },
     {
-        "code": "15",
+        "cities_id": "15",
         "title": "Kab. Asahan",
         "province_code": "34"
     },
     {
-        "code": "16",
+        "cities_id": "16",
         "title": "Kab. Asmat",
         "province_code": "24"
     },
     {
-        "code": "17",
+        "cities_id": "17",
         "title": "Kab. Badung",
         "province_code": "1"
     },
     {
-        "code": "18",
+        "cities_id": "18",
         "title": "Kab. Balangan",
         "province_code": "13"
     },
     {
-        "code": "22",
+        "cities_id": "22",
         "title": "Kab. Bandung",
         "province_code": "9"
     },
     {
-        "code": "24",
+        "cities_id": "24",
         "title": "Kab. Bandung Barat",
         "province_code": "9"
     },
     {
-        "code": "25",
+        "cities_id": "25",
         "title": "Kab. Banggai",
         "province_code": "29"
     },
     {
-        "code": "26",
+        "cities_id": "26",
         "title": "Kab. Banggai Kepulauan",
         "province_code": "29"
     },
     {
-        "code": "27",
+        "cities_id": "27",
         "title": "Kab. Bangka",
         "province_code": "2"
     },
     {
-        "code": "28",
+        "cities_id": "28",
         "title": "Kab. Bangka Barat",
         "province_code": "2"
     },
     {
-        "code": "29",
+        "cities_id": "29",
         "title": "Kab. Bangka Selatan",
         "province_code": "2"
     },
     {
-        "code": "30",
+        "cities_id": "30",
         "title": "Kab. Bangka Tengah",
         "province_code": "2"
     },
     {
-        "code": "31",
+        "cities_id": "31",
         "title": "Kab. Bangkalan",
         "province_code": "11"
     },
     {
-        "code": "32",
+        "cities_id": "32",
         "title": "Kab. Bangli",
         "province_code": "1"
     },
     {
-        "code": "33",
+        "cities_id": "33",
         "title": "Kab. Banjar",
         "province_code": "13"
     },
     {
-        "code": "37",
+        "cities_id": "37",
         "title": "Kab. Banjarnegara",
         "province_code": "10"
     },
     {
-        "code": "38",
+        "cities_id": "38",
         "title": "Kab. Bantaeng",
         "province_code": "28"
     },
     {
-        "code": "39",
+        "cities_id": "39",
         "title": "Kab. Bantul",
         "province_code": "5"
     },
     {
-        "code": "40",
+        "cities_id": "40",
         "title": "Kab. Banyuasin",
         "province_code": "33"
     },
     {
-        "code": "41",
+        "cities_id": "41",
         "title": "Kab. Banyumas",
         "province_code": "10"
     },
     {
-        "code": "42",
+        "cities_id": "42",
         "title": "Kab. Banyuwangi",
         "province_code": "11"
     },
     {
-        "code": "43",
+        "cities_id": "43",
         "title": "Kab. Barito Kuala",
         "province_code": "13"
     },
     {
-        "code": "44",
+        "cities_id": "44",
         "title": "Kab. Barito Selatan",
         "province_code": "14"
     },
     {
-        "code": "45",
+        "cities_id": "45",
         "title": "Kab. Barito Timur",
         "province_code": "14"
     },
     {
-        "code": "46",
+        "cities_id": "46",
         "title": "Kab. Barito Utara",
         "province_code": "14"
     },
     {
-        "code": "47",
+        "cities_id": "47",
         "title": "Kab. Barru",
         "province_code": "28"
     },
     {
-        "code": "49",
+        "cities_id": "49",
         "title": "Kab. Batang",
         "province_code": "10"
     },
     {
-        "code": "50",
+        "cities_id": "50",
         "title": "Kab. Batang Hari",
         "province_code": "8"
     },
     {
-        "code": "52",
+        "cities_id": "52",
         "title": "Kab. Batu Bara",
         "province_code": "34"
     },
     {
-        "code": "54",
+        "cities_id": "54",
         "title": "Kab. Bekasi",
         "province_code": "9"
     },
     {
-        "code": "56",
+        "cities_id": "56",
         "title": "Kab. Belitung",
         "province_code": "2"
     },
     {
-        "code": "57",
+        "cities_id": "57",
         "title": "Kab. Belitung Timur",
         "province_code": "2"
     },
     {
-        "code": "58",
+        "cities_id": "58",
         "title": "Kab. Belu",
         "province_code": "23"
     },
     {
-        "code": "59",
+        "cities_id": "59",
         "title": "Kab. Bener Meriah",
         "province_code": "21"
     },
     {
-        "code": "60",
+        "cities_id": "60",
         "title": "Kab. Bengkalis",
         "province_code": "26"
     },
     {
-        "code": "61",
+        "cities_id": "61",
         "title": "Kab. Bengkayang",
         "province_code": "12"
     },
     {
-        "code": "63",
+        "cities_id": "63",
         "title": "Kab. Bengkulu Selatan",
         "province_code": "4"
     },
     {
-        "code": "64",
+        "cities_id": "64",
         "title": "Kab. Bengkulu Tengah",
         "province_code": "4"
     },
     {
-        "code": "65",
+        "cities_id": "65",
         "title": "Kab. Bengkulu Utara",
         "province_code": "4"
     },
     {
-        "code": "66",
+        "cities_id": "66",
         "title": "Kab. Berau",
         "province_code": "15"
     },
     {
-        "code": "67",
+        "cities_id": "67",
         "title": "Kab. Biak Numfor",
         "province_code": "24"
     },
     {
-        "code": "68",
+        "cities_id": "68",
         "title": "Kab. Bima",
         "province_code": "22"
     },
     {
-        "code": "71",
+        "cities_id": "71",
         "title": "Kab. Bintan",
         "province_code": "17"
     },
     {
-        "code": "72",
+        "cities_id": "72",
         "title": "Kab. Bireuen",
         "province_code": "21"
     },
     {
-        "code": "74",
+        "cities_id": "74",
         "title": "Kab. Blitar",
         "province_code": "11"
     },
     {
-        "code": "76",
+        "cities_id": "76",
         "title": "Kab. Blora",
         "province_code": "10"
     },
     {
-        "code": "77",
+        "cities_id": "77",
         "title": "Kab. Boalemo",
         "province_code": "7"
     },
     {
-        "code": "78",
+        "cities_id": "78",
         "title": "Kab. Bogor",
         "province_code": "9"
     },
     {
-        "code": "80",
+        "cities_id": "80",
         "title": "Kab. Bojonegoro",
         "province_code": "11"
     },
     {
-        "code": "81",
+        "cities_id": "81",
         "title": "Kab. Bolaang Mongondow (Bolmong)",
         "province_code": "31"
     },
     {
-        "code": "82",
+        "cities_id": "82",
         "title": "Kab. Bolaang Mongondow Selatan",
         "province_code": "31"
     },
     {
-        "code": "83",
+        "cities_id": "83",
         "title": "Kab. Bolaang Mongondow Timur",
         "province_code": "31"
     },
     {
-        "code": "84",
+        "cities_id": "84",
         "title": "Kab. Bolaang Mongondow Utara",
         "province_code": "31"
     },
     {
-        "code": "85",
+        "cities_id": "85",
         "title": "Kab. Bombana",
         "province_code": "30"
     },
     {
-        "code": "86",
+        "cities_id": "86",
         "title": "Kab. Bondowoso",
         "province_code": "11"
     },
     {
-        "code": "87",
+        "cities_id": "87",
         "title": "Kab. Bone",
         "province_code": "28"
     },
     {
-        "code": "88",
+        "cities_id": "88",
         "title": "Kab. Bone Bolango",
         "province_code": "7"
     },
     {
-        "code": "90",
+        "cities_id": "90",
         "title": "Kab. Boven Digoel",
         "province_code": "24"
     },
     {
-        "code": "91",
+        "cities_id": "91",
         "title": "Kab. Boyolali",
         "province_code": "10"
     },
     {
-        "code": "92",
+        "cities_id": "92",
         "title": "Kab. Brebes",
         "province_code": "10"
     },
     {
-        "code": "94",
+        "cities_id": "94",
         "title": "Kab. Buleleng",
         "province_code": "1"
     },
     {
-        "code": "95",
+        "cities_id": "95",
         "title": "Kab. Bulukumba",
         "province_code": "28"
     },
     {
-        "code": "96",
+        "cities_id": "96",
         "title": "Kab. Bulungan (Bulongan)",
         "province_code": "16"
     },
     {
-        "code": "97",
+        "cities_id": "97",
         "title": "Kab. Bungo",
         "province_code": "8"
     },
     {
-        "code": "98",
+        "cities_id": "98",
         "title": "Kab. Buol",
         "province_code": "29"
     },
     {
-        "code": "99",
+        "cities_id": "99",
         "title": "Kab. Buru",
         "province_code": "19"
     },
     {
-        "code": "100",
+        "cities_id": "100",
         "title": "Kab. Buru Selatan",
         "province_code": "19"
     },
     {
-        "code": "101",
+        "cities_id": "101",
         "title": "Kab. Buton",
         "province_code": "30"
     },
     {
-        "code": "102",
+        "cities_id": "102",
         "title": "Kab. Buton Utara",
         "province_code": "30"
     },
     {
-        "code": "103",
+        "cities_id": "103",
         "title": "Kab. Ciamis",
         "province_code": "9"
     },
     {
-        "code": "104",
+        "cities_id": "104",
         "title": "Kab. Cianjur",
         "province_code": "9"
     },
     {
-        "code": "105",
+        "cities_id": "105",
         "title": "Kab. Cilacap",
         "province_code": "10"
     },
     {
-        "code": "108",
+        "cities_id": "108",
         "title": "Kab. Cirebon",
         "province_code": "9"
     },
     {
-        "code": "110",
+        "cities_id": "110",
         "title": "Kab. Dairi",
         "province_code": "34"
     },
     {
-        "code": "111",
+        "cities_id": "111",
         "title": "Kab. Deiyai (Deliyai)",
         "province_code": "24"
     },
     {
-        "code": "112",
+        "cities_id": "112",
         "title": "Kab. Deli Serdang",
         "province_code": "34"
     },
     {
-        "code": "113",
+        "cities_id": "113",
         "title": "Kab. Demak",
         "province_code": "10"
     },
     {
-        "code": "116",
+        "cities_id": "116",
         "title": "Kab. Dharmasraya",
         "province_code": "32"
     },
     {
-        "code": "117",
+        "cities_id": "117",
         "title": "Kab. Dogiyai",
         "province_code": "24"
     },
     {
-        "code": "118",
+        "cities_id": "118",
         "title": "Kab. Dompu",
         "province_code": "22"
     },
     {
-        "code": "119",
+        "cities_id": "119",
         "title": "Kab. Donggala",
         "province_code": "29"
     },
     {
-        "code": "121",
+        "cities_id": "121",
         "title": "Kab. Empat Lawang",
         "province_code": "33"
     },
     {
-        "code": "122",
+        "cities_id": "122",
         "title": "Kab. Ende",
         "province_code": "23"
     },
     {
-        "code": "123",
+        "cities_id": "123",
         "title": "Kab. Enrekang",
         "province_code": "28"
     },
     {
-        "code": "124",
+        "cities_id": "124",
         "title": "Kab. Fakfak",
         "province_code": "25"
     },
     {
-        "code": "125",
+        "cities_id": "125",
         "title": "Kab. Flores Timur",
         "province_code": "23"
     },
     {
-        "code": "126",
+        "cities_id": "126",
         "title": "Kab. Garut",
         "province_code": "9"
     },
     {
-        "code": "127",
+        "cities_id": "127",
         "title": "Kab. Gayo Lues",
         "province_code": "21"
     },
     {
-        "code": "128",
+        "cities_id": "128",
         "title": "Kab. Gianyar",
         "province_code": "1"
     },
     {
-        "code": "129",
+        "cities_id": "129",
         "title": "Kab. Gorontalo",
         "province_code": "7"
     },
     {
-        "code": "131",
+        "cities_id": "131",
         "title": "Kab. Gorontalo Utara",
         "province_code": "7"
     },
     {
-        "code": "132",
+        "cities_id": "132",
         "title": "Kab. Gowa",
         "province_code": "28"
     },
     {
-        "code": "133",
+        "cities_id": "133",
         "title": "Kab. Gresik",
         "province_code": "11"
     },
     {
-        "code": "134",
+        "cities_id": "134",
         "title": "Kab. Grobogan",
         "province_code": "10"
     },
     {
-        "code": "135",
+        "cities_id": "135",
         "title": "Kab. Gunung Kidul",
         "province_code": "5"
     },
     {
-        "code": "136",
+        "cities_id": "136",
         "title": "Kab. Gunung Mas",
         "province_code": "14"
     },
     {
-        "code": "138",
+        "cities_id": "138",
         "title": "Kab. Halmahera Barat",
         "province_code": "20"
     },
     {
-        "code": "139",
+        "cities_id": "139",
         "title": "Kab. Halmahera Selatan",
         "province_code": "20"
     },
     {
-        "code": "140",
+        "cities_id": "140",
         "title": "Kab. Halmahera Tengah",
         "province_code": "20"
     },
     {
-        "code": "141",
+        "cities_id": "141",
         "title": "Kab. Halmahera Timur",
         "province_code": "20"
     },
     {
-        "code": "142",
+        "cities_id": "142",
         "title": "Kab. Halmahera Utara",
         "province_code": "20"
     },
     {
-        "code": "143",
+        "cities_id": "143",
         "title": "Kab. Hulu Sungai Selatan",
         "province_code": "13"
     },
     {
-        "code": "144",
+        "cities_id": "144",
         "title": "Kab. Hulu Sungai Tengah",
         "province_code": "13"
     },
     {
-        "code": "145",
+        "cities_id": "145",
         "title": "Kab. Hulu Sungai Utara",
         "province_code": "13"
     },
     {
-        "code": "146",
+        "cities_id": "146",
         "title": "Kab. Humbang Hasundutan",
         "province_code": "34"
     },
     {
-        "code": "147",
+        "cities_id": "147",
         "title": "Kab. Indragiri Hilir",
         "province_code": "26"
     },
     {
-        "code": "148",
+        "cities_id": "148",
         "title": "Kab. Indragiri Hulu",
         "province_code": "26"
     },
     {
-        "code": "149",
+        "cities_id": "149",
         "title": "Kab. Indramayu",
         "province_code": "9"
     },
     {
-        "code": "150",
+        "cities_id": "150",
         "title": "Kab. Intan Jaya",
         "province_code": "24"
     },
     {
-        "code": "157",
+        "cities_id": "157",
         "title": "Kab. Jayapura",
         "province_code": "24"
     },
     {
-        "code": "159",
+        "cities_id": "159",
         "title": "Kab. Jayawijaya",
         "province_code": "24"
     },
     {
-        "code": "160",
+        "cities_id": "160",
         "title": "Kab. Jember",
         "province_code": "11"
     },
     {
-        "code": "161",
+        "cities_id": "161",
         "title": "Kab. Jembrana",
         "province_code": "1"
     },
     {
-        "code": "162",
+        "cities_id": "162",
         "title": "Kab. Jeneponto",
         "province_code": "28"
     },
     {
-        "code": "163",
+        "cities_id": "163",
         "title": "Kab. Jepara",
         "province_code": "10"
     },
     {
-        "code": "164",
+        "cities_id": "164",
         "title": "Kab. Jombang",
         "province_code": "11"
     },
     {
-        "code": "165",
+        "cities_id": "165",
         "title": "Kab. Kaimana",
         "province_code": "25"
     },
     {
-        "code": "166",
+        "cities_id": "166",
         "title": "Kab. Kampar",
         "province_code": "26"
     },
     {
-        "code": "167",
+        "cities_id": "167",
         "title": "Kab. Kapuas",
         "province_code": "14"
     },
     {
-        "code": "168",
+        "cities_id": "168",
         "title": "Kab. Kapuas Hulu",
         "province_code": "12"
     },
     {
-        "code": "169",
+        "cities_id": "169",
         "title": "Kab. Karanganyar",
         "province_code": "10"
     },
     {
-        "code": "170",
+        "cities_id": "170",
         "title": "Kab. Karangasem",
         "province_code": "1"
     },
     {
-        "code": "171",
+        "cities_id": "171",
         "title": "Kab. Karawang",
         "province_code": "9"
     },
     {
-        "code": "172",
+        "cities_id": "172",
         "title": "Kab. Karimun",
         "province_code": "17"
     },
     {
-        "code": "173",
+        "cities_id": "173",
         "title": "Kab. Karo",
         "province_code": "34"
     },
     {
-        "code": "174",
+        "cities_id": "174",
         "title": "Kab. Katingan",
         "province_code": "14"
     },
     {
-        "code": "175",
+        "cities_id": "175",
         "title": "Kab. Kaur",
         "province_code": "4"
     },
     {
-        "code": "176",
+        "cities_id": "176",
         "title": "Kab. Kayong Utara",
         "province_code": "12"
     },
     {
-        "code": "177",
+        "cities_id": "177",
         "title": "Kab. Kebumen",
         "province_code": "10"
     },
     {
-        "code": "178",
+        "cities_id": "178",
         "title": "Kab. Kediri",
         "province_code": "11"
     },
     {
-        "code": "180",
+        "cities_id": "180",
         "title": "Kab. Keerom",
         "province_code": "24"
     },
     {
-        "code": "181",
+        "cities_id": "181",
         "title": "Kab. Kendal",
         "province_code": "10"
     },
     {
-        "code": "183",
+        "cities_id": "183",
         "title": "Kab. Kepahiang",
         "province_code": "4"
     },
     {
-        "code": "184",
+        "cities_id": "184",
         "title": "Kab. Kepulauan Anambas",
         "province_code": "17"
     },
     {
-        "code": "185",
+        "cities_id": "185",
         "title": "Kab. Kepulauan Aru",
         "province_code": "19"
     },
     {
-        "code": "186",
+        "cities_id": "186",
         "title": "Kab. Kepulauan Mentawai",
         "province_code": "32"
     },
     {
-        "code": "187",
+        "cities_id": "187",
         "title": "Kab. Kepulauan Meranti",
         "province_code": "26"
     },
     {
-        "code": "188",
+        "cities_id": "188",
         "title": "Kab. Kepulauan Sangihe",
         "province_code": "31"
     },
     {
-        "code": "189",
+        "cities_id": "189",
         "title": "Kab. Kepulauan Seribu",
         "province_code": "6"
     },
     {
-        "code": "190",
+        "cities_id": "190",
         "title": "Kab. Kepulauan Siau Tagulandang Biaro (Sitaro)",
         "province_code": "31"
     },
     {
-        "code": "191",
+        "cities_id": "191",
         "title": "Kab. Kepulauan Sula",
         "province_code": "20"
     },
     {
-        "code": "192",
+        "cities_id": "192",
         "title": "Kab. Kepulauan Talaud",
         "province_code": "31"
     },
     {
-        "code": "193",
+        "cities_id": "193",
         "title": "Kab. Kepulauan Yapen (Yapen Waropen)",
         "province_code": "24"
     },
     {
-        "code": "194",
+        "cities_id": "194",
         "title": "Kab. Kerinci",
         "province_code": "8"
     },
     {
-        "code": "195",
+        "cities_id": "195",
         "title": "Kab. Ketapang",
         "province_code": "12"
     },
     {
-        "code": "196",
+        "cities_id": "196",
         "title": "Kab. Klaten",
         "province_code": "10"
     },
     {
-        "code": "197",
+        "cities_id": "197",
         "title": "Kab. Klungkung",
         "province_code": "1"
     },
     {
-        "code": "198",
+        "cities_id": "198",
         "title": "Kab. Kolaka",
         "province_code": "30"
     },
     {
-        "code": "199",
+        "cities_id": "199",
         "title": "Kab. Kolaka Utara",
         "province_code": "30"
     },
     {
-        "code": "200",
+        "cities_id": "200",
         "title": "Kab. Konawe",
         "province_code": "30"
     },
     {
-        "code": "201",
+        "cities_id": "201",
         "title": "Kab. Konawe Selatan",
         "province_code": "30"
     },
     {
-        "code": "202",
+        "cities_id": "202",
         "title": "Kab. Konawe Utara",
         "province_code": "30"
     },
     {
-        "code": "203",
+        "cities_id": "203",
         "title": "Kab. Kotabaru",
         "province_code": "13"
     },
     {
-        "code": "205",
+        "cities_id": "205",
         "title": "Kab. Kotawaringin Barat",
         "province_code": "14"
     },
     {
-        "code": "206",
+        "cities_id": "206",
         "title": "Kab. Kotawaringin Timur",
         "province_code": "14"
     },
     {
-        "code": "207",
+        "cities_id": "207",
         "title": "Kab. Kuantan Singingi",
         "province_code": "26"
     },
     {
-        "code": "208",
+        "cities_id": "208",
         "title": "Kab. Kubu Raya",
         "province_code": "12"
     },
     {
-        "code": "209",
+        "cities_id": "209",
         "title": "Kab. Kudus",
         "province_code": "10"
     },
     {
-        "code": "210",
+        "cities_id": "210",
         "title": "Kab. Kulon Progo",
         "province_code": "5"
     },
     {
-        "code": "211",
+        "cities_id": "211",
         "title": "Kab. Kuningan",
         "province_code": "9"
     },
     {
-        "code": "212",
+        "cities_id": "212",
         "title": "Kab. Kupang",
         "province_code": "23"
     },
     {
-        "code": "214",
+        "cities_id": "214",
         "title": "Kab. Kutai Barat",
         "province_code": "15"
     },
     {
-        "code": "215",
+        "cities_id": "215",
         "title": "Kab. Kutai Kartanegara",
         "province_code": "15"
     },
     {
-        "code": "216",
+        "cities_id": "216",
         "title": "Kab. Kutai Timur",
         "province_code": "15"
     },
     {
-        "code": "217",
+        "cities_id": "217",
         "title": "Kab. Labuhan Batu",
         "province_code": "34"
     },
     {
-        "code": "218",
+        "cities_id": "218",
         "title": "Kab. Labuhan Batu Selatan",
         "province_code": "34"
     },
     {
-        "code": "219",
+        "cities_id": "219",
         "title": "Kab. Labuhan Batu Utara",
         "province_code": "34"
     },
     {
-        "code": "220",
+        "cities_id": "220",
         "title": "Kab. Lahat",
         "province_code": "33"
     },
     {
-        "code": "221",
+        "cities_id": "221",
         "title": "Kab. Lamandau",
         "province_code": "14"
     },
     {
-        "code": "222",
+        "cities_id": "222",
         "title": "Kab. Lamongan",
         "province_code": "11"
     },
     {
-        "code": "223",
+        "cities_id": "223",
         "title": "Kab. Lampung Barat",
         "province_code": "18"
     },
     {
-        "code": "224",
+        "cities_id": "224",
         "title": "Kab. Lampung Selatan",
         "province_code": "18"
     },
     {
-        "code": "225",
+        "cities_id": "225",
         "title": "Kab. Lampung Tengah",
         "province_code": "18"
     },
     {
-        "code": "226",
+        "cities_id": "226",
         "title": "Kab. Lampung Timur",
         "province_code": "18"
     },
     {
-        "code": "227",
+        "cities_id": "227",
         "title": "Kab. Lampung Utara",
         "province_code": "18"
     },
     {
-        "code": "228",
+        "cities_id": "228",
         "title": "Kab. Landak",
         "province_code": "12"
     },
     {
-        "code": "229",
+        "cities_id": "229",
         "title": "Kab. Langkat",
         "province_code": "34"
     },
     {
-        "code": "231",
+        "cities_id": "231",
         "title": "Kab. Lanny Jaya",
         "province_code": "24"
     },
     {
-        "code": "232",
+        "cities_id": "232",
         "title": "Kab. Lebak",
         "province_code": "3"
     },
     {
-        "code": "233",
+        "cities_id": "233",
         "title": "Kab. Lebong",
         "province_code": "4"
     },
     {
-        "code": "234",
+        "cities_id": "234",
         "title": "Kab. Lembata",
         "province_code": "23"
     },
     {
-        "code": "236",
+        "cities_id": "236",
         "title": "Kab. Lima Puluh Koto/Kota",
         "province_code": "32"
     },
     {
-        "code": "237",
+        "cities_id": "237",
         "title": "Kab. Lingga",
         "province_code": "17"
     },
     {
-        "code": "238",
+        "cities_id": "238",
         "title": "Kab. Lombok Barat",
         "province_code": "22"
     },
     {
-        "code": "239",
+        "cities_id": "239",
         "title": "Kab. Lombok Tengah",
         "province_code": "22"
     },
     {
-        "code": "240",
+        "cities_id": "240",
         "title": "Kab. Lombok Timur",
         "province_code": "22"
     },
     {
-        "code": "241",
+        "cities_id": "241",
         "title": "Kab. Lombok Utara",
         "province_code": "22"
     },
     {
-        "code": "243",
+        "cities_id": "243",
         "title": "Kab. Lumajang",
         "province_code": "11"
     },
     {
-        "code": "244",
+        "cities_id": "244",
         "title": "Kab. Luwu",
         "province_code": "28"
     },
     {
-        "code": "245",
+        "cities_id": "245",
         "title": "Kab. Luwu Timur",
         "province_code": "28"
     },
     {
-        "code": "246",
+        "cities_id": "246",
         "title": "Kab. Luwu Utara",
         "province_code": "28"
     },
     {
-        "code": "247",
+        "cities_id": "247",
         "title": "Kab. Madiun",
         "province_code": "11"
     },
     {
-        "code": "249",
+        "cities_id": "249",
         "title": "Kab. Magelang",
         "province_code": "10"
     },
     {
-        "code": "251",
+        "cities_id": "251",
         "title": "Kab. Magetan",
         "province_code": "11"
     },
     {
-        "code": "252",
+        "cities_id": "252",
         "title": "Kab. Majalengka",
         "province_code": "9"
     },
     {
-        "code": "253",
+        "cities_id": "253",
         "title": "Kab. Majene",
         "province_code": "27"
     },
     {
-        "code": "255",
+        "cities_id": "255",
         "title": "Kab. Malang",
         "province_code": "11"
     },
     {
-        "code": "257",
+        "cities_id": "257",
         "title": "Kab. Malinau",
         "province_code": "16"
     },
     {
-        "code": "258",
+        "cities_id": "258",
         "title": "Kab. Maluku Barat Daya",
         "province_code": "19"
     },
     {
-        "code": "259",
+        "cities_id": "259",
         "title": "Kab. Maluku Tengah",
         "province_code": "19"
     },
     {
-        "code": "260",
+        "cities_id": "260",
         "title": "Kab. Maluku Tenggara",
         "province_code": "19"
     },
     {
-        "code": "261",
+        "cities_id": "261",
         "title": "Kab. Maluku Tenggara Barat",
         "province_code": "19"
     },
     {
-        "code": "262",
+        "cities_id": "262",
         "title": "Kab. Mamasa",
         "province_code": "27"
     },
     {
-        "code": "263",
+        "cities_id": "263",
         "title": "Kab. Mamberamo Raya",
         "province_code": "24"
     },
     {
-        "code": "264",
+        "cities_id": "264",
         "title": "Kab. Mamberamo Tengah",
         "province_code": "24"
     },
     {
-        "code": "265",
+        "cities_id": "265",
         "title": "Kab. Mamuju",
         "province_code": "27"
     },
     {
-        "code": "266",
+        "cities_id": "266",
         "title": "Kab. Mamuju Utara",
         "province_code": "27"
     },
     {
-        "code": "268",
+        "cities_id": "268",
         "title": "Kab. Mandailing Natal",
         "province_code": "34"
     },
     {
-        "code": "269",
+        "cities_id": "269",
         "title": "Kab. Manggarai",
         "province_code": "23"
     },
     {
-        "code": "270",
+        "cities_id": "270",
         "title": "Kab. Manggarai Barat",
         "province_code": "23"
     },
     {
-        "code": "271",
+        "cities_id": "271",
         "title": "Kab. Manggarai Timur",
         "province_code": "23"
     },
     {
-        "code": "272",
+        "cities_id": "272",
         "title": "Kab. Manokwari",
         "province_code": "25"
     },
     {
-        "code": "273",
+        "cities_id": "273",
         "title": "Kab. Manokwari Selatan",
         "province_code": "25"
     },
     {
-        "code": "274",
+        "cities_id": "274",
         "title": "Kab. Mappi",
         "province_code": "24"
     },
     {
-        "code": "275",
+        "cities_id": "275",
         "title": "Kab. Maros",
         "province_code": "28"
     },
     {
-        "code": "277",
+        "cities_id": "277",
         "title": "Kab. Maybrat",
         "province_code": "25"
     },
     {
-        "code": "279",
+        "cities_id": "279",
         "title": "Kab. Melawi",
         "province_code": "12"
     },
     {
-        "code": "280",
+        "cities_id": "280",
         "title": "Kab. Merangin",
         "province_code": "8"
     },
     {
-        "code": "281",
+        "cities_id": "281",
         "title": "Kab. Merauke",
         "province_code": "24"
     },
     {
-        "code": "282",
+        "cities_id": "282",
         "title": "Kab. Mesuji",
         "province_code": "18"
     },
     {
-        "code": "284",
+        "cities_id": "284",
         "title": "Kab. Mimika",
         "province_code": "24"
     },
     {
-        "code": "285",
+        "cities_id": "285",
         "title": "Kab. Minahasa",
         "province_code": "31"
     },
     {
-        "code": "286",
+        "cities_id": "286",
         "title": "Kab. Minahasa Selatan",
         "province_code": "31"
     },
     {
-        "code": "287",
+        "cities_id": "287",
         "title": "Kab. Minahasa Tenggara",
         "province_code": "31"
     },
     {
-        "code": "288",
+        "cities_id": "288",
         "title": "Kab. Minahasa Utara",
         "province_code": "31"
     },
     {
-        "code": "289",
+        "cities_id": "289",
         "title": "Kab. Mojokerto",
         "province_code": "11"
     },
     {
-        "code": "291",
+        "cities_id": "291",
         "title": "Kab. Morowali",
         "province_code": "29"
     },
     {
-        "code": "292",
+        "cities_id": "292",
         "title": "Kab. Muara Enim",
         "province_code": "33"
     },
     {
-        "code": "293",
+        "cities_id": "293",
         "title": "Kab. Muaro Jambi",
         "province_code": "8"
     },
     {
-        "code": "294",
+        "cities_id": "294",
         "title": "Kab. Muko Muko",
         "province_code": "4"
     },
     {
-        "code": "295",
+        "cities_id": "295",
         "title": "Kab. Muna",
         "province_code": "30"
     },
     {
-        "code": "296",
+        "cities_id": "296",
         "title": "Kab. Murung Raya",
         "province_code": "14"
     },
     {
-        "code": "297",
+        "cities_id": "297",
         "title": "Kab. Musi Banyuasin",
         "province_code": "33"
     },
     {
-        "code": "298",
+        "cities_id": "298",
         "title": "Kab. Musi Rawas",
         "province_code": "33"
     },
     {
-        "code": "299",
+        "cities_id": "299",
         "title": "Kab. Nabire",
         "province_code": "24"
     },
     {
-        "code": "300",
+        "cities_id": "300",
         "title": "Kab. Nagan Raya",
         "province_code": "21"
     },
     {
-        "code": "301",
+        "cities_id": "301",
         "title": "Kab. Nagekeo",
         "province_code": "23"
     },
     {
-        "code": "302",
+        "cities_id": "302",
         "title": "Kab. Natuna",
         "province_code": "17"
     },
     {
-        "code": "303",
+        "cities_id": "303",
         "title": "Kab. Nduga",
         "province_code": "24"
     },
     {
-        "code": "304",
+        "cities_id": "304",
         "title": "Kab. Ngada",
         "province_code": "23"
     },
     {
-        "code": "305",
+        "cities_id": "305",
         "title": "Kab. Nganjuk",
         "province_code": "11"
     },
     {
-        "code": "306",
+        "cities_id": "306",
         "title": "Kab. Ngawi",
         "province_code": "11"
     },
     {
-        "code": "307",
+        "cities_id": "307",
         "title": "Kab. Nias",
         "province_code": "34"
     },
     {
-        "code": "308",
+        "cities_id": "308",
         "title": "Kab. Nias Barat",
         "province_code": "34"
     },
     {
-        "code": "309",
+        "cities_id": "309",
         "title": "Kab. Nias Selatan",
         "province_code": "34"
     },
     {
-        "code": "310",
+        "cities_id": "310",
         "title": "Kab. Nias Utara",
         "province_code": "34"
     },
     {
-        "code": "311",
+        "cities_id": "311",
         "title": "Kab. Nunukan",
         "province_code": "16"
     },
     {
-        "code": "312",
+        "cities_id": "312",
         "title": "Kab. Ogan Ilir",
         "province_code": "33"
     },
     {
-        "code": "313",
+        "cities_id": "313",
         "title": "Kab. Ogan Komering Ilir",
         "province_code": "33"
     },
     {
-        "code": "314",
+        "cities_id": "314",
         "title": "Kab. Ogan Komering Ulu",
         "province_code": "33"
     },
     {
-        "code": "315",
+        "cities_id": "315",
         "title": "Kab. Ogan Komering Ulu Selatan",
         "province_code": "33"
     },
     {
-        "code": "316",
+        "cities_id": "316",
         "title": "Kab. Ogan Komering Ulu Timur",
         "province_code": "33"
     },
     {
-        "code": "317",
+        "cities_id": "317",
         "title": "Kab. Pacitan",
         "province_code": "11"
     },
     {
-        "code": "319",
+        "cities_id": "319",
         "title": "Kab. Padang Lawas",
         "province_code": "34"
     },
     {
-        "code": "320",
+        "cities_id": "320",
         "title": "Kab. Padang Lawas Utara",
         "province_code": "34"
     },
     {
-        "code": "322",
+        "cities_id": "322",
         "title": "Kab. Padang Pariaman",
         "province_code": "32"
     },
     {
-        "code": "325",
+        "cities_id": "325",
         "title": "Kab. Pakpak Bharat",
         "province_code": "34"
     },
     {
-        "code": "330",
+        "cities_id": "330",
         "title": "Kab. Pamekasan",
         "province_code": "11"
     },
     {
-        "code": "331",
+        "cities_id": "331",
         "title": "Kab. Pandeglang",
         "province_code": "3"
     },
     {
-        "code": "332",
+        "cities_id": "332",
         "title": "Kab. Pangandaran",
         "province_code": "9"
     },
     {
-        "code": "333",
+        "cities_id": "333",
         "title": "Kab. Pangkajene Kepulauan",
         "province_code": "28"
     },
     {
-        "code": "335",
+        "cities_id": "335",
         "title": "Kab. Paniai",
         "province_code": "24"
     },
     {
-        "code": "338",
+        "cities_id": "338",
         "title": "Kab. Parigi Moutong",
         "province_code": "29"
     },
     {
-        "code": "339",
+        "cities_id": "339",
         "title": "Kab. Pasaman",
         "province_code": "32"
     },
     {
-        "code": "340",
+        "cities_id": "340",
         "title": "Kab. Pasaman Barat",
         "province_code": "32"
     },
     {
-        "code": "341",
+        "cities_id": "341",
         "title": "Kab. Paser",
         "province_code": "15"
     },
     {
-        "code": "342",
+        "cities_id": "342",
         "title": "Kab. Pasuruan",
         "province_code": "11"
     },
     {
-        "code": "344",
+        "cities_id": "344",
         "title": "Kab. Pati",
         "province_code": "10"
     },
     {
-        "code": "346",
+        "cities_id": "346",
         "title": "Kab. Pegunungan Arfak",
         "province_code": "25"
     },
     {
-        "code": "347",
+        "cities_id": "347",
         "title": "Kab. Pegunungan Bintang",
         "province_code": "24"
     },
     {
-        "code": "348",
+        "cities_id": "348",
         "title": "Kab. Pekalongan",
         "province_code": "10"
     },
     {
-        "code": "351",
+        "cities_id": "351",
         "title": "Kab. Pelalawan",
         "province_code": "26"
     },
     {
-        "code": "352",
+        "cities_id": "352",
         "title": "Kab. Pemalang",
         "province_code": "10"
     },
     {
-        "code": "354",
+        "cities_id": "354",
         "title": "Kab. Penajam Paser Utara",
         "province_code": "15"
     },
     {
-        "code": "355",
+        "cities_id": "355",
         "title": "Kab. Pesawaran",
         "province_code": "18"
     },
     {
-        "code": "356",
+        "cities_id": "356",
         "title": "Kab. Pesisir Barat",
         "province_code": "18"
     },
     {
-        "code": "357",
+        "cities_id": "357",
         "title": "Kab. Pesisir Selatan",
         "province_code": "32"
     },
     {
-        "code": "358",
+        "cities_id": "358",
         "title": "Kab. Pidie",
         "province_code": "21"
     },
     {
-        "code": "359",
+        "cities_id": "359",
         "title": "Kab. Pidie Jaya",
         "province_code": "21"
     },
     {
-        "code": "360",
+        "cities_id": "360",
         "title": "Kab. Pinrang",
         "province_code": "28"
     },
     {
-        "code": "361",
+        "cities_id": "361",
         "title": "Kab. Pohuwato",
         "province_code": "7"
     },
     {
-        "code": "362",
+        "cities_id": "362",
         "title": "Kab. Polewali Mandar",
         "province_code": "27"
     },
     {
-        "code": "363",
+        "cities_id": "363",
         "title": "Kab. Ponorogo",
         "province_code": "11"
     },
     {
-        "code": "364",
+        "cities_id": "364",
         "title": "Kab. Pontianak",
         "province_code": "12"
     },
     {
-        "code": "366",
+        "cities_id": "366",
         "title": "Kab. Poso",
         "province_code": "29"
     },
     {
-        "code": "368",
+        "cities_id": "368",
         "title": "Kab. Pringsewu",
         "province_code": "18"
     },
     {
-        "code": "369",
+        "cities_id": "369",
         "title": "Kab. Probolinggo",
         "province_code": "11"
     },
     {
-        "code": "371",
+        "cities_id": "371",
         "title": "Kab. Pulang Pisau",
         "province_code": "14"
     },
     {
-        "code": "372",
+        "cities_id": "372",
         "title": "Kab. Pulau Morotai",
         "province_code": "20"
     },
     {
-        "code": "373",
+        "cities_id": "373",
         "title": "Kab. Puncak",
         "province_code": "24"
     },
     {
-        "code": "374",
+        "cities_id": "374",
         "title": "Kab. Puncak Jaya",
         "province_code": "24"
     },
     {
-        "code": "375",
+        "cities_id": "375",
         "title": "Kab. Purbalingga",
         "province_code": "10"
     },
     {
-        "code": "376",
+        "cities_id": "376",
         "title": "Kab. Purwakarta",
         "province_code": "9"
     },
     {
-        "code": "377",
+        "cities_id": "377",
         "title": "Kab. Purworejo",
         "province_code": "10"
     },
     {
-        "code": "378",
+        "cities_id": "378",
         "title": "Kab. Raja Ampat",
         "province_code": "25"
     },
     {
-        "code": "379",
+        "cities_id": "379",
         "title": "Kab. Rejang Lebong",
         "province_code": "4"
     },
     {
-        "code": "380",
+        "cities_id": "380",
         "title": "Kab. Rembang",
         "province_code": "10"
     },
     {
-        "code": "381",
+        "cities_id": "381",
         "title": "Kab. Rokan Hilir",
         "province_code": "26"
     },
     {
-        "code": "382",
+        "cities_id": "382",
         "title": "Kab. Rokan Hulu",
         "province_code": "26"
     },
     {
-        "code": "383",
+        "cities_id": "383",
         "title": "Kab. Rote Ndao",
         "province_code": "23"
     },
     {
-        "code": "385",
+        "cities_id": "385",
         "title": "Kab. Sabu Raijua",
         "province_code": "23"
     },
     {
-        "code": "388",
+        "cities_id": "388",
         "title": "Kab. Sambas",
         "province_code": "12"
     },
     {
-        "code": "389",
+        "cities_id": "389",
         "title": "Kab. Samosir",
         "province_code": "34"
     },
     {
-        "code": "390",
+        "cities_id": "390",
         "title": "Kab. Sampang",
         "province_code": "11"
     },
     {
-        "code": "391",
+        "cities_id": "391",
         "title": "Kab. Sanggau",
         "province_code": "12"
     },
     {
-        "code": "392",
+        "cities_id": "392",
         "title": "Kab. Sarmi",
         "province_code": "24"
     },
     {
-        "code": "393",
+        "cities_id": "393",
         "title": "Kab. Sarolangun",
         "province_code": "8"
     },
     {
-        "code": "395",
+        "cities_id": "395",
         "title": "Kab. Sekadau",
         "province_code": "12"
     },
     {
-        "code": "396",
+        "cities_id": "396",
         "title": "Kab. Selayar (Kepulauan Selayar)",
         "province_code": "28"
     },
     {
-        "code": "397",
+        "cities_id": "397",
         "title": "Kab. Seluma",
         "province_code": "4"
     },
     {
-        "code": "398",
+        "cities_id": "398",
         "title": "Kab. Semarang",
         "province_code": "10"
     },
     {
-        "code": "400",
+        "cities_id": "400",
         "title": "Kab. Seram Bagian Barat",
         "province_code": "19"
     },
     {
-        "code": "401",
+        "cities_id": "401",
         "title": "Kab. Seram Bagian Timur",
         "province_code": "19"
     },
     {
-        "code": "402",
+        "cities_id": "402",
         "title": "Kab. Serang",
         "province_code": "3"
     },
     {
-        "code": "404",
+        "cities_id": "404",
         "title": "Kab. Serdang Bedagai",
         "province_code": "34"
     },
     {
-        "code": "405",
+        "cities_id": "405",
         "title": "Kab. Seruyan",
         "province_code": "14"
     },
     {
-        "code": "406",
+        "cities_id": "406",
         "title": "Kab. Siak",
         "province_code": "26"
     },
     {
-        "code": "408",
+        "cities_id": "408",
         "title": "Kab. Sidenreng Rappang/Rapang",
         "province_code": "28"
     },
     {
-        "code": "409",
+        "cities_id": "409",
         "title": "Kab. Sidoarjo",
         "province_code": "11"
     },
     {
-        "code": "410",
+        "cities_id": "410",
         "title": "Kab. Sigi",
         "province_code": "29"
     },
     {
-        "code": "411",
+        "cities_id": "411",
         "title": "Kab. Sijunjung (Sawah Lunto Sijunjung)",
         "province_code": "32"
     },
     {
-        "code": "412",
+        "cities_id": "412",
         "title": "Kab. Sikka",
         "province_code": "23"
     },
     {
-        "code": "413",
+        "cities_id": "413",
         "title": "Kab. Simalungun",
         "province_code": "34"
     },
     {
-        "code": "414",
+        "cities_id": "414",
         "title": "Kab. Simeulue",
         "province_code": "21"
     },
     {
-        "code": "416",
+        "cities_id": "416",
         "title": "Kab. Sinjai",
         "province_code": "28"
     },
     {
-        "code": "417",
+        "cities_id": "417",
         "title": "Kab. Sintang",
         "province_code": "12"
     },
     {
-        "code": "418",
+        "cities_id": "418",
         "title": "Kab. Situbondo",
         "province_code": "11"
     },
     {
-        "code": "419",
+        "cities_id": "419",
         "title": "Kab. Sleman",
         "province_code": "5"
     },
     {
-        "code": "420",
+        "cities_id": "420",
         "title": "Kab. Solok",
         "province_code": "32"
     },
     {
-        "code": "422",
+        "cities_id": "422",
         "title": "Kab. Solok Selatan",
         "province_code": "32"
     },
     {
-        "code": "423",
+        "cities_id": "423",
         "title": "Kab. Soppeng",
         "province_code": "28"
     },
     {
-        "code": "424",
+        "cities_id": "424",
         "title": "Kab. Sorong",
         "province_code": "25"
     },
     {
-        "code": "426",
+        "cities_id": "426",
         "title": "Kab. Sorong Selatan",
         "province_code": "25"
     },
     {
-        "code": "427",
+        "cities_id": "427",
         "title": "Kab. Sragen",
         "province_code": "10"
     },
     {
-        "code": "428",
+        "cities_id": "428",
         "title": "Kab. Subang",
         "province_code": "9"
     },
     {
-        "code": "430",
+        "cities_id": "430",
         "title": "Kab. Sukabumi",
         "province_code": "9"
     },
     {
-        "code": "432",
+        "cities_id": "432",
         "title": "Kab. Sukamara",
         "province_code": "14"
     },
     {
-        "code": "433",
+        "cities_id": "433",
         "title": "Kab. Sukoharjo",
         "province_code": "10"
     },
     {
-        "code": "434",
+        "cities_id": "434",
         "title": "Kab. Sumba Barat",
         "province_code": "23"
     },
     {
-        "code": "435",
+        "cities_id": "435",
         "title": "Kab. Sumba Barat Daya",
         "province_code": "23"
     },
     {
-        "code": "436",
+        "cities_id": "436",
         "title": "Kab. Sumba Tengah",
         "province_code": "23"
     },
     {
-        "code": "437",
+        "cities_id": "437",
         "title": "Kab. Sumba Timur",
         "province_code": "23"
     },
     {
-        "code": "438",
+        "cities_id": "438",
         "title": "Kab. Sumbawa",
         "province_code": "22"
     },
     {
-        "code": "439",
+        "cities_id": "439",
         "title": "Kab. Sumbawa Barat",
         "province_code": "22"
     },
     {
-        "code": "440",
+        "cities_id": "440",
         "title": "Kab. Sumedang",
         "province_code": "9"
     },
     {
-        "code": "441",
+        "cities_id": "441",
         "title": "Kab. Sumenep",
         "province_code": "11"
     },
     {
-        "code": "443",
+        "cities_id": "443",
         "title": "Kab. Supiori",
         "province_code": "24"
     },
     {
-        "code": "446",
+        "cities_id": "446",
         "title": "Kab. Tabalong",
         "province_code": "13"
     },
     {
-        "code": "447",
+        "cities_id": "447",
         "title": "Kab. Tabanan",
         "province_code": "1"
     },
     {
-        "code": "448",
+        "cities_id": "448",
         "title": "Kab. Takalar",
         "province_code": "28"
     },
     {
-        "code": "449",
+        "cities_id": "449",
         "title": "Kab. Tambrauw",
         "province_code": "25"
     },
     {
-        "code": "450",
+        "cities_id": "450",
         "title": "Kab. Tana Tidung",
         "province_code": "16"
     },
     {
-        "code": "451",
+        "cities_id": "451",
         "title": "Kab. Tana Toraja",
         "province_code": "28"
     },
     {
-        "code": "452",
+        "cities_id": "452",
         "title": "Kab. Tanah Bumbu",
         "province_code": "13"
     },
     {
-        "code": "453",
+        "cities_id": "453",
         "title": "Kab. Tanah Datar",
         "province_code": "32"
     },
     {
-        "code": "454",
+        "cities_id": "454",
         "title": "Kab. Tanah Laut",
         "province_code": "13"
     },
     {
-        "code": "455",
+        "cities_id": "455",
         "title": "Kab. Tangerang",
         "province_code": "3"
     },
     {
-        "code": "458",
+        "cities_id": "458",
         "title": "Kab. Tanggamus",
         "province_code": "18"
     },
     {
-        "code": "460",
+        "cities_id": "460",
         "title": "Kab. Tanjung Jabung Barat",
         "province_code": "8"
     },
     {
-        "code": "461",
+        "cities_id": "461",
         "title": "Kab. Tanjung Jabung Timur",
         "province_code": "8"
     },
     {
-        "code": "463",
+        "cities_id": "463",
         "title": "Kab. Tapanuli Selatan",
         "province_code": "34"
     },
     {
-        "code": "464",
+        "cities_id": "464",
         "title": "Kab. Tapanuli Tengah",
         "province_code": "34"
     },
     {
-        "code": "465",
+        "cities_id": "465",
         "title": "Kab. Tapanuli Utara",
         "province_code": "34"
     },
     {
-        "code": "466",
+        "cities_id": "466",
         "title": "Kab. Tapin",
         "province_code": "13"
     },
     {
-        "code": "468",
+        "cities_id": "468",
         "title": "Kab. Tasikmalaya",
         "province_code": "9"
     },
     {
-        "code": "471",
+        "cities_id": "471",
         "title": "Kab. Tebo",
         "province_code": "8"
     },
     {
-        "code": "472",
+        "cities_id": "472",
         "title": "Kab. Tegal",
         "province_code": "10"
     },
     {
-        "code": "474",
+        "cities_id": "474",
         "title": "Kab. Teluk Bintuni",
         "province_code": "25"
     },
     {
-        "code": "475",
+        "cities_id": "475",
         "title": "Kab. Teluk Wondama",
         "province_code": "25"
     },
     {
-        "code": "476",
+        "cities_id": "476",
         "title": "Kab. Temanggung",
         "province_code": "10"
     },
     {
-        "code": "479",
+        "cities_id": "479",
         "title": "Kab. Timor Tengah Selatan",
         "province_code": "23"
     },
     {
-        "code": "480",
+        "cities_id": "480",
         "title": "Kab. Timor Tengah Utara",
         "province_code": "23"
     },
     {
-        "code": "481",
+        "cities_id": "481",
         "title": "Kab. Toba Samosir",
         "province_code": "34"
     },
     {
-        "code": "482",
+        "cities_id": "482",
         "title": "Kab. Tojo Una-Una",
         "province_code": "29"
     },
     {
-        "code": "483",
+        "cities_id": "483",
         "title": "Kab. Toli-Toli",
         "province_code": "29"
     },
     {
-        "code": "484",
+        "cities_id": "484",
         "title": "Kab. Tolikara",
         "province_code": "24"
     },
     {
-        "code": "486",
+        "cities_id": "486",
         "title": "Kab. Toraja Utara",
         "province_code": "28"
     },
     {
-        "code": "487",
+        "cities_id": "487",
         "title": "Kab. Trenggalek",
         "province_code": "11"
     },
     {
-        "code": "489",
+        "cities_id": "489",
         "title": "Kab. Tuban",
         "province_code": "11"
     },
     {
-        "code": "490",
+        "cities_id": "490",
         "title": "Kab. Tulang Bawang",
         "province_code": "18"
     },
     {
-        "code": "491",
+        "cities_id": "491",
         "title": "Kab. Tulang Bawang Barat",
         "province_code": "18"
     },
     {
-        "code": "492",
+        "cities_id": "492",
         "title": "Kab. Tulungagung",
         "province_code": "11"
     },
     {
-        "code": "493",
+        "cities_id": "493",
         "title": "Kab. Wajo",
         "province_code": "28"
     },
     {
-        "code": "494",
+        "cities_id": "494",
         "title": "Kab. Wakatobi",
         "province_code": "30"
     },
     {
-        "code": "495",
+        "cities_id": "495",
         "title": "Kab. Waropen",
         "province_code": "24"
     },
     {
-        "code": "496",
+        "cities_id": "496",
         "title": "Kab. Way Kanan",
         "province_code": "18"
     },
     {
-        "code": "497",
+        "cities_id": "497",
         "title": "Kab. Wonogiri",
         "province_code": "10"
     },
     {
-        "code": "498",
+        "cities_id": "498",
         "title": "Kab. Wonosobo",
         "province_code": "10"
     },
     {
-        "code": "499",
+        "cities_id": "499",
         "title": "Kab. Yahukimo",
         "province_code": "24"
     },
     {
-        "code": "500",
+        "cities_id": "500",
         "title": "Kab. Yalimo",
         "province_code": "24"
     }

@@ -1,492 +1,492 @@
 [
     {
-        "code": "14",
+        "city_id": "14",
         "title": "Kota Ambon",
-        "province_code": "19"
+        "province_id": "19"
     },
     {
-        "code": "19",
+        "city_id": "19",
         "title": "Kota Balikpapan",
-        "province_code": "15"
+        "province_id": "15"
     },
     {
-        "code": "20",
+        "city_id": "20",
         "title": "Kota Banda Aceh",
-        "province_code": "21"
+        "province_id": "21"
     },
     {
-        "code": "21",
+        "city_id": "21",
         "title": "Kota Bandar Lampung",
-        "province_code": "18"
+        "province_id": "18"
     },
     {
-        "code": "23",
+        "city_id": "23",
         "title": "Kota Bandung",
-        "province_code": "9"
+        "province_id": "9"
     },
     {
-        "code": "34",
+        "city_id": "34",
         "title": "Kota Banjar",
-        "province_code": "9"
+        "province_id": "9"
     },
     {
-        "code": "35",
+        "city_id": "35",
         "title": "Kota Banjarbaru",
-        "province_code": "13"
+        "province_id": "13"
     },
     {
-        "code": "36",
+        "city_id": "36",
         "title": "Kota Banjarmasin",
-        "province_code": "13"
+        "province_id": "13"
     },
     {
-        "code": "48",
+        "city_id": "48",
         "title": "Kota Batam",
-        "province_code": "17"
+        "province_id": "17"
     },
     {
-        "code": "51",
+        "city_id": "51",
         "title": "Kota Batu",
-        "province_code": "11"
+        "province_id": "11"
     },
     {
-        "code": "53",
+        "city_id": "53",
         "title": "Kota Bau-Bau",
-        "province_code": "30"
+        "province_id": "30"
     },
     {
-        "code": "55",
+        "city_id": "55",
         "title": "Kota Bekasi",
-        "province_code": "9"
+        "province_id": "9"
     },
     {
-        "code": "62",
+        "city_id": "62",
         "title": "Kota Bengkulu",
-        "province_code": "4"
+        "province_id": "4"
     },
     {
-        "code": "69",
+        "city_id": "69",
         "title": "Kota Bima",
-        "province_code": "22"
+        "province_id": "22"
     },
     {
-        "code": "70",
+        "city_id": "70",
         "title": "Kota Binjai",
-        "province_code": "34"
+        "province_id": "34"
     },
     {
-        "code": "73",
+        "city_id": "73",
         "title": "Kota Bitung",
-        "province_code": "31"
+        "province_id": "31"
     },
     {
-        "code": "75",
+        "city_id": "75",
         "title": "Kota Blitar",
-        "province_code": "11"
+        "province_id": "11"
     },
     {
-        "code": "79",
+        "city_id": "79",
         "title": "Kota Bogor",
-        "province_code": "9"
+        "province_id": "9"
     },
     {
-        "code": "89",
+        "city_id": "89",
         "title": "Kota Bontang",
-        "province_code": "15"
+        "province_id": "15"
     },
     {
-        "code": "93",
+        "city_id": "93",
         "title": "Kota Bukittinggi",
-        "province_code": "32"
+        "province_id": "32"
     },
     {
-        "code": "106",
+        "city_id": "106",
         "title": "Kota Cilegon",
-        "province_code": "3"
+        "province_id": "3"
     },
     {
-        "code": "107",
+        "city_id": "107",
         "title": "Kota Cimahi",
-        "province_code": "9"
+        "province_id": "9"
     },
     {
-        "code": "109",
+        "city_id": "109",
         "title": "Kota Cirebon",
-        "province_code": "9"
+        "province_id": "9"
     },
     {
-        "code": "114",
+        "city_id": "114",
         "title": "Kota Denpasar",
-        "province_code": "1"
+        "province_id": "1"
     },
     {
-        "code": "115",
+        "city_id": "115",
         "title": "Kota Depok",
-        "province_code": "9"
+        "province_id": "9"
     },
     {
-        "code": "120",
+        "city_id": "120",
         "title": "Kota Dumai",
-        "province_code": "26"
+        "province_id": "26"
     },
     {
-        "code": "130",
+        "city_id": "130",
         "title": "Kota Gorontalo",
-        "province_code": "7"
+        "province_id": "7"
     },
     {
-        "code": "137",
+        "city_id": "137",
         "title": "Kota Gunungsitoli",
-        "province_code": "34"
+        "province_id": "34"
     },
     {
-        "code": "151",
+        "city_id": "151",
         "title": "Kota Jakarta Barat",
-        "province_code": "6"
+        "province_id": "6"
     },
     {
-        "code": "152",
+        "city_id": "152",
         "title": "Kota Jakarta Pusat",
-        "province_code": "6"
+        "province_id": "6"
     },
     {
-        "code": "153",
+        "city_id": "153",
         "title": "Kota Jakarta Selatan",
-        "province_code": "6"
+        "province_id": "6"
     },
     {
-        "code": "154",
+        "city_id": "154",
         "title": "Kota Jakarta Timur",
-        "province_code": "6"
+        "province_id": "6"
     },
     {
-        "code": "155",
+        "city_id": "155",
         "title": "Kota Jakarta Utara",
-        "province_code": "6"
+        "province_id": "6"
     },
     {
-        "code": "156",
+        "city_id": "156",
         "title": "Kota Jambi",
-        "province_code": "8"
+        "province_id": "8"
     },
     {
-        "code": "158",
+        "city_id": "158",
         "title": "Kota Jayapura",
-        "province_code": "24"
+        "province_id": "24"
     },
     {
-        "code": "179",
+        "city_id": "179",
         "title": "Kota Kediri",
-        "province_code": "11"
+        "province_id": "11"
     },
     {
-        "code": "182",
+        "city_id": "182",
         "title": "Kota Kendari",
-        "province_code": "30"
+        "province_id": "30"
     },
     {
-        "code": "204",
+        "city_id": "204",
         "title": "Kota Kotamobagu",
-        "province_code": "31"
+        "province_id": "31"
     },
     {
-        "code": "213",
+        "city_id": "213",
         "title": "Kota Kupang",
-        "province_code": "23"
+        "province_id": "23"
     },
     {
-        "code": "230",
+        "city_id": "230",
         "title": "Kota Langsa",
-        "province_code": "21"
+        "province_id": "21"
     },
     {
-        "code": "235",
+        "city_id": "235",
         "title": "Kota Lhokseumawe",
-        "province_code": "21"
+        "province_id": "21"
     },
     {
-        "code": "242",
+        "city_id": "242",
         "title": "Kota Lubuk Linggau",
-        "province_code": "33"
+        "province_id": "33"
     },
     {
-        "code": "248",
+        "city_id": "248",
         "title": "Kota Madiun",
-        "province_code": "11"
+        "province_id": "11"
     },
     {
-        "code": "250",
+        "city_id": "250",
         "title": "Kota Magelang",
-        "province_code": "10"
+        "province_id": "10"
     },
     {
-        "code": "254",
+        "city_id": "254",
         "title": "Kota Makassar",
-        "province_code": "28"
+        "province_id": "28"
     },
     {
-        "code": "256",
+        "city_id": "256",
         "title": "Kota Malang",
-        "province_code": "11"
+        "province_id": "11"
     },
     {
-        "code": "267",
+        "city_id": "267",
         "title": "Kota Manado",
-        "province_code": "31"
+        "province_id": "31"
     },
     {
-        "code": "276",
+        "city_id": "276",
         "title": "Kota Mataram",
-        "province_code": "22"
+        "province_id": "22"
     },
     {
-        "code": "278",
+        "city_id": "278",
         "title": "Kota Medan",
-        "province_code": "34"
+        "province_id": "34"
     },
     {
-        "code": "283",
+        "city_id": "283",
         "title": "Kota Metro",
-        "province_code": "18"
+        "province_id": "18"
     },
     {
-        "code": "290",
+        "city_id": "290",
         "title": "Kota Mojokerto",
-        "province_code": "11"
+        "province_id": "11"
     },
     {
-        "code": "318",
+        "city_id": "318",
         "title": "Kota Padang",
-        "province_code": "32"
+        "province_id": "32"
     },
     {
-        "code": "321",
+        "city_id": "321",
         "title": "Kota Padang Panjang",
-        "province_code": "32"
+        "province_id": "32"
     },
     {
-        "code": "323",
+        "city_id": "323",
         "title": "Kota Padang Sidempuan",
-        "province_code": "34"
+        "province_id": "34"
     },
     {
-        "code": "324",
+        "city_id": "324",
         "title": "Kota Pagar Alam",
-        "province_code": "33"
+        "province_id": "33"
     },
     {
-        "code": "326",
+        "city_id": "326",
         "title": "Kota Palangka Raya",
-        "province_code": "14"
+        "province_id": "14"
     },
     {
-        "code": "327",
+        "city_id": "327",
         "title": "Kota Palembang",
-        "province_code": "33"
+        "province_id": "33"
     },
     {
-        "code": "328",
+        "city_id": "328",
         "title": "Kota Palopo",
-        "province_code": "28"
+        "province_id": "28"
     },
     {
-        "code": "329",
+        "city_id": "329",
         "title": "Kota Palu",
-        "province_code": "29"
+        "province_id": "29"
     },
     {
-        "code": "334",
+        "city_id": "334",
         "title": "Kota Pangkal Pinang",
-        "province_code": "2"
+        "province_id": "2"
     },
     {
-        "code": "336",
+        "city_id": "336",
         "title": "Kota Parepare",
-        "province_code": "28"
+        "province_id": "28"
     },
     {
-        "code": "337",
+        "city_id": "337",
         "title": "Kota Pariaman",
-        "province_code": "32"
+        "province_id": "32"
     },
     {
-        "code": "343",
+        "city_id": "343",
         "title": "Kota Pasuruan",
-        "province_code": "11"
+        "province_id": "11"
     },
     {
-        "code": "345",
+        "city_id": "345",
         "title": "Kota Payakumbuh",
-        "province_code": "32"
+        "province_id": "32"
     },
     {
-        "code": "349",
+        "city_id": "349",
         "title": "Kota Pekalongan",
-        "province_code": "10"
+        "province_id": "10"
     },
     {
-        "code": "350",
+        "city_id": "350",
         "title": "Kota Pekanbaru",
-        "province_code": "26"
+        "province_id": "26"
     },
     {
-        "code": "353",
+        "city_id": "353",
         "title": "Kota Pematang Siantar",
-        "province_code": "34"
+        "province_id": "34"
     },
     {
-        "code": "365",
+        "city_id": "365",
         "title": "Kota Pontianak",
-        "province_code": "12"
+        "province_id": "12"
     },
     {
-        "code": "367",
+        "city_id": "367",
         "title": "Kota Prabumulih",
-        "province_code": "33"
+        "province_id": "33"
     },
     {
-        "code": "370",
+        "city_id": "370",
         "title": "Kota Probolinggo",
-        "province_code": "11"
+        "province_id": "11"
     },
     {
-        "code": "384",
+        "city_id": "384",
         "title": "Kota Sabang",
-        "province_code": "21"
+        "province_id": "21"
     },
     {
-        "code": "386",
+        "city_id": "386",
         "title": "Kota Salatiga",
-        "province_code": "10"
+        "province_id": "10"
     },
     {
-        "code": "387",
+        "city_id": "387",
         "title": "Kota Samarinda",
-        "province_code": "15"
+        "province_id": "15"
     },
     {
-        "code": "394",
+        "city_id": "394",
         "title": "Kota Sawah Lunto",
-        "province_code": "32"
+        "province_id": "32"
     },
     {
-        "code": "399",
+        "city_id": "399",
         "title": "Kota Semarang",
-        "province_code": "10"
+        "province_id": "10"
     },
     {
-        "code": "403",
+        "city_id": "403",
         "title": "Kota Serang",
-        "province_code": "3"
+        "province_id": "3"
     },
     {
-        "code": "407",
+        "city_id": "407",
         "title": "Kota Sibolga",
-        "province_code": "34"
+        "province_id": "34"
     },
     {
-        "code": "415",
+        "city_id": "415",
         "title": "Kota Singkawang",
-        "province_code": "12"
+        "province_id": "12"
     },
     {
-        "code": "421",
+        "city_id": "421",
         "title": "Kota Solok",
-        "province_code": "32"
+        "province_id": "32"
     },
     {
-        "code": "425",
+        "city_id": "425",
         "title": "Kota Sorong",
-        "province_code": "25"
+        "province_id": "25"
     },
     {
-        "code": "429",
+        "city_id": "429",
         "title": "Kota Subulussalam",
-        "province_code": "21"
+        "province_id": "21"
     },
     {
-        "code": "431",
+        "city_id": "431",
         "title": "Kota Sukabumi",
-        "province_code": "9"
+        "province_id": "9"
     },
     {
-        "code": "442",
+        "city_id": "442",
         "title": "Kota Sungaipenuh",
-        "province_code": "8"
+        "province_id": "8"
     },
     {
-        "code": "444",
+        "city_id": "444",
         "title": "Kota Surabaya",
-        "province_code": "11"
+        "province_id": "11"
     },
     {
-        "code": "445",
+        "city_id": "445",
         "title": "Kota Surakarta (Solo)",
-        "province_code": "10"
+        "province_id": "10"
     },
     {
-        "code": "456",
+        "city_id": "456",
         "title": "Kota Tangerang",
-        "province_code": "3"
+        "province_id": "3"
     },
     {
-        "code": "457",
+        "city_id": "457",
         "title": "Kota Tangerang Selatan",
-        "province_code": "3"
+        "province_id": "3"
     },
     {
-        "code": "459",
+        "city_id": "459",
         "title": "Kota Tanjung Balai",
-        "province_code": "34"
+        "province_id": "34"
     },
     {
-        "code": "462",
+        "city_id": "462",
         "title": "Kota Tanjung Pinang",
-        "province_code": "17"
+        "province_id": "17"
     },
     {
-        "code": "467",
+        "city_id": "467",
         "title": "Kota Tarakan",
-        "province_code": "16"
+        "province_id": "16"
     },
     {
-        "code": "469",
+        "city_id": "469",
         "title": "Kota Tasikmalaya",
-        "province_code": "9"
+        "province_id": "9"
     },
     {
-        "code": "470",
+        "city_id": "470",
         "title": "Kota Tebing Tinggi",
-        "province_code": "34"
+        "province_id": "34"
     },
     {
-        "code": "473",
+        "city_id": "473",
         "title": "Kota Tegal",
-        "province_code": "10"
+        "province_id": "10"
     },
     {
-        "code": "477",
+        "city_id": "477",
         "title": "Kota Ternate",
-        "province_code": "20"
+        "province_id": "20"
     },
     {
-        "code": "478",
+        "city_id": "478",
         "title": "Kota Tidore Kepulauan",
-        "province_code": "20"
+        "province_id": "20"
     },
     {
-        "code": "485",
+        "city_id": "485",
         "title": "Kota Tomohon",
-        "province_code": "31"
+        "province_id": "31"
     },
     {
-        "code": "488",
+        "city_id": "488",
         "title": "Kota Tual",
-        "province_code": "19"
+        "province_id": "19"
     },
     {
-        "code": "501",
+        "city_id": "501",
         "title": "Kota Yogyakarta",
-        "province_code": "5"
+        "province_id": "5"
     }
 ]

@@ -1,138 +1,138 @@
 [
     {
-        "code": "1",
+        "province_id": "1",
         "title": "Bali"
     },
     {
-        "code": "2",
+        "province_id": "2",
         "title": "Bangka Belitung"
     },
     {
-        "code": "3",
+        "province_id": "3",
         "title": "Banten"
     },
     {
-        "code": "4",
+        "province_id": "4",
         "title": "Bengkulu"
     },
     {
-        "code": "5",
+        "province_id": "5",
         "title": "DI Yogyakarta"
     },
     {
-        "code": "6",
+        "province_id": "6",
         "title": "DKI Jakarta"
     },
     {
-        "code": "7",
+        "province_id": "7",
         "title": "Gorontalo"
     },
     {
-        "code": "8",
+        "province_id": "8",
         "title": "Jambi"
     },
     {
-        "code": "9",
+        "province_id": "9",
         "title": "Jawa Barat"
     },
     {
-        "code": "10",
+        "province_id": "10",
         "title": "Jawa Tengah"
     },
     {
-        "code": "11",
+        "province_id": "11",
         "title": "Jawa Timur"
     },
     {
-        "code": "12",
+        "province_id": "12",
         "title": "Kalimantan Barat"
     },
     {
-        "code": "13",
+        "province_id": "13",
         "title": "Kalimantan Selatan"
     },
     {
-        "code": "14",
+        "province_id": "14",
         "title": "Kalimantan Tengah"
     },
     {
-        "code": "15",
+        "province_id": "15",
         "title": "Kalimantan Timur"
     },
     {
-        "code": "16",
+        "province_id": "16",
         "title": "Kalimantan Utara"
     },
     {
-        "code": "17",
+        "province_id": "17",
         "title": "Kepulauan Riau"
     },
     {
-        "code": "18",
+        "province_id": "18",
         "title": "Lampung"
     },
     {
-        "code": "19",
+        "province_id": "19",
         "title": "Maluku"
     },
     {
-        "code": "20",
+        "province_id": "20",
         "title": "Maluku Utara"
     },
     {
-        "code": "21",
+        "province_id": "21",
         "title": "Nanggroe Aceh Darussalam (NAD)"
     },
     {
-        "code": "22",
+        "province_id": "22",
         "title": "Nusa Tenggara Barat (NTB)"
     },
     {
-        "code": "23",
+        "province_id": "23",
         "title": "Nusa Tenggara Timur (NTT)"
     },
     {
-        "code": "24",
+        "province_id": "24",
         "title": "Papua"
     },
     {
-        "code": "25",
+        "province_id": "25",
         "title": "Papua Barat"
     },
     {
-        "code": "26",
+        "province_id": "26",
         "title": "Riau"
     },
     {
-        "code": "27",
+        "province_id": "27",
         "title": "Sulawesi Barat"
     },
     {
-        "code": "28",
+        "province_id": "28",
         "title": "Sulawesi Selatan"
     },
     {
-        "code": "29",
+        "province_id": "29",
         "title": "Sulawesi Tengah"
     },
     {
-        "code": "30",
+        "province_id": "30",
         "title": "Sulawesi Tenggara"
     },
     {
-        "code": "31",
+        "province_id": "31",
         "title": "Sulawesi Utara"
     },
     {
-        "code": "32",
+        "province_id": "32",
         "title": "Sumatera Barat"
     },
     {
-        "code": "33",
+        "province_id": "33",
         "title": "Sumatera Selatan"
     },
     {
-        "code": "34",
+        "province_id": "34",
         "title": "Sumatera Utara"
     }
 ]
