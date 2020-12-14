@@ -53,13 +53,18 @@ Route::prefix('product/fabric')->group(function () {
     Route::get('/detail/pesanan','FrontStore\ProductController@createFabricOrder')->name('fabric.create.detail.order');
     Route::post('/detail/pesanan/create','FrontStore\ProductController@storeProductOrder')->name('fabric.store.detail.order')->middleware('auth');
 
-    Route::get('{order}/detail-pengiriman','FrontStore\ProductController@displayUpdateFabricShippingAddress')->name('fabric.show.detail.pengiriman');
-    Route::patch('{order}/detail-pengiriman','FrontStore\ProductController@updateDetailPengiriman')->name('update.detail.pengiriman');
+//    Route::get('{order}/detail-pengiriman','FrontStore\ProductController@displayUpdateFabricShippingAddress')->name('fabric.show.detail.pengiriman');
+//    Route::put('{order}/detail-pengiriman','FrontStore\ProductController@updateDetailPengiriman')->name('update.detail.pengiriman');
+
+    Route::get('detail-pengiriman','FrontStore\ProductController@showDetailPengiriman')->name('fabric.show.detail.pengiriman');
+    Route::post('detail-pengiriman','FrontStore\ProductController@storeDetailPengiriman')->name('fabric.store.detail.pengiriman');
 
     Route::get('/shipping-detail','FrontStore\ProductController@showShippingDetail')->name('fabric.show.shipping.detail')->middleware('auth');
 
     Route::get('/shipping-detail/invoice/print', 'FrontStore\ProductController@InvoiceFabric')->name('fabric.print.invoice');
 });
+
+
 
 Route::prefix('product/mask')->middleware('auth')->group(function () {
 

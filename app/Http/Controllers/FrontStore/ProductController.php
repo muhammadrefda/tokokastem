@@ -131,80 +131,75 @@ class ProductController extends Controller
     }
 
 
-    public function displayUpdateFabricShippingAddress($order){
-        $data['courier'] = Courier::all();
-        $data['province'] = Province::all();
-
-        $data['order'] = DB::table('users')
-            ->join('cities', 'cities.city_id', '=', 'users.cities_id')
-            ->join('provinces', 'provinces.province_id', '=', 'cities.province_id')
-            ->select('provinces.title as prov', 'cities.title as kota', 'users.*')
-            ->get();
-
-
-        return view('products.fabric.detail_pengiriman',$data)->with
-        (
-
-            [
-                'order' => Product::findOrFail($order),
-            ]
-        );
-
-
-    }
-
-
-    public function updateDetailPengiriman(Request $request, User  $user): \Illuminate\Http\RedirectResponse
-    {
-        $user->update([
-            'cities_id' => $request->cities_id,
-            'courier_code' =>$request->courier_code
-        ]);
+//    public function displayUpdateFabricShippingAddress($order){
+//        $data['courier'] = Courier::all();
+//        $data['province'] = Province::all();
+//
+//        $data['order'] = DB::table('users')
+//            ->join('cities', 'cities.city_id', '=', 'users.cities_id')
+//            ->join('provinces', 'provinces.province_id', '=', 'cities.province_id')
+//            ->select('provinces.title as prov', 'cities.title as kota', 'users.*')
+//            ->get();
+//
+//
+//        return view('products.fabric.detail_pengiriman',$data)->with
+//        (
+//
+//            [
+//                'order' => Product::findOrFail($order),
+//            ]
+//        );
+//
+//
+//    }
 
 
-//        $pdf = (new \Barryvdh\DomPDF\PDF)->loadview('products.fabric.payment');
-//        return $pdf->stream('invoice-kain.pdf');
-
-        return redirect()->route('fabric.show.shipping.detail');
-    }
+//    public function updateDetailPengiriman(Request $request, User  $user): \Illuminate\Http\RedirectResponse
+//    {
+//        $user->update([
+//            'cities_id' => $request->cities_id,
+//            'courier_code' =>$request->courier_code
+//        ]);
+////        $user->update($request->all());
+//
+//        return redirect()->route('fabric.show.shipping.detail');
+//    }
 
     public function InvoiceFabric(){
 
-
         $detail_order = DB::table('products')
             ->join('users','products.user_id','=','users.id')
-            ->select('products.id', 'products.quantity','products.created_at','products.category',
-                'products.unique_code','products.price_fabric','products.total','products.fabric_weight')
-            ->orderByDesc('created_at')
+            ->select('products.*','users.*')
+            ->orderByDesc('products.created_at')
             ->limit(1)
             ->get();
 
         $id_user = \Auth::user()->id;
 
-//        $city = DB::table('shipping_address')->where('user_id',$id_user)->get();
-        $city = DB::table('users')->get();
+        $city = DB::table('shipping_address')->where('user_id',$id_user)->get();
+//        $city = DB::table('users')->get();
 
         $city_destination =  $city[0]->cities_id;
 
         $alamat_toko = DB::table('alamat_toko')->first();
 
-//        $getCourier = DB::table('shipping_address')->select('shipping_address.courier_code')
-//            ->orderByDesc('created_at')
-//            ->limit(1)
-//            ->get();
-
-        $getCourier = DB::table('users')->select('users.courier_code')
+        $getCourier = DB::table('shipping_address')->select('shipping_address.courier_code')
             ->orderByDesc('created_at')
             ->limit(1)
             ->get();
 
+//        $getCourier = DB::table('users')->select('users.courier_code')
+//            ->orderByDesc('created_at')
+//            ->limit(1)
+//            ->get();
+
         $calculateCourier = $getCourier[0]->courier_code;
 
-//        $displayCourierType = DB::table('shipping_address')
-//            ->select('courier_code')->first();
-
-        $displayCourierType = DB::table('users')
+        $displayCourierType = DB::table('shipping_address')
             ->select('courier_code')->first();
+
+//        $displayCourierType = DB::table('users')
+//            ->select('courier_code')->first();
 
         $calculateWeight = DB::table('products')
             ->select('products.fabric_weight')
@@ -223,32 +218,31 @@ class ProductController extends Controller
 
         $ongkir =  $cost[0]['costs'][0]['cost'][0]['value'];
 
-
         $data = [
             'ongkir' => $ongkir,
-            'detail_order' => $detail_order
+            'detail_order' => $detail_order,
+            'getCourier' => $getCourier
         ];
 
+//        $pdf = PDF::loadview('products.fabric.invoice',compact('detail_order','ongkir', 'getCourier'));
+        $pdf = PDF::loadview('products.fabric.invoice',$data);
 
 
-        $pdf = PDF::loadview('products.fabric.invoice',compact('detail_order','ongkir'));
-        return $pdf->download('test.pdf');
-
+        return $pdf->stream('invoice-kain.pdf');
     }
 
-//    public function storeDetailPengiriman(Request $request){
-//
-//         ShippingAddress::create([
-//             'cities_id'        => $request->cities_id,
-////             'detail'           => $request->detail,
-//             'user_id'          => \Auth::user()->id,
-//             'courier_code'     => $request->courier_code
-//         ]);
-//
-//        $pdf = (new \Barryvdh\DomPDF\PDF)->loadview('products.fabric.payment');
-//        return $pdf->download('invoice-kain');
-////        return redirect()->route('fabric.show.shipping.detail');
-//    }
+    public function storeDetailPengiriman(Request $request){
+
+
+         ShippingAddress::create([
+             'cities_id'        => $request->cities_id,
+//             'detail'           => $request->detail,
+             'user_id'          => \Auth::user()->id,
+             'courier_code'     => $request->courier_code
+         ]);
+
+        return redirect()->route('fabric.show.shipping.detail');
+    }
 
     public function showShippingDetail(){
 
@@ -262,30 +256,30 @@ class ProductController extends Controller
 
         $id_user = \Auth::user()->id;
 
-//        $city = DB::table('shipping_address')->where('user_id',$id_user)->get();
-        $city = DB::table('users')->get();
+        $city = DB::table('shipping_address')->where('user_id',$id_user)->get();
+//        $city = DB::table('users')->get();
 
         $city_destination =  $city[0]->cities_id;
 
         $alamat_toko = DB::table('alamat_toko')->first();
 
-//        $getCourier = DB::table('shipping_address')->select('shipping_address.courier_code')
-//            ->orderByDesc('created_at')
-//            ->limit(1)
-//            ->get();
-
-        $getCourier = DB::table('users')->select('users.courier_code')
+        $getCourier = DB::table('shipping_address')->select('shipping_address.courier_code')
             ->orderByDesc('created_at')
             ->limit(1)
             ->get();
 
+//        $getCourier = DB::table('users')->select('users.courier_code')
+//            ->orderByDesc('created_at')
+//            ->limit(1)
+//            ->get();
+
         $calculateCourier = $getCourier[0]->courier_code;
 
-//        $displayCourierType = DB::table('shipping_address')
-//            ->select('courier_code')->first();
-
-        $displayCourierType = DB::table('users')
+        $displayCourierType = DB::table('shipping_address')
             ->select('courier_code')->first();
+
+//        $displayCourierType = DB::table('users')
+//            ->select('courier_code')->first();
 
         $calculateWeight = DB::table('products')
             ->select('products.fabric_weight')

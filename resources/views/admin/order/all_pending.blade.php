@@ -7,6 +7,7 @@
             <h4 class="m-0 font-weight-bold text-primary">Status: <b> Pending</b></h4>
         </div>
         <div class="card-body">
+            <p>Untuk mendownload gambar desain, silahkan klik kanan pada kolom desain</p>
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable">
                     <thead>
@@ -14,7 +15,6 @@
                         <th>No.</th>
                         <th>Jumlah Pembelian</th>
                         <th>Kode Pembayaran</th>
-                        <th>Ongkir</th>
                         <th>Link Desain</th>
                         <th>Jenis Kain</th>
                         <th>Catatan</th>
@@ -31,7 +31,6 @@
                         <td>{{$loop->iteration}}</td>
                             <td>{{$fabric->quantity}}</td>
                             <td>{{$fabric->unique_code}}</td>
-{{--                           <td>{{$fabric->ongkir}}</td>--}}
                             <td style="column-width: 50rem;">
                                 <a target="_blank"
                                     href="{{$fabric->link_goggle_drive}}">Klik Link Desain Disini</a></td>
@@ -52,7 +51,6 @@
                             </td>
                         </tr>
                     @endforeach
-{{--{{$ongkir}}--}}
                     </tbody>
                 </table>
             </div>

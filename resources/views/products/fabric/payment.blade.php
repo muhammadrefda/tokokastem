@@ -1,7 +1,6 @@
 @extends('layouts.master')
 @section('title','Payment')
 @section('content')
-
     <section id="checkout" >
         <div class="container">
             <div class="row">
@@ -49,14 +48,25 @@
                                 </table>
                             </div>
                             <div class="aa-order-summary-area">
-                                <a href="{{route('fabric.print.invoice')}}" class="btn btn-info">Cetak Invoice</a>
-                                <h4>Setelah melakukan transfer, silahkan mengirim bukti pembayaran ke nomor berikut</h4>
+                                <div class="aa-blog-content">
+                                    <h4>
+                                        Silahkan <b>Cetak Invoice</b> dan kirim ke nomor <b>WhatsApp</b> dibawah
+                                    </h4>
+                                </div>
+                                <div class="col-lg-offset-11">
+                                    <a href="{{route('fabric.print.invoice')}}" class="btn btn-primary btn-lg"
+                                       style="background-color: #F36365; color: #ffffff;">Cetak Invoice</a>
+                                </div>
+{{--                                <h4>Setelah melakukan transfer, silahkan mengirim bukti pembayaran ke nomor berikut</h4>--}}
                                 <div class="">
-                                    <img src="{{asset('img/WhatsApp_Logo_1.png')}}">
-                                <a class="btn btn-primary" style="background-color: #F36365; color: #ffffff;"
-                                   href="https://api.whatsapp.com/send?phone=81411165221&text=Saya%20ingin%20melakukan%20konfirmasi%20pembayaran">
-                                    0812345678976
-                                </a>
+                                <button class="btn btn-primary btn-lg" style="background-color: #333333; color: #ffffff;">
+                                <i class="fa fa-whatsapp" style="color: #5DC244; font-size: 5rem">
+                                    </i>
+                                    <a style="color: #ffffff"
+                                        href="https://api.whatsapp.com/send?phone=81411165221&text=Saya%20ingin%20melakukan%20konfirmasi%20pembayaran">
+                                        0812345678976
+                                    </a>
+                                </button>
                                 </div>
                             </div>
                         </div>
@@ -64,8 +74,4 @@
             </div>
         </div>
     </section>
-    <!-- / Cart view section -->
-
-
-
 @endsection
