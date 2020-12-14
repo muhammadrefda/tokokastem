@@ -27,7 +27,7 @@
                     <tr>
                         <td>{{$td->category}}</td>
                         <td>{{$td->quantity}}</td>
-                        <td>{{number_format($td->price_fabric)}}</td>
+                        <td>{{number_format($td->price_tshirt)}}</td>
                     </tr>
                 </tbody>
                 @endforeach
@@ -53,7 +53,6 @@
                     @foreach($getCourier as $gc)
                         <td>{{$gc->courier_code}}</td>
                     @endforeach
-
                 </tr>
                 </tfoot>
             </table>
@@ -75,7 +74,6 @@
             </div>
             <br>
             <br>
-
             <div class="row">
                 <table>
                     <thead>

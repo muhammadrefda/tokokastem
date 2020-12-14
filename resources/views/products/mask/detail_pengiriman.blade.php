@@ -27,16 +27,11 @@
                                             <select name="cities_id" id="cities_id" class="form-control">
                                             </select>
                                         </div>
-{{--                                        <div class="form-grup">--}}
-{{--                                            <label for="">Alamat Lengkap</label>--}}
-{{--                                            <textarea name="detail" class="form-control" placeholder="Kecamatan/Desa/Nama Jalan" id="" cols="30" rows="10"></textarea>--}}
-{{--                                        </div>--}}
                                         <br>
                                         <div class="form-group">
                                             <label>Pilih Kurir Pengiriman</label>
                                             @foreach ($courier as $key => $value)
                                                 <div class="form-check form-check-inline">
-                                                    <!-- name="courier[]"-->
                                                     <input class="form-check-input" type="checkbox" id="courier-{{ $key }}" name="courier_code"  value="{{ $value->code }}">
                                                     <label class="form-check-label"  for="courier-{{ $key }}">{{ $value->title }}</label>
                                                 </div>

@@ -47,7 +47,7 @@
                                 {{date('m-d', strtotime($fabric->created_at))}}
                             </td>
                             <td>
-                                <a href="{{route('fabric.order.edit',['order' => $fabric->id])}}" class="btn btn-primary">edit</a>
+                                <a href="{{route('fabric.order.edit',$fabric->id)}}" class="btn btn-primary">edit</a>
                             </td>
                         </tr>
                     @endforeach
@@ -339,8 +339,6 @@
                         <th>Nama Pembeli</th>
                         <th>Alamat Pengiriman</th>
                         <th>No. Hp Pembeli</th>
-                        <th>Jenis Kurir</th>
-
                         <th>Tanggal Transaksi</th>
                         <td colspan="2">Action</td>
                     </tr>
@@ -374,8 +372,6 @@
                                 {{$order->address}}
                             </td>
                             <td>{{$order->phone_number}}</td>
-                            <td>jne</td>
-
                             <td>
                                 {{date('m-d', strtotime($order->created_at))}}
                             </td>

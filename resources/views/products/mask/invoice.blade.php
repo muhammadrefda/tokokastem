@@ -27,7 +27,7 @@
                     <tr>
                         <td>{{$td->category}}</td>
                         <td>{{$td->quantity}}</td>
-                        <td>{{number_format($td->price_fabric)}}</td>
+                        <td>{{number_format($td->price_mask)}}</td>
                     </tr>
                 </tbody>
                 @endforeach

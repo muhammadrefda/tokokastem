@@ -270,11 +270,11 @@ class OrderController extends Controller
         );
     }
 
-    public function updateFabricStatusOrder($order){
+    public function updateFabricStatusOrder(Request $request, Product $product){
 
-        $order = Product::findOrFail($order);
+//        $order = Product::findOrFail($order);
 
-        $order->update(request()->all());
+        $product->update($request->all());
 
         return redirect()->back();
     }

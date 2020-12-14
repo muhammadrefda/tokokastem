@@ -52,32 +52,29 @@ Route::prefix('product/fabric')->group(function () {
 
     Route::get('/detail/pesanan','FrontStore\ProductController@createFabricOrder')->name('fabric.create.detail.order');
     Route::post('/detail/pesanan/create','FrontStore\ProductController@storeProductOrder')->name('fabric.store.detail.order')->middleware('auth');
-
-//    Route::get('{order}/detail-pengiriman','FrontStore\ProductController@displayUpdateFabricShippingAddress')->name('fabric.show.detail.pengiriman');
-//    Route::put('{order}/detail-pengiriman','FrontStore\ProductController@updateDetailPengiriman')->name('update.detail.pengiriman');
-
     Route::get('detail-pengiriman','FrontStore\ProductController@showDetailPengiriman')->name('fabric.show.detail.pengiriman');
     Route::post('detail-pengiriman','FrontStore\ProductController@storeDetailPengiriman')->name('fabric.store.detail.pengiriman');
-
     Route::get('/shipping-detail','FrontStore\ProductController@showShippingDetail')->name('fabric.show.shipping.detail')->middleware('auth');
+    Route::get('/shipping-detail/invoice', 'FrontStore\ProductController@InvoiceFabric')->name('fabric.print.invoice');
 
-    Route::get('/shipping-detail/invoice/print', 'FrontStore\ProductController@InvoiceFabric')->name('fabric.print.invoice');
 });
-
 
 
 Route::prefix('product/mask')->middleware('auth')->group(function () {
 
+    Route::get('/design','FrontStore\ProductController@showRightMask')->name('mask.design.right');
+    Route::get('/design/left','FrontStore\ProductController@showLeftMask')->name('mask.design.left');
     Route::get('/detail/pesanan','FrontStore\ProductController@createMaskOrder')->name('mask.create.detail.order');
     Route::post('/detail/pesanan/create','FrontStore\ProductController@storeMaskOrder')->name('mask.store.detail.order');
     Route::get('detail-pengiriman','FrontStore\ProductController@showMaskDetailPengiriman')->name('mask.show.detail.pengiriman');
     Route::post('detail-pengiriman','FrontStore\ProductController@storeMaskDetailPengiriman')->name('mask.store.detail.pengiriman');
     Route::get('shipping-detail/','FrontStore\ProductController@showShippingMaskDetail')->name('mask.show.shipping.detail');
-    Route::get('/design','FrontStore\ProductController@showRightMask')->name('mask.design.right');
-    Route::get('/design/left','FrontStore\ProductController@showLeftMask')->name('mask.design.left');
+    Route::get('/shipping-detail/invoice', 'FrontStore\ProductController@InvoiceMask')->name('mask.print.invoice');
+
 });
 
 Route::prefix('product/totebag')->middleware('auth')->group(function () {
+
     Route::get('/design/front','FrontStore\ProductController@showFrontTotebag')->name('totebag.design.front');
     Route::get('/design/back','FrontStore\ProductController@showBackTotebag')->name('totebag.design.back');
     Route::get('/detail/pesanan','FrontStore\ProductController@createTotebagOrder')->name('totebag.create.detail.order');
@@ -85,37 +82,49 @@ Route::prefix('product/totebag')->middleware('auth')->group(function () {
     Route::get('detail-pengiriman','FrontStore\ProductController@showTotebagDetailPengiriman')->name('totebag.show.detail.pengiriman');
     Route::post('detail-pengiriman','FrontStore\ProductController@storeTotebagDetailPengiriman')->name('totebag.store.detail.pengiriman');
     Route::get('shipping-detail/','FrontStore\ProductController@showShippingTotebagDetail')->name('totebag.show.shipping.detail');
-    Route::get('/design/front','FrontStore\ProductController@showFrontTotebag')->name('totebag.design.front');
-    Route::get('/design/back','FrontStore\ProductController@showBackTotebag')->name('totebag.design.back');
+    Route::get('/shipping-detail/invoice', 'FrontStore\ProductController@InvoiceTotebag')->name('totebag.print.invoice');
+
 });
 
+
 Route::prefix('product/tshirt')->middleware('auth')->group(function () {
+
+
+    Route::get('/design/front','FrontStore\ProductController@showFrontTshirt')->name('tshirt.design.front');
+    Route::get('/design/back','FrontStore\ProductController@showBackTshirt')->name('tshirt.design.back');
     Route::get('/detail/pesanan','FrontStore\ProductController@createTshirtOrder')->name('tshirt.create.detail.order');
     Route::post('/detail/pesanan/create','FrontStore\ProductController@storeTshirtOrder')->name('tshirt.store.detail.order');
     Route::get('detail-pengiriman','FrontStore\ProductController@showTshirtDetailPengiriman')->name('tshirt.show.detail.pengiriman');
     Route::post('detail-pengiriman','FrontStore\ProductController@storeTshirtDetailPengiriman')->name('tshirt.store.detail.pengiriman');
     Route::get('shipping-detail/','FrontStore\ProductController@showShippingTshirtDetail')->name('tshirt.show.shipping.detail');
-    Route::get('/design/front','FrontStore\ProductController@showFrontTshirt')->name('tshirt.design.front');
-    Route::get('/design/back','FrontStore\ProductController@showBackTshirt')->name('tshirt.design.back');
+    Route::get('/shipping-detail/invoice', 'FrontStore\ProductController@InvoiceTshirt')->name('tshirt.print.invoice');
+
 });
 
 Route::prefix('product/mug')->middleware('auth')->group(function () {
+
+
+    Route::get('/design/front','FrontStore\ProductController@showFrontMug')->name('mug.design.front');
+    Route::get('/design/back','FrontStore\ProductController@showBackMug')->name('mug.design.back');
     Route::get('/detail/pesanan','FrontStore\ProductController@createMugOrder')->name('mug.create.detail.order');
     Route::post('/detail/pesanan/create','FrontStore\ProductController@storeMugOrder')->name('mug.store.detail.order');
     Route::get('detail-pengiriman','FrontStore\ProductController@showMugDetailPengiriman')->name('mug.show.detail.pengiriman');
     Route::post('detail-pengiriman','FrontStore\ProductController@storeMugDetailPengiriman')->name('mug.store.detail.pengiriman');
     Route::get('shipping-detail/','FrontStore\ProductController@showShippingMugDetail')->name('mug.show.shipping.detail');
-    Route::get('/design/front','FrontStore\ProductController@showFrontMug')->name('mug.design.front');
-    Route::get('/design/back','FrontStore\ProductController@showBackMug')->name('mug.design.back');
+    Route::get('/shipping-detail/invoice', 'FrontStore\ProductController@InvoiceMug')->name('mug.print.invoice');
+
 });
 
 Route::prefix('product/bagpack')->middleware('auth')->group(function () {
+
+    Route::get('/design','FrontStore\ProductController@showBagpackDesain')->name('bagpack.design');
     Route::get('/detail/pesanan','FrontStore\ProductController@createBagpackOrder')->name('bagpack.create.detail.order');
     Route::post('/detail/pesanan/create','FrontStore\ProductController@storeBagpackOrder')->name('bagpack.store.detail.order');
     Route::get('detail-pengiriman','FrontStore\ProductController@showBackpackDetailPengiriman')->name('backpack.show.detail.pengiriman');
     Route::post('detail-pengiriman','FrontStore\ProductController@storeBackpackDetailPengiriman')->name('backpack.store.detail.pengiriman');
     Route::get('shipping-detail/','FrontStore\ProductController@showShippingBagpackDetail')->name('bagpack.show.shipping.detail');
-    Route::get('/design','FrontStore\ProductController@showBagpackDesain')->name('bagpack.design');
+    Route::get('/shipping-detail/invoice', 'FrontStore\ProductController@InvoiceBagpack')->name('bagpack.print.invoice');
+
 });
 
 /*End Front Store Area*/
