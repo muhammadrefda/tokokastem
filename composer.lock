@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "172b6360148bc57d89ba8ad9d84828bd",
+    "content-hash": "2549a60576233ccc1b03219240bf0735",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2498,21 +2498,21 @@
         },
         {
             "name": "realrashid/sweet-alert",
-            "version": "v3.1.7",
+            "version": "v3.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/realrashid/sweet-alert.git",
-                "reference": "94415e288bf38e482cc645030800c0a8591c9624"
+                "reference": "f9450bd8ccc5522f7e7c042bd97031f849ad44f8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/realrashid/sweet-alert/zipball/94415e288bf38e482cc645030800c0a8591c9624",
-                "reference": "94415e288bf38e482cc645030800c0a8591c9624",
+                "url": "https://api.github.com/repos/realrashid/sweet-alert/zipball/f9450bd8ccc5522f7e7c042bd97031f849ad44f8",
+                "reference": "f9450bd8ccc5522f7e7c042bd97031f849ad44f8",
                 "shasum": ""
             },
             "require": {
                 "laravel/framework": "^5.4|^6.0|^7.0|^8.0",
-                "php": "^7.2"
+                "php": "^7.2|^8.0"
             },
             "require-dev": {
                 "symfony/thanks": "^1.0"
@@ -2578,7 +2578,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-09-09T15:24:03+00:00"
+            "time": "2020-12-02T09:39:26+00:00"
         },
         {
             "name": "sabberworm/php-css-parser",

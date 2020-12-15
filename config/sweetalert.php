@@ -81,7 +81,7 @@ return [
     |
     */
 
-    'height_auto' => env('SWEET_ALERT_HEIGHT_AUTO', true),
+    'height_auto' => env('SWEET_ALERT_HEIGHT_AUTO', false),
 
     /*
     |--------------------------------------------------------------------------

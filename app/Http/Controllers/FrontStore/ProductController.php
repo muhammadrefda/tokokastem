@@ -9,13 +9,12 @@ use App\Product;
 use App\Province;
 use App\ShippingAddress;
 use App\User;
-//use Barryvdh\DomPDF\PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Kavist\RajaOngkir\Facades\RajaOngkir;
-//use Barryvdh\DomPDF\PDF;
+use RealRashid\SweetAlert\Facades\Alert;
 use PDF;
 
 class ProductController extends Controller
@@ -106,7 +105,8 @@ class ProductController extends Controller
 
         $new_product->save();
 
-        return redirect()->route('fabric.show.detail.pengiriman',['order' => $new_product->id])->with('success','Pesanan Berhasil dibuat');
+        Alert::success('SUKSES','Pesanan Berhasil dibuat');
+        return redirect()->route('fabric.show.detail.pengiriman',['order' => $new_product->id]);
     }
 
     public function showDetailPengiriman(){
@@ -241,6 +241,7 @@ class ProductController extends Controller
              'courier_code'     => $request->courier_code
          ]);
 
+        Alert::success('SUKSES','Alamat Pengiriman Berhasil dibuat!');
         return redirect()->route('fabric.show.shipping.detail');
     }
 
@@ -362,6 +363,9 @@ class ProductController extends Controller
     /*Start of Mask section*/
 
     public function createMaskOrder(){
+
+        Alert::success('SUKSES','Desain Berhasil dibuat!');
+
         return view('products.mask.detail_order');
     }
 
@@ -397,6 +401,8 @@ class ProductController extends Controller
         $new_product->total = $new_product->getMaskTotalAttributes();
 
         $new_product->save();
+
+        Alert::success('SUKSES','Pesanan Berhasil dibuat!');
 
         return redirect()->route('mask.show.detail.pengiriman');
     }
@@ -434,6 +440,8 @@ class ProductController extends Controller
             'courier_code'     => $request->courier_code
 
         ]);
+
+        Alert::success('SUKSES','Pesanan Berhasil dibuat!');
 
         return redirect()->route('mask.show.shipping.detail');
     }
@@ -593,6 +601,7 @@ class ProductController extends Controller
 
     /*Start of Tote Bag section*/
     public function createTotebagOrder(){
+
         return view('products.totebag.detail_order');
     }
 
@@ -634,6 +643,8 @@ class ProductController extends Controller
         $new_product->total = $new_product->getTotebagTotalAttributes();
 
         $new_product->save();
+
+        Alert::success('SUKSES','Pesanan Berhasil dibuat!');
 
         return redirect()->route('totebag.show.detail.pengiriman');
     }
@@ -718,6 +729,8 @@ class ProductController extends Controller
             'courier_code'     => $request->courier_code
 
         ]);
+
+        Alert::success('SUKSES','Alamat Pengiriman  Berhasil dibuat!');
 
         return redirect()->route('totebag.show.shipping.detail');
     }
@@ -813,10 +826,12 @@ class ProductController extends Controller
     }
 
     public function showFrontTotebag(){
+
         return view('products.totebag.design_front');
     }
 
     public function showBackTotebag(){
+
         return view('products.totebag.design_back');
     }
     /*End of Tote Bag section*/
@@ -824,6 +839,8 @@ class ProductController extends Controller
 
     /*Start of T-Shirt*/
     public function createTshirtOrder(){
+        Alert::success('SUKSES','Desain Berhasil dibuat!');
+
         return view('products.tshirt.detail_order');
     }
 
@@ -866,6 +883,8 @@ class ProductController extends Controller
         $new_product->total = $new_product->getTshirtTotalAttributes();
 
         $new_product->save();
+
+        Alert::success('SUKSES','Pesanan Berhasil dibuat!');
 
         return redirect()->route('tshirt.show.detail.pengiriman');
     }
@@ -953,6 +972,9 @@ class ProductController extends Controller
             'courier_code'     => $request->courier_code
 
         ]);
+
+        Alert::success('SUKSES','Alamat Pengiriman Berhasil dibuat!');
+
 
         return redirect()->route('tshirt.show.shipping.detail');
     }
@@ -1061,6 +1083,7 @@ class ProductController extends Controller
     /*Start of Mug Section*/
 
     public function createMugOrder(){
+
         return view('products.mug.detail_order');
     }
 
@@ -1106,6 +1129,8 @@ class ProductController extends Controller
 
         $new_product->save();
 
+        Alert::success('SUKSES','Pesanan Berhasil dibuat!');
+
         return redirect()->route('mug.show.detail.pengiriman');
     }
 
@@ -1141,6 +1166,8 @@ class ProductController extends Controller
             'courier_code'     => $request->courier_code
 
         ]);
+
+        Alert::success('SUKSES','Alamat Pengiriman Berhasil dibuat!');
 
         return redirect()->route('mug.show.shipping.detail');
     }
@@ -1232,9 +1259,11 @@ class ProductController extends Controller
     public function showFrontMug(){
 
         return view('products.mug.design_front');
+
     }
 
     public function showBackMug(){
+        Alert::success('SUKSES','Desain Berhasil dibuat!');
 
         return view('products.mug.design_back');
     }
@@ -1299,6 +1328,8 @@ class ProductController extends Controller
 
     public function createBagpackOrder(){
 
+        Alert::success('SUKSES','Desain Berhasil dibuat!');
+
         return view('products.bag.detail_order');
     }
 
@@ -1333,6 +1364,8 @@ class ProductController extends Controller
         $new_product->total = $new_product->getBagTotalAttributes();
 
         $new_product->save();
+
+        Alert::success('SUKSES','Pesanan Berhasil dibuat!');
 
         return redirect()->route('backpack.show.detail.pengiriman');
     }
@@ -1370,6 +1403,8 @@ class ProductController extends Controller
             'courier_code'     => $request->courier_code
 
         ]);
+
+        Alert::success('SUKSES','Alamat Pengiriman Berhasil dibuat!');
 
         return redirect()->route('bagpack.show.shipping.detail');
     }
