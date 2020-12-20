@@ -7,9 +7,9 @@ use App\Product;
 use App\ShippingAddress;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-//use Intervention\Image\Image;
 use Image;
-use Kavist\RajaOngkir\Facades\RajaOngkir;
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 class OrderController extends Controller
 {
@@ -17,47 +17,12 @@ class OrderController extends Controller
 
     public function allPendingOrder (){
 
-
-//        $city = DB::table('users')->get();
-
-//        $city_destination =  $city[0]->cities_id;
-
-//        $alamat_toko = DB::table('alamat_toko')->first();
-
-//        $getCourier = DB::table('users')->select('users.courier_code')
-//            ->orderByDesc('created_at')
-//            ->limit(1)
-//            ->get();
-
-//        $calculateCourier = $getCourier[0]->courier_code;
-
-//        $calculateWeight = DB::table('products')
-//            ->select('products.fabric_weight')
-//            ->orderByDesc('created_at')
-//            ->limit(1)
-//            ->get();
-
-//        $getFabricWeight = $calculateWeight[0]->fabric_weight;
-
-//        $cost = RajaOngkir::ongkosKirim([
-//            'origin'  => $alamat_toko->id,
-//            'destination' => $city_destination,
-//            'weight' => $getFabricWeight,
-//            'courier' => $calculateCourier,
-//        ])->get();
-
-//        $ongkir =  $cost[0]['costs'][0]['cost'][0]['value'];
-
-
-
         $fabrics = DB::table('products')
             ->join('users','products.user_id','=','users.id')
             ->select('products.*','users.*')
             ->where('status','=','pending')
             ->where('category','=','Kain')
-            ->get();
-
-
+            ->simplePaginate(5);
 
 
         $masks = DB::table('products')
@@ -65,35 +30,36 @@ class OrderController extends Controller
             ->select('products.*', 'users.*')
             ->where('status','=','pending')
             ->where('category','=','Masker')
-            ->get();
+            ->simplePaginate(5);
+
 
         $mugs = DB::table('products')
             ->join('users','products.user_id','=','users.id')
             ->select('products.*', 'users.*')
             ->where('status','=','pending')
             ->where('category','=','Mug')
-            ->get();
+            ->simplePaginate(5);
 
         $tshirts = DB::table('products')
             ->join('users','products.user_id','=','users.id')
             ->select('products.*', 'users.*')
             ->where('status','=','pending')
             ->where('category','=','Tshirt')
-            ->get();
+            ->simplePaginate(5);
 
         $totebags = DB::table('products')
             ->join('users','products.user_id','=','users.id')
             ->select('products.*', 'users.*')
             ->where('status','=','pending')
             ->where('category','=','Totebag')
-            ->get();
+            ->simplePaginate(5);
 
         $backpacks = DB::table('products')
             ->join('users','products.user_id','=','users.id')
             ->select('products.*', 'users.*')
             ->where('status','=','pending')
             ->where('category','=','Tas')
-            ->get();
+            ->simplePaginate(5);
 
         $data = [
             'fabrics' => $fabrics,
@@ -102,7 +68,6 @@ class OrderController extends Controller
             'tshirts' => $tshirts,
             'totebags' => $totebags,
             'backpacks' => $backpacks,
-//            'ongkir' => $ongkir,
         ];
 
         return view('admin.order.all_pending',$data);
@@ -115,53 +80,43 @@ class OrderController extends Controller
             ->select('products.*','users.*')
             ->where('status','=','Berhasil')
             ->where('category','=','Kain')
-            ->get();
+            ->simplePaginate(5);
+
 
         $masks = DB::table('products')
             ->join('users','products.user_id','=','users.id')
-            ->select('products.id', 'products.quantity', 'products.design_mask', 'products.size',
-                'products.material', 'products.note', 'products.status','products.unique_code',
-                'users.name', 'users.address', 'users.phone_number', 'products.created_at')
+            ->select('products.*', 'users.*')
             ->where('status','=','Berhasil')
             ->where('category','=','Masker')
-            ->get();
+            ->simplePaginate(5);
 
         $mugs = DB::table('products')
             ->join('users','products.user_id','=','users.id')
-            ->select('products.id', 'products.quantity', 'products.design_front_mug', 'products.design_back_mug',
-                'products.size', 'products.material', 'products.note', 'products.status', 'products.unique_code',
-                'users.name', 'users.address', 'users.phone_number', 'products.created_at')
+            ->select('products.*', 'users.*')
             ->where('status','=','Berhasil')
             ->where('category','=','Mug')
-            ->get();
+            ->simplePaginate(5);
 
         $tshirts = DB::table('products')
             ->join('users','products.user_id','=','users.id')
-            ->select('products.id', 'products.quantity', 'products.design_front_tshirt', 'products.design_back_tshirt',
-                'products.size', 'products.material', 'products.note', 'products.status', 'products.unique_code',
-                'users.name', 'users.address', 'users.phone_number', 'products.created_at')
+            ->select('products.*', 'users.*')
             ->where('status','=','Berhasil')
             ->where('category','=','Tshirt')
-            ->get();
+            ->simplePaginate(5);
 
         $totebags = DB::table('products')
             ->join('users','products.user_id','=','users.id')
-            ->select('products.id', 'products.quantity', 'products.design_front_totebag', 'products.design_back_totebag',
-                'products.size', 'products.material', 'products.note', 'products.status', 'products.unique_code',
-                'users.name', 'users.address', 'users.phone_number', 'products.created_at')
+            ->select('products.*', 'users.*')
             ->where('status','=','Berhasil')
             ->where('category','=','Totebag')
-            ->get();
+            ->simplePaginate(5);
 
         $backpacks = DB::table('products')
             ->join('users','products.user_id','=','users.id')
-            ->select('products.id', 'products.quantity', 'products.design_backpack', 'products.size',
-                'products.material', 'products.note', 'products.status', 'products.unique_code',
-                'users.name', 'users.address', 'users.phone_number', 'products.created_at')
+            ->select('products.*', 'users.*')
             ->where('status','=','Berhasil')
             ->where('category','=','Tas')
-            ->get();
-
+            ->simplePaginate(5);
 
         $data = [
             'fabrics' => $fabrics,
@@ -181,52 +136,42 @@ class OrderController extends Controller
             ->select('products.*','users.*')
             ->where('status','=','On Progress')
             ->where('category','=','Kain')
-            ->get();
+            ->simplePaginate(5);
 
         $masks = DB::table('products')
             ->join('users','products.user_id','=','users.id')
-            ->select('products.id', 'products.quantity', 'products.design_mask', 'products.size',
-                'products.material', 'products.note', 'products.status','products.unique_code',
-                'users.name', 'users.address', 'users.phone_number', 'products.created_at')
+            ->select('products.*', 'users.*')
             ->where('status','=','On Progress')
             ->where('category','=','Masker')
-            ->get();
+            ->simplePaginate(5);
 
         $mugs = DB::table('products')
             ->join('users','products.user_id','=','users.id')
-            ->select('products.id', 'products.quantity', 'products.design_front_mug', 'products.design_back_mug',
-                'products.size', 'products.material', 'products.note', 'products.status', 'products.unique_code',
-                'users.name', 'users.address', 'users.phone_number', 'products.created_at')
+            ->select('products.*', 'users.*')
             ->where('status','=','On Progress')
             ->where('category','=','Mug')
-            ->get();
+            ->simplePaginate(5);
 
         $tshirts = DB::table('products')
             ->join('users','products.user_id','=','users.id')
-            ->select('products.id', 'products.quantity', 'products.design_front_tshirt', 'products.design_back_tshirt',
-                'products.size', 'products.material', 'products.note', 'products.status', 'products.unique_code',
-                'users.name', 'users.address', 'users.phone_number', 'products.created_at')
+            ->select('products.*', 'users.*')
             ->where('status','=','On Progress')
             ->where('category','=','Tshirt')
-            ->get();
+            ->simplePaginate(5);
 
         $totebags = DB::table('products')
             ->join('users','products.user_id','=','users.id')
-            ->select('products.id', 'products.quantity', 'products.design_front_totebag', 'products.design_back_totebag',
-                'products.size', 'products.material', 'products.note', 'products.status', 'products.unique_code',
-                'users.name', 'users.address', 'users.phone_number', 'products.created_at')
+            ->select('products.*', 'users.*')
             ->where('status','=','On Progress')
             ->where('category','=','Totebag')
-            ->get();
+            ->simplePaginate(5);
 
         $backpacks = DB::table('products')
             ->join('users','products.user_id','=','users.id')
-            ->select('products.id', 'products.quantity', 'products.design_backpack', 'products.size',
-                'products.material', 'products.note', 'products.status', 'products.unique_code',
-                'users.name', 'users.address', 'users.phone_number', 'products.created_at')
+            ->select('products.*', 'users.*')
             ->where('status','=','On Progress')
             ->where('category','=','Tas')
-            ->get();
+            ->simplePaginate(5);
 
 
         $data = [
@@ -243,61 +188,48 @@ class OrderController extends Controller
 
     /* Start Fabric Section */
 
-//    public function displayFabricSuccessOrder(){
-//
-//        $orders = DB::table('products')
-//            ->join('users','products.user_id','=','users.id')
-//            ->select('products.id', 'products.quantity', 'products.link_goggle_drive', 'products.type_fabric',
-//                             'products.note', 'products.status',
-//                             'products.unique_code', 'users.name', 'users.address', 'users.phone_number',
-//                             'products.created_at')
-//            ->where('status','=','Berhasil')
-//            ->where('category','=','Kain')
-//            ->get();
-//
-//        return view('admin.order.fabric.success')->with(['orders' => $orders,]);
-//    }
-
-
     public function editFabricStatusOrder ($order)
     {
 
-        return view('admin.order.fabric.edit')->with
-        (
-            [
-                'order' => Product::findOrFail($order),
-            ]
-        );
+        $fabric = Product::findOrFail($order);
+
+        return view('admin.order.fabric.edit',['fabric' => $fabric,]);
     }
 
-    public function updateFabricStatusOrder(Request $request, Product $product){
+    public function updateFabricStatusOrder(Request $request, $order)
+    {
 
-//        $order = Product::findOrFail($order);
+//                $updateFabric = Product::findOrFail($order);
+//
+//        $updateFabric->update(
+//            $request->all()
+//        );
 
-        $product->update($request->all());
+        $kain = Product::findOrFail($order);
 
-        return redirect()->back();
+        $kain->status= $request->get('status');
+
+        $kain->save();
+
+//        $kain->update(['status' => $request->status,]);
+
+
+//        $updateFabric = Product::findOrFail($order);
+
+//        $updateFabric->status = $request->get('status');
+
+//        $updateFabric->save();
+
+
+//        Alert::success('Sukses','Status Berhasil di update');
+
+        return redirect()->route('fabric.order.edit', ['order' => $order])->with('Sukses','Status Berhasil di update!');
     }
 
     /* End Fabric Section */
 
 
     /* Start Mask Section */
-
-    public function displayMaskSuccessOrder(){
-
-        $orders = DB::table('products')
-            ->join('users','products.user_id','=','users.id')
-            ->select('products.id', 'products.quantity', 'products.design_left_mask', 'products.design_right_mask',
-                'products.size', 'products.material', 'products.note', 'products.status', 'products.unique_code',
-                'users.name', 'users.address', 'users.phone_number', 'products.created_at')
-            ->where('status','=','Berhasil')
-            ->where('category','=','Masker')
-            ->get();
-
-        return view('admin.order.mask.success')->with(['orders' => $orders,]);
-    }
-
 
     public function editMaskStatusOrder ($order)
     {
@@ -316,6 +248,8 @@ class OrderController extends Controller
 
         $order->update(request()->all());
 
+        Alert::success('Sukses','Status Berhasil di update');
+
         return redirect()->route('order.success.index');
     }
 
@@ -323,34 +257,6 @@ class OrderController extends Controller
 
 
     /* Start Mug Section */
-
-    public function displayMugPendingOrder(){
-
-        $orders = DB::table('products')
-            ->join('users','products.user_id','=','users.id')
-            ->select('products.id', 'products.quantity', 'products.design_front_mug', 'products.design_back_mug',
-                'products.size', 'products.material', 'products.note', 'products.status', 'products.unique_code',
-                'users.name', 'users.address', 'users.phone_number', 'products.created_at')
-            ->where('status','=','pending')
-            ->where('category','=','Mug')
-            ->get();
-
-        return view('admin.order.mug.pending')->with(['orders' => $orders,]);
-    }
-
-    public function displayMugSuccessOrder(){
-
-        $orders = DB::table('products')
-            ->join('users','products.user_id','=','users.id')
-            ->select('products.id', 'products.quantity', 'products.design_front_mug', 'products.design_back_mug',
-                'products.size', 'products.material', 'products.note', 'products.status', 'products.unique_code',
-                'users.name', 'users.address', 'users.phone_number', 'products.created_at')
-            ->where('status','=','Berhasil')
-            ->where('category','=','Mug')
-            ->get();
-
-        return view('admin.order.mug.success')->with(['orders' => $orders,]);
-    }
 
     public function editMugStatusOrder ($order)
     {
@@ -369,6 +275,8 @@ class OrderController extends Controller
 
         $order->update(request()->all());
 
+        Alert::success('Sukses','Status Berhasil di update');
+
         return redirect()->route('order.success.index');
     }
 
@@ -376,34 +284,6 @@ class OrderController extends Controller
 
 
     /* Start T-Shirt Section */
-
-    public function displayTshirtPendingOrder(){
-
-        $orders = DB::table('products')
-            ->join('users','products.user_id','=','users.id')
-            ->select('products.id', 'products.quantity', 'products.design_front_tshirt', 'products.design_back_tshirt',
-                'products.size', 'products.material', 'products.note', 'products.status', 'products.unique_code',
-                'users.name', 'users.address', 'users.phone_number', 'products.created_at')
-            ->where('status','=','pending')
-            ->where('category','=','Tshirt')
-            ->get();
-
-        return view('admin.order.tshirt.pending')->with(['orders' => $orders,]);
-    }
-
-    public function displayTshirtSuccessOrder(){
-
-        $orders = DB::table('products')
-            ->join('users','products.user_id','=','users.id')
-            ->select('products.id', 'products.quantity', 'products.design_front_tshirt', 'products.design_back_tshirt',
-                'products.size', 'products.material', 'products.note', 'products.status', 'products.unique_code',
-                'users.name', 'users.address', 'users.phone_number', 'products.created_at')
-            ->where('status','=','Berhasil')
-            ->where('category','=','Tshirt')
-            ->get();
-
-        return view('admin.order.tshirt.success')->with(['orders' => $orders,]);
-    }
 
     public function editTshirtStatusOrder ($order)
     {
@@ -422,40 +302,14 @@ class OrderController extends Controller
 
         $order->update(request()->all());
 
+        Alert::success('Sukses','Status Berhasil di update');
+
         return redirect()->route('order.success.index');
     }
     /* End T-Shirt Section */
 
 
     /* Start Tote Bag Section */
-
-    public function displayTotebagPendingOrder(){
-
-        $orders = DB::table('products')
-            ->join('users','products.user_id','=','users.id')
-            ->select('products.id', 'products.quantity', 'products.design_front_totebag', 'products.design_back_totebag',
-                'products.size', 'products.material', 'products.note', 'products.status', 'products.unique_code',
-                'users.name', 'users.address', 'users.phone_number', 'products.created_at')
-            ->where('status','=','pending')
-            ->where('category','=','Totebag')
-            ->get();
-
-        return view('admin.order.totebag.pending')->with(['orders' => $orders,]);
-    }
-
-    public function displayTotebagSuccessOrder(){
-
-        $orders = DB::table('products')
-            ->join('users','products.user_id','=','users.id')
-            ->select('products.id', 'products.quantity', 'products.design_front_totebag', 'products.design_back_totebag',
-                'products.size', 'products.material', 'products.note', 'products.status', 'products.unique_code',
-                'users.name', 'users.address', 'users.phone_number', 'products.created_at')
-            ->where('status','=','Berhasil')
-            ->where('category','=','Totebag')
-            ->get();
-
-        return view('admin.order.totebag.success')->with(['orders' => $orders,]);
-    }
 
     public function editTotebagStatusOrder ($order)
     {
@@ -474,40 +328,14 @@ class OrderController extends Controller
 
         $order->update(request()->all());
 
-        return redirect()->route('totebag.order.index');
+        Alert::success('Sukses','Status Berhasil di update');
+
+        return redirect()->back();
     }
     /* End Tote Bag Section */
 
 
     /* Start BagPack Section */
-
-    public function displayBagPendingOrder(){
-
-        $orders = DB::table('products')
-            ->join('users','products.user_id','=','users.id')
-            ->select('products.id', 'products.quantity', 'products.design_backpack', 'products.size',
-                'products.material', 'products.note', 'products.status', 'products.unique_code',
-                'users.name', 'users.address', 'users.phone_number', 'products.created_at')
-            ->where('status','=','pending')
-            ->where('category','=','Tas')
-            ->get();
-
-        return view('admin.order.bag.pending')->with(['orders' => $orders,]);
-    }
-
-    public function displayBagSuccessOrder(){
-
-        $orders = DB::table('products')
-            ->join('users','products.user_id','=','users.id')
-            ->select('products.id', 'products.quantity', 'products.design_backpack',
-                'products.size', 'products.material', 'products.note', 'products.status', 'products.unique_code',
-                'users.name', 'users.address', 'users.phone_number', 'products.created_at')
-            ->where('status','=','Berhasil')
-            ->where('category','=','Tas')
-            ->get();
-
-        return view('admin.order.bag.success')->with(['orders' => $orders,]);
-    }
 
     public function editBagStatusOrder ($order)
     {
@@ -526,10 +354,10 @@ class OrderController extends Controller
 
         $order->update(request()->all());
 
+        Alert::success('Sukses','Status Berhasil di update');
+
         return redirect()->route('bag.order.index');
     }
     /* End BagPack Section */
-
-
 
 }

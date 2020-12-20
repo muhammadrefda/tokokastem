@@ -6,10 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Desain Masker | Toko Kastem</title>
 
-    <link href="{{asset('css/style.css')}}" rel="stylesheet">
-
-
-
     <script type="text/javascript" src="{{ asset('js/excanvas.js')}}"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script type="text/javascript" src="{{ asset('js/fabric.js')}}"></script>
@@ -19,15 +15,20 @@
     <script type="text/javascript" src="{{ asset('js/loading.js')}}"></script>
     <script type="text/javascript"
             src="https://cdn.rawgit.com/eligrey/FileSaver.js/5733e40e5af936eb3f48554cf6a8a7075d71d18a/FileSaver.js"></script>
-    <!-- Le styles -->
+
     <link type="text/css" rel="stylesheet" href="{{ asset('css/jquery.miniColors.css')}}"/>
     <link href="{{ asset('css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href=" {{ asset('css/loader.css')}}" rel="stylesheet">
     <link href="{{ asset('css/bootstrap-responsive.min.css')}}" rel="stylesheet">
+    <link href="{{asset('css/style.css')}}" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <link id="switcher" href="{{asset('css/theme-color/default-theme.css')}}" rel="stylesheet">
+    <link href="{{asset('css/font-awesome.css')}}" rel="stylesheet">
+    <link href="{{asset('css/bootstrap.css')}}" rel="stylesheet">
+    <link href="{{asset('css/jquery.smartmenus.bootstrap.css')}}" rel="stylesheet">
 
-    <script type="text/javascript">
-    </script>
     <style type="text/css">
 
         .color-preview {
@@ -123,42 +124,20 @@
         }
     </style>
 
-    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
-    <link id="switcher" href="{{asset('css/theme-color/default-theme.css')}}" rel="stylesheet">
-
-    <!-- Font awesome -->
-    <link href="{{asset('css/font-awesome.css')}}" rel="stylesheet">
-    <!-- Bootstrap -->
-    <link href="{{asset('css/bootstrap.css')}}" rel="stylesheet">
-    <!-- SmartMenus jQuery Bootstrap Addon CSS -->
-    <link href="{{asset('css/jquery.smartmenus.bootstrap.css')}}" rel="stylesheet">
 </head>
-
-
-<!-- Start header section -->
-<header id="aa-header" >
-
-    <!-- start header top  -->
+<header id="aa-header">
     <div class="aa-header-top">
         <div class="container" >
             <div class="row">
                 <div class="col-md-12">
                     <div class="aa-header-top-area">
-                        <!-- start header top left -->
                         <div class="aa-header-top-left">
-
-                            <!-- start cellphone -->
                             <div class="cellphone hidden-xs">
                                 <p><span class="fa fa-phone"></span>00-62-658-658</p>
                             </div>
-                            <!-- / cellphone -->
                         </div>
-
-                        <!-- / header top left -->
                         <div class="aa-header-top-right" >
                             <ul class="aa-head-top-nav-right">
-                                <!-- Authentication Links -->
                                 @guest
                                     <li class="nav-item">
                                         <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -173,14 +152,12 @@
                                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                             {{ Auth::user()->name }} <span class="caret"></span>
                                         </a>
-
                                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                             <a class="dropdown-item" href="{{ route('logout') }}"
                                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                                 {{ __('Logout') }}
                                             </a>
-
                                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                                 @csrf
                                             </form>
@@ -194,35 +171,27 @@
             </div>
         </div>
     </div>
-    <!-- / header top  -->
 
-    <!-- start header bottom  -->
     <div class="aa-header-bottom">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="aa-header-bottom-area">
-                        <!-- logo  -->
                         <div class="aa-logo">
-                            <!-- Text based logo -->
                             <a href="/">
                                 <span class="fa fa-shopping-cart"></span>
                                 <p>toko<strong>Kastem</strong> <span>Custom your own</span></p>
                             </a>
                         </div>
-                        <!-- / logo  -->
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- / header bottom  -->
 </header>
-<!-- / header section -->
 <section id="menu">
     <div class="container">
         <div class="menu-area">
-            <!-- Navbar -->
             <div class="navbar navbar-default" role="navigation">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -233,32 +202,24 @@
                     </button>
                 </div>
                 <div class="navbar-collapse collapse">
-                    <!-- Left nav -->
                     <ul class="nav navbar-nav">
                         <li><a href="/">Home</a></li>
                         <li><a href="/cara-pesan">Cara Pesan</a>
                         <li><a href="/kontak-kami">Kontak Kami</a></li>
                     </ul>
                 </div>
-                <!--/.nav-collapse -->
             </div>
         </div>
     </div>
 </section>
 
-
 <body>
 <div class="container">
     <section id="typography">
-        <!-- Headings & Paragraph Copy -->
-
         <div class="row">
-
-
             <div class="col-md-3">
                 <h3>Desain Masker</h3>
-
-                <div class="tabbable"> <!-- Only required for left/right tabs -->
+                <div class="tabbable">
                     <ul class="nav nav-tabs">
                         <li class="active"><a href="#tab1" data-toggle="tab">Atur File </a></li>
                         <li><a href="#tab2" data-toggle="tab">tulisan/gambar</a></li>
@@ -267,7 +228,6 @@
                         <div class="tab-pane active" id="tab1">
                             <div class="well">
                                 <button id="imgsavepdf" class="aa-add-to-cart-btn">Simpan Gambar</button>
-
                                 <button class="aa-add-to-cart-btn" onclick="location.reload();" title="Reset Desain">
                                     Reset Desain
                                 </button>
@@ -285,13 +245,11 @@
                                 </div>
                                 <h4>Sisipkan Gambar
                                     <form hidden id="form1" runat="server">
-                                        <input hidden type='file' id="imgInp"/>
+                                        <input hidden type='file' id="imgInp" accept="image/png, image/jpg" />
                                     </form>
-                                    <button id="addimg" class="btn btn-primary"><i style="font-size: 15px;"
-                                                                                   class="fa fa-plus"
+                                    <button id="addimg" class="btn btn-primary"><i style="font-size: 15px;" class="fa fa-plus"
                                                                                    aria-hidden="true"></i></button>
                                 </h4>
-
                                 <div id="avatarlist" style="max-height: 500px; overflow: scroll;">
                                 </div>
                             </div>
@@ -308,30 +266,18 @@
                             </button>
                             <ul class="dropdown-menu" role="menu" aria-labelledby="font-family-X">
                                 <li><a tabindex="-1" href="#" onclick="setFont('Arial');" class="Arial">Arial</a></li>
-                                <li><a tabindex="-1" href="#" onclick="setFont('Helvetica');" class="Helvetica">Helvetica</a>
-                                </li>
-                                <li><a tabindex="-1" href="#" onclick="setFont('Myriad Pro');" class="MyriadPro">Myriad
-                                        Pro</a></li>
-                                <li><a tabindex="-1" href="#" onclick="setFont('Delicious');" class="Delicious">Delicious</a>
-                                </li>
-                                <li><a tabindex="-1" href="#" onclick="setFont('Verdana');" class="Verdana">Verdana</a>
-                                </li>
-                                <li><a tabindex="-1" href="#" onclick="setFont('Georgia');" class="Georgia">Georgia</a>
-                                </li>
-                                <li><a tabindex="-1" href="#" onclick="setFont('Courier');" class="Courier">Courier</a>
-                                </li>
-                                <li><a tabindex="-1" href="#" onclick="setFont('Comic Sans MS');" class="ComicSansMS">Comic
-                                        Sans MS</a></li>
-                                <li><a tabindex="-1" href="#" onclick="setFont('Impact');" class="Impact">Impact</a>
-                                </li>
-                                <li><a tabindex="-1" href="#" onclick="setFont('Monaco');" class="Monaco">Monaco</a>
-                                </li>
-                                <li><a tabindex="-1" href="#" onclick="setFont('Optima');" class="Optima">Optima</a>
-                                </li>
-                                <li><a tabindex="-1" href="#" onclick="setFont('Hoefler Text');" class="Hoefler Text">Hoefler
-                                        Text</a></li>
-                                <li><a tabindex="-1" href="#" onclick="setFont('Plaster');" class="Plaster">Plaster</a>
-                                </li>
+                                <li><a tabindex="-1" href="#" onclick="setFont('Helvetica');" class="Helvetica">Helvetica</a></li>
+                                <li><a tabindex="-1" href="#" onclick="setFont('Myriad Pro');" class="MyriadPro">Myriad Pro</a></li>
+                                <li><a tabindex="-1" href="#" onclick="setFont('Delicious');" class="Delicious">Delicious</a></li>
+                                <li><a tabindex="-1" href="#" onclick="setFont('Verdana');" class="Verdana">Verdana</a></li>
+                                <li><a tabindex="-1" href="#" onclick="setFont('Georgia');" class="Georgia">Georgia</a></li>
+                                <li><a tabindex="-1" href="#" onclick="setFont('Courier');" class="Courier">Courier</a></li>
+                                <li><a tabindex="-1" href="#" onclick="setFont('Comic Sans MS');" class="ComicSansMS">Comic Sans MS</a></li>
+                                <li><a tabindex="-1" href="#" onclick="setFont('Impact');" class="Impact">Impact</a></li>
+                                <li><a tabindex="-1" href="#" onclick="setFont('Monaco');" class="Monaco">Monaco</a></li>
+                                <li><a tabindex="-1" href="#" onclick="setFont('Optima');" class="Optima">Optima</a></li>
+                                <li><a tabindex="-1" href="#" onclick="setFont('Hoefler Text');" class="Hoefler Text">Hoefler Text</a></li>
+                                <li><a tabindex="-1" href="#" onclick="setFont('Plaster');" class="Plaster">Plaster</a></li>
                                 <li><a tabindex="-1" href="#" onclick="setFont('Engagement');" class="Engagement">Engagement</a>
                                 </li>
                             </ul>
@@ -365,7 +311,6 @@
                         </div>
                     </div>
                 </div>
-                <!--	EDITOR      -->
                 <div id="shirtDiv" class="page"
                      style="
                      z-index: 11;
@@ -374,7 +319,6 @@
                      position: relative;
                      background-color: rgb(255, 255, 255);">
                     <img id="tshirtFacing" src="{{asset('img/masker_right.png')}}" alt="">
-
 
                     <div id="drawingArea"
                          style="position: absolute;
@@ -444,17 +388,13 @@
 
         </div>
     </section>
-
-
-</div><!-- /container -->
+</div>
 <br>
-<!-- Support section -->
 <section id="aa-support">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="aa-support-area">
-                    <!-- single support -->
                     <div class="col-md-4 col-sm-4 col-xs-12">
                         <div class="aa-support-single">
                             <span class="fa fa-truck"></span>
@@ -462,7 +402,6 @@
                             <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, nobis.</P>
                         </div>
                     </div>
-                    <!-- single support -->
                     <div class="col-md-4 col-sm-4 col-xs-12">
                         <div class="aa-support-single">
                             <span class="fa fa-clock-o"></span>
@@ -470,7 +409,6 @@
                             <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, nobis.</P>
                         </div>
                     </div>
-                    <!-- single support -->
                     <div class="col-md-4 col-sm-4 col-xs-12">
                         <div class="aa-support-single">
                             <span class="fa fa-phone"></span>
@@ -483,46 +421,35 @@
         </div>
     </div>
 </section>
-<!-- / Support section -->
 
-
-<!-- Support section -->
 <section id="aa-support" >
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="aa-support-area">
-                    <!-- single support -->
                     <div class="col-md-4 col-sm-4 col-xs-12">
-                        <div class="aa-support-single">
-                        </div>
+                        <div class="aa-support-single"></div>
                     </div>
-                    <!-- single support -->
                     <div class="col-md-4 col-sm-4 col-xs-12">
                         <div class="aa-support-single">
                             <span class="fa fa-envelope"></span>
-
                             <h4>PARTNERSHIP</h4>
                             <P>Ribrick Tech
                                 <br> <span>&</span> <br>
                                 Lazuardy Printing</P>
                         </div>
                     </div>
-                    <!-- single support -->
                     <div class="col-md-4 col-sm-4 col-xs-12">
-                        <div class="aa-support-single">
-                        </div>
+                        <div class="aa-support-single"></div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<!-- / Support section -->
 
-<!-- footer -->
+
 <footer id="aa-footer">
-    <!-- footer bottom -->
     <div class="aa-footer-top">
         <div class="container">
             <div class="row">
@@ -552,7 +479,6 @@
             </div>
         </div>
     </div>
-    <!-- footer-bottom -->
     <div class="aa-footer-bottom">
         <div class="container">
             <div class="row">
@@ -565,15 +491,9 @@
         </div>
     </div>
 </footer>
-<!-- / footer -->
 
-
-<!-- Le javascript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
 <script src="{{ asset('js/bootstrap.min.js')}}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/0.9.0rc1/jspdf.min.js"></script>
-
 <script type="text/javascript">
 
     var _gaq = _gaq || [];
@@ -706,7 +626,6 @@
         });
 
     });
-
 </script>
 <script src="{{asset('js/custom.js')}}"></script>
 </body>

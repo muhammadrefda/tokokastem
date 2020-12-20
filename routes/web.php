@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,7 +15,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-
+Route::get('/clear-cache', function() {
+    Artisan::call('cache:clear');
+    return "Cache is cleared";
+});
 
 
 
@@ -62,8 +66,7 @@ Route::prefix('product/fabric')->group(function () {
 
 Route::prefix('product/mask')->middleware('auth')->group(function () {
 
-    Route::get('/design','FrontStore\ProductController@showRightMask')->name('mask.design.right');
-    Route::get('/design/left','FrontStore\ProductController@showLeftMask')->name('mask.design.left');
+    Route::get('/design','FrontStore\ProductController@showMaskDesign')->name('mask.design');
     Route::get('/detail/pesanan','FrontStore\ProductController@createMaskOrder')->name('mask.create.detail.order');
     Route::post('/detail/pesanan/create','FrontStore\ProductController@storeMaskOrder')->name('mask.store.detail.order');
     Route::get('detail-pengiriman','FrontStore\ProductController@showMaskDetailPengiriman')->name('mask.show.detail.pengiriman');
@@ -148,46 +151,44 @@ Route::prefix('daftar-orderan')->middleware('admin')->group(function (){
     Route::get('sukses','Admin\OrderController@allSuccessOrder')->name('order.success.index');
 });
 
-Route::prefix('fabric-order')->group(function () {
-    Route::get('/','Admin\OrderController@displayFabricPendingOrder')->name('fabric.order.index');
-    Route::get('/success/','Admin\OrderController@displayFabricSuccessOrder')->name('fabric.order.index.success');
-    Route::get('{order}/edit','Admin\OrderController@editFabricStatusOrder')->name('fabric.order.edit');
-    Route::put('{order}','Admin\OrderController@updateFabricStatusOrder')->name('fabric.order.update');
+Route::prefix('kain')->group(function () {
+    Route::get('/{order}/edit','Admin\OrderController@editFabricStatusOrder')->name('fabric.order.edit');
+    Route::put('/{order}','Admin\OrderController@updateFabricStatusOrder')->name('fabric.order.update');
 });
 
-Route::prefix('mask-order')->group(function () {
-    Route::get('/','Admin\OrderController@displayMaskPendingOrder')->name('mask.order.index');
-    Route::get('/success/','Admin\OrderController@displayMaskSuccessOrder')->name('mask.order.index.success');
-    Route::get('{order}/edit','Admin\OrderController@editMaskStatusOrder')->name('mask.order.edit');
-    Route::put('{order}','Admin\OrderController@updateMaskStatusOrder')->name('mask.order.update');
-});
+//Route::prefix('mask-order')->group(function () {
+//    Route::get('/','Admin\OrderController@displayMaskPendingOrder')->name('mask.order.index');
+//    Route::get('/success/','Admin\OrderController@displayMaskSuccessOrder')->name('mask.order.index.success');
+//    Route::get('{order}/edit','Admin\OrderController@editMaskStatusOrder')->name('mask.order.edit');
+//    Route::put('{order}','Admin\OrderController@updateMaskStatusOrder')->name('mask.order.update');
+//});
 
-Route::prefix('mug-order')->group(function () {
-    Route::get('/','Admin\OrderController@displayMugPendingOrder')->name('mug.order.index');
-    Route::get('/success/','Admin\OrderController@displayMugSuccessOrder')->name('mug.order.index.success');
-    Route::get('{order}/edit','Admin\OrderController@editMugStatusOrder')->name('mug.order.edit');
-    Route::put('{order}','Admin\OrderController@updateMugStatusOrder')->name('mug.order.update');
-});
+//Route::prefix('mug-order')->group(function () {
+//    Route::get('/','Admin\OrderController@displayMugPendingOrder')->name('mug.order.index');
+//    Route::get('/success/','Admin\OrderController@displayMugSuccessOrder')->name('mug.order.index.success');
+//    Route::get('{order}/edit','Admin\OrderController@editMugStatusOrder')->name('mug.order.edit');
+//    Route::put('{order}','Admin\OrderController@updateMugStatusOrder')->name('mug.order.update');
+//});
 
-Route::prefix('tshirt-order')->group(function () {
-    Route::get('/','Admin\OrderController@displayTshirtPendingOrder')->name('tshirt.order.index');
-    Route::get('/success/','Admin\OrderController@displayTshirtSuccessOrder')->name('tshirt.order.index.success');
-    Route::get('{order}/edit','Admin\OrderController@editTshirtStatusOrder')->name('tshirt.order.edit');
-    Route::put('{order}','Admin\OrderController@updateTshirtStatusOrder')->name('tshirt.order.update');
-});
+//Route::prefix('tshirt-order')->group(function () {
+//    Route::get('/','Admin\OrderController@displayTshirtPendingOrder')->name('tshirt.order.index');
+//    Route::get('/success/','Admin\OrderController@displayTshirtSuccessOrder')->name('tshirt.order.index.success');
+//    Route::get('{order}/edit','Admin\OrderController@editTshirtStatusOrder')->name('tshirt.order.edit');
+//    Route::put('{order}','Admin\OrderController@updateTshirtStatusOrder')->name('tshirt.order.update');
+//});
 
-Route::prefix('totebag-order')->group(function () {
-    Route::get('/','Admin\OrderController@displayTotebagPendingOrder')->name('totebag.order.index');
-    Route::get('/success/','Admin\OrderController@displayTotebagSuccessOrder')->name('totebag.order.index.success');
-    Route::get('{order}/edit','Admin\OrderController@editTotebagStatusOrder')->name('totebag.order.edit');
-    Route::put('{order}','Admin\OrderController@updateTotebagStatusOrder')->name('totebag.order.update');
-});
+//Route::prefix('totebag-order')->group(function () {
+//    Route::get('/','Admin\OrderController@displayTotebagPendingOrder')->name('totebag.order.index');
+//    Route::get('/success/','Admin\OrderController@displayTotebagSuccessOrder')->name('totebag.order.index.success');
+//    Route::get('{order}/edit','Admin\OrderController@editTotebagStatusOrder')->name('totebag.order.edit');
+//    Route::put('{order}','Admin\OrderController@updateTotebagStatusOrder')->name('totebag.order.update');
+//});
 
-Route::prefix('bag-order')->group(function () {
-    Route::get('/','Admin\OrderController@displayBagPendingOrder')->name('bag.order.index');
-    Route::get('/success/','Admin\OrderController@displayBagSuccessOrder')->name('bag.order.index.success');
-    Route::get('{order}/edit','Admin\OrderController@editBagStatusOrder')->name('bag.order.edit');
-    Route::put('{order}','Admin\OrderController@updateBagStatusOrder')->name('bag.order.update');
-});
+//Route::prefix('bag-order')->group(function () {
+//    Route::get('/','Admin\OrderController@displayBagPendingOrder')->name('bag.order.index');
+//    Route::get('/success/','Admin\OrderController@displayBagSuccessOrder')->name('bag.order.index.success');
+//    Route::get('{order}/edit','Admin\OrderController@editBagStatusOrder')->name('bag.order.edit');
+//    Route::put('{order}','Admin\OrderController@updateBagStatusOrder')->name('bag.order.update');
+//});
 
 /*End Admin Panel Area*/

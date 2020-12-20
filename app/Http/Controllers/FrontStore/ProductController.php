@@ -218,6 +218,10 @@ class ProductController extends Controller
 
     /*Start of Mask section*/
 
+    public function showMaskDesign(){
+        return view('products.mask.design');
+    }
+
     public function createMaskOrder(){
 
         Alert::success('SUKSES','Desain Berhasil dibuat!');
@@ -286,22 +290,18 @@ class ProductController extends Controller
         return view('products.mask.detail_pengiriman',$data);
     }
 
-
     public function storeMaskDetailPengiriman(Request $request){
 
         ShippingAddress::create([
             'cities_id'        => $request->cities_id,
-//            'detail'           => $request->detail,
             'user_id'          => \Auth::user()->id,
             'courier_code'     => $request->courier_code
-
         ]);
 
         Alert::success('SUKSES','Pesanan Berhasil dibuat!');
 
         return redirect()->route('mask.show.shipping.detail');
     }
-
 
     public function showShippingMaskDetail(){
 
@@ -377,9 +377,6 @@ class ProductController extends Controller
 
         $calculateCourier = $getCourier[0]->courier_code;
 
-        $displayCourierType = DB::table('shipping_address')
-            ->select('courier_code')->first();
-
         $calculateWeight = DB::table('products')
             ->select('products.mask_weight')
             ->orderByDesc('created_at')
@@ -408,50 +405,6 @@ class ProductController extends Controller
         return $pdf->stream('invoice-masker.pdf');
     }
 
-
-    public function saveShippingMaskDetail(Request $request){
-        $add_shipping = new User();
-
-        $add_shipping->name = $request->get('name');
-        $add_shipping->email = $request->get('email');
-        $add_shipping->password = $request->get('password');
-        $add_shipping->address = $request->get('address');
-        $add_shipping->phone_number = $request->get('phone_number');
-
-        $add_shipping->save();
-
-        return back();
-    }
-
-    public function editPaymentMaskDetail($id){
-
-        $new_shipping_address = User::findOrFail($id);
-
-        return view('products.mask.payment', ['new_shipping_address' => $new_shipping_address]);
-    }
-
-    public function updateShippingMaskAddress(Request $request, $id){
-
-        $new_shipping_address = User::findOrFail($id);
-
-        $new_shipping_address->name = $request->get('name');
-        $new_shipping_address->email = $request->get('email');
-        $new_shipping_address->password = $request->get('password');
-        $new_shipping_address->address = $request->get('address');
-        $new_shipping_address->phone_number = $request->get('phone_number');
-
-        $new_shipping_address->save();
-
-        return redirect()->route('mask.edit.shipping',['id' => $new_shipping_address->id]);
-    }
-
-    public function showRightMask(){
-        return view('products.mask.design_right');
-    }
-
-    public function showLeftMask(){
-        return view('products.mask.design_left');
-    }
     /*End of Mask section*/
 
 
@@ -614,9 +567,6 @@ class ProductController extends Controller
             ->get();
 
         $calculateCourier = $getCourier[0]->courier_code;
-
-        $displayCourierType = DB::table('shipping_address')
-            ->select('courier_code')->first();
 
         $calculateWeight = DB::table('products')
             ->select('products.totebag_weight')

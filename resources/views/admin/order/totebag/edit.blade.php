@@ -29,12 +29,12 @@
                     <label>Ubah Status Orderan</label>
                     <span class="aa-product-view-price"></span>
                     <select class="form-control" name="status">
-                        <option value="{{$order->status}}">pending</option>
+                        <option value="{{$order->status}}">{{$order->status}}</option>
+                        <option value="Pending">Pending</option>
+                        <option value="On Progress">On Progress</option>
                         <option value="Berhasil">Berhasil</option>
                     </select>
                 </div>
-
-
                 <input type="text" hidden class="form-control" id="" name="category" value="{{$order->category}}">
 
                 <button type="submit" name="submit" class="btn btn-primary">Ubah Status</button>

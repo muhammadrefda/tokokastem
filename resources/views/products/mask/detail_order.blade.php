@@ -30,7 +30,7 @@
                                                 <label>Design masker</label>
                                                 <span class="aa-product-view-price"></span>
                                                 <input type="file" class="form-control @error('design_mask') is-invalid @enderror"
-                                                       name="design_mask">
+                                                       name="design_mask" accept="application/pdf">
                                                 @error('design_mask')
                                                 <span class="invalid-feedback" role="alert" style="color: red">
                                         <strong>{{ $message }}</strong>

@@ -59,15 +59,6 @@
             <hr class="sidebar-divider">
 
 
-{{--            <li class="nav-item">--}}
-{{--                <a class="nav-link" href="{{route('admin.alamat.index')}}">--}}
-{{--                    <i class="fas fa-fw fa-cog"></i>--}}
-{{--                    <span>Atur Alamat Toko</span>--}}
-{{--                </a>--}}
-{{--            </li>--}}
-
-        <!-- Divider -->
-{{--        <hr class="sidebar-divider d-none d-md-block">--}}
 
         <!-- Sidebar Toggler (Sidebar) -->
         <div class="text-center d-none d-md-inline">
@@ -238,6 +229,7 @@
 <script src="{{asset('js/src/globalFabric.js')}}"></script>
 
 @yield('js')
+@include('sweetalert::alert')
 </body>
 
 </html>

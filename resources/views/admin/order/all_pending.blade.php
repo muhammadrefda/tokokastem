@@ -9,10 +9,10 @@
         <div class="card-body">
             <p>Untuk mendownload gambar desain, silahkan klik kanan pada kolom desain</p>
             <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable">
+                <table class="table">
                     <thead>
-                    <tr>
-                        <th>No.</th>
+                    <tr class="table-success">
+                        <th scope="col">No</th>
                         <th>Jumlah Pembelian</th>
                         <th>Kode Pembayaran</th>
                         <th>Link Desain</th>
@@ -28,7 +28,7 @@
                     <tbody>
                     @foreach($fabrics as $fabric)
                         <tr>
-                        <td>{{$loop->iteration}}</td>
+                        <th scope="row">{{$loop->iteration}}</th>
                             <td>{{$fabric->quantity}}</td>
                             <td>{{$fabric->unique_code}}</td>
                             <td style="column-width: 50rem;">
@@ -36,23 +36,20 @@
                                     href="{{$fabric->link_goggle_drive}}">Klik Link Desain Disini</a></td>
                             <td>{{$fabric->type_fabric}}</td>
                             <td style="column-width: auto;">{{$fabric->note}}</td>
-                            <td>
-                                {{$fabric->name}}
-                            </td>
-                            <td>
-                                {{$fabric->address}}
-                            </td>
+                            <td>{{$fabric->name}}</td>
+                            <td>{{$fabric->address}}</td>
                             <td>{{$fabric->phone_number}}</td>
+                            <td>{{date('m-d', strtotime($fabric->created_at))}}</td>
                             <td>
-                                {{date('m-d', strtotime($fabric->created_at))}}
-                            </td>
-                            <td>
-                                <a href="{{route('fabric.order.edit',$fabric->id)}}" class="btn btn-primary">edit</a>
+                                <a href="{{route('fabric.order.edit',['order' => $fabric->id])}}" class="btn btn-primary">edit</a>
                             </td>
                         </tr>
                     @endforeach
                     </tbody>
                 </table>
+                <div class="d-flex justify-content-center">
+                    {!! $fabrics->links() !!}
+                </div>
             </div>
         </div>
     </div>
@@ -65,8 +62,8 @@
         <div class="card-body">
             <p>Untuk mendownload gambar desain, silahkan klik kanan pada kolom desain</p>
             <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" cellspacing="0">
-                    <thead>
+                <table class="table">
+                    <thead class="table-dark">
                     <tr>
                         <th>No.</th>
                         <th>Jumlah Pembelian</th>
@@ -106,6 +103,9 @@
                     @endforeach
                     </tbody>
                 </table>
+                <div class="d-flex justify-content-center">
+                    {{$masks->links()}}
+                </div>
             </div>
         </div>
     </div>
@@ -118,8 +118,8 @@
         <div class="card-body">
             <p>Untuk mendownload gambar desain, silahkan klik kanan pada kolom desain</p>
             <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" cellspacing="0">
-                    <thead>
+                <table class="table table-borderless">
+                    <thead class="table-primary">
                     <tr>
                         <th>No.</th>
                         <th>Jumlah Pembelian</th>
@@ -181,6 +181,9 @@
                     @endforeach
                     </tbody>
                 </table>
+                <div class="d-flex justify-content-center">
+                    {{$mugs->links()}}
+                </div>
             </div>
         </div>
     </div>
@@ -193,8 +196,8 @@
         <div class="card-body">
             <p>Untuk mendownload gambar desain, silahkan klik kanan pada kolom desain</p>
             <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" cellspacing="0">
-                    <thead>
+                <table class="table table-borderless">
+                    <thead style="background-color: cyan">
                     <tr>
                         <th>No.</th>
                         <th>Jumlah Pembelian</th>
@@ -242,6 +245,9 @@
 
                     </tbody>
                 </table>
+                <div class="d-flex justify-content-center">
+                    {{$totebags->links()}}
+                </div>
             </div>
         </div>
     </div>
@@ -255,8 +261,8 @@
             <p>Untuk mendownload gambar desain, silahkan klik kanan pada kolom desain</p>
 
             <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" cellspacing="0">
-                    <thead>
+                <table class="table table-borderless">
+                    <thead style="background-color: #fffe3f">
                     <tr>
                         <th>No.</th>
                         <th>Jumlah Pembelian</th>
@@ -313,6 +319,9 @@
                     @endforeach
                     </tbody>
                 </table>
+                <div class="d-flex justify-content-center">
+                    {{$tshirts->links()}}
+                </div>
             </div>
         </div>
     </div>
@@ -326,8 +335,8 @@
             <p>Untuk mendownload gambar desain, silahkan klik kanan pada kolom desain</p>
 
             <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" cellspacing="0">
-                    <thead>
+                <table class="table table-borderless">
+                    <thead style="background-color: #35ff2f">
                     <tr>
                         <th>No.</th>
                         <th>Jumlah Pembelian</th>
@@ -382,6 +391,9 @@
                     @endforeach
                     </tbody>
                 </table>
+                <div class="d-flex justify-content-center">
+                    {{$backpacks->links()}}
+                </div>
             </div>
         </div>
     </div>

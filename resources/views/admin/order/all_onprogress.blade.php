@@ -8,7 +8,7 @@
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" cellspacing="0">
+                <table class="table table-bordered">
                     <thead>
                     <tr>
                         <th>No.</th>
@@ -28,7 +28,6 @@
                         <tr>
                             <td>{{$loop->iteration}}</td>
                             <td>{{$fabric->quantity}}</td>
-                            <td>{{$fabric->category}}</td>
                             <td style="column-width: 50rem;"><a target="_blank" href="{{$fabric->link_goggle_drive}}">
                                     Klik Link Desain Disini</a></td>
                             <td>{{$fabric->type_fabric}}</td>
@@ -205,7 +204,6 @@
                         <tr>
                             <td>{{$loop->iteration}}</td>
                             <td>{{$totebag->quantity}}</td>
-                            <td>{{$totebag->category}}</td>
                             <td>{{$totebag->unique_code}}</td>
                             <td>
                                 @if($totebag->design_front_totebag)

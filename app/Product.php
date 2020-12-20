@@ -86,7 +86,7 @@ class Product extends Model
         return $this->quantity * $this->price_backpack + $this->unique_code;
     }
 
-    public function specifics(){
-        return $this->hasManyThrough(User::class, ShippingAddress::class, 'user_id');
-    }
+//    public function specifics(){
+//        return $this->hasManyThrough(User::class, ShippingAddress::class, 'user_id');
+//    }
 }
