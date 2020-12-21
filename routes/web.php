@@ -152,43 +152,33 @@ Route::prefix('daftar-orderan')->middleware('admin')->group(function (){
 });
 
 Route::prefix('kain')->group(function () {
-    Route::get('/{order}/edit','Admin\OrderController@editFabricStatusOrder')->name('fabric.order.edit');
-    Route::put('/{order}','Admin\OrderController@updateFabricStatusOrder')->name('fabric.order.update');
+    Route::get('/{product}/edit','Admin\OrderController@editFabricStatusOrder')->name('fabric.order.edit');
+    Route::put('/{product}','Admin\OrderController@updateFabricStatusOrder')->name('fabric.order.update');
 });
 
-//Route::prefix('mask-order')->group(function () {
-//    Route::get('/','Admin\OrderController@displayMaskPendingOrder')->name('mask.order.index');
-//    Route::get('/success/','Admin\OrderController@displayMaskSuccessOrder')->name('mask.order.index.success');
-//    Route::get('{order}/edit','Admin\OrderController@editMaskStatusOrder')->name('mask.order.edit');
-//    Route::put('{order}','Admin\OrderController@updateMaskStatusOrder')->name('mask.order.update');
-//});
+Route::prefix('mask-order')->group(function () {
+    Route::get('{product}/edit','Admin\OrderController@editMaskStatusOrder')->name('mask.order.edit');
+    Route::put('{product}','Admin\OrderController@updateMaskStatusOrder')->name('mask.order.update');
+});
 
-//Route::prefix('mug-order')->group(function () {
-//    Route::get('/','Admin\OrderController@displayMugPendingOrder')->name('mug.order.index');
-//    Route::get('/success/','Admin\OrderController@displayMugSuccessOrder')->name('mug.order.index.success');
-//    Route::get('{order}/edit','Admin\OrderController@editMugStatusOrder')->name('mug.order.edit');
-//    Route::put('{order}','Admin\OrderController@updateMugStatusOrder')->name('mug.order.update');
-//});
+Route::prefix('mug-order')->group(function () {
+    Route::get('{product}/edit','Admin\OrderController@editMugStatusOrder')->name('mug.order.edit');
+    Route::put('{product}','Admin\OrderController@updateMugStatusOrder')->name('mug.order.update');
+});
 
-//Route::prefix('tshirt-order')->group(function () {
-//    Route::get('/','Admin\OrderController@displayTshirtPendingOrder')->name('tshirt.order.index');
-//    Route::get('/success/','Admin\OrderController@displayTshirtSuccessOrder')->name('tshirt.order.index.success');
-//    Route::get('{order}/edit','Admin\OrderController@editTshirtStatusOrder')->name('tshirt.order.edit');
-//    Route::put('{order}','Admin\OrderController@updateTshirtStatusOrder')->name('tshirt.order.update');
-//});
+Route::prefix('tshirt-order')->group(function () {
+    Route::get('{product}/edit','Admin\OrderController@editTshirtStatusOrder')->name('tshirt.order.edit');
+    Route::put('{product}','Admin\OrderController@updateTshirtStatusOrder')->name('tshirt.order.update');
+});
 
-//Route::prefix('totebag-order')->group(function () {
-//    Route::get('/','Admin\OrderController@displayTotebagPendingOrder')->name('totebag.order.index');
-//    Route::get('/success/','Admin\OrderController@displayTotebagSuccessOrder')->name('totebag.order.index.success');
-//    Route::get('{order}/edit','Admin\OrderController@editTotebagStatusOrder')->name('totebag.order.edit');
-//    Route::put('{order}','Admin\OrderController@updateTotebagStatusOrder')->name('totebag.order.update');
-//});
+Route::prefix('totebag-order')->group(function () {
+    Route::get('{product}/edit','Admin\OrderController@editTotebagStatusOrder')->name('totebag.order.edit');
+    Route::put('{product}','Admin\OrderController@updateTotebagStatusOrder')->name('totebag.order.update');
+});
 
-//Route::prefix('bag-order')->group(function () {
-//    Route::get('/','Admin\OrderController@displayBagPendingOrder')->name('bag.order.index');
-//    Route::get('/success/','Admin\OrderController@displayBagSuccessOrder')->name('bag.order.index.success');
-//    Route::get('{order}/edit','Admin\OrderController@editBagStatusOrder')->name('bag.order.edit');
-//    Route::put('{order}','Admin\OrderController@updateBagStatusOrder')->name('bag.order.update');
-//});
+Route::prefix('bag-order')->group(function () {
+    Route::get('{product}/edit','Admin\OrderController@editBagStatusOrder')->name('bag.order.edit');
+    Route::put('{product}','Admin\OrderController@updateBagStatusOrder')->name('bag.order.update');
+});
 
 /*End Admin Panel Area*/

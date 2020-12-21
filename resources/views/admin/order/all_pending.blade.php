@@ -26,22 +26,23 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($fabrics as $fabric)
+                    @foreach($fabrics as $product)
                         <tr>
+{{--                            {{$loop->iteration}}--}}
                         <th scope="row">{{$loop->iteration}}</th>
-                            <td>{{$fabric->quantity}}</td>
-                            <td>{{$fabric->unique_code}}</td>
+                            <td>{{$product->quantity}}</td>
+                            <td>{{$product->unique_code}}</td>
                             <td style="column-width: 50rem;">
                                 <a target="_blank"
-                                    href="{{$fabric->link_goggle_drive}}">Klik Link Desain Disini</a></td>
-                            <td>{{$fabric->type_fabric}}</td>
-                            <td style="column-width: auto;">{{$fabric->note}}</td>
-                            <td>{{$fabric->name}}</td>
-                            <td>{{$fabric->address}}</td>
-                            <td>{{$fabric->phone_number}}</td>
-                            <td>{{date('m-d', strtotime($fabric->created_at))}}</td>
+                                    href="{{$product->link_goggle_drive}}">Klik Link Desain Disini</a></td>
+                            <td>{{$product->type_fabric}}</td>
+                            <td style="column-width: auto;">{{$product->note}}</td>
+                            <td>{{$product->name}}</td>
+                            <td>{{$product->address}}</td>
+                            <td>{{$product->phone_number}}</td>
+                            <td>{{date('m-d', strtotime($product->created_at))}}</td>
                             <td>
-                                <a href="{{route('fabric.order.edit',['order' => $fabric->id])}}" class="btn btn-primary">edit</a>
+                                <a href="{{route('fabric.order.edit',$product->id)}}" class="btn btn-primary">edit</a>
                             </td>
                         </tr>
                     @endforeach
@@ -81,23 +82,23 @@
                     </thead>
                     <tbody>
 
-                    @foreach($masks as $mask)
+                    @foreach($masks as $product)
                         <tr>
                             <td>{{$loop->iteration}}</td>
-                            <td>{{$mask->quantity}}</td>
-                            <td>{{$mask->unique_code}}</td>
-                            <td>@if($mask->design_mask)
-                                    <iframe src="{{asset('storage/' .$mask->design_mask)}}" ></iframe>
+                            <td>{{$product->quantity}}</td>
+                            <td>{{$product->unique_code}}</td>
+                            <td>@if($product->design_mask)
+                                    <iframe src="{{asset('storage/' .$product->design_mask)}}" ></iframe>
                                 @endif</td>
-                            <td>{{$mask->size}}</td>
-                            <td>{{$mask->material}}</td>
-                            <td>{{$mask->note}}</td>
-                            <td>{{$mask->name}}</td>
-                            <td>{{$mask->address}}</td>
-                            <td>{{$mask->phone_number}}</td>
-                            <td>{{date('m-d', strtotime($mask->created_at))}}</td>
+                            <td>{{$product->size}}</td>
+                            <td>{{$product->material}}</td>
+                            <td>{{$product->note}}</td>
+                            <td>{{$product->name}}</td>
+                            <td>{{$product->address}}</td>
+                            <td>{{$product->phone_number}}</td>
+                            <td>{{date('m-d', strtotime($product->created_at))}}</td>
                             <td>
-                                <a href="{{route('mask.order.edit',['order' => $mask->id])}}" class="btn btn-primary">edit</a>
+                                <a href="{{route('mask.order.edit',$product->id)}}" class="btn btn-primary">edit</a>
                             </td>
 </tr>
                     @endforeach
@@ -137,45 +138,45 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($mugs as $mug)
+                    @foreach($mugs as $product)
                         <tr>
                             <td>
                                 {{$loop->iteration}}
                             </td>
                             <td>
-                                {{$mug->quantity}}
+                                {{$product->quantity}}
                             </td>
-                            <td>{{$mug->unique_code}}</td>
+                            <td>{{$product->unique_code}}</td>
                             <td>
-                                @if($mug->design_front_mug)
-                                    <iframe src="{{asset('storage/' .$mug->design_front_mug)}}" ></iframe>
+                                @if($product->design_front_mug)
+                                    <iframe src="{{asset('storage/' .$product->design_front_mug)}}" ></iframe>
                                 @endif
                             </td>
                             <td>
-                                @if($mug->design_back_mug)
-                                    <iframe src="{{asset('storage/' .$mug->design_back_mug)}}" ></iframe>
+                                @if($product->design_back_mug)
+                                    <iframe src="{{asset('storage/' .$product->design_back_mug)}}" ></iframe>
                                 @endif
                             </td>
-                            <td>{{$mug->size}}</td>
+                            <td>{{$product->size}}</td>
                             <td>
-                                {{$mug->material}}
+                                {{$product->material}}
                             </td>
                             <td>
-                                {{$mug->note}}
+                                {{$product->note}}
                             </td>
                             <td>
-                                {{$mug->name}}
+                                {{$product->name}}
                             </td>
                             <td>
-                                {{$mug->address}}
+                                {{$product->address}}
                             </td>
-                            <td>{{$mug->phone_number}}</td>
+                            <td>{{$product->phone_number}}</td>
 
                             <td>
-                                {{date('m-d', strtotime($mug->created_at))}}
+                                {{date('m-d', strtotime($product->created_at))}}
                             </td>
                             <td>
-                                <a href="{{route('mug.order.edit',['order' => $mug->id])}}" class="btn btn-primary">edit</a>
+                                <a href="{{route('mug.order.edit', $product->id)}}" class="btn btn-primary">edit</a>
                             </td>
                         </tr>
                     @endforeach
@@ -215,30 +216,30 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($totebags as $totebag)
+                    @foreach($totebags as $product)
                         <tr>
                             <td>{{$loop->iteration}}</td>
-                            <td>{{$totebag->quantity}}</td>
-                            <td>{{$totebag->unique_code}}</td>
+                            <td>{{$product->quantity}}</td>
+                            <td>{{$product->unique_code}}</td>
                             <td>
-                                @if($totebag->design_front_totebag)
-                                    <iframe src="{{asset('storage/' .$totebag->design_front_totebag)}}" ></iframe>
+                                @if($product->design_front_totebag)
+                                    <iframe src="{{asset('storage/' .$product->design_front_totebag)}}" ></iframe>
                                 @endif
                             </td>
                             <td>
-                                @if($totebag->design_back_totebag)
-                                    <iframe src="{{asset('storage/' .$totebag->design_back_totebag)}}" ></iframe>
+                                @if($product->design_back_totebag)
+                                    <iframe src="{{asset('storage/' .$product->design_back_totebag)}}" ></iframe>
                                 @endif
                             </td>
-                            <td>{{$totebag->size}}</td>
-                            <td>{{$totebag->material}}</td>
-                            <td>{{$totebag->note}}</td>
-                            <td>{{$totebag->name}}</td>
-                            <td>{{$totebag->address}}</td>
-                            <td>{{$totebag->phone_number}}</td>
-                            <td>{{date('m-d', strtotime($totebag->created_at))}}</td>
+                            <td>{{$product->size}}</td>
+                            <td>{{$product->material}}</td>
+                            <td>{{$product->note}}</td>
+                            <td>{{$product->name}}</td>
+                            <td>{{$product->address}}</td>
+                            <td>{{$product->phone_number}}</td>
+                            <td>{{date('m-d', strtotime($product->created_at))}}</td>
                             <td>
-                                <a href="{{route('totebag.order.edit',['order' => $totebag->id])}}" class="btn btn-primary">edit</a>
+                                <a href="{{route('totebag.order.edit', $product->id)}}" class="btn btn-primary">edit</a>
                             </td>
                         </tr>
                     @endforeach
@@ -280,40 +281,37 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($tshirts as $tshirt)
+                    @foreach($tshirts as $product)
                         <tr>
                             <td>{{$loop->iteration}}</td>
-                            <td>{{$tshirt->quantity}}</td>
-                            <td>{{$tshirt->unique_code}}</td>
+                            <td>{{$product->quantity}}</td>
+                            <td>{{$product->unique_code}}</td>
                             <td>
-                                @if($tshirt->design_front_tshirt)
-                                    <iframe src="{{asset('storage/' .$tshirt->design_front_tshirt)}}" ></iframe>
+                                @if($product->design_front_tshirt)
+                                    <iframe src="{{asset('storage/' .$product->design_front_tshirt)}}" ></iframe>
                                 @endif
                             </td>
                             <td>
-                                @if($tshirt->design_back_tshirt)
-                                    <iframe src="{{asset('storage/' .$tshirt->design_back_tshirt)}}" ></iframe>
+                                @if($product->design_back_tshirt)
+                                    <iframe src="{{asset('storage/' .$product->design_back_tshirt)}}" ></iframe>
                                 @endif
                             </td>
-                            <td>{{$tshirt->size}}</td>
-                            <td>
-                                {{$tshirt->material}}
+                            <td>{{$product->size}}</td>
+                            <td>{{$product->material}}</td>
+                            <td>{{$product->note}}
                             </td>
                             <td>
-                                {{$tshirt->note}}
+                                {{$product->name}}
                             </td>
                             <td>
-                                {{$tshirt->name}}
+                                {{$product->address}}
+                            </td>
+                            <td>{{$product->phone_number}}</td>
+                            <td>
+                                {{date('m-d', strtotime($product->created_at))}}
                             </td>
                             <td>
-                                {{$tshirt->address}}
-                            </td>
-                            <td>{{$tshirt->phone_number}}</td>
-                            <td>
-                                {{date('m-d', strtotime($tshirt->created_at))}}
-                            </td>
-                            <td>
-                                <a href="{{route('tshirt.order.edit',['order' => $tshirt->id])}}" class="btn btn-primary">edit</a>
+                                <a href="{{route('tshirt.order.edit', $product->id)}}" class="btn btn-primary">edit</a>
                             </td>
                         </tr>
                     @endforeach
@@ -353,39 +351,39 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($backpacks as $order)
+                    @foreach($backpacks as $product)
                         <tr>
                             <td>
                                 {{$loop->iteration}}
                             </td>
                             <td>
-                                {{$order->quantity}}
+                                {{$product->quantity}}
                             </td>
-                            <td>{{$order->unique_code}}</td>
+                            <td>{{$product->unique_code}}</td>
                             <td>
-                                @if($order->design_backpack)
-                                    <iframe src="{{asset('storage/' .$order->design_backpack)}}" ></iframe>
+                                @if($product->design_backpack)
+                                    <iframe src="{{asset('storage/' .$product->design_backpack)}}" ></iframe>
                                 @endif
                             </td>
-                            <td>{{$order->size}}</td>
+                            <td>{{$product->size}}</td>
                             <td>
-                                {{$order->material}}
+                                {{$product->material}}
                             </td>
                             <td>
-                                {{$order->note}}
+                                {{$product->note}}
                             </td>
                             <td>
-                                {{$order->name}}
+                                {{$product->name}}
                             </td>
                             <td>
-                                {{$order->address}}
+                                {{$product->address}}
                             </td>
-                            <td>{{$order->phone_number}}</td>
+                            <td>{{$product->phone_number}}</td>
                             <td>
-                                {{date('m-d', strtotime($order->created_at))}}
+                                {{date('m-d', strtotime($product->created_at))}}
                             </td>
                             <td>
-                                <a href="{{route('bag.order.edit',['order' => $order->id])}}" class="btn btn-primary">edit</a>
+                                <a href="{{route('bag.order.edit', $product->id)}}" class="btn btn-primary">edit</a>
                             </td>
                         </tr>
                     @endforeach

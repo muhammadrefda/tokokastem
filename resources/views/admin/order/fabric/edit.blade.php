@@ -21,14 +21,14 @@
                     {{session('status')}}
                 </div>
             @endif
-            <form action="{{route('fabric.order.update', ['order' => $fabric->id])}}" method="POST" enctype="multipart/form-data">
+            <form action="{{route('fabric.order.update', $product->id)}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div class="form-group">
                     <label>Ubah Status Orderan</label>
                     <span class="aa-product-view-price"></span>
                     <select class="form-control" name="status">
-                        <option value="{{$fabric->status}}">pending</option>
+                        <option value="{{$product->status}}">pending</option>
                         <option value="On Progress">On Progress</option>
                         <option value="Berhasil">Berhasil</option>
                     </select>
