@@ -233,6 +233,9 @@
                                 </button>
                             </div>
                         </div>
+                        <div>
+                            <h3>Pastikan Kamu sudah mendownload file desain kamu</h3>
+                        </div>
                         <div class="tab-pane" id="tab2">
                             <div class="well">
                                 <h4>Text</h4>

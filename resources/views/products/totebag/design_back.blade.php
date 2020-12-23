@@ -298,6 +298,10 @@
                         </div>
                     </div>
                 </div>
+
+                <div>
+                    <h3>Pastikan Kamu sudah mendownload file desain kamu</h3>
+                </div>
             </div>
             <div class="col-md-6">
                 <div align="center" style="min-height: 32px;">
@@ -382,7 +386,8 @@
                                 left: 0px;
                                 z-index: 10;
                                 width: 530px;
-                                height: 630px;">
+                                height: 630px;
+                                opacity: 0.7">
                         <canvas id="tcanvas" width=530 height="630" class="hover"
                                 style="-webkit-user-select: none;"></canvas>
                     </div>

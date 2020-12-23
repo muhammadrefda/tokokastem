@@ -298,6 +298,10 @@
                         </div>
                     </div>
                 </div>
+
+                <div>
+                    <h3>Pastikan Kamu sudah mendownload file desain kamu</h3>
+                </div>
             </div>
             <div class="col-md-6">
                 <div align="center" style="min-height: 32px;">

@@ -21,7 +21,7 @@
                                                 <label>Jumlah Pesanan</label>
                                                 <span class="aa-product-view-price"></span>
                                                 <input type="text" class="form-control @error('quantity') is-invalid @enderror"
-                                                       name="quantity">
+                                                       name="quantity" placeholder="jumlah pesanan minimal 1">
                                                 @error('quantity')
                                                 <span class="invalid-feedback" role="alert" style="color: red">
                                         <strong>{{ $message }}</strong></span>
