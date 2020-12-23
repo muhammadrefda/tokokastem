@@ -29,7 +29,8 @@
                     <label>Ubah Status Orderan</label>
                     <span class="aa-product-view-price"></span>
                     <select class="form-control" name="status">
-                        <option value="{{$order->status}}">pending</option>
+                        <option value="Pending">pending</option>
+                        <option value="On Progress">On Progress</option>
                         <option value="Berhasil">Berhasil</option>
                     </select>
                 </div>

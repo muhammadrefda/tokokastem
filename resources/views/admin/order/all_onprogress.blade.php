@@ -1,18 +1,18 @@
 @extends('admin.master')
 @section('content')
 
-    <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <h2 class="text-primary">Daftar Orderan Kain</h2>
-            <h4 class="m-0 font-weight-bold text-primary">Status: <b> On Progress</b></h4>
+    <div class="mb-4">
+        <div class="card-header ">
+            <h2 class="coloring">Daftar Orderan Kain</h2>
+            <h4 class="coloring">Status: On Progress</h4>
         </div>
         <div class="card-body">
             <p>Untuk mendownload gambar desain, silahkan klik kanan pada kolom desain</p>
             <div class="table-responsive">
                 <table class="table">
-                    <thead>
-                    <tr class="table-success">
-                        <th scope="col">No</th>
+                    <thead class="table-order">
+                    <tr >
+                        <th>No</th>
                         <th>Jumlah Pembelian</th>
                         <th>Kode Pembayaran</th>
                         <th>Link Desain</th>
@@ -22,15 +22,14 @@
                         <th>Alamat Pengiriman</th>
                         <th>No. Hp Pembeli</th>
                         <th>Tanggal Transaksi</th>
-                        <td colspan="2">Action</td>
+                        <td class="table-order" colspan="2">Action</td>
                     </tr>
                     </thead>
                     <tbody>
                     @foreach($fabrics as $product)
                         <tr>
-                            {{--                            {{$loop->iteration}}--}}
                             <th scope="row">{{$loop->iteration}}</th>
-                            <td>{{$product->quantity}}</td>
+                            <td class="">{{$product->quantity}}</td>
                             <td>{{$product->unique_code}}</td>
                             <td style="column-width: 50rem;">
                                 <a target="_blank"
@@ -55,17 +54,17 @@
         </div>
     </div>
 
-    <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <h2 class="text-primary">Daftar Orderan Masker</h2>
-            <h4 class="m-0 font-weight-bold text-primary">Status: <b> On Progress</b></h4>
+    <div class="mb-4">
+        <div class="card-header">
+            <h2 class="coloring">Daftar Orderan Masker</h2>
+            <h4 class="coloring">Status: On Progress</h4>
         </div>
         <div class="card-body">
             <p>Untuk mendownload gambar desain, silahkan klik kanan pada kolom desain</p>
             <div class="table-responsive">
                 <table class="table">
-                    <thead class="table-dark">
-                    <tr>
+                    <thead>
+                    <tr class="table-order">
                         <th>No.</th>
                         <th>Jumlah Pembelian</th>
                         <th>Kode Pembayaran</th>
@@ -77,7 +76,7 @@
                         <th>Alamat Pengiriman</th>
                         <th>No. Hp Pembeli</th>
                         <th>Tanggal Transaksi</th>
-                        <td colspan="2">Action</td>
+                        <td class="table-order" colspan="2">Action</td>
                     </tr>
                     </thead>
                     <tbody>
@@ -111,16 +110,16 @@
         </div>
     </div>
 
-    <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <h2 class="text-primary">Daftar Orderan Mug</h2>
-            <h4 class="m-0 font-weight-bold text-primary">Status: <b> On Progress</b></h4>
+    <div class="mb-4">
+        <div class="card-header">
+            <h2 class="coloring">Daftar Orderan Mug</h2>
+            <h4 class="coloring">Status: On Progress</h4>
         </div>
         <div class="card-body">
             <p>Untuk mendownload gambar desain, silahkan klik kanan pada kolom desain</p>
             <div class="table-responsive">
-                <table class="table table-borderless">
-                    <thead class="table-primary">
+                <table class="table">
+                    <thead class="table-order">
                     <tr>
                         <th>No.</th>
                         <th>Jumlah Pembelian</th>
@@ -140,12 +139,8 @@
                     <tbody>
                     @foreach($mugs as $product)
                         <tr>
-                            <td>
-                                {{$loop->iteration}}
-                            </td>
-                            <td>
-                                {{$product->quantity}}
-                            </td>
+                            <td>{{$loop->iteration}}</td>
+                            <td>{{$product->quantity}}</td>
                             <td>{{$product->unique_code}}</td>
                             <td>
                                 @if($product->design_front_mug)
@@ -158,23 +153,12 @@
                                 @endif
                             </td>
                             <td>{{$product->size}}</td>
-                            <td>
-                                {{$product->material}}
-                            </td>
-                            <td>
-                                {{$product->note}}
-                            </td>
-                            <td>
-                                {{$product->name}}
-                            </td>
-                            <td>
-                                {{$product->address}}
-                            </td>
+                            <td>{{$product->material}}</td>
+                            <td>{{$product->note}}</td>
+                            <td>{{$product->name}}</td>
+                            <td>{{$product->address}}</td>
                             <td>{{$product->phone_number}}</td>
-
-                            <td>
-                                {{date('m-d', strtotime($product->created_at))}}
-                            </td>
+                            <td>{{date('m-d', strtotime($product->created_at))}}</td>
                             <td>
                                 <a href="{{route('mug.order.edit', $product->id)}}" class="btn btn-primary">edit</a>
                             </td>
@@ -189,16 +173,16 @@
         </div>
     </div>
 
-    <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <h2 class="text-primary">Daftar Orderan Totebag</h2>
-            <h4 class="m-0 font-weight-bold text-primary">Status: <b> On Progress</b></h4>
+    <div class="mb-4">
+        <div class="card-header">
+            <h2 class="coloring">Daftar Orderan Totebag</h2>
+            <h4 class="coloring">Status: On Progress</h4>
         </div>
         <div class="card-body">
             <p>Untuk mendownload gambar desain, silahkan klik kanan pada kolom desain</p>
             <div class="table-responsive">
-                <table class="table table-borderless">
-                    <thead style="background-color: cyan">
+                <table class="table">
+                    <thead class="table-order">
                     <tr>
                         <th>No.</th>
                         <th>Jumlah Pembelian</th>
@@ -243,7 +227,6 @@
                             </td>
                         </tr>
                     @endforeach
-
                     </tbody>
                 </table>
                 <div class="d-flex justify-content-center">
@@ -253,17 +236,16 @@
         </div>
     </div>
 
-    <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <h2 class="text-primary">Daftar Orderan T-Shirt</h2>
-            <h4 class="m-0 font-weight-bold text-primary">Status: <b> On Progress</b></h4>
+    <div class="mb-4">
+        <div class="card-header">
+            <h2 class="coloring">Daftar Orderan T-Shirt</h2>
+            <h4 class="coloring">Status: On Progress</h4>
         </div>
         <div class="card-body">
             <p>Untuk mendownload gambar desain, silahkan klik kanan pada kolom desain</p>
-
             <div class="table-responsive">
                 <table class="table table-borderless">
-                    <thead style="background-color: #fffe3f">
+                    <thead class="table-order">
                     <tr>
                         <th>No.</th>
                         <th>Jumlah Pembelian</th>
@@ -298,14 +280,9 @@
                             </td>
                             <td>{{$product->size}}</td>
                             <td>{{$product->material}}</td>
-                            <td>{{$product->note}}
-                            </td>
-                            <td>
-                                {{$product->name}}
-                            </td>
-                            <td>
-                                {{$product->address}}
-                            </td>
+                            <td>{{$product->note}}</td>
+                            <td>{{$product->name}}</td>
+                            <td>{{$product->address}}</td>
                             <td>{{$product->phone_number}}</td>
                             <td>
                                 {{date('m-d', strtotime($product->created_at))}}
@@ -324,17 +301,16 @@
         </div>
     </div>
 
-    <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <h2 class="text-primary">Daftar Orderan Tas</h2>
-            <h4 class="m-0 font-weight-bold text-primary">Status: <b> On Progress</b></h4>
+    <div class="mb-4">
+        <div class="card-header">
+            <h2 class="coloring">Daftar Orderan Tas</h2>
+            <h4 class="coloring">Status: On Progress</h4>
         </div>
         <div class="card-body">
             <p>Untuk mendownload gambar desain, silahkan klik kanan pada kolom desain</p>
-
             <div class="table-responsive">
-                <table class="table table-borderless">
-                    <thead style="background-color: #35ff2f">
+                <table class="table">
+                    <thead class="table-order">
                     <tr>
                         <th>No.</th>
                         <th>Jumlah Pembelian</th>
@@ -353,12 +329,8 @@
                     <tbody>
                     @foreach($backpacks as $product)
                         <tr>
-                            <td>
-                                {{$loop->iteration}}
-                            </td>
-                            <td>
-                                {{$product->quantity}}
-                            </td>
+                            <td>{{$loop->iteration}}</td>
+                            <td>{{$product->quantity}}</td>
                             <td>{{$product->unique_code}}</td>
                             <td>
                                 @if($product->design_backpack)
@@ -366,22 +338,12 @@
                                 @endif
                             </td>
                             <td>{{$product->size}}</td>
-                            <td>
-                                {{$product->material}}
-                            </td>
-                            <td>
-                                {{$product->note}}
-                            </td>
-                            <td>
-                                {{$product->name}}
-                            </td>
-                            <td>
-                                {{$product->address}}
-                            </td>
+                            <td>{{$product->material}}</td>
+                            <td>{{$product->note}}</td>
+                            <td>{{$product->name}}</td>
+                            <td>{{$product->address}}</td>
                             <td>{{$product->phone_number}}</td>
-                            <td>
-                                {{date('m-d', strtotime($product->created_at))}}
-                            </td>
+                            <td>{{date('m-d', strtotime($product->created_at))}}</td>
                             <td>
                                 <a href="{{route('bag.order.edit', $product->id)}}" class="btn btn-primary">edit</a>
                             </td>
