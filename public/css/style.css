@@ -2735,6 +2735,7 @@ img {
   width: 100%;
   float: left;
   margin-bottom: 20px;
+    padding-right: 50px;
 }
 #aa-blog-archive .aa-blog-archive-area .aa-blog-content .aa-blog-content-single .aa-blog-img:hover img {
   opacity: 1;
