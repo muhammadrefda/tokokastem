@@ -7,10 +7,8 @@
                 <div class="col-md-12">
                     <div class="aa-blog-archive-area">
                         <h2>Bagaimana Cara Belanja di TokoKastem?</h2>
-
                         <div class="row">
                             <div class="col-md-9">
-                                <!-- Blog details -->
                                 <div class="aa-blog-content aa-blog-details">
                                     <article class="aa-blog-content-single">
                                         <h2><a href="#">Langkah 1</a></h2>
