@@ -166,7 +166,6 @@
 </section>
 <!-- / menu -->
 
-    @include('sweetalert::alert')
 
     <main>
         @yield('content')
@@ -311,11 +310,22 @@
 
 </footer>
 <!-- / footer -->
+    <script>
+        window.onbeforeunload = function (e) {
+            e = e || window.event;
 
-<!-- jQuery library -->
+            if (e) {
+                e.returnValue = 'Sure?';
+            }
+
+            // For Safari
+            return 'Sure?';
+        };
+    </script>
+    <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="{{asset('js/bootstrap.js')}}"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{{asset('js/bootstrap.js')}}"></script>
 <!-- SmartMenus jQuery plugin -->
 <script type="text/javascript" src="{{asset('js/jquery.smartmenus.js')}}"></script>
 <!-- SmartMenus jQuery Bootstrap Addon -->
@@ -333,6 +343,7 @@
 <!-- Custom js -->
 <script src="{{asset('js/custom.js')}}"></script>
 @yield('js')
+    @include('sweetalert::alert')
 </body>
 
 </html>
