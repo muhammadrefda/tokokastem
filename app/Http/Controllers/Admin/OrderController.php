@@ -237,7 +237,8 @@ class OrderController extends Controller
 
         Alert::success('Sukses','Status Berhasil di update');
 
-        return redirect()->back();
+        return back();
+
 
     }
 

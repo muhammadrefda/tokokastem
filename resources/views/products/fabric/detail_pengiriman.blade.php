@@ -13,7 +13,6 @@
                                 <div class="card-body">
                                     <form action="{{route('fabric.store.detail.pengiriman')}}" method="POST">
                                         @csrf
-{{--                                        @method('put')--}}
                                         <div class="form-group">
                                             <label for="">Pilih Provinsi</label>
                                             <select name="province_id" id="province_id" class="form-control">
@@ -46,12 +45,11 @@
                                             <button type="submit" class="aa-add-to-cart-btn">Submit</button>
                                         </div>
                                     </form>
+
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-2"></div>
                     </div>
-
                 </div>
             </div>
 

@@ -447,6 +447,7 @@ class ProductController extends Controller
         $new_product->note = $request->get('note');
         $new_product->status = $request->get('status');
         $new_product->price_totebag = 15000;
+        /*weight in grams*/
         $new_product->totebag_weight = 1000;
 
         $new_product->total = $new_product->getTotebagTotalAttributes();
@@ -684,6 +685,7 @@ class ProductController extends Controller
         $new_product->note = $request->get('note');
         $new_product->status = $request->get('status');
         $new_product->price_tshirt = 35000;
+        /*weight in grams*/
         $new_product->tshirt_weight = 1000;
 
         $new_product->total = $new_product->getTshirtTotalAttributes();
@@ -926,8 +928,8 @@ class ProductController extends Controller
         $new_product->material = $request->get('material');
         $new_product->note = $request->get('note');
         $new_product->status = $request->get('status');
-
         $new_product->price_mug = 25000;
+        /*weight in grams*/
         $new_product->mug_weight = 1500;
 
 
@@ -1165,6 +1167,7 @@ class ProductController extends Controller
         $new_product->note = $request->get('note');
         $new_product->status = $request->get('status');
         $new_product->price_backpack = 50000;
+        /*weight in grams*/
         $new_product->backpack_weight = 2000;
 
         $new_product->total = $new_product->getBagTotalAttributes();

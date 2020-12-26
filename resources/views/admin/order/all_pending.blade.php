@@ -83,7 +83,7 @@
 
                     @foreach($masks as $product)
                         <tr>
-                            <td>{{$loop-shadow >iteration}}</td>
+                            <td>{{$loop->iteration}}</td>
                             <td>{{$product->quantity}}</td>
                             <td>{{$product->unique_code}}</td>
                             <td>@if($product->design_mask)
