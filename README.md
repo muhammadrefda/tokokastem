@@ -18,3 +18,6 @@
 2. Reguler User
    - email : reguser@gmail.com
    - password : xyz123
+
+## Link Flowchart    
+https://drive.google.com/drive/folders/1DxEue8fuHJujA4f0yTgf1Bzj-sq5OBfM?usp=sharing
