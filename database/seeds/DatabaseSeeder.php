@@ -16,6 +16,5 @@ class DatabaseSeeder extends Seeder
 //        $this->call(CitySeeder::class);
         $this->call(CourierSeeder::class);
         $this->call(LocationsSeeder::class);
-//        $this->call(RekeningSeeder::class);
     }
 }
