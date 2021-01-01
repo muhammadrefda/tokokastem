@@ -5,7 +5,8 @@
 3. generate laravel key dengan menggunakan command "php artisan key:generate"
 4. ubah nama database sesuai yang dibuat pada phpmyadmin
 5. jalankan migrate dan seed dengan menggunakan command "php artisan migrate:fresh --seed"
-6. lalu jalankan "php artisan serve" apabila menggunakn xampp
+6. lalu jalankan "php artisan serve" apabila menggunakan xampp
+7. buat alamat pengiriman dengan mengakses localhost/tokokastem atau tokokastem.test (disesuaikan dengan url yg dibuat), lalu tambahkan uri: /alamat-toko
 ## Catatan Toko Kastem
 
 1. satuan untuk berat di raja ongkir adalah gram
